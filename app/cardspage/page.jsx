@@ -28,15 +28,21 @@ function page() {
         , []);
 
     console.log(cardsData);
+    
     return (
         <main>
             <h1>Card List</h1>
             {
-                cardsData && cardsData.map((card, index) => (
-                    <div key={index}>
-                        <h2>{card.name}</h2>
-                        <p>{card.description}</p>
-                    </div>
+                cardsData.map((card) => (
+                    card.map((card, index) => (
+                        <div key={index}>
+                            <h2>{card.name}</h2>
+                            <img src={card.image} />
+                            <p>{card.description}</p>
+                            {card.type ? <p>{card.type}</p> : null}
+
+                        </div>
+                    ))
                 ))
             }
 
