@@ -34,9 +34,10 @@ function page() {
             <h1>Card List</h1>
             {
                 cardsData.map((card) => (
-                    card.map((card, index) => (
-                        <div key={index}>
+                    card.map((card) => (
+                        <div key={card.id}>
                             <h2>{card.name}</h2>
+                            <p>{card.id}</p>
                             <img src={card.image} />
                             <p>{card.description}</p>
                             {card.type ? <p>{card.type}</p> : null}
