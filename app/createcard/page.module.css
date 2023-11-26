@@ -55,3 +55,20 @@
     box-shadow: 0 -2px 3px 0 #ff8907,0 0 0 4px #ffa80c,0 -1px 0 4px #ffa80c,0 -1px 2px 4px #ffd525,0 -2px 0 5px #f4e684,0 6px 0 4px #b06904,0 3px 0 5px #f4e684,0 -2px 0 7px #202020,0 5px 0 7px #202020,0 7px 0 7px #333;
     text-shadow: -1px -1px 0 #582d00,1px -1px 0 #582d00,-1px 1px 0 #582d00,1px 1px 0 #582d00
 }
+.containerCard{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 50%;
+    background-color: #acacac;
+    border: solid 5px #747474;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+}
+.containerHeader{
+    background-color: white;
+}
+.containerPoints{
+    background-color: rgb(226, 237, 250);
+}
