@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const itemsPerPage = 10;
 function page() {
-    const [cardsData, setCardsData] = useState(null);
+    const [cardsData, setCardsData] = useState([]);
     const [data, setData] = useState([]);
     const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(0);
@@ -27,7 +27,7 @@ function page() {
     }
         , []);
 
-
+    console.log(cardsData);
     return (
         <main>
             <h1>Card List</h1>
