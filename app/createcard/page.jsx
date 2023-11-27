@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image"
+import axios from "axios"
 import { useState, useEffect } from "react"
 import styles from "../createcard/page.module.css"
 import CardInfo from "../components/cardinfo/cardinfo";
@@ -22,15 +23,15 @@ export default function Home() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      await axios.post("/api/cards", {
-        name,
-        level,
-        rarity,
-        type,
-        elixir,
-        image,
-        description
-      })
+      const response = await axios.post("/api/cards", {
+          name,
+          level,
+          rarity,
+          type,
+          elixir,
+          image,
+          description
+        })
       setName("")
       setLevel("")
       setRarity("")
