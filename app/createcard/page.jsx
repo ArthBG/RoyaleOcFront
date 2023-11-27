@@ -19,6 +19,31 @@ export default function Home() {
   //   setImage(URL.createObjectURL(file));
   // }
 
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      await axios.post("/api/cards", {
+        name,
+        level,
+        rarity,
+        type,
+        elixir,
+        image,
+        description
+      })
+      setName("")
+      setLevel("")
+      setRarity("")
+      setType("")
+      setElixir("")
+      setImage("")
+      setDescription("")
+      console.log(response)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <main className={styles.backgroundimage}>
       <h1>Clash Royale</h1>
@@ -90,7 +115,7 @@ export default function Home() {
 
         {/* <input type="file" className={styles.file} value={image} onChange={onChangeImage} /> */}
         <textarea className={styles.input} placeholder="Descrição da carta" value={description} onChange={e => setDescription(e.target.value)} />
-        <button className={styles.scbtnyellow}>Salvar</button>
+        <button className={styles.scbtnyellow} onClick={handleSubmit}>Salvar</button>
       </div>
 
 
