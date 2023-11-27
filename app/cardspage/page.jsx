@@ -6,27 +6,23 @@ import axios from 'axios';
 const itemsPerPage = 10;
 function page() {
     const [cardsData, setCardsData] = useState([]);
-    const [data, setData] = useState([]);
-    const [page, setPage] = useState(1);
-    const [totalPages, setTotalPages] = useState(0);
-
+    const [currentPage, setCurrentPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(0); 
+    
     useEffect(() => {
-        async function fetchCards() {
-            try {
-                const response = await axios.get('/api/cards');
-                const data = response.data;
-                setData(data);
-                setTotalPages(Math.ceil(data.length / itemsPerPage));
-                const cards = data.slice(0, itemsPerPage);
-                setCardsData(cards);
+        async function fetchData() {
+            try{
+            const response = await axios.get("/api/cards");
+            setCardsData(response.data.cards);
+            setTotalPages(response.data.totalPages);
             } catch (error) {
                 console.error(error);
             }
         }
-        fetchCards();
+        fetchData();
     }
-        , []);
-
+    , []);
+    
     console.log(cardsData);
     
     return (
@@ -34,17 +30,12 @@ function page() {
             <h1>Card List</h1>
             {
                 cardsData.map((card) => (
-                    card.map((card) => (
                         <div key={card.id}>
                             <h2>{card.name}</h2>
-                            <p>{card.id}</p>
                             <img src={card.image} />
-                            <p>{card.description}</p>
                             {card.type ? <p>{card.type}</p> : null}
-
                         </div>
                     ))
-                ))
             }
 
         </main>
