@@ -55,10 +55,10 @@ export default function Home() {
             <Image src={"/images/logoclashroyale.png"} width={300} height={200} />
           </div>
           <div className={styles.containerCard}>
-          <h3>nome{name} Nível {level}</h3>
+          <h2 className={styles.title}>nome{name} Nível {level}</h2>
             <div className={styles.containerHeader}>
               <div className={styles.cardImage}>
-                {rarity === "comum" || rarity === "raro" || rarity === "epico" && elixir === "1" ? <Image src={"/images/communCard1.png"} width={50} height={50} />
+                {/* {rarity === "comum" || rarity === "raro" || rarity === "epico" && elixir === "1" ? <Image src={"/images/communCard1.png"} width={50} height={50} />
                 : (rarity === "comum" || rarity === "raro" || rarity === "epico" && elixir === "2" ? <Image src={"/images/communCard2.png"} width={50} height={50} />
                 : (rarity === "comum" || rarity === "raro" || rarity === "epico" && elixir === "3" ? <Image src={"/images/communCard3.png"} width={50} height={50} />
                 : (rarity === "comum" || rarity === "raro" || rarity === "epico" && elixir === "4" ? <Image src={"/images/communCard4.png"} width={50} height={50} />                
@@ -89,10 +89,11 @@ export default function Home() {
                 : (rarity === "campeao" && elixir === "9" ? <Image src={"/images/championCard9.png"} width={50} height={50} />
                 : (rarity === "campeao" && elixir === "10" ? <Image src={"/images/championCard10.png"} width={50} height={50} />
                 : null)))))))))))))))))))))))))))))
-                }
+                } */}
+                <Image src={"/images/balao.png.png"} width={220} height={250} />
               </div>
             <div className={styles.headCard}>
-              {rarity === "comum" ? <div className={styles.common}>
+              {/* {rarity === "comum" ? <div className={styles.common}>
                 <h3>Raridade:</h3>
                 <h3>Comum</h3>
                 <h3>Tipo:</h3>
@@ -121,7 +122,18 @@ export default function Home() {
                 <h3>Campeão</h3>
                 <h3>Tipo:</h3>
                 <h3>{type}</h3>
-              </div> : null}
+              </div> : null} */}
+              <div className={styles.fitrt}>
+              <div className={styles.rarity}>
+              <h3>Raridade:</h3>
+              <h3>Comum</h3>
+              </div>
+              <div className={styles.type}>
+                <h3>Tipo:</h3>
+                <h3>Campeão</h3>
+              </div>
+              </div>
+              </div>
               <h3>{description}</h3>
           </div>
        <div className={styles.containerPoints}>
@@ -156,7 +168,6 @@ export default function Home() {
             <div className={styles.point}>
               <h2>10</h2>
             </div>
-          </div>
           </div>
        </div>    
         </div>
