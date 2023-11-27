@@ -1,0 +1,158 @@
+.divcontatos {
+  width: 9%;
+  height: 8rem;
+  cursor: pointer;
+  background-color: rgb(74, 186, 224);
+  border-radius: 100%;
+}
+
+.divcontatos:hover {
+  background-color: rgb(2, 141, 187);
+  border-radius: 100%;
+}
+.divsobrenos {
+  width: 9%;
+  margin-left: 27rem;
+  height: 8rem;
+  cursor: pointer;
+  background-color: rgb(74, 186, 224);
+  border-radius: 100%;
+}
+.divsobrenos:hover {
+  background-color: rgb(2, 141, 187);
+  border-radius: 100%;
+}
+
+.divhome {
+  width: 9%;
+  margin-left: 26rem;
+  height: 8rem;
+  cursor: pointer;
+  background-color: rgb(74, 186, 224);
+  border-radius: 100%;
+}
+
+.divhome:hover {
+  background-color: rgb(2, 141, 187);
+  border-radius: 100%;
+}
+
+.divfundo {
+  display: flex;
+  margin-left: 15rem;
+}
+
+.cartas {
+  margin-left: 2rem;
+  width: 4rem;
+  margin-top: 1.5rem;
+}
+.cartas:hover {
+  width: 6rem;
+  height: 6rem;
+  margin-left: 1rem;
+  margin-top: 1.2rem;
+}
+
+.espadas {
+margin-left: 1.8rem;
+margin-top: 1.5rem;
+}
+.espadas:hover {
+  width: 5.5rem;
+  height: 5.5rem;
+  margin-left: 1.1rem;
+  margin-top: 1.5rem;
+}
+
+.bau {
+  margin-left: 1.8rem;
+  margin-top: 1.5rem;
+}
+.bau:hover {
+  width: 5.5rem;
+  height: 5.5rem;
+  margin-left: 1rem;
+  margin-top: 1.5rem;
+}
+
+.footer {
+  bottom: 0;
+  left: 0;
+  /*background-color: lightskyblue;*/
+  background-image: url(https://i.pinimg.com/564x/00/ee/dc/00eedc61c56d7ca29d202924f8712104.jpg);
+  padding: 10px 60px 20px;
+  font-size: 15px;
+  line-height: 24px;
+  position: relative;
+  color: #737373;
+  z-index: 100;
+}
+
+.justify {
+  text-align: justify;
+  width: 30%;
+}
+
+.li {
+  padding: 10%;
+
+}
+
+.sobre {
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-top: 5px;
+  letter-spacing: 2px;
+
+}
+
+
+.h6i {
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-top: 5px;
+  letter-spacing: 2px;
+  margin-left: 14px;
+}
+
+.footer Link {
+  color: #737373;
+}
+
+.icon {
+  width: 80px;
+  height: 10vh;
+}
+
+.footer Link hover {
+  color: #3366cc;
+  text-decoration: none;
+}
+
+.links li {
+  display: block
+}
+
+.links a {
+  color: #737373
+}
+
+.links.inline li {
+  display: inline-block
+}
+
+.site {
+  text-align: right
+}
+
+.row {
+  display: flex;
+}
+
+.copyright {
+  margin: 0
+}
+
