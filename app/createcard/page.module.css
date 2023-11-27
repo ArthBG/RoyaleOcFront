@@ -99,6 +99,7 @@
 }
 .fitrt{
     display: flex;
+    width: max-content;
     justify-content: space-between;
     border-radius: 5px;
     background-color: rgb(168, 219, 219);
@@ -108,3 +109,5 @@
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
+
+
