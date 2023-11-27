@@ -6,15 +6,12 @@ import axios from 'axios';
 const itemsPerPage = 10;
 function page() {
     const [cardsData, setCardsData] = useState([]);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [totalPages, setTotalPages] = useState(0); 
     
     useEffect(() => {
         async function fetchData() {
             try{
             const response = await axios.get("/api/cards");
             setCardsData(response.data.cards);
-            setTotalPages(response.data.totalPages);
             } catch (error) {
                 console.error(error);
             }
@@ -22,7 +19,7 @@ function page() {
         fetchData();
     }
     , []);
-    
+    console.log("Primeiro vazio e depois o Hello");
     console.log(cardsData);
     
     return (
