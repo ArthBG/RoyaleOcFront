@@ -2,6 +2,7 @@
 import Image from "next/image"
 import { useState, useEffect } from "react"
 import styles from "../createcard/page.module.css"
+import CardInfo from "../components/cardinfo/cardinfo";
 
 export default function Home() {
   const [cards, setCards] = useState([])
@@ -93,142 +94,16 @@ export default function Home() {
       </div>
 
 
-      <div className={styles.containerCards}>
-        <div className={styles.card}>
-          <h2>Carta</h2>
-          <div className={styles.containerCard}>
-            <h2 className={styles.title}>{name} Nível {level}</h2>
-            <div className={styles.containerHeader}>
-              <div className={styles.cardImage}>
-                {rarity === "comum" || rarity === "raro" || rarity === "epico" && elixir === "1" ? <img src={"/images/createcard/communCard1.png"} className={styles.communCard1} width={300} height={250} /> :
-                (rarity === "comum" || rarity === "raro" || rarity === "epico" && elixir === "2" ? <img src={"/images/createcard/communCard2.png"} className={styles.communCard2} width={300} height={250} /> :
-                (rarity === "comum" || rarity === "raro" || rarity === "epico" && elixir === "3" ? <img src={"/images/createcard/communCard3.png"} className={styles.communCard3} width={300} height={250} /> :
-                (rarity === "comum" || rarity === "raro" || rarity === "epico" && elixir === "4" ? <img src={"/images/createcard/communCard4.png"} className={styles.communCard4} width={300} height={250} /> :
-                (rarity === "comum" || rarity === "raro" || rarity === "epico" && elixir === "5" ? <img src={"/images/createcard/communCard5.png"} className={styles.communCard5} width={300} height={250} /> :
-                (rarity === "comum" || rarity === "raro" || rarity === "epico" && elixir === "6" ? <img src={"/images/createcard/communCard6.png"} className={styles.communCard6} width={300} height={250} /> :
-                (rarity === "comum" || rarity === "raro" || rarity === "epico" && elixir === "7" ? <img src={"/images/createcard/communCard7.png"} className={styles.communCard7} width={300} height={250} /> :
-                (rarity === "comum" || rarity === "raro" || rarity === "epico" && elixir === "8" ? <img src={"/images/createcard/communCard8.png"} className={styles.communCard8} width={300} height={250} /> :
-                (rarity === "comum" || rarity === "raro" || rarity === "epico" && elixir === "9" ? <img src={"/images/createcard/communCard9.png"} className={styles.communCard9} width={300} height={250} /> :
-                (rarity === "comum" || rarity === "raro" || rarity === "epico" && elixir === "10" ? <img src={"/images/createcard/communCard10.png"} className={styles.communCard10} width={300} height={250} /> :
-                (rarity === "lendario" && elixir === "1" ? <img src={"/images/createcard/legendaryCard1.png"} className={styles.legendaryCard1} width={300} height={250} /> :
-                (rarity === "lendario" && elixir === "2" ? <img src={"/images/createcard/legendaryCard2.png"} className={styles.legendaryCard2} width={300} height={250} /> :
-                (rarity === "lendario" && elixir === "3" ? <img src={"/images/createcard/legendaryCard3.png"} className={styles.legendaryCard3} width={300} height={250} /> :
-                (rarity === "lendario" && elixir === "4" ? <img src={"/images/createcard/legendaryCard4.png"} className={styles.legendaryCard4} width={300} height={250} /> :
-                (rarity === "lendario" && elixir === "5" ? <img src={"/images/createcard/legendaryCard5.png"} className={styles.legendaryCard5} width={300} height={250} /> :
-                (rarity === "lendario" && elixir === "6" ? <img src={"/images/createcard/legendaryCard6.png"} className={styles.legendaryCard6} width={300} height={250} /> :
-                (rarity === "lendario" && elixir === "7" ? <img src={"/images/createcard/legendaryCard7.png"} className={styles.legendaryCard7} width={300} height={250} /> :
-                (rarity === "lendario" && elixir === "8" ? <img src={"/images/createcard/legendaryCard8.png"} className={styles.legendaryCard8} width={300} height={250} /> :
-                (rarity === "lendario" && elixir === "9" ? <img src={"/images/createcard/legendaryCard9.png"} className={styles.legendaryCard9} width={300} height={250} /> :
-                (rarity === "lendario" && elixir === "10" ? <img src={"/images/createcard/legendaryCard10.png"} className={styles.legendaryCard10} width={300} height={250} /> :
-                (rarity === "campeao" && elixir === "1" ? <img src={"/images/createcard/championCard1.png"} className={styles.championCard1} width={300} height={250} /> :
-                (rarity === "campeao" && elixir === "2" ? <img src={"/images/createcard/championCard2.png"} className={styles.championCard2} width={300} height={250} /> :
-                (rarity === "campeao" && elixir === "3" ? <img src={"/images/createcard/championCard3.png"} className={styles.championCard3} width={300} height={250} /> :
-                (rarity === "campeao" && elixir === "4" ? <img src={"/images/createcard/championCard4.png"} className={styles.championCard4} width={300} height={250} /> :
-                (rarity === "campeao" && elixir === "5" ? <img src={"/images/createcard/championCard5.png"} className={styles.championCard5} width={300} height={250} /> :
-                (rarity === "campeao" && elixir === "6" ? <img src={"/images/createcard/championCard6.png"} className={styles.championCard6} width={300} height={250} /> :
-                (rarity === "campeao" && elixir === "7" ? <img src={"/images/createcard/championCard7.png"} className={styles.championCard7} width={300} height={250} /> :
-                (rarity === "campeao" && elixir === "8" ? <img src={"/images/createcard/championCard8.png"} className={styles.championCard8} width={300} height={250} /> :
-                (rarity === "campeao" && elixir === "9" ? <img src={"/images/createcard/championCard9.png"} className={styles.championCard9} width={300} height={250} /> :
-                (rarity === "campeao" && elixir === "10" ? <img src={"/images/createcard/championCard10.png"} className={styles.championCard10} width={300} height={250} /> : null
-                )))))))))))))))))))))))))))))} 
-
-
-
-                {image ? <img src={image} width={300} height={200} /> : null }
-              </div>
-              <div className={styles.headCard}>
-                {rarity === "comum" ?
-                  <div className={styles.fitrt}>
-                    <div className={styles.rarity}>
-                      <h3>Raridade:</h3>
-                      <h3>Comum</h3>
-                    </div>
-                    <div className={styles.type}>
-                      <h3>Tipo:</h3>
-                      <h3>{type}</h3>
-                    </div>
-                  </div> :
-                  (rarity === "raro" ?
-                    <div className={styles.fitrt}>
-                      <div className={styles.rarity}>
-                        <h3>Raridade:</h3>
-                        <h3>Raro</h3>
-                        <div className={styles.type}>
-                          <h3>Tipo:</h3>
-                          <h3>{type}</h3>
-                        </div>
-                      </div>
-                    </div> :
-                    rarity === "epico" ? <div className={styles.fitrt}>
-                      <div className={styles.rarity}>
-                        <h3>Raridade:</h3>
-                        <h3>Épico</h3>
-                        <div className={styles.type}>
-                          <h3>Tipo:</h3>
-                          <h3>{type}</h3>
-                        </div>
-                      </div>
-                    </div> :
-                      rarity === "lendario" ? <div className={styles.fitrt}>
-                        <div className={styles.rarity}>
-                          <h3>Raridade:</h3>
-                          <h3>Lendário</h3>
-                          <div className={styles.type}>
-                            <h3>Tipo:</h3>
-                            <h3>{type}</h3>
-                          </div>
-                        </div>
-                      </div> :
-                        rarity === "campeao" ? <div className={styles.fitrt}>
-                          <div className={styles.rarity}>
-                            <h3>Raridade:</h3>
-                            <h3>Campeão</h3>
-                            <div className={styles.type}>
-                              <h3>Tipo:</h3>
-                              <h3>{type}</h3>
-                            </div>
-                          </div>
-                        </div> : null
-                  )}
-                <h3>{description}</h3>
-              </div>
-            </div>
-            <div className={styles.containerPoints}>
-              <div className={styles.containerPoint}>
-                <div className={styles.point}>
-                  <h2>1</h2>
-                </div>
-                <div className={styles.point}>
-                  <h2>2</h2>
-                </div>
-                <div className={styles.point}>
-                  <h2>3</h2>
-                </div>
-                <div className={styles.point}>
-                  <h2>4</h2>
-                </div>
-                <div className={styles.point}>
-                  <h2>5</h2>
-                </div>
-                <div className={styles.point}>
-                  <h2>6</h2>
-                </div>
-                <div className={styles.point}>
-                  <h2>7</h2>
-                </div>
-                <div className={styles.point}>
-                  <h2>8</h2>
-                </div>
-                <div className={styles.point}>
-                  <h2>9</h2>
-                </div>
-                <div className={styles.point}>
-                  <h2>10</h2>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div className={styles.containerCard}>
+        <CardInfo
+          name={name}
+          level={level}
+          rarity={rarity}
+          type={type}
+          elixir={elixir}
+          image={image}
+          description={description}
+        />
       </div>
     </main>
   )

@@ -1,0 +1,34 @@
+
+.CardInfo{
+    background-image: url("/images/infobg.png");
+    height: 75rem;
+    width: 60rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+    margin-top: 10rem;
+}
+.rarity{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+.type{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+.fitrt{
+    display: flex;
+    width: max-content;
+    justify-content: space-between;
+    border-radius: 5px;
+    background-color: rgb(168, 219, 219);
+}
+.containerPoints{
+    background-color: rgb(226, 237, 250);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
