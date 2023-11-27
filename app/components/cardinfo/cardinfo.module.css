@@ -15,6 +15,9 @@
     font-weight: bold;
     color: #fff;
 }
+.imagecomming{
+    z-index: 999;
+}
 .containerImage{
     margin: 1rem;
 }
@@ -71,7 +74,7 @@
     width: 1rem;
     max-width: 1rem;
     height: 1rem;
-    
+
 }
     .containerCards{
         display: flex;

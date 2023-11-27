@@ -25,7 +25,7 @@ export default function Home() {
   const [rarity, setRarity] = useState("")
   const [type, setType] = useState("")
   const [elixir, setElixir] = useState("")
-  const [image, setImage] = useState(null)
+  const [image, setImage] = useState("")
   const [description, setDescription] = useState("")
 
   const handleImage = (e) => {

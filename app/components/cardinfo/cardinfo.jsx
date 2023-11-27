@@ -1,7 +1,7 @@
 import Image from "next/image"
 import styles from "./cardinfo.module.css"
 export default function CardInfo({ name, level, rarity, type, elixir, image, description }) {
-    console.log(name, level, rarity, type, elixir, description);
+    console.log(name, level, rarity, type, elixir, image, description);
     return (
         <div className={styles.CardInfo} >
             <h1 className={styles.cardName}>{name} Nível {level}</h1>
@@ -9,31 +9,58 @@ export default function CardInfo({ name, level, rarity, type, elixir, image, des
                 <div className={styles.containerImage}>
                   {
                     rarity == "comum" && elixir == "1" ?
+                    <div>
+                    <Image className={styles.imagecomming}src={image} width={250} height={310} />
                     <Image src={"/images/createcard/communCard1.png"} width={240} height={300} />
+                    </div>
                     :
                     (rarity == "comum" && elixir == "2" ?
+                    <div>
+                    <Image className={styles.imagecomming}src={image} width={250} height={310} />
                     <Image src={"/images/createcard/communCard2.png"} width={240} height={300} />
+                    </div>
                     :
                      (rarity == "comum" && elixir == "3" ?
+                     <div>
+                     <Image className={styles.imagecomming}src={image} width={250} height={310} />
                      <Image src={"/images/createcard/communCard3.png"} width={240} height={300} />
+                     </div>
                      :
                      (rarity == "comum" && elixir == "4" ?
+                     <div>
+                     <Image className={styles.imagecomming}src={image} width={250} height={310} />
                      <Image src={"/images/createcard/communCard4.png"} width={240} height={300} />
+                    </div>
                      :
                      (rarity == "comum" && elixir == "5" ?
+                     <div>
+                    <Image className={styles.imagecomming}src={image} width={250} height={310} />
                      <Image src={"/images/createcard/communCard5.png"} width={240} height={300} />
+                     </div>
                      :
                         (rarity == "comum" && elixir == "6" ?
+                        <div>
+                             <Image className={styles.imagecomming}src={image} width={250} height={310} />
                         <Image src={"/images/createcard/communCard6.png"} width={240} height={300} />
+                        </div>
                         :
                         (rarity == "comum" && elixir == "7" ?
+                        <div>
+                        <Image className={styles.imagecomming}src={image} width={250} height={310} />
                         <Image src={"/images/createcard/communCard7.png"} width={240} height={300} />
+                        </div>
                         :
                         (rarity == "comum" && elixir == "8" ?
+                        <div>
+                             <Image className={styles.imagecomming}src={image} width={250} height={310} />
                         <Image src={"/images/createcard/communCard8.png"} width={240} height={300} />
+                        </div>
                         :
                         (rarity == "comum" && elixir == "9" ?
+                        <div>
+                        <Image className={styles.imagecomming}src={image} width={250} height={310} />
                         <Image src={"/images/createcard/communCard9.png"} width={240} height={300} />
+                        </div>
                         :
                         (rarity == "comum" && elixir == "10" ?
                         <Image src={"/images/createcard/communCard10.png"} width={240} height={300} />
