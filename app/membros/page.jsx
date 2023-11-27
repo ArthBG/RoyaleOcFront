@@ -4,121 +4,97 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-/* import dashboardInput from "../components/dashInput"; */
 
-export default function UptadeMembro({ params }) {
-    const [nome, setNome] = useState("");
-    const [idade, setIdade] = useState("");
-    const [cargo, setCargo] = useState("");
-    const [foto, setFoto] = useState("");
-    const [descricao, setDescricao] = useState("");
+
+export default async function Registros() {
+    const [infos, setInfos] = useState([]);
+    const [membros, setMembros] = useState([]);
     const router = useRouter();
-    const { id } = params;
 
-    useEffect(() => {
-        async function fetchMembro() {
-            try {
-                const response = await axios.get(`/api/membros/${id}`);
-                const membro = response.data;
-                setNome(membro.nome);
-                setIdade(membro.idade);
-                setCargo(membro.cargo);
-                setFoto(membro.foto);
-                setDescricao(membro.descricao);
-
-            } catch (error) {
-                console.log("error fetching membro details", error);
-            }
-
-        }
-        if (id) {
-            fetchMembro();
-        }
-
-    }, [id]);
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            await axios.put(`/api/membros/${id}`, { nome, idade, cargo, foto, descricao });
-            router.push(`/membros/${id}`);
-
-        } catch (error) {
-            console.log("error updating membro", error);
-        }
+    const deletar = async (id) => {
+        const url = `/api/membros/${id}`;
+    try {
+        await axios.delete(url);
+        setInfos(infos.filter((info) => info.id !== id));
+    } catch (error) {
+        console.log("error", error);
+    };
+    };
+    const update = async (id) => {
+        router.push(`/membros/${id}`);
     };
 
-    return (
+    useEffect(() => {
+        async function fetchMembros() {
+            try {
+                const response = await axios.get("/api/membros");
+                setMembros(response.data);
+                setInfos(response.data);
+            } catch (error) {
+                console.log("error", error);
+            }
+        }
 
-        <div className="paidetodos">
-            <div className="container">
-                <h1> Membro</h1>
-                <Link href={`/membros`}>
-                    <button>Voltar</button>
+        fetchMembros();
+    }, []);
+
+    return (
+        <div>
+            <div>
+                <Link href="/membros">
+                    <button>
+                        cadastrar membro
+                    </button>
                 </Link>
             </div>
 
             <div>
-                <h1>Atualizar Membro</h1>
-                {id ? (
-                    <form onSubmit={handleSubmit}>
-                        <div>
-                            <label>Nome</label>
-                            <input
-                                type="text"
-                                id="nome"
-                                value={nome}
-                                onChange={(e) => setNome(e.target.value)}
-                                required
-                            />
-                        </div>
-                        <div>
-                            <label>Idade</label>
-                            <input
-                                type="text"
-                                id="idade"
-                                value={idade}
-                                onChange={(e) => setIdade(e.target.value)}
-                                required
-                            />
-                        </div>
-                        <div>
-                            <label>Cargo</label>
-                            <input
-                                type="text"
-                                id="cargo"
-                                value={cargo}
-                                onChange={(e) => setCargo(e.target.value)}
-                                required
-                            />
-                        </div>
-                        <div>
-                            <label>Foto</label>
-                            <input
-                                type="text"
-                                id="foto"
-                                value={foto}
-                                onChange={(e) => setFoto(e.target.value)}
-                                required
-                            />
-                        </div>
-                        <div>
-                            <label>Descrição</label>
-                            <input
-                                type="text"
-                                id="descricao"
-                                value={descricao}
-                                onChange={(e) => setDescricao(e.target.value)}
-                                required
-                            />
-                        </div>
-                        <button type="submit">Atualizar</button>
-                    </form>
-                ) : (
-                    <p> Carregando..</p>
+                <h1>membros</h1>
+                {infos.length ? (
+                    <div>
+                        {membros.map((membro) => (
+                            <div key={membro.id}>
+                                <div>
+                                    <p>
+                                        <strong>ID:</strong>{membro.id}
+                                    </p>
+                                    <p>
+                                        <strong>Nome:</strong>{membro.nome}
+                                    </p>
+                                    <p>
+                                        <strong>Idade:</strong>{membro.idade}
+                                    </p>
+                                    <p>
+                                        <strong>Cargo:</strong>{membro.cargo}
 
+                                    </p>
+                                    <p>
+                                        <strong>Foto:</strong>{membro.foto}
+                                    </p>
+                                    <p>
+                                        <strong>Descrição:</strong>{membro.descricao}
+                                    </p>
+                                </div>
+                                <div >
+                                    <button onClick={() => deletar(membro.id)}>
+
+                                        Deletar
+
+                                    </button>
+                                    <button onClick={() => update(membro.id)}>
+
+                                        Atualizar
+
+                                    </button>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                ) : (
+                <p>{infos.message ? infos.message : "carregando"}</p>
                 )}
             </div>
+
         </div>
     );
 }
