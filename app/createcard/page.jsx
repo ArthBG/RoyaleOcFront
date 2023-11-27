@@ -119,45 +119,48 @@ export default function Home() {
             <Image src={"/images/logoclashroyale.png"} width={300} height={200} />
           </div>
           <div className={styles.containerCard}>
-          <h2 className={styles.title}>nome{name} Nível {level}</h2>
+          <h2 className={styles.title}>{name} Nível {level}</h2>
             <div className={styles.containerHeader}>
               <div className={styles.cardImage}>
-                {/* {rarity === "comum" || rarity === "raro" || rarity === "epico" && elixir === "1" ? <Image src={"/images/communCard1.png"} width={50} height={50} />
-                : (rarity === "comum" || rarity === "raro" || rarity === "epico" && elixir === "2" ? <Image src={"/images/communCard2.png"} width={50} height={50} />
-                : (rarity === "comum" || rarity === "raro" || rarity === "epico" && elixir === "3" ? <Image src={"/images/communCard3.png"} width={50} height={50} />
-                : (rarity === "comum" || rarity === "raro" || rarity === "epico" && elixir === "4" ? <Image src={"/images/communCard4.png"} width={50} height={50} />                
-                : (rarity === "comum" || rarity === "raro" || rarity === "epico" && elixir === "5" ? <Image src={"/images/communCard5.png"} width={50} height={50} />  
-                : (rarity === "comum" || rarity === "raro" || rarity === "epico" && elixir === "6" ? <Image src={"/images/communCard6.png"} width={50} height={50} />
-                : (rarity === "comum" || rarity === "raro" || rarity === "epico" && elixir === "7" ? <Image src={"/images/communCard7.png"} width={50} height={50} />
-                : (rarity === "comum" || rarity === "raro" || rarity === "epico" && elixir === "8" ? <Image src={"/images/communCard8.png"} width={50} height={50} />                
-                : (rarity === "comum" || rarity === "raro" || rarity === "epico" && elixir === "9" ? <Image src={"/images/communCard9.png"} width={50} height={50} />
-                : (rarity === "comum" || rarity === "raro" || rarity === "epico" && elixir === "10" ? <Image src={"/images/communCard10.png"} width={50} height={50} />
-                : (rarity === "lendario" && elixir === "1" ? <Image src={"/images/legendaryCard1.png"} width={50} height={50} />
-                : (rarity === "lendario" && elixir === "2" ? <Image src={"/images/legendaryCard2.png"} width={50} height={50} />
-                : (rarity === "lendario" && elixir === "3" ? <Image src={"/images/legendaryCard3.png"} width={50} height={50} />
-                : (rarity === "lendario" && elixir === "4" ? <Image src={"/images/legendaryCard4.png"} width={50} height={50} />
-                : (rarity === "lendario" && elixir === "5" ? <Image src={"/images/legendaryCard5.png"} width={50} height={50} />
-                : (rarity === "lendario" && elixir === "6" ? <Image src={"/images/legendaryCard6.png"} width={50} height={50} />
-                : (rarity === "lendario" && elixir === "7" ? <Image src={"/images/legendaryCard7.png"} width={50} height={50} />
-                : (rarity === "lendario" && elixir === "8" ? <Image src={"/images/legendaryCard8.png"} width={50} height={50} />
-                : (rarity === "lendario" && elixir === "9" ? <Image src={"/images/legendaryCard9.png"} width={50} height={50} />
-                : (rarity === "lendario" && elixir === "10" ? <Image src={"/images/legendaryCard10.png"} width={50} height={50} />
-                : (rarity === "campeao" && elixir === "1" ? <Image src={"/images/championCard1.png"} width={50} height={50} />
-                : (rarity === "campeao" && elixir === "2" ? <Image src={"/images/championCard2.png"} width={50} height={50} />
-                : (rarity === "campeao" && elixir === "3" ? <Image src={"/images/championCard3.png"} width={50} height={50} />
-                : (rarity === "campeao" && elixir === "4" ? <Image src={"/images/championCard4.png"} width={50} height={50} />
-                : (rarity === "campeao" && elixir === "5" ? <Image src={"/images/championCard5.png"} width={50} height={50} />
-                : (rarity === "campeao" && elixir === "6" ? <Image src={"/images/championCard6.png"} width={50} height={50} />
-                : (rarity === "campeao" && elixir === "7" ? <Image src={"/images/championCard7.png"} width={50} height={50} />
-                : (rarity === "campeao" && elixir === "8" ? <Image src={"/images/championCard8.png"} width={50} height={50} />
-                : (rarity === "campeao" && elixir === "9" ? <Image src={"/images/championCard9.png"} width={50} height={50} />
-                : (rarity === "campeao" && elixir === "10" ? <Image src={"/images/championCard10.png"} width={50} height={50} />
-                : null)))))))))))))))))))))))))))))
-                } */}
-                <Image src={"/images/balao.png.png"} width={220} height={250} />
+                {rarity === "comum" || rarity === "raro" || rarity === "epico" && elixir === "1" ? setImage("/images/createcard/communCard1") : 
+                (rarity === "comum" || rarity === "raro" || rarity === "epico" && elixir === "2" ? setImage("/images/createcard/communCard2") :
+                (rarity === "comum" || rarity === "raro" || rarity === "epico" && elixir === "3" ? setImage("/images/createcard/communCard3") :
+                (rarity === "comum" || rarity === "raro" || rarity === "epico" && elixir === "4" ? setImage("/images/createcard/communCard4") :
+                (rarity === "comum" || rarity === "raro" || rarity === "epico" && elixir === "5" ? setImage("/images/createcard/communCard5") :
+                (rarity === "comum" || rarity === "raro" || rarity === "epico" && elixir === "6" ? setImage("/images/createcard/communCard6") :
+                (rarity === "comum" || rarity === "raro" || rarity === "epico" && elixir === "7" ? setImage("/images/createcard/communCard7") :
+                (rarity === "comum" || rarity === "raro" || rarity === "epico" && elixir === "8" ? setImage("/images/createcard/communCard8") :
+                (rarity === "comum" || rarity === "raro" || rarity === "epico" && elixir === "9" ? setImage("/images/createcard/communCard9") :
+                (rarity === "comum" || rarity === "raro" || rarity === "epico" && elixir === "10" ? setImage("/images/createcard/communCard10") :
+                (rarity === "lendario" && elixir === "1" ? setImage("/images/createcard/legendaryCard1") :
+                (rarity === "lendario" && elixir === "2" ? setImage("/images/createcard/legendaryCard2") :
+                (rarity === "lendario" && elixir === "3" ? setImage("/images/createcard/legendaryCard3") :
+                (rarity === "lendario" && elixir === "4" ? setImage("/images/createcard/legendaryCard4") :
+                (rarity === "lendario" && elixir === "5" ? setImage("/images/createcard/legendaryCard5") :
+                (rarity === "lendario" && elixir === "6" ? setImage("/images/createcard/legendaryCard6") :
+                (rarity === "lendario" && elixir === "7" ? setImage("/images/createcard/legendaryCard7") :
+                (rarity === "lendario" && elixir === "8" ? setImage("/images/createcard/legendaryCard8") :
+                (rarity === "lendario" && elixir === "9" ? setImage("/images/createcard/legendaryCard9") :
+                (rarity === "lendario" && elixir === "10" ? setImage("/images/createcard/legendaryCard10") :
+                (rarity === "campeao" && elixir === "1" ? setImage("/images/createcard/championCard1") :
+                (rarity === "campeao" && elixir === "2" ? setImage("/images/createcard/championCard2") :
+                (rarity === "campeao" && elixir === "3" ? setImage("/images/createcard/championCard3") :
+                (rarity === "campeao" && elixir === "4" ? setImage("/images/createcard/championCard4") :
+                (rarity === "campeao" && elixir === "5" ? setImage("/images/createcard/championCard5") :
+                (rarity === "campeao" && elixir === "6" ? setImage("/images/createcard/championCard6") :
+                (rarity === "campeao" && elixir === "7" ? setImage("/images/createcard/championCard7") :
+                (rarity === "campeao" && elixir === "8" ? setImage("/images/createcard/championCard8") :
+                (rarity === "campeao" && elixir === "9" ? setImage("/images/createcard/championCard9") :
+                (rarity === "campeao" && elixir === "10" ? setImage("/images/createcard/championCard10") : null
+                )))))))))))))))))))))))))))))}
+
+
+               
+                {image ? <Image src={image} width={300} height={200} /> : null}
               </div>
             <div className={styles.headCard}>
-              {rarity === "comum" ?     <div className={styles.fitrt}>
+              {rarity === "comum" ?     
+              <div className={styles.fitrt}>
               <div className={styles.rarity}>
               <h3>Raridade:</h3>
               <h3>Comum</h3>
@@ -167,7 +170,8 @@ export default function Home() {
                 <h3>{type}</h3>
               </div>
               </div> : 
-              (rarity === "raro" ?     <div className={styles.fitrt}>
+              (rarity === "raro" ?    
+               <div className={styles.fitrt}>
                 <div className={styles.rarity}>
                   <h3>Raridade:</h3>
                   <h3>Raro</h3>
