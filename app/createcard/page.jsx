@@ -2,8 +2,21 @@
 import Image from "next/image"
 import axios from "axios"
 import { useState, useEffect } from "react"
+// import { styled } from "@material-ui/core/styles"
 import styles from "../createcard/page.module.css"
 import CardInfo from "../components/cardinfo/cardinfo";
+
+// const VisuallyHiddenInput = styled("input")({
+//   clip: "rect(0 0 0 0)",
+//   clippath: "inset(50%)",
+//   height: "1px",
+//   overflow: "hidden",
+//   position: "absolute",
+//   whiteSpace: "nowrap",
+//   bottom: "0",
+//   left: "0",
+//   border: "0",
+// });
 
 export default function Home() {
   const [cards, setCards] = useState([])
@@ -12,13 +25,16 @@ export default function Home() {
   const [rarity, setRarity] = useState("")
   const [type, setType] = useState("")
   const [elixir, setElixir] = useState("")
-  const [image, setImage] = useState("")
+  const [image, setImage] = useState(null)
   const [description, setDescription] = useState("")
 
-  // const onChangeImage = (e) => {
-  //   const file = e.target.files[0];
-  //   setImage(URL.createObjectURL(file));
-  // }
+  const handleImage = (e) => {
+    const file = e.target.files[0]
+    setImage(URL.createObjectURL(file))
+   
+  }
+  
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -114,7 +130,7 @@ export default function Home() {
           <option value="10">10 Elixir</option>
         </select>
 
-        {/* <input type="file" className={styles.file} value={image} onChange={onChangeImage} /> */}
+        <input type = "file" className={styles.file} onChange={handleImage} />
         <textarea className={styles.input} placeholder="Descrição da carta" value={description} onChange={e => setDescription(e.target.value)} />
         <button className={styles.scbtnyellow} onClick={handleSubmit}>Salvar</button>
       </div>
