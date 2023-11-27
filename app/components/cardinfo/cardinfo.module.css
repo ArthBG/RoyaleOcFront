@@ -8,27 +8,18 @@
     margin: auto;
     margin-top: 10rem;
 }
-.rarity{
-    display: flex;
-    flex-direction: column;
+.cardName{
+    text-align: center;
+    font-size: 1.5rem;
+    padding-top: 2rem;
+    font-weight: bold;
+    color: #fff;
+}
+.containerImage{
     margin: 1rem;
 }
-.type{
-    display: flex;
-    flex-direction: column;
-    margin: 1rem;
+.communtropa{
+    margin-left: 24rem;
+    margin-top: 5rem;
 }
-.fitrt{
-    display: flex;
-    width: max-content;
-    justify-content: space-between;
-    border-radius: 5px;
-    background-color: rgb(168, 219, 219);
-}
-.containerPoints{
-    background-color: rgb(226, 237, 250);
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
 

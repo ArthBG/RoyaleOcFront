@@ -52,7 +52,7 @@ export default function Home() {
         <img src={"/images/logoclashroyale.png"} width={300} height={200} />
       </div>
       <div className={styles.conatainerInputs}>
-        <input className={styles.input} type="text" placeholder="Nome da sua carta" value={name} onChange={e => setName(e.target.value)} />
+        <input className={styles.input} type="text" maxLength={30} placeholder="Nome da sua carta" value={name} onChange={e => setName(e.target.value)} />
         <select className={styles.select}
           value={level}
           onChange={e => setLevel(e.target.value)}
