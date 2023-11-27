@@ -12,6 +12,36 @@ export default function Home() {
   const [elixir, setElixir] = useState("")
   const [image, setImage] = useState("")
   const [description, setDescription] = useState("")
+
+  const onChangeName = (event) => {
+    setName(event.target.value)
+  }
+
+  const onChangeLevel = (event) => {
+    setLevel(event.target.value)
+  }
+
+  const onChangeRarity = (event) => {
+    setRarity(event.target.value)
+  }
+
+  const onChangeType = (event) => {
+    setType(event.target.value)
+  }
+
+  const onChangeElixir = (event) => {
+    setElixir(event.target.value)
+  }
+
+  const onChangeImage = (event) => {
+    setImage(event.target.value)
+  }
+
+  const onChangeDescription = (event) => {
+    setDescription(event.target.value)
+  }
+
+
   return (
     <main className={styles.backgroundimage}>
       <h1>Clash Royale</h1>
@@ -19,35 +49,69 @@ export default function Home() {
         <Image src={"/images/logoclashroyale.png"} width={300} height={200} />
       </div>
       <div className={styles.conatainerInputs}>
-        <input className={styles.nameinput} type="text" placeholder="Nome da carta" />
-        <select className={styles.select}>
-            <option value= "1">1</option>
-            <option value= "2">2</option>
-            <option value= "3">3</option>
-            <option value= "4">4</option>
-            <option value= "5">5</option>
-            <option value= "6">6</option>
-            <option value= "7">7</option>
-            <option value= "8">8</option>
-            <option value= "9">9</option>
-            <option value= "10">10</option>
+        <input className={styles.input} type="text" placeholder="Nome da sua carta" value={name} onChange={onChangeName} />
+        <select className={styles.select} 
+        value={level}
+        onChange={onChangeLevel}
+        >
+          <option value="1">Nível 1</option>
+          <option value="2">Nível 2</option>
+          <option value="3">Nível 3</option>
+          <option value="4">Nível 4</option>
+          <option value="5">Nível 5</option>
+          <option value="6">Nível 6</option>
+          <option value="7">Nível 7</option>
+          <option value="8">Nível 8</option>
+          <option value="9">Nível 9</option>
+          <option value="10">Nível 10</option>
+          <option value="11">Nível 11</option>
+          <option value="12">Nível 12</option>
+          <option value="13">Nível 13</option>
+          <option value="14">Nível 14</option>
+          <option value="15">Nível 15</option>
         </select>
-        <select className={styles.select}>
-            <option value="comum">Comum</option>
-            <option value="raro">Raro</option>
-            <option value="epico">Épico</option>
-            <option value="lendario">Lendário</option>
-            <option value="campeao">Campeão</option>
+        <select className={styles.select}
+        value={rarity}
+        onChange={onChangeRarity}
+        >
+          <option value="comum">Comum</option>
+          <option value="raro">Raro</option>
+          <option value="epico">Épico</option>
+          <option value="lendario">Lendário</option>
+          <option value="campeao">Campeão</option>
         </select>
-        <select className={styles.select}>
-            <option value="tropa">Tropa</option>
-            <option value="feitiço">Feitiço</option>
-            <option value="construcao">Construção</option>
+
+        <select className={styles.select}
+        value={type}
+        onChange={onChangeType}
+        >
+          <option value="tropa">Tropa</option>
+          <option value="feitico">Feitiço</option>
+          <option value="construcao">Construção</option>
         </select>
-        <input type="file" placeholder="Imagem da carta" />
-        <input className={styles.descinput} type="text" placeholder="Descrição da sua carta" />
-        <button className={styles.scbtnyellow}>Criar</button>
+
+        <select className={styles.select}
+        value={elixir}
+        onChange={onChangeElixir}
+        >
+          <option value="1">1 Elixir</option>
+          <option value="2">2 Elixir</option>
+          <option value="3">3 Elixir</option>
+          <option value="4">4 Elixir</option>
+          <option value="5">5 Elixir</option>
+          <option value="6">6 Elixir</option>
+          <option value="7">7 Elixir</option>
+          <option value="8">8 Elixir</option>
+          <option value="9">9 Elixir</option>
+          <option value="10">10 Elixir</option>
+        </select>
+
+        <input type="file" className={styles.file} value={image} onChange={onChangeImage} />
+        <textarea className={styles.input} placeholder="Descrição da carta" value={description} onChange={onChangeDescription} />
+        <button className={styles.scbtnyellow}>Salvar</button>
       </div>
+
+
       <div className={styles.containerCards}>
         <div className={styles.card}>
           <h2>Carta</h2>
@@ -93,48 +157,59 @@ export default function Home() {
                 <Image src={"/images/balao.png.png"} width={220} height={250} />
               </div>
             <div className={styles.headCard}>
-              {/* {rarity === "comum" ? <div className={styles.common}>
-                <h3>Raridade:</h3>
-                <h3>Comum</h3>
-                <h3>Tipo:</h3>
-                <h3>{type}</h3>
-              </div> : null}
-              {rarity === "raro" ? <div className={styles.rare}>
-                <h3>Raridade:</h3>
-                <h3>Raro</h3>
-                <h3>Tipo:</h3>
-                <h3>{type}</h3>
-              </div> : null}
-              {rarity === "epico" ? <div className={styles.epic}>
-                <h3>Raridade:</h3>
-                <h3>Épico</h3>
-                <h3>Tipo:</h3>
-                <h3>{type}</h3>
-              </div> : null}
-              {rarity === "lendario" ? <div className={styles.legendary}>
-                <h3>Raridade:</h3>
-                <h3>Lendário</h3>
-                <h3>Tipo:</h3>
-                <h3>{type}</h3>
-              </div> : null}
-              {rarity === "campeao" ? <div className={styles.champion}>
-                <h3>Raridade:</h3>
-                <h3>Campeão</h3>
-                <h3>Tipo:</h3>
-                <h3>{type}</h3>
-              </div> : null} */}
-              <div className={styles.fitrt}>
+              {rarity === "comum" ?     <div className={styles.fitrt}>
               <div className={styles.rarity}>
               <h3>Raridade:</h3>
               <h3>Comum</h3>
               </div>
               <div className={styles.type}>
                 <h3>Tipo:</h3>
-                <h3>Campeão</h3>
+                <h3>{type}</h3>
               </div>
+              </div> : 
+              (rarity === "raro" ?     <div className={styles.fitrt}>
+                <div className={styles.rarity}>
+                  <h3>Raridade:</h3>
+                  <h3>Raro</h3>
+                  <div className={styles.type}>
+                    <h3>Tipo:</h3>
+                    <h3>{type}</h3>
+                  </div>
+                </div>
+              </div> :
+              rarity === "epico" ?     <div className={styles.fitrt}>
+                <div className={styles.rarity}>
+                  <h3>Raridade:</h3>
+                  <h3>Épico</h3>
+                  <div className={styles.type}>
+                    <h3>Tipo:</h3>
+                    <h3>{type}</h3>
+                  </div>
+                </div> 
+              </div> :
+              rarity === "lendario" ?     <div className={styles.fitrt}>
+                <div className={styles.rarity}>
+                  <h3>Raridade:</h3>
+                  <h3>Lendário</h3>
+                  <div className={styles.type}>
+                    <h3>Tipo:</h3>
+                    <h3>{type}</h3>
+                  </div>
+                </div>
+              </div> :
+              rarity === "campeao" ?     <div className={styles.fitrt}>
+                <div className={styles.rarity}>
+                  <h3>Raridade:</h3>
+                  <h3>Campeão</h3>
+                  <div className={styles.type}>
+                    <h3>Tipo:</h3>
+                    <h3>{type}</h3>
+                  </div>
+                </div>
+              </div> : null
+              )}
+            <h3>{description}</h3>
               </div>
-              </div>
-              <h3>{description}</h3>
           </div>
        <div className={styles.containerPoints}>
           <div className={styles.containerPoint}>

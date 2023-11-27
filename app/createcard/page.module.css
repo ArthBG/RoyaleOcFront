@@ -32,6 +32,14 @@
     font-size: 16px;
     margin-bottom: 0.5rem;
 }
+.input{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 16px;
+    margin-bottom: 0.5rem;
+}
 .select{
     padding: 10px;
     border-radius: 5px;
@@ -48,6 +56,7 @@
 }
   
 .scbtnyellow {
+    margin: 0.35rem;
     background-color: #f0c44e;
     border: none;
     border-radius: 5px;
@@ -91,10 +100,6 @@
 .fitrt{
     display: flex;
     justify-content: space-between;
-    margin-left: 25%;
-    margin-top: 5%;
-    width: 100%;
-    gap: 5rem;
     border-radius: 5px;
     background-color: rgb(168, 219, 219);
 }
