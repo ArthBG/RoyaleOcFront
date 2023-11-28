@@ -18,3 +18,11 @@
 .cardName{
     font-size: 16px;
 }
+
+.containerButtons{
+    text-align: center;
+    display: flex;
+}
+.containerS{
+    margin: 1rem;
+}

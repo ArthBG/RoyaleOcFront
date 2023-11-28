@@ -5,6 +5,7 @@ import axios from "axios"
 import { useState, useEffect } from "react"
 import styles from "../createcard/page.module.css"
 import CardInfo from "../components/cardinfo/cardinfo";
+import cardspage from "../cardspage/page";
 
 
 
