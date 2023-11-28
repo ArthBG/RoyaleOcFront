@@ -1,22 +1,12 @@
 "use client";
 import Image from "next/image"
+import ModalAtributes from "../components/modalatributes/modalatributes";
 import axios from "axios"
 import { useState, useEffect } from "react"
-// import { styled } from "@material-ui/core/styles"
 import styles from "../createcard/page.module.css"
 import CardInfo from "../components/cardinfo/cardinfo";
 
-// const VisuallyHiddenInput = styled("input")({
-//   clip: "rect(0 0 0 0)",
-//   clippath: "inset(50%)",
-//   height: "1px",
-//   overflow: "hidden",
-//   position: "absolute",
-//   whiteSpace: "nowrap",
-//   bottom: "0",
-//   left: "0",
-//   border: "0",
-// });
+
 
 export default function Home() {
   const [cards, setCards] = useState([])
@@ -31,10 +21,8 @@ export default function Home() {
   const handleImage = (e) => {
     const file = e.target.files[0]
     setImage(URL.createObjectURL(file))
-   
   }
-  
-  
+
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -60,6 +48,13 @@ export default function Home() {
       console.log(error)
     }
   }
+
+  const AtributesModal = () => {
+    ModalAtributes({ type })
+  }
+  
+
+
 
   return (
     <main className={styles.backgroundimage}>
@@ -132,7 +127,8 @@ export default function Home() {
 
         <input type = "file" className={styles.file} onChange={handleImage} />
         <textarea className={styles.input} placeholder="Descrição da carta" value={description} onChange={e => setDescription(e.target.value)} />
-        <button className={styles.scbtnyellow} onClick={handleSubmit}>Salvar</button>
+        <button className={styles.scbtnyellow} onClick={AtributesModal}>Adicionar atributos</button>
+        <button className={styles.scbtnyellow} onClick={handleSubmit}>Criar</button>
       </div>
 
 
