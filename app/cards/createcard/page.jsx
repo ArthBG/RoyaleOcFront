@@ -1,10 +1,10 @@
 "use client";
 import Image from "next/image"
-import ModalAtributes from "../components/modalatributes/modalatributes";
+import ModalAtributes from "../../components/modalatributes/modalatributes";
 import axios from "axios"
 import { useState, useEffect } from "react"
 import styles from "../createcard/page.module.css"
-import CardInfo from "../components/cardinfo/cardinfo";
+import CardInfo from "../../components/cardinfo/cardinfo";
 import cardspage from "../cardspage/page";
 
 
