@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from '../createcard/page.module.css';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 // npm install react-icons --save
 
 export default function updateCard({ params }) {
@@ -13,8 +12,8 @@ export default function updateCard({ params }) {
     const [elixir, setElixir] = useState("");
     const [image, setImage] = useState("");
     const [description, setDescription] = useState("");
-    const { id } = params;
     const router = useRouter();
+    const { id } = params;
 
     useEffect(() => {
         async function fetchData() {

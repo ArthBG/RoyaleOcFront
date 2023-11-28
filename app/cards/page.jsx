@@ -12,33 +12,30 @@ function cardspage() {
     
     useEffect(() => {
         async function fetchData() {
-            try{
-            const response = await axios.get("/api/cards");
-            setCardsData(response.data.cards);
+            try {
+                const response = await axios.get("/api/cards");
+                setCardsData(response.data.cards);
             } catch (error) {
                 console.error(error);
             }
         }
         fetchData();
-    }
-    , []);
-    console.log("Primeiro vazio e depois o Hello");
+    }, []);
     console.log(cardsData);
-    
+
     const editCard = (id) => {
         router.push(`/cards/${id}`);
     }
-
+ 
 
     const deleteCard = async (id) => {
         const url = `/api/cards/${id}`;
-        try{
+        try {
             await axios.delete(url);
             setCardsData(cardsData.filter((card) => card.id !== id));
         } catch (error) {
             console.error(error);
         }
-            
     }
 
     return (
