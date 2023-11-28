@@ -24,3 +24,25 @@ export async function POST(request) {
         return new NextResponse("Erro interno do servidor!", { status: 500 });
     }
 }
+
+export async function PUT(request) {
+    const params = await request.json();
+    try {
+        const response = await axios.put(url, params);
+        return NextResponse.json(response.data);
+    } catch (error) {
+        console.log("[ORDER_PUT]", error);
+        return new NextResponse("Erro interno do servidor!", { status: 500 });
+    }
+}
+
+export async function DELETE(request) {
+    const params = await request.json();
+    try {
+        const response = await axios.delete(url, { data: params });
+        return NextResponse.json(response.data);
+    } catch (error) {
+        console.log("[ORDER_DELETE]", error);
+        return new NextResponse("Erro interno do servidor!", { status: 500 });
+    }
+}

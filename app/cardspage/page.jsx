@@ -3,6 +3,8 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import style from './page.module.css';
+import { TbEdit } from "react-icons/tb";
+// npm install react-icons --save
 
 const itemsPerPage = 10;
 function page() {
@@ -34,6 +36,9 @@ function page() {
                              <h2 className={style.cardName}>{card.name}</h2>
                             <img src={card.image} width={200} height={195}/>
                             {card.type ? <p className={style.cardName}>{card.type}</p> : null}
+                            <div className={style.containerButtons}>
+                                <TbEdit className={style.buttonEdit} onClick={() => editCard(card.id)}/>
+                            </div>
                         </div>
                         </div>
                     ))
