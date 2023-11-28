@@ -1,69 +1,72 @@
 "use client";
-import Image from "next/image"
-import ModalAtributes from "../../components/modalatributes/modalatributes";
-import axios from "axios"
-import { useState, useEffect } from "react"
-import styles from "../createcard/page.module.css"
-import CardInfo from "../../components/cardinfo/cardinfo";
-import cardspage from "../page";
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import styles from '../createcard/page.module.css';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+// npm install react-icons --save
 
+export default function updateCard({ params }) {
+    const [name, setName] = useState("");
+    const [rarity, setRarity] = useState("");
+    const [type, setType] = useState("");
+    const [elixir, setElixir] = useState("");
+    const [image, setImage] = useState("");
+    const [description, setDescription] = useState("");
+    const { id } = params;
+    const router = useRouter();
 
-
-export default function createCard() {
-  const [cards, setCards] = useState([])
-  const [name, setName] = useState("")
-  const [level, setLevel] = useState("")
-  const [rarity, setRarity] = useState("")
-  const [type, setType] = useState("")
-  const [elixir, setElixir] = useState("")
-  const [image, setImage] = useState("")
-  const [description, setDescription] = useState("")
-
-  const handleImage = (e) => {
-    const file = e.target.files[0]
-    setImage(URL.createObjectURL(file))
-  }
-
-
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    try {
-      const response = await axios.post("/api/cards", {
-          name,
-          level,
-          rarity,
-          type,
-          elixir,
-          image,
-          description
-        })
-      setName("")
-      setLevel("")
-      setRarity("")
-      setType("")
-      setElixir("")
-      setImage("")
-      setDescription("")
-      console.log(response)
-    } catch (error) {
-      console.log(error)
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const response = await axios.get(`/api/cards/${id}`);
+                const card = response.data;
+                setName(card.name);
+                setRarity(card.rarity);
+                setType(card.type);
+                setElixir(card.elixir);
+                setImage(card.image);
+                setDescription(card.description);
+            } catch (error) {
+                console.error(error);
+            }
+        }
+        if (id) {
+            fetchData();
     }
-  }
+    }, [id]);
 
-  const AtributesModal = () => {
-    ModalAtributes({ type })
-  }
-  
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.put(`/api/cards/${id}`, {
+                name,
+                rarity,
+                type,
+                elixir,
+                image,
+                description
+            });
+            router.push(`/cards/${id}`);
+            setName("");
+            setRarity("");
+            setType("");
+            setElixir("");
+            setImage("");
+            setDescription("");
+            console.log(response);
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
+    const handleImage = (e) => {
+        const file = e.target.files[0];
+        setImage(URL.createObjectURL(file));
+    }
 
-
-  return (
-    <main className={styles.backgroundimage}>
-      <h1>Clash Royale</h1>
-      <div className={styles.containerLogo}>
-        <img src={"/images/logoclashroyale.png"} width={300} height={200} />
-      </div>
-      <div className={styles.conatainerInputs}>
+    return (
+        <div className={styles.conatainerInputs}>
         <input className={styles.input} type="text" maxLength={30} placeholder="Nome da sua carta" value={name} onChange={e => setName(e.target.value)} />
         <select className={styles.select}
           value={level}
@@ -132,18 +135,5 @@ export default function createCard() {
         <button className={styles.scbtnyellow} onClick={handleSubmit}>Criar</button>
       </div>
 
-
-      <div className={styles.containerCard}>
-        <CardInfo
-          name={name}
-          level={level}
-          rarity={rarity}
-          type={type}
-          elixir={elixir}
-          image={image}
-          description={description}
-        />
-      </div>
-    </main>
-  )
+    )
 }

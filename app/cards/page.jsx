@@ -6,7 +6,6 @@ import style from './page.module.css';
 import { useRouter } from 'next/router';
 // npm install react-icons --save
 
-const itemsPerPage = 10;
 function cardspage() {
     const [cardsData, setCardsData] = useState([]);
     const router = useRouter();
@@ -26,10 +25,10 @@ function cardspage() {
     console.log("Primeiro vazio e depois o Hello");
     console.log(cardsData);
     
-    const editCard = async (id) => {
-        router.push(`/cardspage/${id}`);
-        return true;
+    const editCard = (id) => {
+        router.push(`/cards/${id}`);
     }
+
 
     const deleteCard = async (id) => {
         const url = `/api/cards/${id}`;
