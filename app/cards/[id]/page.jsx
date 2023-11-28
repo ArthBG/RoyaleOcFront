@@ -105,11 +105,11 @@ export default function updateCard({ params }) {
           onChange={e => setRarity(e.target.value)}
         >
           <option value="">Selecione a raridade</option>
-          <option value="comum">Comum</option>
-          <option value="raro">Raro</option>
-          <option value="epico">Épico</option>
-          <option value="lendario">Lendário</option>
-          <option value="campeao">Campeão</option>
+          <option value="Comum">Comum</option>
+          <option value="Raro">Raro</option>
+          <option value="Épico">Épico</option>
+          <option value="Lendário">Lendário</option>
+          <option value="Campeão">Campeão</option>
         </select>
 
         <select className={styles.select}
@@ -117,9 +117,9 @@ export default function updateCard({ params }) {
           onChange={e => setType(e.target.value)}
         >
           <option value="">Selecione o Tipo</option>
-          <option value="tropa">Tropa</option>
-          <option value="feitico">Feitiço</option>
-          <option value="construcao">Construção</option>
+          <option value="Tropa">Tropa</option>
+          <option value="Feitiço">Feitiço</option>
+          <option value="Construção">Construção</option>
         </select>
 
         <select className={styles.select}
