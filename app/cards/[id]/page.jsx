@@ -1,12 +1,15 @@
 "use client";
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import ModalAtributes from '@/app/components/modalatributes/modalatributes';
 import styles from '../createcard/page.module.css';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
+import CardInfo from '@/app/components/cardinfo/cardinfo';
 // npm install react-icons --save
 
 export default function updateCard({ params }) {
     const [name, setName] = useState("");
+    const [level, setLevel] = useState("");
     const [rarity, setRarity] = useState("");
     const [type, setType] = useState("");
     const [elixir, setElixir] = useState("");
@@ -63,9 +66,17 @@ export default function updateCard({ params }) {
         const file = e.target.files[0];
         setImage(URL.createObjectURL(file));
     }
+    const AtributesModal = () => {
+        ModalAtributes({ type })
+      }
 
     return (
-        <div className={styles.conatainerInputs}>
+        <main className={styles.backgroundimage}>
+            <h1>Clash Royale</h1>
+      <div className={styles.containerLogo}>
+        <img src={"/images/logoclashroyale.png"} width={300} height={200} />
+      </div>
+        <div className={styles.conatainerInputs} >
         <input className={styles.input} type="text" maxLength={30} placeholder="Nome da sua carta" value={name} onChange={e => setName(e.target.value)} />
         <select className={styles.select}
           value={level}
@@ -133,6 +144,17 @@ export default function updateCard({ params }) {
         <button className={styles.scbtnyellow} onClick={AtributesModal}>Adicionar atributos</button>
         <button className={styles.scbtnyellow} onClick={handleSubmit}>Criar</button>
       </div>
-
+      <div className={styles.containerCard}>
+      <CardInfo
+        name={name}
+        level={level}
+        rarity={rarity}
+        type={type}
+        elixir={elixir}
+        image={image}
+        description={description}
+      />
+    </div>
+    </main>
     )
 }

@@ -3,7 +3,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import style from './page.module.css';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 // npm install react-icons --save
 
 function cardspage() {
