@@ -52,7 +52,7 @@ export default function CardInfo({ name, level, rarity, type, elixir, image, des
                         :
                         (rarity == "comum" && elixir == "8" ?
                         <div>
-                             <Image className={styles.imagecomming}src={image} width={250} height={310} />
+                        <Image className={styles.imagecomming}src={image} width={250} height={310} />
                         <Image src={"/images/createcard/communCard8.png"} width={240} height={300} />
                         </div>
                         :
@@ -193,13 +193,13 @@ export default function CardInfo({ name, level, rarity, type, elixir, image, des
                 {
                     rarity == "comum" && type == "tropa" ?
                         <div className={styles.communtropa}>
-                            <Image src={"/images/comumtropa.png"} width={500} height={100} />
+                            <Image src={"/images/comumtropa.png"} width={400} height={100} />
                             {description}
                         </div>
                         :
                         (rarity == "comum" && type == "feitico" ?
                             <div className={styles.communfeitico}>
-                                <Image src={"/images/comumfeiti.png"} width={500} height={100} />
+                                <Image src={"/images/comumfeiti.png"} width={400} height={100} />
                                 <div className={styles.desc}>
                                     {description}
                                 </div>
@@ -207,7 +207,7 @@ export default function CardInfo({ name, level, rarity, type, elixir, image, des
                             :
                             (rarity == "comum" && type == "construcao" ?
                                 <div className={styles.communconstrucao}>
-                                    <Image src={"/images/comumconst.png"} width={500} height={100} />
+                                    <Image src={"/images/comumconst.png"} width={400} height={100} />
                                     <div className={styles.desc}>
                                         {description}
                                     </div>
@@ -215,7 +215,7 @@ export default function CardInfo({ name, level, rarity, type, elixir, image, des
                                 :
                                 (rarity == "raro" && type == "tropa" ?
                                     <div className={styles.rarotropa}>
-                                        <Image src={"/images/raratropa.png"} width={500} height={100} />
+                                        <Image src={"/images/raratropa.png"} width={400} height={100} />
                                         <div className={styles.desc}>
                                             {description}
                                         </div>
@@ -223,7 +223,7 @@ export default function CardInfo({ name, level, rarity, type, elixir, image, des
                                     :
                                     (rarity == "raro" && type == "feitico" ?
                                         <div className={styles.rarofeitico}>
-                                            <Image src={"/images/rarafeiti.png"} width={500} height={100} />
+                                            <Image src={"/images/rarafeiti.png"} width={400} height={100} />
                                             <div className={styles.desc}>
                                                 {description}
                                             </div>
@@ -231,7 +231,7 @@ export default function CardInfo({ name, level, rarity, type, elixir, image, des
                                         :
                                         (rarity == "raro" && type == "construcao" ?
                                             <div className={styles.raroconstrucao}>
-                                                <Image src={"/images/raraconst.png"} width={500} height={100} />
+                                                <Image src={"/images/raraconst.png"} width={400} height={100} />
                                                 <div className={styles.desc}>
                                                     {description}
                                                 </div>
@@ -239,7 +239,7 @@ export default function CardInfo({ name, level, rarity, type, elixir, image, des
                                             :
                                             (rarity == "epico" && type == "tropa" ?
                                                 <div className={styles.epicotropa}>
-                                                    <Image src={"/images/epicatropa.png"} width={500} height={100} />
+                                                    <Image src={"/images/epicatropa.png"} width={400} height={100} />
                                                     <div className={styles.desc}>
                                                         {description}
                                                     </div>
@@ -247,7 +247,7 @@ export default function CardInfo({ name, level, rarity, type, elixir, image, des
                                                 :
                                                 (rarity == "epico" && type == "feitico" ?
                                                     <div className={styles.epicofeitico}>
-                                                        <Image src={"/images/epicafeiti.png"} width={500} height={100} />
+                                                        <Image src={"/images/epicafeiti.png"} width={400} height={100} />
                                                         <div className={styles.desc}>
                                                             {description}
                                                         </div>
@@ -255,7 +255,7 @@ export default function CardInfo({ name, level, rarity, type, elixir, image, des
                                                     :
                                                     (rarity == "epico" && type == "construcao" ?
                                                         <div className={styles.epicoconstrucao}>
-                                                            <Image src={"/images/epicaconst.png"} width={500} height={100} />
+                                                            <Image src={"/images/epicaconst.png"} width={400} height={100} />
                                                             <div className={styles.desc}>
                                                                 {description}
                                                             </div>
@@ -263,7 +263,7 @@ export default function CardInfo({ name, level, rarity, type, elixir, image, des
                                                         :
                                                         (rarity == "lendario" && type == "tropa" ?
                                                             <div className={styles.lendariotropa}>
-                                                                <Image src={"/images/lendariatropa.png"} width={500} height={100} />
+                                                                <Image src={"/images/lendariatropa.png"} width={450} height={100} />
                                                                 <div className={styles.desc}>
                                                                     {description}
                                                                 </div>
@@ -271,7 +271,7 @@ export default function CardInfo({ name, level, rarity, type, elixir, image, des
                                                             :
                                                             (rarity == "lendario" && type == "feitico" ?
                                                                 <div className={styles.lendariofeitico}>
-                                                                    <Image src={"/images/lendariafeiti.png"} width={500} height={100} />
+                                                                    <Image src={"/images/lendariafeiti.png"} width={450} height={100} />
                                                                     <div className={styles.desc}>
                                                                         {description}
                                                                     </div>
@@ -279,7 +279,7 @@ export default function CardInfo({ name, level, rarity, type, elixir, image, des
                                                                 :
                                                                 (rarity == "lendario" && type == "construcao" ?
                                                                     <div className={styles.lendarioconstrucao}>
-                                                                        <Image src={"/images/lendariaconst.png"} width={500} height={100} />
+                                                                        <Image src={"/images/lendariaconst.png"} width={450} height={95} />
                                                                         <div className={styles.desc}>
                                                                             {description}
                                                                         </div>
