@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import ModalAtributes from '@/app/components/modalatributes/modalatributes';
+import Image from 'next/image';
 import styles from '../createcard/page.module.css';
 import { useRouter } from 'next/navigation';
 import CardInfo from '@/app/components/cardinfo/cardinfo';
@@ -15,6 +16,9 @@ export default function updateCard({ params }) {
     const [elixir, setElixir] = useState("");
     const [image, setImage] = useState("");
     const [description, setDescription] = useState("");
+    const [showInput, setShowInput] = useState(false);
+    const [show, setShow] = useState(true);
+
     const router = useRouter();
     const { id } = params;
 
@@ -69,14 +73,23 @@ export default function updateCard({ params }) {
     const AtributesModal = () => {
         ModalAtributes({ type })
       }
+    const prosseguir = () => {
+        setShowInput(true);
+        setShow(false);
+    }
 
     return (
         <main className={styles.backgroundimage}>
-            <h1>Clash Royale</h1>
-      <div className={styles.containerLogo}>
-        <img src={"/images/logoclashroyale.png"} width={300} height={200} />
-      </div>
-        <div className={styles.conatainerInputs} >
+        <div className={styles.prosseguir} style={{ display: show ? 'block' : 'none'}} value={show}>
+          <h1 className={styles.title}>Deseja editar a Carta?</h1>
+          <div className={styles.containerButtonsp}>
+          <button className={styles.scbtnyellow} onClick={prosseguir}>Sim</button>
+          <button className={styles.scbtnyellow} onClick={() => router.push(`/cards`)}>Não</button>
+          <Image src= {"/public/images/hog_thinking.webp"} width={300} height={300} />
+          </div>
+        </div>
+        <div style={{ display: showInput ? 'block' : 'none'}} value={showInput} >
+        <div className={styles.conatainerInputs}>
         <input className={styles.input} type="text" maxLength={30} placeholder="Nome da sua carta" value={name} onChange={e => setName(e.target.value)} />
         <select className={styles.select}
           value={level}
@@ -154,6 +167,7 @@ export default function updateCard({ params }) {
         image={image}
         description={description}
       />
+      </div>
     </div>
     </main>
     )

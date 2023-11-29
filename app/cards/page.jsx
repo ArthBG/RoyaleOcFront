@@ -49,11 +49,11 @@ function cardspage() {
                             <div className={style.containerButtons}>
                              <h2 className={style.cardName}>{card.name}</h2>
                              <div className={style.containerS}>
-                                <img src={"/images/info.png"} width={37} height={35} className={style.buttonEdit} onClick={() => editCard(card.id)}/>
-                                <img src={"/images/excluir.png"}  width={40} height={36} className={style.buttonDelete} onClick={() => deleteCard(card.id)}/>
+                                <img src={"/images/info.png"} width={31} height={29} className={style.buttonEdit} onClick={() => editCard(card.id)}/>
+                                <img src={"/images/excluir.png"}  width={34} height={30} className={style.buttonDelete} onClick={() => deleteCard(card.id)}/>
                             </div>    
                             </div>   
-                            <img src={card.image} width={200} height={195}/>
+                            <img src={card.image} width={110} height={125}/>
                             {card.type ? <p className={style.cardName}>{card.type}</p> : null}
                            
                         </div>
