@@ -13,8 +13,8 @@ export default function Page() {
     async function fetchMembros() {
       try {
         const response = await axios.get("/api/membros");
-        setMembros(response.data);
-        setDados(response.data);
+        setMembros(response.data.membros);
+        setDados(response.data.membros);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
