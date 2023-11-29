@@ -51,7 +51,7 @@ export default function Register() {
             </div>
 
             <div>
-                <h1>Cadastrar Aluno</h1>
+                <h1>Cadastrar novo integrante</h1>
 
                 <form onSubmit={handleSubmit}>
                     <div>
