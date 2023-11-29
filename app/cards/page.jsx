@@ -40,21 +40,21 @@ function cardspage() {
 
     return (
         <main>
-            <h1>Card List</h1>
+            <h1 className={style.title}>RoyaleOcto</h1>
             <div className={style.containerCard}>
             {
                 cardsData.map((card) => (
                         <div key={card.id} >
                             <div className={style.card}>       
                             <div className={style.containerButtons}>
-                             <h2 className={style.cardName}>{card.name}</h2>
                              <div className={style.containerS}>
                                 <img src={"/images/info.png"} width={31} height={29} className={style.buttonEdit} onClick={() => editCard(card.id)}/>
                                 <img src={"/images/excluir.png"}  width={34} height={30} className={style.buttonDelete} onClick={() => deleteCard(card.id)}/>
                             </div>    
                             </div>   
                             <img src={card.image} width={110} height={125}/>
-                            {card.type ? <p className={style.cardName}>{card.type}</p> : null}
+                             <p className={style.cardName}>{card.name}</p>
+                            {/* {card.type ? <p className={style.cardType}>{card.type}</p> : null} */}
                            
                         </div>
                         </div>
