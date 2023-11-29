@@ -7,11 +7,20 @@
 
 }
 .prosseguir{
-    display: flex;
-    align-items: center;
+    margin: auto;
+    margin-top: 10rem;
     justify-content: center;
-    margin-top: 2rem;
-    width: 100%;
+    align-items: center;
+
+}
+.containerButtonsp{
+    margin: auto;
+    text-align: center;
+}
+.containerImageS{
+    display: block;
+    margin-top: 17rem;
+    text-align: center;
 
 }
 .conatainerInputs{
@@ -62,10 +71,7 @@
     margin-bottom: 1rem;
 
 }
-.containerButtonsp{
-    margin: auto;
-    text-align: center;
-}
+
 .scbtnyellow {
     margin: 0.75rem;
     background-color: #f0c44e;

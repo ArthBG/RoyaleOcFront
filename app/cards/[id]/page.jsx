@@ -85,7 +85,10 @@ export default function updateCard({ params }) {
           <div className={styles.containerButtonsp}>
           <button className={styles.scbtnyellow} onClick={prosseguir}>Sim</button>
           <button className={styles.scbtnyellow} onClick={() => router.push(`/cards`)}>Não</button>
-          <Image src= {"/public/images/hog_thinking.webp"} width={300} height={300} />
+          </div>
+          <div className={styles.containerImageS}>
+          {/* <Image src={"/public/images/hog_thinking.png"} width={300} height={300} /> */}
+          <h1>Foto</h1>
           </div>
         </div>
         <div style={{ display: showInput ? 'block' : 'none'}} value={showInput} >
