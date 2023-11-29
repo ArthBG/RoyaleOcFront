@@ -1,5 +1,4 @@
 .card{
-    border: 1px solid black;
     width: 11rem;
     height: 11rem;
     margin: 1rem;
@@ -11,7 +10,7 @@
     align-items: center;
     background-color: #f5f5f5;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
     position: relative;
 }
 .title{
@@ -24,6 +23,9 @@
     margin: 2rem;
 
 }
+.containerImage{
+    padding-top: 0.90rem;
+}
 .containerCard{
     display: flex;
     flex-wrap: wrap; 
@@ -31,10 +33,10 @@
 }
 .cardName{
     color: rgb(255, 255, 255);
-    text-shadow: -1px 3px 0 #000,0 2px 0 #000,1px 2px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;
+    text-shadow: -1px 1px 0 #000,0 2px 0 #000,1px 2px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;
     text-align: center;
     font-size: 11px;
-    margin-bottom: 0.25rem;
+    margin-bottom: 1rem;
 }
 .cardType{
     color: rgb(255, 255, 255);
@@ -46,9 +48,15 @@
 .containerButtons{
     display: flex;
 }
+.buttonEdit{
+    cursor: pointer;
+}
+.buttonDelete{
+    cursor: pointer;
+}
 .containerS{
     position: absolute;
-    top: -5px;
+    top: -10px;
     right: -5px;
     
 }

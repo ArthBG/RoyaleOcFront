@@ -51,8 +51,10 @@ function cardspage() {
                                 <img src={"/images/info.png"} width={31} height={29} className={style.buttonEdit} onClick={() => editCard(card.id)}/>
                                 <img src={"/images/excluir.png"}  width={34} height={30} className={style.buttonDelete} onClick={() => deleteCard(card.id)}/>
                             </div>    
-                            </div>   
+                            </div>  
+                            <div className={style.containerImage}> 
                             <img src={card.image} width={110} height={125}/>
+                            </div>
                              <p className={style.cardName}>{card.name}</p>
                             {/* {card.type ? <p className={style.cardType}>{card.type}</p> : null} */}
                            
