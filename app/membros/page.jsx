@@ -1,10 +1,13 @@
 "use client";
+// Importações
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import styles from "./membro.module.css";
 import Link from "next/link";
 
 export default function Page() {
+  // Estados para armazenar a lista de membros e dados adicionais.
   const [membros, setMembros] = useState([]);
   const [dados, setDados] = useState({});
   const router = useRouter();
@@ -12,6 +15,7 @@ export default function Page() {
   useEffect(() => {
     async function fetchMembros() {
       try {
+        // Atualiza os estados com a lista de membros e dados adicionais.
         const response = await axios.get("/api/membros");
         setMembros(response.data.membros);
         setDados(response.data.membros);
@@ -22,7 +26,7 @@ export default function Page() {
 
     fetchMembros();
   }, []);
-
+  // Renderização do componente.
   return (
     <div>
       <div>
@@ -33,12 +37,14 @@ export default function Page() {
 
       <div>
         <h1>Membros</h1>
-
+        {/* Se há dados, exibe a lista de membros; caso contrário, exibe uma mensagem de carregamento ou erro. */}
         {dados.length ? (
+          // Se há membros, mapeia e exibe as informações de cada membro.
           <div>
             {membros.map((membro) => (
               <div key={membro.id}>
                 <div>
+                  {/*  Informações do membro */}
                   <p>
                     <strong>ID:</strong> {membro.id}
                   </p>
