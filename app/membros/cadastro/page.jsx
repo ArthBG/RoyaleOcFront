@@ -51,16 +51,19 @@ export default function Register() {
     return (
         <div className={styles.containerPai}>
 
-            <div className={styles.botaoVoltar}>
+            
                 <Link href="/membros">
-                    <button className={styles.botao}>
-                        Voltar para membros
-                    </button>
+                <button type="submit" className={styles.botaoVoltar}>
+                        <div className={styles.overlay}></div>
+                        <div className={styles.overlay}></div>
+                        <div className={styles.overlay}></div>
+                        <span>Voltar</span>
+                    </button > 
                 </Link>
-            </div>
+          
 
             <div className={styles.containerForm}>
-                <h1 className={styles.titulo}>Cadastrar novo integrante</h1>
+                <h1 className={styles.titulo}>Fazer cadastro</h1>
 
                 <form className={styles.form} onSubmit={handleSubmit}>
                     <div className={styles.divInput}>
@@ -133,12 +136,12 @@ export default function Register() {
                         />
                     </div>
 
-                   {/*  <button type="submit" className={styles.btn}>
+                     <button type="submit" className={styles.btn}>
                         <div className={styles.overlay}></div>
                         <div className={styles.overlay}></div>
                         <div className={styles.overlay}></div>
                         <span>Cadastrar</span>
-                    </button > */}
+                    </button > 
                 </form >
             </div >
         </div >

@@ -28,39 +28,44 @@ export default function Page() {
   }, []);
   // Renderização do componente.
   return (
-    <div>
+    <div className={styles.divPai}>
       <div>
         <Link href="/membros/cadastro">
-          <button>Cadastrar membro</button>
+        <button type="submit" className={styles.botaoCadastro}>
+                        <div className={styles.overlay}></div>
+                        <div className={styles.overlay}></div>
+                        <div className={styles.overlay}></div>
+                        <span>Cadastro</span>
+                    </button > 
         </Link>
       </div>
 
-      <div>
-        <h1>Membros</h1>
+      <div className={styles.divMembros}>
+        <h1 className={styles.titulo}>Membros</h1>
         {/* Se há dados, exibe a lista de membros; caso contrário, exibe uma mensagem de carregamento ou erro. */}
         {dados.length ? (
           // Se há membros, mapeia e exibe as informações de cada membro.
-          <div>
+          <div className={styles.map}>
             {membros.map((membro) => (
               <div key={membro.id}>
                 <div>
                   {/*  Informações do membro */}
-                  <p>
+                  <p className={styles.infos}>
                     <strong>ID:</strong> {membro.id}
                   </p>
-                  <p>
+                  <p className={styles.infos}>
                     <strong>Nome:</strong> {membro.nome}
                   </p>
-                  <p>
+                  <p className={styles.infos}>
                     <strong>Idade:</strong> {membro.idade}
                   </p>
-                  <p>
+                  <p className={styles.infos}>
                     <strong>Cargo:</strong> {membro.cargo}
                   </p>
-                  <p>
+                  <p className={styles.infos}>
                     <strong>Foto:</strong> {membro.foto}
                   </p>
-                  <p>
+                  <p className={styles.infos}>
                     <strong>Descrição:</strong> {membro.descricao}
                   </p>
                 </div>
@@ -68,7 +73,9 @@ export default function Page() {
             ))}
           </div>
         ) : (
-          <p>{dados.message ? dados.message : "Carregando..."}</p>
+          <p className={styles.mensagem}>
+            {dados.length == 0 ? "Carregando..." : "Erro ao carregar dados."}
+          </p>
         )}
       </div>
     </div>
