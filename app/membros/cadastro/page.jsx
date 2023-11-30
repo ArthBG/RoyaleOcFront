@@ -49,26 +49,26 @@ export default function Register() {
     }, []);
     // Renderização do componente.
     return (
-        <div>
+        <div className={styles.containerPai}>
 
-            <div>
+            <div className={styles.botaoVoltar}>
                 <Link href="/membros">
-                    <button >
+                    <button className={styles.botao}>
                         Voltar para membros
                     </button>
                 </Link>
             </div>
 
-            <div>
-                <h1>Cadastrar novo integrante</h1>
+            <div className={styles.containerForm}>
+                <h1 className={styles.titulo}>Cadastrar novo integrante</h1>
 
-                <form onSubmit={handleSubmit}>
-                    <div>
-                        <label htmlFor="nome">
+                <form className={styles.form} onSubmit={handleSubmit}>
+                    <div className={styles.divInput}>
+                        <label className={styles.label} htmlFor="nome">
                             Nome:
                         </label>
                         <input
-
+                            className={styles.input}
                             type="text"
                             id="name"
                             value={nome}
@@ -77,12 +77,12 @@ export default function Register() {
                         />
                     </div>
 
-                    <div>
-                        <label htmlFor="idade">
+                    <div className={styles.divInput}>
+                        <label className={styles.label} htmlFor="idade">
                             Idade:
                         </label>
                         <input
-
+                            className={styles.input}
                             type="number"
                             id="idade"
                             value={idade}
@@ -91,12 +91,12 @@ export default function Register() {
                         />
                     </div>
 
-                    <div>
-                        <label htmlFor="cargo">
+                    <div className={styles.divInput}>
+                        <label className={styles.label} htmlFor="cargo">
                             Cargo:
                         </label>
                         <input
-
+                            className={styles.input}
                             type="text"
                             id="cargo"
                             value={cargo}
@@ -105,12 +105,12 @@ export default function Register() {
                         />
                     </div>
 
-                    <div>
-                        <label htmlFor="foto">
+                    <div className={styles.divInput}>
+                        <label className={styles.label} htmlFor="foto">
                             Foto:
                         </label>
                         <input
-
+                            className={styles.input}
                             type="text"
                             id="foto"
                             value={foto}
@@ -119,12 +119,12 @@ export default function Register() {
                         />
                     </div>
 
-                    <div>
-                        <label htmlFor="descricao">
+                    <div className={styles.divInput}>
+                        <label className={styles.label} htmlFor="descricao">
                             Descrição:
                         </label>
                         <input
-
+                            className={styles.input}
                             type="text"
                             id="descricao"
                             value={descricao}
@@ -133,15 +133,14 @@ export default function Register() {
                         />
                     </div>
 
-
-                    <button
-                        type="submit"
-
-                    >
-                        Cadastrar
-                    </button>
-                </form>
-            </div>
-        </div>
+                   {/*  <button type="submit" className={styles.btn}>
+                        <div className={styles.overlay}></div>
+                        <div className={styles.overlay}></div>
+                        <div className={styles.overlay}></div>
+                        <span>Cadastrar</span>
+                    </button > */}
+                </form >
+            </div >
+        </div >
     );
 }
