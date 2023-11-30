@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import style from './page.module.css';
 import { useRouter } from 'next/navigation';
+import { FiSearch } from 'react-icons/fi';
 // npm install react-icons --save
 // Todas as funções devem ser comentadas
 
@@ -45,6 +46,22 @@ function cardspage() {
         return filtering;
     }
 
+    const handleSearch = () => {
+        let filtering = cardsData?.filter((card) => {
+            if (search !== "") {
+                return card.name?.toLowerCase().includes(search.toLowerCase());
+            }
+        });
+        return filtering;
+    }
+
+    const clearFilters = () => {
+        setSelectedType("all");
+        setSelectedRarity("all");
+        setSelectedElixir("all");
+        setSearch("");
+    }
+
     const editCard = (id) => {
         router.push(`/cards/${id}`);
     }
@@ -64,7 +81,10 @@ function cardspage() {
         <main>
             <h1 className={style.title}>RoyaleOcto</h1>
             <div className={style.containerFilters}>
+                <div className={style.containerSearch}>
                 <input type="text" placeholder="Pesquisar Cartas" className={style.search} onChange={(e) => setSearch(e.target.value)}/>
+                <FiSearch className={style.icon} onClick={handleSearch}/>
+                </div>
                 <select className={style.select} onChange={(e) => setSelectedType(e.target.value)}>
                     <option value="all">Tipo:</option>
                     <option value="Tropa">Tropa</option>
@@ -92,6 +112,7 @@ function cardspage() {
                     <option value="9">9</option>
                     <option value ="10">10</option>
                 </select>
+                <button className={style.scbtnred} onClick={clearFilters}>Redefinir Filtros</button>
                 </div>
             <div className={style.containerCard}>
                 { filterCards().length > 0 ? filterCards().map((card) =>
