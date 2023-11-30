@@ -73,9 +73,7 @@ export default function Page() {
             ))}
           </div>
         ) : (
-          <p className={styles.mensagem}>
-            {dados.length == 0 ? "Carregando..." : "Erro ao carregar dados."}
-          </p>
+         <p>carregando..</p>
         )}
       </div>
     </div>
