@@ -10,7 +10,6 @@ import { useRouter } from 'next/navigation';
 function cardspage() {
     const [cardsData, setCardsData] = useState([]);
     const [search, setSearch] = useState("");
-    const [filteredCards, setFilteredCards] = useState([cardsData]);
     const [selectedRarity, setSelectedRarity] = useState("all");
     const [selectedType, setSelectedType] = useState("all");
     const [selectedElixir, setSelectedElixir] = useState("all");
@@ -28,55 +27,23 @@ function cardspage() {
         fetchData();
     }, []);
     console.log(cardsData);
-
-
-    useEffect(() => {
-        handleSearch();
-    }
-    , [search, selectedRarity, selectedType, selectedElixir]);
-
-
-  
-
-    
     const filterCards = () => {
-        let filtering = cardsData.slice();
-        let filter = false
-
-        if (selectedRarity !== "all") {
-            filtering = filtering.filter((card) =>{
-                filter = true;
-                return card.rarity === selectedRarity;
-            });
-        }
-        if (selectedType !== "all") {
-            filtering = filtering.filter((card) =>{
-                filter = true;
+        let filtering = cardsData?.filter((card) => {
+            if (selectedType !== "all") {
                 return card.type === selectedType;
-            });
-        }
-        if (selectedElixir !== "all") {
-            filtering = filtering.filter((card) =>{
-                filter = true;
+            }
+            if (selectedRarity !== "all") {
+                return card.rarity === selectedRarity;
+            }
+            if (selectedElixir !== "all") {
                 return card.elixir === selectedElixir;
-            });
-        }
-        return filter;
+            }
+            if (search !== "") {
+                return card.name?.toLowerCase().includes(search.toLowerCase());
+            }
+        });
+        return filtering;
     }
-
-    const handleSearch = () => {
-        //  cópia dos dados originais
-        let cardsToFilter = cardsData.slice(); 
-        
-            const searchLower = search.toLowerCase();
-            cardsToFilter = cardsToFilter.filter((card) => {
-                const cardName = card.name?.toLowerCase() || '';
-                return cardName.includes(searchLower);
-            });
-    
-        
-            setFilteredCards(cardsToFilter);
-        };
 
     const editCard = (id) => {
         router.push(`/cards/${id}`);
@@ -127,23 +94,23 @@ function cardspage() {
                 </select>
                 </div>
             <div className={style.containerCard}>
-                { filterCards == true ? filteredCards.map((card) => 
-                  <div key={card.id} >
-                  <div className={style.card}>       
-                  <div className={style.containerButtons}>
-                   <div className={style.containerS}>
-                      <img src={"/images/info.png"} width={31} height={29} className={style.buttonEdit} onClick={() => editCard(card.id)}/>
-                      <img src={"/images/excluir.png"}  width={34} height={30} className={style.buttonDelete} onClick={() => deleteCard(card.id)}/>
-                  </div>    
-                  </div>  
-                  <div className={style.containerImage}> 
-                  <img src={card.image} width={110} height={125}/>
-                  </div>
-                   <p className={style.cardName}>{card.name}</p>
-                  {/* {card.type ? <p className={style.cardType}>{card.type}</p> : null} */}
-                 
-              </div>
-              </div>        
+                { filterCards().length > 0 ? filterCards().map((card) =>
+                 <div key={card.id} >
+                 <div className={style.card}>       
+                 <div className={style.containerButtons}>
+                  <div className={style.containerS}>
+                     <img src={"/images/info.png"} width={31} height={29} className={style.buttonEdit} onClick={() => editCard(card.id)}/>
+                     <img src={"/images/excluir.png"}  width={34} height={30} className={style.buttonDelete} onClick={() => deleteCard(card.id)}/>
+                 </div>    
+                 </div>  
+                 <div className={style.containerImage}> 
+                 <img src={card.image} width={110} height={125}/>
+                 </div>
+                  <p className={style.cardName}>{card.name}</p>
+                 {/* {card.type ? <p className={style.cardType}>{card.type}</p> : null} */}
+                
+             </div>
+             </div>        
                 ) : cardsData.map((card) =>  
                  <div key={card.id} >
                 <div className={style.card}>       

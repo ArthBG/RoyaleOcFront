@@ -1,9 +1,11 @@
 .backgroundimage{
-    background-image: url("/public/images/fundoazul.png");
-    height: 100vh;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-image: url("../../../public/images/fundoazul.png");
+    background-repeat:repeat;
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+   
 
 }
 .title{
@@ -12,7 +14,7 @@
 }
 .prosseguir{
     margin: auto;
-    margin-top: 10rem;
+    padding-top: 10rem;
     justify-content: center;
     align-items: center;
 
@@ -23,7 +25,7 @@
 }
 .containerImageS{
     display: block;
-    margin-top: 17rem;
+    padding-top: 10rem;
     text-align: center;
 
 }
