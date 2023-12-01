@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React, { use } from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import style from './page.module.css';
@@ -28,56 +28,33 @@ function cardspage() {
             }
         }
         fetchData();
-    }, [allClean]);
+    }, []);
     console.log(cardsData);
 
-    const handleSearch = () => {
-        if (search !== "") {
-            setCardsData(cardsData.filter((card) => card.name.toLowerCase().includes(search.toLowerCase())));
+    const filterCards = (cardsData) => {
+        let filtered = cardsData;
+
+        if(selectedRarity !== "all") {
+            filtered = filtered.filter((card) => {
+                return card.rarity.includes(selectedRarity);
+            })
+
+         
+        if(selectedType !== "all") {
+            filtered = filtered.filter((card) => {
+                return card.type.includes(selectedType);
+            })
         }
+        
+        if(selectedElixir !== "all") {
+            filtered = filtered.filter((card) =>{
+                return card.elixirCost == selectedElixir;
+            })
+
+        return filtered;    
     }
 
-    useEffect(() => {
-        if (search === "") {
-            setAllClean(true);
-        }
-    }
-    , [search]);
 
-    useEffect(() => {
-        if (selectedRarity === "all" && selectedType === "all" && selectedElixir === "all") {
-            setAllClean(true);
-        }
-    }
-    , [selectedRarity, selectedType, selectedElixir]);
-
-    useEffect(() => {
-        if (selectedRarity !== "all") {
-            setCardsData(cardsData.filter((card) => card.rarity === selectedRarity));
-        }
-    }
-    , [selectedRarity]);
-
-    useEffect(() => {
-        if (selectedType !== "all") {
-            setCardsData(cardsData.filter((card) => card.type === selectedType));
-        }
-    }
-    , [selectedType]);
-
-    useEffect(() => {
-        if (selectedElixir !== "all") {
-            setCardsData(cardsData.filter((card) => card.elixir === selectedElixir));
-        }
-    }
-    , [selectedElixir]);
-
-    useEffect(() => {
-        if (allClean) {
-            setAllClean(false);
-        }
-    }
-    , [allClean]);  
     
 
     const clearFilters = () => {
