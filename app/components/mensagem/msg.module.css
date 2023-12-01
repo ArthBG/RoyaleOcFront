@@ -1,0 +1,12 @@
+.erro{
+    color: red;
+    font-size: 1.2rem;
+    text-align: center;
+    
+}
+.sucesso{
+    color: green;
+    font-size: 1.2rem;
+    text-align: center;
+
+}
