@@ -47,73 +47,7 @@ export default function updateCard({ params }) {
     const router = useRouter();
     const { id } = params;
 
-    // const cards = [{
-    //   name,
-    //   image,
-    //   type,
-    //   rarity,
-    //   elixir,
-    //   hp,
-    //   deploytime,
-    //   shieldhp,
-    //   description,
-    //   damage,
-    //   damagepersecond,
-    //   rangeddamage,
-    //   damageondistance,
-    //   damageonarea,
-    //   damageonimpact,
-    //   damageontower,
-    //   chargedamage,
-    //   damageondeath,
-    //   spawnspeed,
-    //   duration,
-    //   radius,
-    //   width,
-    //   efecttime,
-    //   freezetime,
-    //   unities,
-    //   arena,
-    //   target,
-    //   projectilerange,
-    //   range,
-    //   speed,
-    //   impactspeed,
-    // }] = req.body;
-    // const card = listCards.updateCard(
-    //   name,
-    //   image,
-    //   type,
-    //   rarity,
-    //   elixir,
-    //   hp,
-    //   deploytime,
-    //   shieldhp,
-    //   description,
-    //   damage,
-    //   damagepersecond,
-    //   rangeddamage,
-    //   damageondistance,
-    //   damageonarea,
-    //   damageonimpact,
-    //   damageontower,
-    //   chargedamage,
-    //   damageondeath,
-    //   spawnspeed,
-    //   duration,
-    //   radius,
-    //   width,
-    //   efecttime,
-    //   freezetime,
-    //   unities,
-    //   arena,
-    //   target,
-    //   projectilerange,
-    //   range,
-    //   speed,
-    //   impactspeed,
-    //   id
-    // );
+
 
 
     useEffect(() => {
@@ -167,46 +101,46 @@ export default function updateCard({ params }) {
           
           const handleSubmit = async (e) => {
             e.preventDefault();
-        try {
-            const response = await axios.put(`/api/cards/${id}`, {
-                name,
-                image,
-                type,
-                rarity,
-                elixir,
-                hp,
-                deploytime,
-                shieldhp,
-                description,
-                damage,
-                damagepersecond,
-                rangeddamage,
-                damageondistance,
-                damageonarea,
-                damageonimpact,
-                damageontower,
-                chargedamage,
-                damageondeath,
-                spawnspeed,
-                duration,
-                radius,
-                width,
-                efecttime,
-                freezetime,
-                unities,
-                arena,
-                target,
-                projectilerange,
-                range,
-                speed,
-                impactspeed,
-                level,
-            });
-            router.push(`/cards/${id}`);
-            console.log(response);
-        } catch (error) {
-            console.log(error);
-        }
+            try {
+              const formData = new FormData();
+              formData.append('name', name);
+              formData.append('image', image);
+              formData.append('type', type);
+              formData.append('rarity', rarity);
+              formData.append('elixir', elixir);
+              formData.append('hp', hp);
+              formData.append('deploytime', deploytime);
+              formData.append('shieldhp', shieldhp);
+              formData.append('description', description);
+              formData.append('damage', damage);
+              formData.append('damagepersecond', damagepersecond);
+              formData.append('rangeddamage', rangeddamage);
+              formData.append('damageondistance', damageondistance);
+              formData.append('damageonarea', damageonarea);
+              formData.append('damageonimpact', damageonimpact);
+              formData.append('damageontower', damageontower);
+              formData.append('chargedamage', chargedamage);
+              formData.append('damageondeath', damageondeath);
+              formData.append('spawnspeed', spawnspeed);
+              formData.append('duration', duration);
+              formData.append('radius', radius);
+              formData.append('width', width);
+              formData.append('efecttime', efecttime);
+              formData.append('freezetime', freezetime);
+              formData.append('unities', unities);
+              formData.append('arena', arena);
+              formData.append('target', target);
+              formData.append('projectilerange', projectilerange);
+              formData.append('range', range);
+              formData.append('speed', speed);
+              formData.append('impactspeed', impactspeed);
+              formData.append('level', level);
+              const response = await axios.put(`/api/cards/${id}`, formData);
+              router.push(`/cards/${id}`);
+              console.log(response);
+            } catch (error) {
+              console.error(error);
+            }
     }
 
     const handleFileChange = (e) => {
@@ -316,12 +250,12 @@ export default function updateCard({ params }) {
         {efecttime ? <input className={styles.input} type="number" placeholder="Tempo de efeito" value={efecttime} onChange={e => setEfecttime(e.target.value)} /> : null}
         {freezetime ? <input className={styles.input} type="number" placeholder="Tempo de congelamento" value={freezetime} onChange={e => setFreezetime(e.target.value)} /> : null}
         {unities ? <input className={styles.input} type="number" placeholder="Unidades" value={unities} onChange={e => setUnities(e.target.value)} /> : null}
-        {arena ? <input className={styles.input} type="number" placeholder="Arena" value={arena} onChange={e => setArena(e.target.value)} /> : null}
-        {target ? <input className={styles.input} type="number" placeholder="Alvo" value={target} onChange={e => setTarget(e.target.value)} /> : null}
+        {arena ? <input className={styles.input} type="text" placeholder="Arena" value={arena} onChange={e => setArena(e.target.value)} /> : null}
+        {target ? <input className={styles.input} type="text" placeholder="Alvo" value={target} onChange={e => setTarget(e.target.value)} /> : null}
         {projectilerange ? <input className={styles.input} type="number" placeholder="Alcance do projetil" value={projectilerange} onChange={e => setProjectilerange(e.target.value)} /> : null}
-        {range ? <input className={styles.input} type="number" placeholder="Alcance" value={range} onChange={e => setRange(e.target.value)} /> : null}
-        {speed ? <input className={styles.input} type="number" placeholder="Velocidade" value={speed} onChange={e => setSpeed(e.target.value)} /> : null}
-        {impactspeed ? <input className={styles.input} type="number" placeholder="Velocidade de impacto" value={impactspeed} onChange={e => setImpactspeed(e.target.value)} /> : null}
+        {range ? <input className={styles.input} type="text" placeholder="Alcance" value={range} onChange={e => setRange(e.target.value)} /> : null}
+        {speed ? <input className={styles.input} type="text" placeholder="Velocidade" value={speed} onChange={e => setSpeed(e.target.value)} /> : null}
+        {impactspeed ? <input className={styles.input} type="text" placeholder="Velocidade de impacto" value={impactspeed} onChange={e => setImpactspeed(e.target.value)} /> : null}
         <label className={styles.label} htmlFor="file">Selecione uma imagem</label>
         <input type="file" onChange={handleFileChange} className={styles.file} />
         <textarea className={styles.input} placeholder="Descrição da carta" value={description} onChange={e => setDescription(e.target.value)} />
