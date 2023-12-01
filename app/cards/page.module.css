@@ -71,9 +71,11 @@
     margin-bottom: 2rem;
   }
   
-  .select {
+  .select,
+  .containerSearch {
     padding: 0.75rem;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
+    background-color: #fff;
     border-radius: 0.5rem;
     font-size: 1rem;
     outline: none;
@@ -93,11 +95,6 @@
     outline: none;
     border: none;
  }
- .containerSearch{
-    border: 2px solid #ccc;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
- }
  .icon{
     width: 1.2rem;
     height: 1.2rem;
@@ -110,7 +107,7 @@
   }
   
   .scbtnred {
-    padding: 0.2rem;
+    padding: 0.4rem;
     border-radius: 5px;
     background-color: #fc4144;
     box-shadow: 0 0 3px 0 #fc4144,0 0 0 4px #e72424,0 1px 0 4px #e72424,0 -1px 2px 4px #fe4a5d,0 -2px 0 5px #ec8a95,0 6px 0 4px #9c1414,0 3px 0 5px #9c1414,0 -2px 0 7px #202020,0 5px 0 7px #202020,0 7px 0 7px #333;
