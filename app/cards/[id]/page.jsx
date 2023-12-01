@@ -120,7 +120,8 @@ export default function updateCard({ params }) {
         async function fetchData() {
             try {
                 const response = await axios.get(`/api/cards/${id}`);
-                const card = response.data.card;
+                const card = response.data;
+                console.log(card);
                 setName(card.name);
                 setImage(card.image);
                 setType(card.type);

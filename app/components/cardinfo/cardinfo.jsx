@@ -219,7 +219,7 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                         <Image src={"/images/createcard/championCard10.png"} width={240} height={300} />
                         :
                         !elixir ?
-                         <image src={image} width={250} height={310} />
+                         <Image src={image} width={250} height={310} />
                         :
                         null
                         )))))))))))))))))))))))))))))))))))))))))))))))))

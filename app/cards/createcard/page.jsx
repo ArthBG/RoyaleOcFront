@@ -127,7 +127,7 @@ export default function createCard() {
 
         <input type = "file" className={styles.file} onChange={handleImage} />
         <textarea className={styles.input} placeholder="Descrição da carta" value={description} onChange={e => setDescription(e.target.value)} />
-        <button className={styles.scbtnyellow} onClick={AtributesModal}>Adicionar atributos</button>
+        {/* <button className={styles.scbtnyellow} onClick={AtributesModal}>Adicionar atributos</button> */}
         <button className={styles.scbtnyellow} onClick={handleSubmit}>Criar</button>
       </div>
 
