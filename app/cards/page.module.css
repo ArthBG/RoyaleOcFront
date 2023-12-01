@@ -56,6 +56,10 @@
 .containerButtons{
     display: flex;
 }
+.linkremove{
+    text-decoration: none;
+
+}
 .buttonEdit{
     background-color: transparent;
     border: none;

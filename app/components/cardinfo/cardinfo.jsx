@@ -1,8 +1,10 @@
 import Image from "next/image"
 import styles from "./cardinfo.module.css";
+import Link from "next/link";
 export default function CardInfo({ name, image, type, rarity, elixir, hp, deploytime, shieldhp, description, damage, damagepersecond, rangeddamage, damageondistance, damageonarea, damageonimpact, damageontower, chargedamage, damageondeath, spawnspeed, duration, radius, width, efecttime, freezetime, unities, arena, target, projectilerange, range, speed, impactspeed, id, level }) {
     return (
         <div className={styles.CardInfo} >
+            
             <h1 className={styles.cardName}>{name} Nível {level}</h1>
             <div className={styles.containerCards}>
                 <div className={styles.containerImage}>
