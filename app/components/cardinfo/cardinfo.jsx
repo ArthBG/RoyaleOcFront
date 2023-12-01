@@ -1,7 +1,40 @@
 import Image from "next/image"
 import styles from "./cardinfo.module.css"
-export default function CardInfo({ name, level, rarity, type, elixir, image, description }) {
-    console.log(name, level, rarity, type, elixir, image, description);
+   // const card = listCards.updateCard(
+    //   name,
+    //   image,
+    //   type,
+    //   rarity,
+    //   elixir,
+    //   hp,
+    //   deploytime,
+    //   shieldhp,
+    //   description,
+    //   damage,
+    //   damagepersecond,
+    //   rangeddamage,
+    //   damageondistance,
+    //   damageonarea,
+    //   damageonimpact,
+    //   damageontower,
+    //   chargedamage,
+    //   damageondeath,
+    //   spawnspeed,
+    //   duration,
+    //   radius,
+    //   width,
+    //   efecttime,
+    //   freezetime,
+    //   unities,
+    //   arena,
+    //   target,
+    //   projectilerange,
+    //   range,
+    //   speed,
+    //   impactspeed,
+    //   id
+    // );
+export default function CardInfo({ name, image, type, rarity, elixir, hp, deploytime, shieldhp, description, damage, damagepersecond, rangeddamage, damageondistance, damageonarea, damageonimpact, damageontower, chargedamage, damageondeath, spawnspeed, duration, radius, width, efecttime, freezetime, unities, arena, target, projectilerange, range, speed, impactspeed, id, level }) {
     return (
         <div className={styles.CardInfo} >
             <h1 className={styles.cardName}>{name} Nível {level}</h1>
@@ -316,7 +349,206 @@ export default function CardInfo({ name, level, rarity, type, elixir, image, des
                                                                 ))))))))))))))
                 }
             </div>
-
+            <div className={styles.atributesCondition}>
+                {hp ? <div className={styles.hp}>
+                    <Image src={"/images/hp.png"} width={60} height={60} />
+                    <div className={styles.desc}>
+                        {hp}
+                    </div>
+                </div> : null}
+                {
+                    deploytime ? <div className={styles.deploytime}>
+                        <Image src={"/images/deploytime.png"} width={60} height={60} />
+                        <div className={styles.desc}>
+                            {deploytime}
+                        </div>
+                    </div> : null
+                }
+                {
+                    shieldhp ? <div className={styles.shieldhp}>
+                        <Image src={"/images/shieldhp.png"} width={60} height={60} />
+                        <div className={styles.desc}>
+                            {shieldhp}
+                        </div>
+                    </div> : null
+                }
+                {
+                    damage ? <div className={styles.damage}>
+                        <Image src={"/images/damage.png"} width={60} height={60} />
+                        <div className={styles.desc}>
+                            {damage}
+                        </div>
+                    </div> : null
+                }
+                {
+                    damagepersecond ? <div className={styles.damagepersecond}>
+                        <Image src={"/images/damagepersecond.png"} width={60} height={60} />
+                        <div className={styles.desc}>
+                            {damagepersecond}
+                        </div>
+                    </div> : null
+                }
+                {
+                    rangeddamage ? <div className={styles.rangeddamage}>
+                        <Image src={"/images/rangeddamage.png"} width={60} height={60} />
+                        <div className={styles.desc}>
+                            {rangeddamage}
+                        </div>
+                    </div> : null
+                }
+                {
+                    damageondistance ? <div className={styles.damageondistance}>
+                        <Image src={"/images/damageondistance.png"} width={60} height={60} />
+                        <div className={styles.desc}>
+                            {damageondistance}
+                        </div>
+                    </div> : null
+                }
+                {
+                    damageonarea ? <div className={styles.damageonarea}>
+                        <Image src={"/images/damageonarea.png"} width={60} height={60} />
+                        <div className={styles.desc}>
+                            {damageonarea}
+                        </div>
+                    </div> : null
+                }
+                {
+                    damageonimpact ? <div className={styles.damageonimpact}>
+                        <Image src={"/images/damageonimpact.png"} width={60} height={60} />
+                        <div className={styles.desc}>
+                            {damageonimpact}
+                        </div>
+                    </div> : null
+                }
+                {
+                    damageontower ? <div className={styles.damageontower}>
+                        <Image src={"/images/damageontower.png"} width={60} height={60} />
+                        <div className={styles.desc}>
+                            {damageontower}
+                        </div>
+                    </div> : null
+                }
+                {
+                    chargedamage ? <div className={styles.chargedamage}>
+                        <Image src={"/images/chargedamage.png"} width={60} height={60} />
+                        <div className={styles.desc}>
+                            {chargedamage}
+                        </div>
+                    </div> : null
+                }
+                {
+                    damageondeath ? <div className={styles.damageondeath}>
+                        <Image src={"/images/damageondeath.png"} width={60} height={60} />
+                        <div className={styles.desc}>
+                            {damageondeath}
+                        </div>
+                    </div> : null
+                }
+                {
+                    spawnspeed ? <div className={styles.spawnspeed}>
+                        <Image src={"/images/spawnspeed.png"} width={60} height={60} />
+                        <div className={styles.desc}>
+                            {spawnspeed}
+                        </div>
+                    </div> : null
+                }
+                {
+                    duration ? <div className={styles.duration}>
+                        <Image src={"/images/duration.png"} width={60} height={60} />
+                        <div className={styles.desc}>
+                            {duration}
+                        </div>
+                    </div> : null
+                }
+                {
+                    radius ? <div className={styles.radius}>
+                        <Image src={"/images/radius.png"} width={60} height={60} />
+                        <div className={styles.desc}>
+                            {radius}
+                        </div>
+                    </div> : null
+                }
+                {
+                    width ? <div className={styles.width}>
+                        <Image src={"/images/width.png"} width={60} height={60} />
+                        <div className={styles.desc}>
+                            {width}
+                        </div>
+                    </div> : null
+                }
+                {
+                    efecttime ? <div className={styles.efecttime}>
+                        <Image src={"/images/efecttime.png"} width={60} height={60} />
+                        <div className={styles.desc}>
+                            {efecttime}
+                        </div>
+                    </div> : null
+                }
+                {
+                    freezetime ? <div className={styles.freezetime}>
+                        <Image src={"/images/freezetime.png"} width={60} height={60} />
+                        <div className={styles.desc}>
+                            {freezetime}
+                        </div>
+                    </div> : null
+                }
+                {
+                    unities ? <div className={styles.unities}>
+                        <Image src={"/images/unities.png"} width={60} height={60} />
+                        <div className={styles.desc}>
+                            {unities}
+                        </div>
+                    </div> : null
+                }
+                {
+                    arena ? <div className={styles.arena}>
+                        <Image src={"/images/arena.png"} width={60} height={60} />
+                        <div className={styles.desc}>
+                            {arena}
+                        </div>
+                    </div> : null
+                }
+                {
+                    target ? <div className={styles.target}>
+                        <Image src={"/images/target.png"} width={60} height={60} />
+                        <div className={styles.desc}>
+                            {target}
+                        </div>
+                    </div> : null
+                }
+                {
+                    projectilerange ? <div className={styles.projectilerange}>
+                        <Image src={"/images/projectilerange.png"} width={60} height={60} />
+                        <div className={styles.desc}>
+                            {projectilerange}
+                        </div>
+                    </div> : null
+                }
+                {
+                    range ? <div className={styles.range}>
+                        <Image src={"/images/range.png"} width={60} height={60} />
+                        <div className={styles.desc}>
+                            {range}
+                        </div>
+                    </div> : null
+                }
+                {
+                    speed ? <div className={styles.speed}>
+                        <Image src={"/images/speed.png"} width={60} height={60} />
+                        <div className={styles.desc}>
+                            {speed}
+                        </div>
+                    </div> : null
+                }
+                {
+                    impactspeed ? <div className={styles.impactspeed}>
+                        <Image src={"/images/impactspeed.png"} width={60} height={60} />
+                        <div className={styles.desc}>
+                            {impactspeed}
+                        </div>
+                    </div> : null
+                }
+        </div>
         </div>
     )
 }
