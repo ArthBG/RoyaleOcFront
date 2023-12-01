@@ -22,11 +22,10 @@ export async function PUT(request, { params }) {
 
     try {
         const response = await axios.put(`${url}/${id}`, body);
-
         return NextResponse.json(response.data);
     } catch (error) {
         console.log("[ORDER_PUT]", error);
-        return new NextResponse("error interno do servidor!", { status: 500 });
+        return new NextResponse("error interno do servidor! Erroooooooo", { status: 500 });
     }
 }
 

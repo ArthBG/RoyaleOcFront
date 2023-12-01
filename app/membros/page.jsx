@@ -10,7 +10,7 @@ import Image from "next/image";
 export default function Page() {
     // Estados para armazenar a lista de membros e dados adicionais.
     const [membros, setMembros] = useState([]);
-    const [dados, setDados] = useState({});
+    const [dados, setDados] = useState([]);
     const router = useRouter();
 
     // Função para deletar um membro.
@@ -19,11 +19,14 @@ export default function Page() {
         try {
             await axios.delete(url);
             setDados(dados.filter((membro) => membro.id !== id));
+            setMembros(membros.filter((membro) => membro.id !== id));
         } catch (error) {
             console.error("Error deleting membro", error);
         }
     };
-    const update = async (id) => {
+    console.log(dados, membros)
+
+    const update = (id) => {
         router.push(`/membros/${id}`);
     };
 
@@ -65,9 +68,7 @@ export default function Page() {
                             <div key={membro.id}>
                                 <div>
                                     {/*  Informações do membro */}
-                                    <p className={styles.infos}>
-                                        <strong>ID:</strong> {membro.id}
-                                    </p>
+                                 
                                     <p className={styles.infos}>
                                         <strong>Nome:</strong> {membro.nome}
                                     </p>

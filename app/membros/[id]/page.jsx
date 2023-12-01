@@ -37,6 +37,12 @@ export default function UpdateMembro({ params }) {
         e.preventDefault();
         try {
             await axios.put(`/api/membros/${id}`, { nome, idade, cargo, foto, descricao });
+            setNome("");
+            setIdade("");
+            setCargo("");
+            setFoto("");
+            setDescricao("");
+
             router.push(`/membros/${id}`);
 
         } catch (error) {
