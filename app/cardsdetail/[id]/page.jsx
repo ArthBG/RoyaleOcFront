@@ -24,40 +24,40 @@ const cardDescription = ({ params }) => {
     }, [id]);
 
     return (
-        <div className={styles.containerPai}>
+        <div className={styles.container}>
 
-            <div className={styles.back2}>
-               <p> {card.name ? card.name : "Não disponível"}</p>
+            <div className={styles.infosCartas}>
+                <p className={styles.info}> {card.name ? card.name : "Não disponível"}</p>
                 <img src={card.image} alt={`Imagem da Carta ${card.name}`} />
 
-                <p>Tipo de Carta: {card.type ? card.type : "Não disponível"}</p>
-                <p>Raridade: {card.rarity ? card.rarity : "Não disponível"}</p>
-                <p>Elixir: {card.elixir ? card.elixir : "Não disponível"}</p>
-                <p>Pontos de Vida: {card.hp ? card.hp : "Não disponível"}</p>
-                <p>Tempo de Geração: {card.deploytime ? card.deploytime : "Não disponível"}</p>
-                <p>Pontos de Escudo: {card.shieldhp ? card.shieldhp : "Não disponível"}</p>
-                <p>Descrição: {card.description ? card.description : "Não disponível"}</p>
-                <p>Dano: {card.damage ? card.damage : "Não disponível"}</p>
-                <p>Dano por Segundo: {card.damagepersecond ? card.damagepersecond : "Não disponível"}</p>
-                <p>Dano à Distância: {card.damageondistance ? card.damageondistance : "Não disponível"}</p>
-                <p>Dano em Área: {card.damageonarea ? card.damageonarea : "Não disponível"}</p>
-                <p>Dano no Impacto: {card.damageonimpact ? card.damageonimpact : "Não disponível"}</p>
-                <p>Dano na Torre: {card.damageontower ? card.damageontower : "Não disponível"}</p>
-                <p>Dano da Carga: {card.chargedamage ? card.chargedamage : "Não disponível"}</p>
-                <p>Dano de Morte: {card.damageondeath ? card.damageondeath : "Não disponível"}</p>
-                <p>Velocidade de Invocação: {card.spawnspeed ? card.spawnspeed : "Não disponível"}</p>
-                <p>Duração: {card.duration ? card.duration : "Não disponível"}</p>
-                <p>Raio: {card.radius ? card.radius : "Não disponível"}</p>
-                <p>Largura: {card.width ? card.width : "Não disponível"}</p>
-                <p>Tempo de Efeito: {card.efecttime ? card.efecttime : "Não disponível"}</p>
-                <p>Tempo de Congelamento: {card.freezetime ? card.freezetime : "Não disponível"}</p>
-                <p>Quantidade de Unidades: {card.unities ? card.unities : "Não disponível"}</p>
-                <p>Arena: {card.arena ? card.arena : "Não disponível"}</p>
-                <p>Alvos: {card.target ? card.target : "Não disponível"}</p>
-                <p>Alcance do Projétil: {card.projectilerange ? card.projectilerange : "Não disponível"}</p>
-                <p>Alcance: {card.range ? card.range : "Não disponível"}</p>
-                <p>Velocidade: {card.speed ? card.speed : "Não disponível"}</p>
-                <p>Velocidade do Impacto: {card.impactspeed ? card.impactspeed : "Não disponível"}</p>
+                <p className={styles.info}>Tipo de Carta: {card.type ? card.type : "Não disponível"}</p>
+                <p className={styles.info}>Raridade: {card.rarity ? card.rarity : "Não disponível"}</p>
+                <p className={styles.info}>Elixir: {card.elixir ? card.elixir : "Não disponível"}</p>
+                <p className={styles.info}>Pontos de Vida: {card.hp ? card.hp : "Não disponível"}</p>
+                <p className={styles.info}>Tempo de Geração: {card.deploytime ? card.deploytime : "Não disponível"}</p>
+                <p className={styles.info}>Pontos de Escudo: {card.shieldhp ? card.shieldhp : "Não disponível"}</p>
+                <p className={styles.info}>Descrição: {card.description ? card.description : "Não disponível"}</p>
+                <p className={styles.info}>Dano: {card.damage ? card.damage : "Não disponível"}</p>
+                <p className={styles.info}>Dano por Segundo: {card.damagepersecond ? card.damagepersecond : "Não disponível"}</p>
+                <p className={styles.info}>Dano à Distância: {card.damageondistance ? card.damageondistance : "Não disponível"}</p>
+                <p className={styles.info}>Dano em Área: {card.damageonarea ? card.damageonarea : "Não disponível"}</p>
+                <p className={styles.info}>Dano no Impacto: {card.damageonimpact ? card.damageonimpact : "Não disponível"}</p>
+                <p className={styles.info}>Dano na Torre: {card.damageontower ? card.damageontower : "Não disponível"}</p>
+                <p className={styles.info}>Dano da Carga: {card.chargedamage ? card.chargedamage : "Não disponível"}</p>
+                <p className={styles.info}>Dano de Morte: {card.damageondeath ? card.damageondeath : "Não disponível"}</p>
+                <p className={styles.info}>Velocidade de Invocação: {card.spawnspeed ? card.spawnspeed : "Não disponível"}</p>
+                <p className={styles.info}>Duração: {card.duration ? card.duration : "Não disponível"}</p>
+                <p className={styles.info}>Raio: {card.radius ? card.radius : "Não disponível"}</p>
+                <p className={styles.info}>Largura: {card.width ? card.width : "Não disponível"}</p>
+                <p className={styles.info}>Tempo de Efeito: {card.efecttime ? card.efecttime : "Não disponível"}</p>
+                <p className={styles.info}>Tempo de Congelamento: {card.freezetime ? card.freezetime : "Não disponível"}</p>
+                <p className={styles.info}>Quantidade de Unidades: {card.unities ? card.unities : "Não disponível"}</p>
+                <p className={styles.info}>Arena: {card.arena ? card.arena : "Não disponível"}</p>
+                <p className={styles.info}>Alvos: {card.target ? card.target : "Não disponível"}</p>
+                <p className={styles.info}>Alcance do Projétil: {card.projectilerange ? card.projectilerange : "Não disponível"}</p>
+                <p className={styles.info}>Alcance: {card.range ? card.range : "Não disponível"}</p>
+                <p className={styles.info}>Velocidade: {card.speed ? card.speed : "Não disponível"}</p>
+                <p className={styles.info}>Velocidade do Impacto: {card.impactspeed ? card.impactspeed : "Não disponível"}</p>
 
 
 
