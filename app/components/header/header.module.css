@@ -1,5 +1,12 @@
+
+
 .main{
+    font-family: clash-font;
     width: 100%;
-    height: 10%;
+    height: 15%;
     background-color: rgb(8, 3, 57);
+}
+
+.imagemain{
+    margin-top: 1.3%;
 }

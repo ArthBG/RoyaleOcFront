@@ -6,7 +6,8 @@ export const Header = () => {
     return (
         <header className={styles.main}>
             <div className={styles.icones}>
-            <Image src={'/coraicone.png'} alt="Logo da empresa" width={50} height={50}></Image>
+            <Image className={styles.imagemain} src={'/images/coroaicone.png'} alt="Logo da empresa" width={60} height={60}></Image>
+            <h1>sim</h1>
             </div>
         </header>
 
