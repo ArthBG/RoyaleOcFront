@@ -143,26 +143,6 @@ function cardspage() {
                     
                  </div>
                  </div>     
-                )) : handleSearch().length > 0 ? handleSearch().map((card) => (
-                    <div key={card.id} >
-                    <div className={style.card}>       
-                    <div className={style.containerButtons}>
-                     <div className={style.containerS}>
-                       <button className={style.buttonEdit}>
-                        <img src={"/images/info.png"} width={31} height={29}  onClick={() => editCard(card.id)}/>
-                        </button>
-                        <button className={style.buttonDelete}>
-                        <img src={"/images/excluir.png"}  width={34} height={30} onClick={() => deleteCard(card.id)}/>
-                        </button>
-                    </div>    
-                    </div>  
-                    <div className={style.containerImage}> 
-                    <img src={card.image} width={110} height={125}/>
-                    </div>
-                     <p className={style.cardName}>{card.name}</p>
-                   
-                </div>
-                </div> 
                 )) : cardsData.map((card) => (
                     <div key={card.id} >
                     <div className={style.card}>       
