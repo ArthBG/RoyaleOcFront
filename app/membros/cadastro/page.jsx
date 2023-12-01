@@ -51,16 +51,16 @@ export default function Register() {
     return (
         <div className={styles.containerPai}>
 
-            
-                <Link href="/membros">
+
+            <Link href="/membros">
                 <button type="submit" className={styles.botaoVoltar}>
-                        <div className={styles.overlay}></div>
-                        <div className={styles.overlay}></div>
-                        <div className={styles.overlay}></div>
-                        <span>Voltar</span>
-                    </button > 
-                </Link>
-          
+                    <div className={styles.overlay}></div>
+                    <div className={styles.overlay}></div>
+                    <div className={styles.overlay}></div>
+                    <span>Voltar</span>
+                </button >
+            </Link>
+
 
             <div className={styles.containerForm}>
                 <h1 className={styles.titulo}>Fazer cadastro</h1>
@@ -113,14 +113,16 @@ export default function Register() {
                             Foto:
                         </label>
                         <input
-                            className={styles.input}
                             type="text"
                             id="foto"
+                            name="foto"
                             value={foto}
                             onChange={(e) => setFoto(e.target.value)}
                             required
+
                         />
                     </div>
+
 
                     <div className={styles.divInput}>
                         <label className={styles.label} htmlFor="descricao">
@@ -136,12 +138,12 @@ export default function Register() {
                         />
                     </div>
 
-                     <button type="submit" className={styles.btn}>
+                    <button type="submit" className={styles.btn}>
                         <div className={styles.overlay}></div>
                         <div className={styles.overlay}></div>
                         <div className={styles.overlay}></div>
                         <span>Cadastrar</span>
-                    </button > 
+                    </button >
                 </form >
             </div >
         </div >
