@@ -10,16 +10,12 @@
     width: 11rem;
     height: 11.15rem;
     margin: 1rem;
-    min-width: fit-content;
-    min-height: fit-content;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     background-color: #f5f5f5;
     border-radius: 10px;
     box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
-    position: relative;
+   
 }
 .title{
     color: white;
@@ -34,7 +30,7 @@
 .containerImage{
     padding-top: 0.90rem;
 }
-.containerCard{
+.divpaiinfos{
     display: flex;
     flex-wrap: wrap; 
     justify-content: center;
