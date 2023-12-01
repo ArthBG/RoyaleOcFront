@@ -17,7 +17,7 @@ function cardspage() {
     const [selectedElixir, setSelectedElixir] = useState("all");
     const [allClean, setAllClean] = useState(false);
     const router = useRouter();
-    
+
     useEffect(() => {
         async function fetchData() {
             try {
@@ -30,54 +30,62 @@ function cardspage() {
         fetchData();
     }, []);
 
-    
-    
+    useEffect(() => {
+        setCardsData(filterRarity());
+    }, [selectedRarity, selectedType, selectedElixir, search]);
 
-    console.log(cardsData);
-    const filterCards = (cardsData) => {
-        let filtered = cardsData || [];
-    
-        if (selectedRarity !== "all") {
-            filtered = filtered.filter((card) => {
-                return card.rarity.includes(selectedRarity);
-            });
+
+    const filterRarity = () => {
+        if (selectedRarity != "all" && selectedType != "all" && selectedElixir != "all") {
+            return cardsData.filter((card) => card.rarity == selectedRarity && card.type == selectedType && card.elixir == selectedElixir);
         }
-    
-        if (selectedType !== "all") {
-            filtered = filtered.filter((card) => {
-                return card.type && card.type.includes(selectedType);
-            });
+
+        else if (selectedRarity != "all" && selectedType != "all") {
+            return cardsData.filter((card) => card.rarity == selectedRarity && card.type == selectedType);
         }
-    
-        if (selectedElixir !== "all") {
-            filtered = filtered.filter((card) => {
-                return card.elixirCost == selectedElixir;
-            });
+
+        else if (selectedRarity != "all" && selectedElixir != "all") {
+            return cardsData.filter((card) => card.rarity == selectedRarity && card.elixir == selectedElixir);
         }
-    
-        return filtered;
-    };
-    
-    const handleSearch = () => {
-        const filteredCards = filterCards(cardsData) || [];
-        const filtered = filteredCards.filter((card) => {
-            return card && card.name.toLowerCase().includes(search.toLowerCase());
-        });
-        return filtered;
-    };
+
+        else if (selectedType != "all" && selectedElixir != "all") {
+            return cardsData.filter((card) => card.type == selectedType && card.elixir == selectedElixir);
+        }
+
+        else if (selectedRarity != "all") {
+
+            return cardsData.filter((card) => card.rarity == selectedRarity);
+        }
+
+        else if (selectedType != "all") {
+            return cardsData.filter((card) => card.type == selectedType);
+        }
+
+        else if (selectedElixir != "all") {
+            return cardsData.filter((card) => card.elixir == selectedElixir);
+        }
+
+        else if (search != "") {
+            return cardsData.filter((card) => card.name.toLowerCase().includes(search.toLowerCase()));
+        }
+
+        else {
+            return cardsData;
+        }
+    }
 
     const clearFilters = () => {
-        setAllClean(true);
         setSelectedRarity("all");
         setSelectedType("all");
         setSelectedElixir("all");
         setSearch("");
+        setAllClean(true);
     }
 
     const editCard = (id) => {
         router.push(`/cards/${id}`);
     }
- 
+
 
     const deleteCard = async (id) => {
         const url = `/api/cards/${id}`;
@@ -91,12 +99,12 @@ function cardspage() {
 
     return (
         <main className={style.mainBg}>
-            
+
             <h1 className={style.title}>RoyaleOcto</h1>
             <div className={style.containerFilters}>
                 <div className={style.containerSearch}>
-                <input type="text" placeholder="Pesquisar Cartas" className={style.search} onChange={(e) => setSearch(e.target.value)}/>
-                <FiSearch className={style.icon} onClick={handleSearch}/>
+                    <input type="text" placeholder="Pesquisar Cartas" className={style.search} onChange={(e) => setSearch(e.target.value)} />
+                    <FiSearch className={style.icon}  />
                 </div>
                 <select className={style.select} onChange={(e) => setSelectedType(e.target.value)}>
                     <option value="all">Tipo:</option>
@@ -123,35 +131,35 @@ function cardspage() {
                     <option value={7}>7</option>
                     <option value={8}>8</option>
                     <option value={9}>9</option>
-                    <option value ={10}>10</option>
+                    <option value={10}>10</option>
                 </select>
                 <button className={style.scbtnred} onClick={clearFilters}>Redefinir Filtros</button>
-                </div>
+            </div>
             <div className={style.containerCard}>
-                { cardsData.map((card) => (
+                {cardsData.map((card) => (
                     <div key={card.id} >
-                    <div className={style.card}>       
-                    <div className={style.containerButtons}>
-                       <button className={style.buttonEdit}>
-                        <img src={"/images/info.png"} width={31} height={29}  onClick={() => editCard(card.id)}/>
-                        </button>
-                        <button className={style.buttonDelete}>
-                        <img src={"/images/excluir.png"}  width={34} height={30} onClick={() => deleteCard(card.id)}/>
-                        </button>
-                     <div className={style.containerS}>
-                    </div>    
-                    </div>  
-                    <Link className={style.linkremove} href={`/cardsdetail/${card.id}`}>
-                    <div className={style.containerImage}> 
-                    <img src={card.image} width={110} height={125}/>
+                        <Link className={style.linkremove} href={`/cardsdetail/${card.id}`}>
+                            <div className={style.card}>
+                                <div className={style.containerButtons}>
+                                    <div className={style.containerS}>
+                                        <button className={style.buttonEdit}>
+                                            <img src={"/images/info.png"} width={31} height={29} onClick={() => editCard(card.id)} />
+                                        </button>
+                                        <button className={style.buttonDelete}>
+                                            <img src={"/images/excluir.png"} width={34} height={30} onClick={() => deleteCard(card.id)} />
+                                        </button>
+                                    </div>
+                                </div>
+                                <div className={style.containerImage}>
+                                    <img src={card.image} width={110} height={125} />
+                                </div>
+                                <p className={style.cardName}>{card.name}</p>
+
+                            </div>
+                        </Link>
                     </div>
-                     <p className={style.cardName}>{card.name}</p>
-                   
-                </Link>
-                </div>
-                </div> 
                 ))
-}
+                }
             </div>
 
         </main>
