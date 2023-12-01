@@ -48,10 +48,10 @@
 .containerButtons{
     display: flex;
 }
-.buttonEdit{
+.buttonEdit:hover{
     cursor: pointer;
 }
-.buttonDelete{
+.buttonDelete:hover{
     cursor: pointer;
 }
 

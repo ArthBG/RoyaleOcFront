@@ -22,6 +22,8 @@ export default function updateCard({ params }) {
     const router = useRouter();
     const { id } = params;
 
+
+
     useEffect(() => {
         async function fetchData() {
             try {
@@ -35,17 +37,19 @@ export default function updateCard({ params }) {
                 setImage(card.image);
                 setDescription(card.description);
                 
-            } catch (error) {
+              } catch (error) {
                 console.error(error);
+              }
             }
-        }
-        if (id) {
-            fetchData();
-    }
-    }, [id]);
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+            if (id) {
+              fetchData();
+            }
+          }, [id]);
+      
+          console.log(name, level, rarity, type, elixir, image, description);
+          
+          const handleSubmit = async (e) => {
+            e.preventDefault();
         try {
             const response = await axios.put(`/api/cards/${id}`, {
                 name,
