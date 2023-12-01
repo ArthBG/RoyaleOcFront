@@ -26,13 +26,15 @@ export default function updateCard({ params }) {
         async function fetchData() {
             try {
                 const response = await axios.get(`/api/cards/${id}`);
-                const card = response.data;
+                const card = response.data.card;
                 setName(card.name);
+                setLevel(card.level);
                 setRarity(card.rarity);
                 setType(card.type);
                 setElixir(card.elixir);
                 setImage(card.image);
                 setDescription(card.description);
+                
             } catch (error) {
                 console.error(error);
             }
