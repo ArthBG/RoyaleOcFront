@@ -28,23 +28,24 @@ function cardspage() {
         fetchData();
     }, []);
     console.log(cardsData);
+
     const filterCards = () => {
-        let filtering = cardsData?.filter((card) => {
-            if (selectedType !== "all") {
-                return card.type === selectedType;
-            }
+        let filtering = cardsData.filter((card) => {
             if (selectedRarity !== "all") {
                 return card.rarity === selectedRarity;
             }
+            if (selectedType !== "all") {
+                return card.type === selectedType;
+            }
             if (selectedElixir !== "all") {
-                return card.elixir === selectedElixir;
+                return card.elixir.toString() === selectedElixir;
             }
-            if (search !== "") {
-                return card.name?.toLowerCase().includes(search.toLowerCase());
-            }
-        });
+        }
+        );
         return filtering;
     }
+    
+    
 
     const handleSearch = () => {
         let filtering = cardsData?.filter((card) => {
@@ -56,8 +57,8 @@ function cardspage() {
     }
 
     const clearFilters = () => {
-        setSelectedType("all");
         setSelectedRarity("all");
+        setSelectedType("all");
         setSelectedElixir("all");
         setSearch("");
     }
@@ -87,9 +88,9 @@ function cardspage() {
                 </div>
                 <select className={style.select} onChange={(e) => setSelectedType(e.target.value)}>
                     <option value="all">Tipo:</option>
-                    <option value="Tropa">Tropa</option>
-                    <option value="Construção">Construção</option>
-                    <option value="Feitiço">Feitiço</option>
+                    <option value='Tropa'>Tropa</option>
+                    <option value='Construção'>Construção</option>
+                    <option value='Feitiço'>Feitiço</option>
                 </select>
                 <select className={style.select} onChange={(e) => setSelectedRarity(e.target.value)}>
                     <option value="all">Raridade:</option>
