@@ -5,6 +5,7 @@ import axios from 'axios';
 import style from './page.module.css';
 import { useRouter } from 'next/navigation';
 import { FiSearch } from 'react-icons/fi';
+import Link from 'next/link';
 // npm install react-icons --save
 // Todas as funções devem ser comentadas
 
@@ -87,6 +88,7 @@ function cardspage() {
 
     return (
         <main className={style.mainBg}>
+            
             <h1 className={style.title}>RoyaleOcto</h1>
             <div className={style.containerFilters}>
                 <div className={style.containerSearch}>
@@ -124,7 +126,8 @@ function cardspage() {
                 </div>
             <div className={style.containerCard}>
                 { filterCards().length > 0 ?  filterCards().map((card) => (
-                     <div key={card.id} >
+                    <div key={card.id} >
+                         <Link href={`/cardsdetail/${card.id}`}>
                      <div className={style.card}>       
                      <div className={style.containerButtons}>
                       <div className={style.containerS}>
@@ -142,9 +145,11 @@ function cardspage() {
                       <p className={style.cardName}>{card.name}</p>
                     
                  </div>
+                </Link>
                  </div>     
                 )) : cardsData.map((card) => (
                     <div key={card.id} >
+                        <Link href={`/cardsdetail/${card.id}`}>
                     <div className={style.card}>       
                     <div className={style.containerButtons}>
                      <div className={style.containerS}>
@@ -162,6 +167,7 @@ function cardspage() {
                      <p className={style.cardName}>{card.name}</p>
                    
                 </div>
+                </Link>
                 </div> 
                 ))
 }
