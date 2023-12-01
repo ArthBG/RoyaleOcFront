@@ -127,7 +127,7 @@ function cardspage() {
             <div className={style.containerCard}>
                 { filterCards().length > 0 ?  filterCards().map((card) => (
                     <div key={card.id} >
-                         <Link href={`/cardsdetail/${card.id}`}>
+                         <Link className={style.linkremove} href={`/cardsdetail/${card.id}`}>
                      <div className={style.card}>       
                      <div className={style.containerButtons}>
                       <div className={style.containerS}>
@@ -149,7 +149,7 @@ function cardspage() {
                  </div>     
                 )) : cardsData.map((card) => (
                     <div key={card.id} >
-                        <Link href={`/cardsdetail/${card.id}`}>
+                        <Link className={style.linkremove} href={`/cardsdetail/${card.id}`}>
                     <div className={style.card}>       
                     <div className={style.containerButtons}>
                      <div className={style.containerS}>
