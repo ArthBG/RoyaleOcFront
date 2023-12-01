@@ -3,7 +3,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import styles from "./membro.module.css";
+import styles from "./page.module.css";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -68,7 +68,7 @@ export default function Page() {
                             <div key={membro.id}>
                                 <div>
                                     {/*  Informações do membro */}
-                                 
+
                                     <p className={styles.infos}>
                                         <strong>Nome:</strong> {membro.nome}
                                     </p>
@@ -87,12 +87,20 @@ export default function Page() {
                                     </p>
                                 </div>
                                 <div>
-                                    <button onClick={() => deletar(membro.id)}>
-                                        deletar
-                                    </button>
-                                    <button onClick={() => update(membro.id)}>
-                                        editar
-                                    </button>
+
+                                    <button className={styles.btndelete} onClick={() => deletar(membro.id)}>
+                                        <div className={styles.overlay}></div>
+                                        <div className={styles.overlay}></div>
+                                        <div className={styles.overlay}></div>
+                                        <span>Deletar</span>
+                                    </button >
+
+                                    <button className={styles.btnupdate} onClick={() => update(membro.id)}>
+                                        <div className={styles.overlay}></div>
+                                        <div className={styles.overlay}></div>
+                                        <div className={styles.overlay}></div>
+                                        <span>Editar</span>
+                                    </button >
                                 </div>
                             </div>
                         ))}
