@@ -4,7 +4,6 @@ import Image from 'next/image';
 
 export const Footer = () => {
     return (
-        <div>
             <footer className={styles.rodape}>
                 <div className={styles.rodapediv}>
 
@@ -25,9 +24,9 @@ export const Footer = () => {
                     <div className={styles.rodapediv3}>
                         <div className={styles.rodapediv3coluna}>
                             <span><strong className={styles.titulos}>Sobre Nós</strong></span>
-                            <p><Link href={'/sobrenos'}>Integrantes</Link></p>
-                            <p><Link href={'/sobrenos'}>Sobre</Link></p>
-                            <p><Link href={'/sobrenos'}>Se torne um integrante!</Link></p>
+                            <p className={styles.home}><Link href={'/sobrenos'}>Integrantes</Link></p>
+                            <p className={styles.home}><Link href={'/sobrenos'}>Sobre</Link></p>
+                            <p className={styles.home}><Link href={'/sobrenos'}>Se torne um integrante!</Link></p>
                         </div>
                     </div>
 
@@ -46,7 +45,6 @@ export const Footer = () => {
                 </div>
                 <p className={styles.rodapedireitos}>Octopus © 2023, Todos os Direitos Reservados.</p>
             </footer>
-        </div>
     )
 }
 export default Footer;
