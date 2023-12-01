@@ -62,9 +62,9 @@ function cardspage() {
     }
 
     const clearFilters = () => {
-        setSelectedRarity("all");
-        setSelectedType("all");
-        setSelectedElixir("all");
+        setSelectedRarity("");
+        setSelectedType("");
+        setSelectedElixir("");
         setSearch("");
     }
 
