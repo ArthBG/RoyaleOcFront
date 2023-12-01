@@ -79,7 +79,7 @@ function cardspage() {
     }
 
     return (
-        <main>
+        <main className={style.mainBg}>
             <h1 className={style.title}>RoyaleOcto</h1>
             <div className={style.containerFilters}>
                 <div className={style.containerSearch}>

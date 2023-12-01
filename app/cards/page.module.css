@@ -1,3 +1,11 @@
+.mainBg{
+    background-image: url("../../public/images/fundoazulcards.png");
+    background-repeat:repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+}
 .card{
     width: 11rem;
     height: 11rem;
@@ -20,7 +28,7 @@
     font-size: 2rem;
     font-weight: bold;
     text-align: center;
-    margin: 2rem;
+    padding: 2rem;
 
 }
 .containerImage{
