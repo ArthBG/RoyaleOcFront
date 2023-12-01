@@ -1,3 +1,4 @@
+
 import axios from 'axios';
 
 import { NextResponse } from 'next/server';
@@ -24,4 +25,3 @@ export async function POST(request) {
         return new NextResponse("Erro interno do servidor!", { status: 500 });
     }
 }
-
