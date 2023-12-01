@@ -1,97 +1,134 @@
 import Image from "next/image"
-import styles from "./cardinfo.module.css"
-   // const card = listCards.updateCard(
-    //   name,
-    //   image,
-    //   type,
-    //   rarity,
-    //   elixir,
-    //   hp,
-    //   deploytime,
-    //   shieldhp,
-    //   description,
-    //   damage,
-    //   damagepersecond,
-    //   rangeddamage,
-    //   damageondistance,
-    //   damageonarea,
-    //   damageonimpact,
-    //   damageontower,
-    //   chargedamage,
-    //   damageondeath,
-    //   spawnspeed,
-    //   duration,
-    //   radius,
-    //   width,
-    //   efecttime,
-    //   freezetime,
-    //   unities,
-    //   arena,
-    //   target,
-    //   projectilerange,
-    //   range,
-    //   speed,
-    //   impactspeed,
-    //   id
-    // );
+import styles from "./cardinfo.module.css";
 export default function CardInfo({ name, image, type, rarity, elixir, hp, deploytime, shieldhp, description, damage, damagepersecond, rangeddamage, damageondistance, damageonarea, damageonimpact, damageontower, chargedamage, damageondeath, spawnspeed, duration, radius, width, efecttime, freezetime, unities, arena, target, projectilerange, range, speed, impactspeed, id, level }) {
     return (
         <div className={styles.CardInfo} >
             <h1 className={styles.cardName}>{name} Nível {level}</h1>
             <div className={styles.containerCards}>
                 <div className={styles.containerImage}>
-                  {
+                  
+                { image && typeof image == 'object' ? (
+                   <Image
+                     className={styles.imagecomming}
+                     src={URL.createObjectURL(image)}
+                     width={250}
+                     height={310}
+                   />
+                 ) : 
                     rarity == "Comum" && elixir == "1" ?
                     <div>
-                    <Image className={styles.imagecomming}src={image} width={250} height={310} />
                     <Image src={"/images/createcard/communCard1.png"} width={240} height={300} />
                     </div>
                     :
+                (image && typeof image === 'object' ? (
+                 <Image
+                   className={styles.imagecomming}
+                   src={URL.createObjectURL(image)}
+                   width={250}
+                   height={310}
+                 />
+               ) : 
                     (rarity == "Comum" && elixir == "2" ?
                     <div>
-                    <Image className={styles.imagecomming}src={image} width={250} height={310} />
                     <Image src={"/images/createcard/communCard2.png"} width={240} height={300} />
                     </div>
                     :
+                    (image && typeof image === 'object' ? (
+                        <Image
+                          className={styles.imagecomming}
+                          src={URL.createObjectURL(image)}
+                          width={250}
+                          height={310}
+                        />
+                      ) : 
                      (rarity == "Comum" && elixir == "3" ?
                      <div>
-                     <Image className={styles.imagecomming}src={image} width={250} height={310} />
+                         {image && typeof image === 'object' ? (
+                     <Image
+                       className={styles.imagecomming}
+                       src={URL.createObjectURL(image)}
+                       width={250}
+                       height={310}
+                     />
+                   ) : null}
                      <Image src={"/images/createcard/communCard3.png"} width={240} height={300} />
                      </div>
                      :
                      (rarity == "Comum" && elixir == "4" ?
                      <div>
-                     <Image className={styles.imagecomming}src={image} width={250} height={310} />
+                         {image && typeof image === 'object' ? (
+                     <Image
+                       className={styles.imagecomming}
+                       src={URL.createObjectURL(image)}
+                       width={250}
+                       height={310}
+                     />
+                   ) : null}
                      <Image src={"/images/createcard/communCard4.png"} width={240} height={300} />
                     </div>
                      :
                      (rarity == "Comum" && elixir == "5" ?
                      <div>
-                    <Image className={styles.imagecomming}src={image} width={250} height={310} />
+                         {image && typeof image === 'object' ? (
+                      <Image
+                        className={styles.imagecomming}
+                        src={URL.createObjectURL(image)}
+                        width={250}
+                        height={310}
+                      />
+                    ) : null}
                      <Image src={"/images/createcard/communCard5.png"} width={240} height={300} />
                      </div>
                      :
                         (rarity == "Comum" && elixir == "6" ?
                         <div>
-                             <Image className={styles.imagecomming}src={image} width={250} height={310} />
+                            {image && typeof image === 'object' ? (
+                <Image
+                  className={styles.imagecomming}
+                  src={URL.createObjectURL(image)}
+                  width={250}
+                  height={310}
+                />
+              ) : null}
                         <Image src={"/images/createcard/communCard6.png"} width={240} height={300} />
                         </div>
                         :
                         (rarity == "Comum" && elixir == "7" ?
                         <div>
-                        <Image className={styles.imagecomming}src={image} width={250} height={310} />
+                            {image && typeof image === 'object' ? (
+                     <Image
+                       className={styles.imagecomming}
+                       src={URL.createObjectURL(image)}
+                       width={250}
+                       height={310}
+                     />
+                   ) : null}
                         <Image src={"/images/createcard/communCard7.png"} width={240} height={300} />
                         </div>
                         :
                         (rarity == "Comum" && elixir == "8" ?
                         <div>
-                        <Image className={styles.imagecomming}src={image} width={250} height={310} />
+                            {image && typeof image === 'object' ? (
+                     <Image
+                       className={styles.imagecomming}
+                       src={URL.createObjectURL(image)}
+                       width={250}
+                       height={310}
+                     />
+                   ) : null}
                         <Image src={"/images/createcard/communCard8.png"} width={240} height={300} />
                         </div>
                         :
                         (rarity == "Comum" && elixir == "9" ?
                         <div>
-                        <Image className={styles.imagecomming}src={image} width={250} height={310} />
+                            {image && typeof image === 'object' ? (
+                     <Image
+                       className={styles.imagecomming}
+                       src={URL.createObjectURL(image)}
+                       width={250}
+                       height={310}
+                     />
+                   ) : null}
                         <Image src={"/images/createcard/communCard9.png"} width={240} height={300} />
                         </div>
                         :
@@ -222,7 +259,7 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                          <Image src={image} width={250} height={310} />
                         :
                         null
-                        )))))))))))))))))))))))))))))))))))))))))))))))))
+                        )))))))))))))))))))))))))))))))))))))))))))))))))))
                         }                      
                            
                 </div>
