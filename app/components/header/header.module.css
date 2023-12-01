@@ -2,19 +2,38 @@
     font-family: clash-font;
     width: 100%;
     height: 15%;
-    background-color: rgb(8, 3, 57);
+    background-color: #06245c;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
 }
 
-.icones{
+.container1{
+    width: 30%;
     display: flex;
+    font-size: 12px;
+    justify-content: start;
 }
 
 .title{
     color: white;
-    font-size: 25px;
-    margin-top: 1.8%;
 }
 
-.imagemain{
-    margin-top: 1.3%;
+.container2{
+    width: 70%;
+    display: flex;
+    justify-content: end;
+}
+
+.shortcut1{
+    
+}
+
+.contact{
+    font-size: 12px;
+}
+
+.a{
+    text-decoration: none;
 }
