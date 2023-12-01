@@ -1,0 +1,80 @@
+
+.CardInfo{
+    background-image: url("/images/infobg.png");
+    height: 75rem;
+    min-width: 60rem;
+    max-width: fit-content;
+    background-size: cover;	
+    margin: auto;
+    margin-top: 10rem;
+}
+.cardName{
+    text-align: center;
+    font-size: 1.5rem;
+    padding-top: 2rem;
+    font-weight: bold;
+    color: #fff;
+}
+.containerImage{
+    margin: 1rem;
+}
+.communtropa{
+    display: flex;
+    flex-direction: column;
+    margin-right: 1rem;
+}
+.communfeitico{
+    display: flex;
+    flex-direction: column;
+}
+.communconstrucao{
+    display: flex;
+    flex-direction: column;
+}
+.rarotropa{
+    display: flex;
+    flex-direction: column;
+}
+.rarofeitico{
+    display: flex;
+    flex-direction: column;
+}
+.raroconstrucao{
+    display: flex;
+    flex-direction: column;
+}
+
+.epicotropa{
+    display: flex;
+    flex-direction: column;
+}
+.epicofeitico{
+    display: flex;
+    flex-direction: column;
+}
+.epicoconstrucao{
+    display: flex;
+    flex-direction: column;
+}
+.lendariotropa{
+    display: flex;
+    flex-direction: column;
+}
+.lendariofeitico{
+    display: flex;
+    flex-direction: column;
+}
+.lendarioconstrucao{
+    display: flex;
+    flex-direction: column;
+}
+.desc{
+    width: 30rem;
+    max-width: 50rem;
+}
+    .containerCards{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 5rem;
+    }

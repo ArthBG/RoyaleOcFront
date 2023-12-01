@@ -6,6 +6,11 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: "clash-font";
     box-sizing: border-box;
     scroll-behavior: smooth;
+  }
+
+  button{
+    cursor: pointer;
   }
