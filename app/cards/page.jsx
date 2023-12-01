@@ -29,8 +29,25 @@ function cardspage() {
         }
         fetchData();
     }, []);
-    console.log(cardsData);
 
+    useEffect(() => {
+        const filtered = filterCards();
+        const searched = handleSearch();
+
+        if(searched.length > 0) {
+            setCardsData(searched);
+        }
+        else if(filtered.length > 0) {
+            setCardsData(filtered);
+        }
+        else if(allClean) {
+            setCardsData(cardsData);
+            setAllClean(false);
+        }
+    }
+    , [selectedRarity, selectedType, selectedElixir, search, cardsData]);
+
+    console.log(cardsData);
     const filterCards = (cardsData) => {
         let filtered = cardsData;
 
@@ -38,6 +55,7 @@ function cardspage() {
             filtered = filtered.filter((card) => {
                 return card.rarity.includes(selectedRarity);
             })
+        }
 
          
         if(selectedType !== "all") {
@@ -51,9 +69,17 @@ function cardspage() {
                 return card.elixirCost == selectedElixir;
             })
 
-        return filtered;    
+        return filtered;   
+        }
     }
 
+    const handleSearch = () => {
+        const filteredGames = filterCards();
+        const filtered = filteredGames.filter((card) => {
+            return card.name.toLowerCase().includes(search.toLowerCase());
+        })
+        return filtered;
+    }
 
     
 
@@ -150,4 +176,4 @@ function cardspage() {
     )
 }
 
-export default cardspage
+export default cardspage;
