@@ -121,7 +121,7 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                         :
                         (rarity == "Comum" && elixir == "9" ?
                         <div>
-                            {image && typeof image === 'object' ? (
+                    {image && typeof image === 'object' ? (
                      <Image
                        className={styles.imagecomming}
                        src={URL.createObjectURL(image)}
