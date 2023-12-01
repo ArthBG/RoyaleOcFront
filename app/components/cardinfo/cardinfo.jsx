@@ -1,9 +1,7 @@
 import Image from "next/image"
 import styles from "./cardinfo.module.css";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 export default function CardInfo({ name, image, type, rarity, elixir, hp, deploytime, shieldhp, description, damage, damagepersecond, rangeddamage, damageondistance, damageonarea, damageonimpact, damageontower, chargedamage, damageondeath, spawnspeed, duration, radius, width, efecttime, freezetime, unities, arena, target, projectilerange, range, speed, impactspeed, id, level }) {
-    const router = useRouter();
     return (
         <div className={styles.CardInfo} >
             <Link href={`/cardsdetail/${id}`}>
