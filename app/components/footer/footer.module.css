@@ -1,28 +1,69 @@
-.customFooter {
-  background-color: rgb(238, 238, 238);
-  color: black;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: Arial, sans-serif;
-}
-
-.footerContainer {
+.rodape {
+  background-color: #f36e20;
+  color: white;
+  height: auto;
   width: 100%;
-  max-width: 1140px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footerLink {
-  color: rgb(171, 171, 171);
-  text-decoration: none;
   font-size: 14px;
+  font-family: helvetica;
 }
 
-.footerLink:hover {
-  text-decoration: underline;
+.rodape a {
+  text-decoration: none;
+  color: white;
+}
+
+.link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.rodape p {
+  margin-bottom: 5px;
+}
+
+.rodapediv {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: auto;
+  align-items: stretch;
+  padding: 60px 10px 40px 10px;
+}
+
+.rodapediv1,
+.rodapediv2,
+.rodapediv3,
+.rodapediv4 {
+  display: flex;
+  width: calc(100% / 4 - 20px);
+  padding: 10px;
+}
+
+.rodape span {
+  font-size: 20px;
+  color: white;
+}
+
+.rodapedireitos {
+  width: calc(100% - 20px);
+  background-color: black;
+  padding: 10px;
+  margin: 0px;
+  text-align: center;
+}
+
+/*mobile*/
+@media (max-width: 768px) {
+
+  .rodapediv1,
+  .rodapediv2,
+  .rodapediv3,
+  .rodapediv4 {
+    width: calc(50% - 20px);
+    padding: 10px;
+  }
+
+  .rodapediv {
+    padding: 60px 0px 40px 0px;
+  }
 }
