@@ -13,6 +13,20 @@ export default function Page() {
     const [dados, setDados] = useState({});
     const router = useRouter();
 
+    // Função para deletar um membro.
+    const deletar = async (id) => {
+        const url = `/api/membros/${id}`;
+        try {
+            await axios.delete(url);
+            setDados(dados.filter((membro) => membro.id !== id));
+        } catch (error) {
+            console.error("Error deleting membro", error);
+        }
+    };
+    const update = async (id) => {
+        router.push(`/membros/${id}`);
+    };
+
     useEffect(() => {
         async function fetchMembros() {
             try {
@@ -64,12 +78,20 @@ export default function Page() {
                                         <strong>Cargo:</strong> {membro.cargo}
                                     </p>
                                     <p className={styles.infos}>
-                                        <strong>Foto:</strong> 
+                                        <strong>Foto:</strong>
                                         <img src={membro.foto} width={200} height={200} />
                                     </p>
                                     <p className={styles.infos}>
                                         <strong>Descrição:</strong> {membro.descricao}
                                     </p>
+                                </div>
+                                <div>
+                                    <button onClick={() => deletar(membro.id)}>
+                                        deletar
+                                    </button>
+                                    <button onClick={() => update(membro.id)}>
+                                        editar
+                                    </button>
                                 </div>
                             </div>
                         ))}
