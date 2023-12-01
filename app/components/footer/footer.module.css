@@ -1,5 +1,7 @@
 .rodape {
-  background-color: #f36e20;
+  position: fixed;
+  bottom: 0;
+  background-color: #244d97;
   color: white;
   height: auto;
   width: 100%;
@@ -25,7 +27,6 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  margin: auto;
   align-items: stretch;
   padding: 60px 10px 40px 10px;
 }
@@ -45,16 +46,14 @@
 }
 
 .rodapedireitos {
-  width: calc(100% - 20px);
   background-color: black;
-  padding: 10px;
-  margin: 0px;
+  padding: 20px;
+  margin: 0;
   text-align: center;
 }
 
 /*mobile*/
 @media (max-width: 768px) {
-
   .rodapediv1,
   .rodapediv2,
   .rodapediv3,
