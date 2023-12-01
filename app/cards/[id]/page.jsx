@@ -241,21 +241,21 @@ export default function updateCard({ params }) {
           onChange={e => setLevel(e.target.value)}
         >
           <option value="">Selecione o nível</option>
-          <option value="1">Nível 1</option>
-          <option value="2">Nível 2</option>
-          <option value="3">Nível 3</option>
-          <option value="4">Nível 4</option>
-          <option value="5">Nível 5</option>
-          <option value="6">Nível 6</option>
-          <option value="7">Nível 7</option>
-          <option value="8">Nível 8</option>
-          <option value="9">Nível 9</option>
-          <option value="10">Nível 10</option>
-          <option value="11">Nível 11</option>
-          <option value="12">Nível 12</option>
-          <option value="13">Nível 13</option>
-          <option value="14">Nível 14</option>
-          <option value="15">Nível 15</option>
+          <option value={1}>Nível 1</option>
+          <option value={2}>Nível 2</option>
+          <option value={3}>Nível 3</option>
+          <option value={4}>Nível 4</option>
+          <option value={5}>Nível 5</option>
+          <option value={6}>Nível 6</option>
+          <option value={7}>Nível 7</option>
+          <option value={8}>Nível 8</option>
+          <option value={9}>Nível 9</option>
+          <option value={10}>Nível 10</option>
+          <option value={11}>Nível 11</option>
+          <option value={12}>Nível 12</option>
+          <option value={13}>Nível 13</option>
+          <option value={14}>Nível 14</option>
+          <option value={15}>Nível 15</option>
         </select>
 
         <select className={styles.select}
@@ -285,16 +285,16 @@ export default function updateCard({ params }) {
           onChange={e => setElixir(e.target.value)}
         >
           <option value="">Selecione a quantidade de elixir</option>
-          <option value="1">1 Elixir</option>
-          <option value="2">2 Elixir</option>
-          <option value="3">3 Elixir</option>
-          <option value="4">4 Elixir</option>
-          <option value="5">5 Elixir</option>
-          <option value="6">6 Elixir</option>
-          <option value="7">7 Elixir</option>
-          <option value="8">8 Elixir</option>
-          <option value="9">9 Elixir</option>
-          <option value="10">10 Elixir</option>
+          <option value={1}>1 Elixir</option>
+          <option value={2}>2 Elixir</option>
+          <option value={3}>3 Elixir</option>
+          <option value={4}>4 Elixir</option>
+          <option value={5}>5 Elixir</option>
+          <option value={6}>6 Elixir</option>
+          <option value={7}>7 Elixir</option>
+          <option value={8}>8 Elixir</option>
+          <option value={9}>9 Elixir</option>
+          <option value={10}>10 Elixir</option>
         </select>
         {hp ? <input className={styles.input} type="number" placeholder="Pontos de vida" value={hp} onChange={e => setHp(e.target.value)} /> : null}
         {deploytime ? <input className={styles.input} type="number" placeholder="Tempo de implantação" value={deploytime} onChange={e => setDeploytime(e.target.value)} /> : null}
