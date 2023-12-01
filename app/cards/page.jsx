@@ -31,37 +31,54 @@ function cardspage() {
     }, [allClean]);
     console.log(cardsData);
 
-    useEffect(() => {
-        filterCards();
-    }, [selectedRarity, selectedType, selectedElixir, search]);
-
-    const filterCards = () => {
-        let filtering = cardsData.filter((card) => {
-            if (selectedRarity !== "all") {
-                return card.rarity == selectedRarity;
-            }
-            if (selectedType !== "all") {
-                return card.type == selectedType;
-            }
-            if (selectedElixir !== "all") {
-                return card.elixir.toString() == selectedElixir;
-            }
-        }
-        );
-        handleSearch();
-        return filtering;
-    }
-    
-    
-
     const handleSearch = () => {
-        let filtering = cardsData?.filter((card) => {
-            if (search !== "") {
-                return card.name?.toLowerCase().includes(search.toLowerCase());
-            }
-        });
-        return filtering;
+        if (search !== "") {
+            setCardsData(cardsData.filter((card) => card.name.toLowerCase().includes(search.toLowerCase())));
+        }
     }
+
+    useEffect(() => {
+        if (search === "") {
+            setAllClean(true);
+        }
+    }
+    , [search]);
+
+    useEffect(() => {
+        if (selectedRarity === "all" && selectedType === "all" && selectedElixir === "all") {
+            setAllClean(true);
+        }
+    }
+    , [selectedRarity, selectedType, selectedElixir]);
+
+    useEffect(() => {
+        if (selectedRarity !== "all") {
+            setCardsData(cardsData.filter((card) => card.rarity === selectedRarity));
+        }
+    }
+    , [selectedRarity]);
+
+    useEffect(() => {
+        if (selectedType !== "all") {
+            setCardsData(cardsData.filter((card) => card.type === selectedType));
+        }
+    }
+    , [selectedType]);
+
+    useEffect(() => {
+        if (selectedElixir !== "all") {
+            setCardsData(cardsData.filter((card) => card.elixir === selectedElixir));
+        }
+    }
+    , [selectedElixir]);
+
+    useEffect(() => {
+        if (allClean) {
+            setAllClean(false);
+        }
+    }
+    , [allClean]);  
+    
 
     const clearFilters = () => {
         setSelectedRarity("all");
@@ -125,29 +142,7 @@ function cardspage() {
                 <button className={style.scbtnred} onClick={clearFilters}>Redefinir Filtros</button>
                 </div>
             <div className={style.containerCard}>
-                { filterCards().length > 0 ?  filterCards().map((card) => (
-                    <div key={card.id} >
-                         <Link className={style.linkremove} href={`/cardsdetail/${card.id}`}>
-                     <div className={style.card}>       
-                     <div className={style.containerButtons}>
-                      <div className={style.containerS}>
-                        <button className={style.buttonEdit}>
-                         <img src={"/images/info.png"} width={31} height={29}  onClick={() => editCard(card.id)}/>
-                         </button>
-                         <button className={style.buttonDelete}>
-                         <img src={"/images/excluir.png"}  width={34} height={30} onClick={() => deleteCard(card.id)}/>
-                         </button>
-                     </div>    
-                     </div>  
-                     <div className={style.containerImage}> 
-                     <img src={card.image} width={110} height={125}/>
-                     </div>
-                      <p className={style.cardName}>{card.name}</p>
-                    
-                 </div>
-                </Link>
-                 </div>     
-                )) : cardsData.map((card) => (
+                { cardsData.map((card) => (
                     <div key={card.id} >
                         <Link className={style.linkremove} href={`/cardsdetail/${card.id}`}>
                     <div className={style.card}>       
