@@ -1,12 +1,21 @@
 .rodape {
   position: fixed;
   bottom: 0;
-  background-color: #244d97;
+  background-color: #06245c;
   color: white;
   height: auto;
   width: 100%;
-  font-size: 14px;
+  font-size: 11px;
   font-family: helvetica;
+}
+
+.hovercarta {
+  cursor: pointer;
+}
+
+.titulos {
+  font-family: clash-font;
+  font-size: 16px;
 }
 
 .rodape a {
@@ -19,40 +28,60 @@
   text-decoration: none;
 }
 
+.home {
+  color: white;
+  font-size: 11px;
+  font-family: helvetica;
+}
+
+.home:hover {
+  color: white;
+  font-size: 13px;
+  font-family: helvetica;
+  transition: 1s;
+}
+
 .rodape p {
   margin-bottom: 5px;
 }
 
 .rodapediv {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  align-items: stretch;
-  padding: 60px 10px 40px 10px;
-}
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: stretch;
+    padding: 20px 10px;
+  }
 
-.rodapediv1,
-.rodapediv2,
-.rodapediv3,
-.rodapediv4 {
-  display: flex;
-  width: calc(100% / 4 - 20px);
-  padding: 10px;
-}
+  .rodapediv1,
+  .rodapediv2,
+  .rodapediv3,
+  .rodapediv4 {
+    display: flex;
+    width: calc(100% / 4 - 20px);
+    padding: 10px;
+  }
 
 .rodape span {
   font-size: 20px;
   color: white;
 }
 
+
 .rodapedireitos {
-  background-color: black;
+  background-color: rgb(8, 3, 57);
   padding: 20px;
-  margin: 0;
   text-align: center;
 }
 
-/*mobile*/
+.linktree {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  color: #fff;
+}
+
 @media (max-width: 768px) {
   .rodapediv1,
   .rodapediv2,
@@ -63,6 +92,10 @@
   }
 
   .rodapediv {
-    padding: 60px 0px 40px 0px;
+    padding: 40px 0; /* Reduzi o valor de 60px para 40px no topo */
+  }
+
+  .rodapedireitos {
+    padding: 10px; /* Ajuste no padding para manter o equilíbrio visual */
   }
 }
