@@ -93,10 +93,10 @@
   }
 
   .rodapediv {
-    padding: 40px 0; /* Reduzi o valor de 60px para 40px no topo */
+    padding: 40px 0; 
   }
 
   .rodapedireitos {
-    padding: 10px; /* Ajuste no padding para manter o equilíbrio visual */
+    padding: 10px; 
   }
 }
