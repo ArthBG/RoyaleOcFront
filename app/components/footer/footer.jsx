@@ -18,8 +18,7 @@ export const Footer = () => {
                     <div className={styles.rodapediv2}>
                         <div className={styles.rodapediv2coluna}>
                             <span><strong className={styles.titulos}>Contato</strong></span>
-                            <p>Entre em contato com nossa equipe:</p>
-                            <p className={styles.hovercarta}><Link href={'/contato.jsx'}><Image src={'/images/cartasclash.png'} width={45} height={45}></Image></Link></p>
+                            <p className={styles.home}>Entre em contato com nossa equipe:</p>
                         </div>
                     </div>
 
