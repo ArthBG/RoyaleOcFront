@@ -56,8 +56,18 @@
 .containerButtons{
     display: flex;
 }
+.buttonEdit{
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
 .buttonEdit:hover{
     cursor: pointer;
+}
+.buttonDelete{
+    background-color: transparent;
+    border: none;
+    outline: none;
 }
 .buttonDelete:hover{
     cursor: pointer;
