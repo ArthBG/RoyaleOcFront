@@ -71,6 +71,7 @@ export default function UpdateMembro({ params }) {
                                 type="text"
                                 value={nome}
                                 onChange={(e) => setNome(e.target.value)}
+                                required
                             />
                         </div>
                         <div className={styles.divInputs}>
@@ -81,6 +82,7 @@ export default function UpdateMembro({ params }) {
                                 type="text"
                                 value={idade}
                                 onChange={(e) => setIdade(e.target.value)}
+                                required
                             />
                         </div>
                         <div className={styles.divInputs}>
@@ -91,6 +93,7 @@ export default function UpdateMembro({ params }) {
                                 type="text"
                                 value={cargo}
                                 onChange={(e) => setCargo(e.target.value)}
+                                required
                             />
                         </div>
                         <div className={styles.divInputs}>
@@ -102,6 +105,7 @@ export default function UpdateMembro({ params }) {
                                 type="text"
                                 value={foto}
                                 onChange={(e) => setFoto(e.target.value)}
+                                required
                             />
                         </div>
                         <div className={styles.divInputs}>
@@ -112,6 +116,7 @@ export default function UpdateMembro({ params }) {
                                 type="text"
                                 value={descricao}
                                 onChange={(e) => setDescricao(e.target.value)}
+                                required
                             />
                         </div>
                         <button type="submit">Atualizar
