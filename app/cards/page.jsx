@@ -14,6 +14,7 @@ function cardspage() {
     const [selectedRarity, setSelectedRarity] = useState("all");
     const [selectedType, setSelectedType] = useState("all");
     const [selectedElixir, setSelectedElixir] = useState("all");
+    const [allClean, setAllClean] = useState(false);
     const router = useRouter();
     
     useEffect(() => {
@@ -26,7 +27,7 @@ function cardspage() {
             }
         }
         fetchData();
-    }, []);
+    }, [allClean]);
     console.log(cardsData);
 
     useEffect(() => {
@@ -62,10 +63,11 @@ function cardspage() {
     }
 
     const clearFilters = () => {
-        setSelectedRarity("");
-        setSelectedType("");
-        setSelectedElixir("");
+        setSelectedRarity("all");
+        setSelectedType("all");
+        setSelectedElixir("all");
         setSearch("");
+        setAllClean(true);
     }
 
     const editCard = (id) => {
