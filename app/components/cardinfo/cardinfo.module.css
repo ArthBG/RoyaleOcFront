@@ -3,7 +3,7 @@
     background-image: url("/images/infobg.png");
     height: 75rem;
     min-width: 60rem;
-    max-width: fit-content;
+    max-width: 75rem;
     background-size: cover;	
     margin: auto;
     margin-top: 10rem;
@@ -93,4 +93,8 @@
         flex-direction: row;
         justify-content: space-around;
         margin-top: 5rem;
+    }
+    .atributesCondition{
+        display: flex;
+        flex-wrap: wrap;
     }

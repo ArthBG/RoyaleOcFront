@@ -540,14 +540,6 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                     </div> : null
                 }
                 {
-                    arena ? <div className={styles.arena}>
-                        <Image src={"/images/arena.png"} width={60} height={60} />
-                        <div className={styles.desc}>
-                            {arena}
-                        </div>
-                    </div> : null
-                }
-                {
                     target ? <div className={styles.target}>
                         <Image src={"/images/target.png"} width={60} height={60} />
                         <div className={styles.desc}>
