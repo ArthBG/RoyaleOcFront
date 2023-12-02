@@ -143,10 +143,10 @@ export default function updateCard({ params }) {
             }
     }
 
-    const handleFileChange = (e) => {
-      const selectedFile = e.target.files[0];
-      setImage(selectedFile);
-    };
+    const handleImage = (e) => {
+      const file = e.target.files[0]
+      setImage(URL.createObjectURL(file))
+    }
     
     const AtributesModal = () => {
         ModalAtributes({ type })
@@ -257,7 +257,7 @@ export default function updateCard({ params }) {
         {speed ? <input className={styles.input} type="text" placeholder="Velocidade" value={speed} onChange={e => setSpeed(e.target.value)} /> : null}
         {impactspeed ? <input className={styles.input} type="text" placeholder="Velocidade de impacto" value={impactspeed} onChange={e => setImpactspeed(e.target.value)} /> : null}
         <label className={styles.label} htmlFor="file">Selecione uma imagem</label>
-        <input type="file" onChange={handleFileChange} className={styles.file} />
+        <input className={styles.file} type="file" id="file" onChange={handleImage} />
         <textarea className={styles.input} placeholder="Descrição da carta" value={description} onChange={e => setDescription(e.target.value)} />
         <button className={styles.scbtnyellow} onClick={AtributesModal}>Adicionar atributos</button>
         <button className={styles.scbtnyellow} onClick={handleSubmit}>Criar</button>
