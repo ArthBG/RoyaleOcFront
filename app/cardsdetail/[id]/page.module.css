@@ -1,4 +1,4 @@
-.container{
+ .container{
     background-image: url("../../../public/images/fundoazul.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -6,6 +6,36 @@
     background-attachment: fixed;
     height: 100%;
     color: white;
-
-
 }
+ 
+ .infosCartas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Styles for card name */
+.info {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+
+
+/* Responsive styles using media queries */
+@media only screen and (min-width: 600px) {
+    .infosCartas {
+        justify-content: space-between;
+    }
+
+    .info {
+        width: 48%; /* Adjust width for better spacing on larger screens */
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .info {
+        width: 30%; /* Adjust width for better spacing on larger screens */
+    }
+}
+
