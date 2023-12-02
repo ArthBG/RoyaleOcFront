@@ -170,6 +170,7 @@ export default function updateCard({ params }) {
         </div>
         <div style={{ display: showInput ? 'block' : 'none'}} value={showInput} >
         <div className={styles.conatainerInputs}>
+        <button className={styles.scbtnyellow} onClick={() => router.push(`/cards`)}>Voltar</button>
         <input className={styles.input} type="text" maxLength={30} placeholder="Nome da sua carta" value={name} onChange={e => setName(e.target.value)} />
         <select className={styles.select}
           value={level}
