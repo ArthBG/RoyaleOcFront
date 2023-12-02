@@ -391,191 +391,311 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
             <div className={styles.atributesCondition}>
                 {hp ? <div className={styles.hp}>
                     <Image src={"/images/hp.png"} width={60} height={60} />
-                    <div className={styles.desc}>
+                    <div className={styles.desc2}>
+                        <h1 className={styles.atributesP}>
+                            Pontos de vida
+                        </h1>
+                        <h1 className={styles.atributesNames}>
                         {hp}
+                        </h1>
                     </div>
                 </div> : null}
                 {
                     deploytime ? <div className={styles.deploytime}>
                         <Image src={"/images/deploytime.png"} width={60} height={60} />
-                        <div className={styles.desc}>
+                        <div className={styles.desc2}>
+                        <h1 className={styles.atributesP}>
+                            Tempo de mobilização
+                        </h1>
+                            <h1 className={styles.atributesNames}>
                             {deploytime}
+                            </h1>
                         </div>
                     </div> : null
                 }
                 {
                     shieldhp ? <div className={styles.shieldhp}>
                         <Image src={"/images/shieldhp.png"} width={60} height={60} />
-                        <div className={styles.desc}>
+                        <div className={styles.desc2}>
+                        <h1 className={styles.atributesP}>
+                            Vida do escudo
+                        </h1>
+                            <h1 className={styles.atributesNames}>
                             {shieldhp}
+                            </h1>
                         </div>
                     </div> : null
                 }
                 {
                     damage ? <div className={styles.damage}>
                         <Image src={"/images/damage.png"} width={60} height={60} />
-                        <div className={styles.desc}>
+                        <div className={styles.desc2}>
+                        <h1 className={styles.atributesP}>
+                            Dano
+                        </h1>
+                            <h1 className={styles.atributesNames}>
                             {damage}
+                            </h1>
                         </div>
                     </div> : null
                 }
                 {
                     damagepersecond ? <div className={styles.damagepersecond}>
                         <Image src={"/images/damagepersecond.png"} width={60} height={60} />
-                        <div className={styles.desc}>
+                        <div className={styles.desc2}>
+                        <h1 className={styles.atributesP}>
+                            Dano por segundo
+                        </h1>
+                            <h1 className={styles.atributesNames}>
                             {damagepersecond}
+                            </h1>
                         </div>
                     </div> : null
                 }
                 {
                     rangeddamage ? <div className={styles.rangeddamage}>
                         <Image src={"/images/rangeddamage.png"} width={60} height={60} />
-                        <div className={styles.desc}>
+                        <div className={styles.desc2}>
+                        <h1 className={styles.atributesP}>
+                            Dano a distância
+                        </h1>
+                            <h1 className={styles.atributesNames}>
                             {rangeddamage}
+                            </h1>
                         </div>
                     </div> : null
                 }
                 {
                     damageondistance ? <div className={styles.damageondistance}>
                         <Image src={"/images/damageondistance.png"} width={60} height={60} />
-                        <div className={styles.desc}>
+                        <div className={styles.desc2}>
+                        <h1 className={styles.atributesP}>
+                            Dano a distância
+                        </h1>
+                            <h1 className={styles.atributesNames}>
                             {damageondistance}
+                            </h1>
                         </div>
                     </div> : null
                 }
                 {
                     damageonarea ? <div className={styles.damageonarea}>
                         <Image src={"/images/damageonarea.png"} width={60} height={60} />
-                        <div className={styles.desc}>
+                        <div className={styles.desc2}>
+                        <h1 className={styles.atributesP}>
+                            Dano em área
+                        </h1>
+                            <h1 className={styles.atributesNames}>
                             {damageonarea}
+                            </h1>
                         </div>
                     </div> : null
                 }
                 {
                     damageonimpact ? <div className={styles.damageonimpact}>
                         <Image src={"/images/damageonimpact.png"} width={60} height={60} />
-                        <div className={styles.desc}>
+                        <div className={styles.desc2}>
+                        <h1 className={styles.atributesP}>
+                            Dano no impacto
+                        </h1>
+                            <h1 className={styles.atributesNames}>
                             {damageonimpact}
+                            </h1>
                         </div>
                     </div> : null
                 }
                 {
                     damageontower ? <div className={styles.damageontower}>
                         <Image src={"/images/damageontower.png"} width={60} height={60} />
-                        <div className={styles.desc}>
+                        <div className={styles.desc2}>
+                        <h1 className={styles.atributesP}>
+                            Dano a torre
+                        </h1>
+                            <h1 className={styles.atributesNames}>
                             {damageontower}
+                            </h1>
                         </div>
                     </div> : null
                 }
                 {
                     chargedamage ? <div className={styles.chargedamage}>
                         <Image src={"/images/chargedamage.png"} width={60} height={60} />
-                        <div className={styles.desc}>
+                        <div className={styles.desc2}>
+                        <h1 className={styles.atributesP}>
+                            Dano carregado
+                        </h1>
+                            <h1 className={styles.atributesNames}>
                             {chargedamage}
+                            </h1>
                         </div>
                     </div> : null
                 }
                 {
                     damageondeath ? <div className={styles.damageondeath}>
                         <Image src={"/images/damageondeath.png"} width={60} height={60} />
-                        <div className={styles.desc}>
+                        <div className={styles.desc2}>
+                        <h1 className={styles.atributesP}>
+                        Dano na morte
+                        </h1>
+                            <h1 className={styles.atributesNames}>
                             {damageondeath}
+                            </h1>
                         </div>
                     </div> : null
                 }
                 {
                     spawnspeed ? <div className={styles.spawnspeed}>
                         <Image src={"/images/spawnspeed.png"} width={60} height={60} />
-                        <div className={styles.desc}>
+                        <div className={styles.desc2}>
+                        <h1 className={styles.atributesP}>
+                        Tempo de mobilização    
+                        </h1>
+                            <h1 className={styles.atributesNames}>
                             {spawnspeed}
+                            </h1>
                         </div>
                     </div> : null
                 }
                 {
                     duration ? <div className={styles.duration}>
                         <Image src={"/images/duration.png"} width={60} height={60} />
-                        <div className={styles.desc}>
+                        <div className={styles.desc2}>
+                        <h1 className={styles.atributesP}>
+                        Duração
+                        </h1>
+                            <h1 className={styles.atributesNames}>
                             {duration}
+                            </h1>
                         </div>
                     </div> : null
                 }
                 {
                     radius ? <div className={styles.radius}>
                         <Image src={"/images/radius.png"} width={60} height={60} />
-                        <div className={styles.desc}>
+                        <div className={styles.desc2}>
+                        <h1 className={styles.atributesP}>
+                        Raio
+                        </h1>
+                            <h1 className={styles.atributesNames}>
                             {radius}
+                            </h1>
                         </div>
                     </div> : null
                 }
                 {
                     width ? <div className={styles.width}>
                         <Image src={"/images/width.png"} width={60} height={60} />
-                        <div className={styles.desc}>
+                        <div className={styles.desc2}>
+                        <h1 className={styles.atributesP}>
+                        Largura
+                        </h1>
+                            <h1 className={styles.atributesNames}>
                             {width}
+                            </h1>
                         </div>
                     </div> : null
                 }
                 {
                     efecttime ? <div className={styles.efecttime}>
                         <Image src={"/images/efecttime.png"} width={60} height={60} />
-                        <div className={styles.desc}>
+                        <div className={styles.desc2}>
+                        <h1 className={styles.atributesP}>
+                        Tempo de efeito
+                        </h1>
+                            <h1 className={styles.atributesNames}>
                             {efecttime}
+                            </h1>
                         </div>
                     </div> : null
                 }
                 {
                     freezetime ? <div className={styles.freezetime}>
                         <Image src={"/images/freezetime.png"} width={60} height={60} />
-                        <div className={styles.desc}>
+                        <div className={styles.desc2}>
+                        <h1 className={styles.atributesP}>
+                        Tempo de congelamento
+                        </h1>
+                            <h1 className={styles.atributesNames}>
                             {freezetime}
+                            </h1>
                         </div>
                     </div> : null
                 }
                 {
                     unities ? <div className={styles.unities}>
                         <Image src={"/images/unities.png"} width={60} height={60} />
-                        <div className={styles.desc}>
+                        <div className={styles.desc2}>
+                        <h1 className={styles.atributesP}>
+                        Unidades
+                        </h1>
+                            <h1 className={styles.atributesNames}>
                             {unities}
+                            </h1>
                         </div>
                     </div> : null
                 }
                 {
                     target ? <div className={styles.target}>
                         <Image src={"/images/target.png"} width={60} height={60} />
-                        <div className={styles.desc}>
+                        <div className={styles.desc2}>
+                        <h1 className={styles.atributesP}>
+                        Alvos
+                        </h1>
+                            <h1 className={styles.atributesNames}>
                             {target}
+                            </h1>
                         </div>
                     </div> : null
                 }
                 {
                     projectilerange ? <div className={styles.projectilerange}>
                         <Image src={"/images/projectilerange.png"} width={60} height={60} />
-                        <div className={styles.desc}>
+                        <div className={styles.desc2}>
+                        <h1 className={styles.atributesP}>
+                        Alcance do projétil
+                        </h1>
+                            <h1 className={styles.atributesNames}>
                             {projectilerange}
+                            </h1>
                         </div>
                     </div> : null
                 }
                 {
                     range ? <div className={styles.range}>
                         <Image src={"/images/range.png"} width={60} height={60} />
-                        <div className={styles.desc}>
+                        <div className={styles.desc2}>
+                        <h1 className={styles.atributesP}>
+                        Alcance
+                        </h1>
+                            <h1 className={styles.atributesNames}>
                             {range}
+                            </h1>
                         </div>
                     </div> : null
                 }
                 {
                     speed ? <div className={styles.speed}>
                         <Image src={"/images/speed.png"} width={60} height={60} />
-                        <div className={styles.desc}>
+                        <div className={styles.desc2}>
+                        <h1 className={styles.atributesP}>
+                        Velocidade
+                        </h1>
+                            <h1 className={styles.atributesNames}>
                             {speed}
+                            </h1>
                         </div>
                     </div> : null
                 }
                 {
                     impactspeed ? <div className={styles.impactspeed}>
                         <Image src={"/images/impactspeed.png"} width={60} height={60} />
-                        <div className={styles.desc}>
+                        <div className={styles.desc2}>
+                        <h1 className={styles.atributesP}>
+                        Velocidade de impacto
+                        </h1>
+                            <h1 className={styles.atributesNames}>
                             {impactspeed}
+                            </h1>
                         </div>
                     </div> : null
                 }
