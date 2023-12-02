@@ -1,7 +1,7 @@
 
 .CardInfo{
     background-image: url("/images/infobg.png");
-    height: 55rem;
+    height: 100%;
     min-width: 30rem;
     max-width: 50rem;
     background-size: cover;	
@@ -86,7 +86,7 @@
 }
 .desc{
     width: 30rem;
-    max-width: 50rem;
+    max-width: 48rem;
 }
     .containerCards{
         display: flex;

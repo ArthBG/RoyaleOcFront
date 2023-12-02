@@ -14,7 +14,9 @@ export default function CardInfoedit({ name, image, type, rarity, elixir, hp, de
                     rarity == "Comum" && type == "Tropa" ?
                         <div className={styles.communtropa}>
                             <Image src={"/images/Comumtropa.png"} width={400} height={100} />
+                            <div className={styles.desc}>
                             {description}
+                            </div>
                         </div>
                         :
                         (rarity == "Comum" && type == "Feitiço" ?
