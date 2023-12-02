@@ -102,40 +102,40 @@ export default function updateCard({ params }) {
           const handleSubmit = async (e) => {
             e.preventDefault();
             try {
-              const formData = new FormData();
-              formData.append('name', name);
-              formData.append('image', image);
-              formData.append('type', type);
-              formData.append('rarity', rarity);
-              formData.append('elixir', elixir);
-              formData.append('hp', hp);
-              formData.append('deploytime', deploytime);
-              formData.append('shieldhp', shieldhp);
-              formData.append('description', description);
-              formData.append('damage', damage);
-              formData.append('damagepersecond', damagepersecond);
-              formData.append('rangeddamage', rangeddamage);
-              formData.append('damageondistance', damageondistance);
-              formData.append('damageonarea', damageonarea);
-              formData.append('damageonimpact', damageonimpact);
-              formData.append('damageontower', damageontower);
-              formData.append('chargedamage', chargedamage);
-              formData.append('damageondeath', damageondeath);
-              formData.append('spawnspeed', spawnspeed);
-              formData.append('duration', duration);
-              formData.append('radius', radius);
-              formData.append('width', width);
-              formData.append('efecttime', efecttime);
-              formData.append('freezetime', freezetime);
-              formData.append('unities', unities);
-              formData.append('arena', arena);
-              formData.append('target', target);
-              formData.append('projectilerange', projectilerange);
-              formData.append('range', range);
-              formData.append('speed', speed);
-              formData.append('impactspeed', impactspeed);
-              formData.append('level', level);
-              const response = await axios.put(`/api/cards/${id}`, formData);
+              const response = await axios.put(`/api/cards/${id}`, {
+                name,
+                image,
+                type,
+                rarity,
+                elixir,
+                hp,
+                deploytime,
+                shieldhp,
+                description,
+                damage,
+                damagepersecond,
+                rangeddamage,
+                damageondistance,
+                damageonarea,
+                damageonimpact,
+                damageontower,
+                chargedamage,
+                damageondeath,
+                spawnspeed,
+                duration,
+                radius,
+                width,
+                efecttime,
+                freezetime,
+                unities,
+                arena,
+                target,
+                projectilerange,
+                range,
+                speed,
+                impactspeed
+              }
+                );
               router.push(`/cards/${id}`);
               console.log(response);
             } catch (error) {
@@ -261,7 +261,7 @@ export default function updateCard({ params }) {
         <input className={styles.file} type="file" id="file" onChange={handleImage} />
         <textarea className={styles.input} placeholder="Descrição da carta" value={description} onChange={e => setDescription(e.target.value)} />
         <button className={styles.scbtnyellow} onClick={AtributesModal}>Adicionar atributos</button>
-        <button className={styles.scbtnyellow} onClick={handleSubmit}>Criar</button>
+        <button className={styles.scbtnyellow} onClick={handleSubmit}>Editar</button>
       </div>
       <div className={styles.containerCard}>
       <CardInfo
