@@ -6,6 +6,7 @@ import Image from 'next/image';
 import styles from '../createcard/page.module.css';
 import { useRouter } from 'next/navigation';
 import CardInfo from '@/app/components/cardinfo/cardinfo';
+import CardInfoedit from '@/app/components/cardinfoedit/cardinfoedit';
 // npm install react-icons --save
 
 export default function updateCard({ params }) {
@@ -264,7 +265,7 @@ export default function updateCard({ params }) {
         <button className={styles.scbtnyellow} onClick={handleSubmit}>Editar</button>
       </div>
       <div className={styles.containerCard}>
-      <CardInfo
+      <CardInfoedit
         name={name}
         image={image}
         type={type}

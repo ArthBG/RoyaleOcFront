@@ -114,6 +114,15 @@
     .atributesP{
         font-size: 14px;
     }
+    .cardImage{
+        margin-left: 2rem;
+    }
+    .cardTroop{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 1rem;
+    }
     .desc2{
         display: flex;
         flex-direction: column;
