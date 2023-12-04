@@ -23,6 +23,8 @@ function cardspage() {
     useEffect(() => {
         async function fetchData() {
             try {
+
+                console.log(search);
                 console.log(selectedRarity);
                 console.log(selectedType);
                 console.log(selectedElixir);
@@ -30,6 +32,9 @@ function cardspage() {
                 // Construa os parâmetros da URL com base nos valores definidos
                 let queryParams = '';
     
+                if (search) {
+                    queryParams += `name=${search}&`;
+                }
                 if (selectedRarity) {
                     queryParams += `rarity=${selectedRarity}&`;
                 }
@@ -47,7 +52,6 @@ function cardspage() {
                     queryParams = queryParams.slice(0, -1);
                 }
 
-                console.log("AAAAAAAAAAAAAAAAA");
                 console.log(queryParams);
     
                 const response = await axios.get(`/api/cards?${queryParams}`);
@@ -58,16 +62,11 @@ function cardspage() {
         }
     
         fetchData();
-    }, [selectedRarity, selectedType, selectedElixir]);
+    }, [selectedRarity, selectedType, selectedElixir, search]);
     
 
     console.log(cardsData);
 
-    const handleSearch = () => {
-        if (search !== "") {
-            setCardsData(cardsData.filter((card) => card.name.toLowerCase().includes(search.toLowerCase())));
-        }
-    }
 
 
 
@@ -100,7 +99,7 @@ function cardspage() {
             <div className={style.containerFilters}>
                 <div className={style.containerSearch}>
                     <input type="text" placeholder="Pesquisar Cartas" className={style.search} onChange={(e) => setSearch(e.target.value)} />
-                    <FiSearch className={style.icon} onClick={handleSearch} />
+                    <FiSearch className={style.icon}/>
                 </div>
                 <select className={style.select} onChange={(e) => setSelectedType(e.target.value)}>
                     <option value="">Tipo:</option>

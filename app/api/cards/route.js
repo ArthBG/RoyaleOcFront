@@ -11,14 +11,16 @@ export async function GET(request) {
     const rarity = searchParams.get("rarity")
     const elixir = searchParams.get("elixir")
     const type = searchParams.get("type")
-    console.log(rarity, elixir, type)
+    const name = searchParams.get("name")
+    console.log(rarity, elixir, type, name)
     
     try {
-        if(rarity || elixir || type){
-            const elixirCondition = elixir === undefined || elixir === null ? "" : `elixir=${elixir}`
+        if(name || rarity || elixir || type){
+            const nameCondition = name === undefined || name === null ? "" : `name=${name}`
+            const elixirCondition = elixir === undefined || elixir === null ? "" : `&elixir=${elixir}`
             const rarityCondition = rarity === undefined || rarity === null ? "" : `&rarity=${rarity}`
             const typeCondition = type === undefined || type === null ? "" : `&type=${type}`
-            const response = await axios.get(`${url}?${elixirCondition}${rarityCondition}${typeCondition}`);
+            const response = await axios.get(`${url}?${nameCondition}${elixirCondition}${rarityCondition}${typeCondition}`);
             return NextResponse.json(response.data);
         }else{
             const response = await axios.get(`${url}`);
