@@ -73,7 +73,7 @@ export default function ModalAtributes({ type }) {
           </Modal>
         </div>
       ) : (
-        type === "Construção" ? (
+        type == "Construção" ? (
           <div>
           <Button onClick={handleOpen}>Open modal</Button>
           <Modal
@@ -113,7 +113,7 @@ export default function ModalAtributes({ type }) {
           </Modal>
         </div>
       ) : (
-        type === "Feitiço" ? (
+        type == "Feitiço" ? (
           <div>
           <Button onClick={handleOpen}>Open modal</Button>
           <Modal
