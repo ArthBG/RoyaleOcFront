@@ -4,266 +4,271 @@ import Link from "next/link";
 export default function CardInfo({ name, image, type, rarity, elixir, hp, deploytime, shieldhp, description, damage, damagepersecond, rangeddamage, damageondistance, damageonarea, damageonimpact, damageontower, chargedamage, damageondeath, spawnspeed, duration, radius, width, efecttime, freezetime, unities, arena, target, projectilerange, range, speed, impactspeed, id, level }) {
     return (
         <div className={styles.CardInfo} >
-            
+
             <h1 className={styles.cardName}>{name} Nível {level}</h1>
             <div className={styles.containerCards}>
                 <div className={styles.containerImage}>
-                  
-                { image && typeof image == 'object' ? (
-                   <Image
-                     className={styles.imagecomming}
-                     src={URL.createObjectURL(image)}
-                     width={250}
-                     height={310}
-                   />
-                 ) : 
-                    rarity == "Comum" && elixir == "1" ?
-                    <div>
-                    <Image src={"/images/createcard/communCard1.png"} width={240} height={300} />
-                    </div>
-                    :
-                (image && typeof image === 'object' ? (
-                 <Image
-                   className={styles.imagecomming}
-                   src={URL.createObjectURL(image)}
-                   width={250}
-                   height={310}
-                 />
-               ) : 
-                    (rarity == "Comum" && elixir == "2" ?
-                    <div>
-                    <Image src={"/images/createcard/communCard2.png"} width={240} height={300} />
-                    </div>
-                    :
-                    (image && typeof image === 'object' ? (
-                        <Image
-                          className={styles.imagecomming}
-                          src={URL.createObjectURL(image)}
-                          width={250}
-                          height={310}
-                        />
-                      ) : 
-                     (rarity == "Comum" && elixir == "3" ?
-                     <div>
-                         {image && typeof image === 'object' ? (
-                     <Image
-                       className={styles.imagecomming}
-                       src={URL.createObjectURL(image)}
-                       width={250}
-                       height={310}
-                     />
-                   ) : null}
-                     <Image src={"/images/createcard/communCard3.png"} width={240} height={300} />
-                     </div>
-                     :
-                     (rarity == "Comum" && elixir == "4" ?
-                     <div>
-                         {image && typeof image === 'object' ? (
-                     <Image
-                       className={styles.imagecomming}
-                       src={URL.createObjectURL(image)}
-                       width={250}
-                       height={310}
-                     />
-                   ) : null}
-                     <Image src={"/images/createcard/communCard4.png"} width={240} height={300} />
-                    </div>
-                     :
-                     (rarity == "Comum" && elixir == "5" ?
-                     <div>
-                         {image && typeof image === 'object' ? (
-                      <Image
-                        className={styles.imagecomming}
-                        src={URL.createObjectURL(image)}
-                        width={250}
-                        height={310}
-                      />
-                    ) : null}
-                     <Image src={"/images/createcard/communCard5.png"} width={240} height={300} />
-                     </div>
-                     :
-                        (rarity == "Comum" && elixir == "6" ?
-                        <div>
-                            {image && typeof image === 'object' ? (
-                <Image
-                  className={styles.imagecomming}
-                  src={URL.createObjectURL(image)}
-                  width={250}
-                  height={310}
-                />
-              ) : null}
-                        <Image src={"/images/createcard/communCard6.png"} width={240} height={300} />
+
+                    {elixir == "1" && rarity == "Comum" ? (
+                        <div className={styles.imagecomming} style={{
+                            backgroundImage: `url(${image})`,
+                            width: 240,
+                            height: 284,
+                            backgroundPosition: "center",
+                            backgroundPositionX: -10,
+                            backgroundPositionY: 15,
+                            borderRadius: "20",
+                            borderTopLeftRadius: "20",
+                            borderBottomRightRadius: "20",
+                            backgroundRepeat: "no-repeat",
+                            backgroundSize: "cover",
+                        }}>
+                            
+                            <Image src={"/images/createcard/communCard1.png"} className={styles.oi0} width={260} height={300} />
                         </div>
-                        :
-                        (rarity == "Comum" && elixir == "7" ?
-                        <div>
-                            {image && typeof image === 'object' ? (
-                     <Image
-                       className={styles.imagecomming}
-                       src={URL.createObjectURL(image)}
-                       width={250}
-                       height={310}
-                     />
-                   ) : null}
-                        <Image src={"/images/createcard/communCard7.png"} width={240} height={300} />
-                        </div>
-                        :
-                        (rarity == "Comum" && elixir == "8" ?
-                        <div>
-                            {image && typeof image === 'object' ? (
-                     <Image
-                       className={styles.imagecomming}
-                       src={URL.createObjectURL(image)}
-                       width={250}
-                       height={310}
-                     />
-                   ) : null}
-                        <Image src={"/images/createcard/communCard8.png"} width={240} height={300} />
-                        </div>
-                        :
-                        (rarity == "Comum" && elixir == "9" ?
-                        <div>
-                    {image && typeof image === 'object' ? (
-                     <Image
-                       className={styles.imagecomming}
-                       src={URL.createObjectURL(image)}
-                       width={250}
-                       height={310}
-                     />
-                   ) : null}
-                        <Image src={"/images/createcard/communCard9.png"} width={240} height={300} />
-                        </div>
-                        :
-                        (rarity == "Comum" && elixir == "10" ?
-                        <Image src={"/images/createcard/communCard10.png"} width={240} height={300} />
-                        :
-                        (rarity == "Raro" && elixir == "1" ?
-                        <Image src={"/images/createcard/communCard1.png"} width={240} height={300} />
-                        :
-                        (rarity == "Raro" && elixir == "2" ?
-                        <Image src={"/images/createcard/communCard2.png"} width={240} height={300} />
-                        :
-                        (rarity == "Raro" && elixir == "3" ?
-                        <Image src={"/images/createcard/communCard3.png"} width={240} height={300} />
-                        :
-                        (rarity == "Raro" && elixir == "4" ?
-                        <Image src={"/images/createcard/communCard4.png"} width={240} height={300} />
-                        :
-                        (rarity == "Raro" && elixir == "5" ?
-                        <Image src={"/images/createcard/communCard5.png"} width={240} height={300} />
-                        :
-                        (rarity == "Raro" && elixir == "6" ?
-                        <Image src={"/images/createcard/communCard6.png"} width={240} height={300} />
-                        :
-                        (rarity == "Raro" && elixir == "7" ?
-                        <Image src={"/images/createcard/communCard7.png"} width={240} height={300} />
-                        :
-                        (rarity == "Raro" && elixir == "8" ?
-                        <Image src={"/images/createcard/communCard8.png"} width={240} height={300} />
-                        :
-                        (rarity == "Raro" && elixir == "9" ?
-                        <Image src={"/images/createcard/communCard9.png"} width={240} height={300} />
-                        :
-                        (rarity == "Raro" && elixir == "10" ?
-                        <Image src={"/images/createcard/communCard10.png"} width={240} height={300} />
-                        :
-                        (rarity =="Épico" && elixir == "1" ?
-                        <Image src={"/images/createcard/communCard1.png"} width={240} height={300} />
-                        :
-                        (rarity =="Épico" && elixir == "2" ?
-                        <Image src={"/images/createcard/communCard2.png"} width={240} height={300} />
-                        :
-                        (rarity =="Épico" && elixir == "3" ?
-                        <Image src={"/images/createcard/communCard3.png"} width={240} height={300} />
-                        :
-                        (rarity =="Épico" && elixir == "4" ?
-                        <Image src={"/images/createcard/communCard4.png"} width={240} height={300} />
-                        :
-                        (rarity =="Épico" && elixir == "5" ?
-                        <Image src={"/images/createCard5.png"} width={240} height={300} />
-                        :
-                        (rarity =="Épico" && elixir == "6" ?
-                        <Image src={"/images/createcard/communCard6.png"} width={240} height={300} />
-                        :
-                        (rarity =="Épico" && elixir == "7" ?
-                        <Image src={"/images/createcard/communCard7.png"} width={240} height={300} />
-                        :
-                        (rarity =="Épico" && elixir == "8" ?
-                        <Image src={"/images/createcard/communCard8.png"} width={240} height={300} />
-                        :
-                        (rarity =="Épico" && elixir == "9" ?
-                        <Image src={"/images/createcard/communCard9.png"} width={240} height={300} />
-                        :
-                        (rarity =="Épico" && elixir == "10" ?
-                        <Image src={"/images/createcard/communCard10.png"} width={240} height={300} />
-                        :
-                        (rarity =="Lendário" && elixir == "1" ?
-                        <Image src={"/images/createcard/legendaryCard1.png"} width={240} height={300} />
-                        :
-                        (rarity =="Lendário" && elixir == "2" ?
-                        <Image src={"/images/createcard/legendaryCard2.png"} width={240} height={300} />
-                        :
-                        (rarity =="Lendário" && elixir == "3" ?
-                        <Image src={"/images/createcard/legendaryCard3.png"} width={240} height={300} />
-                        :
-                        (rarity =="Lendário" && elixir == "4" ?
-                        <Image src={"/images/createcard/legendaryCard4.png"} width={240} height={300} />
-                        :
-                        (rarity =="Lendário" && elixir == "5" ?
-                        <Image src={"/images/createcard/legendaryCard5.png"} width={240} height={300} />
-                        :
-                        (rarity =="Lendário" && elixir == "6" ?
-                        <Image src={"/images/createcard/legendaryCard6.png"} width={240} height={300} />
-                        :
-                        (rarity =="Lendário" && elixir == "7" ?
-                        <Image src={"/images/createcard/legendaryCard7.png"} width={240} height={300} />
-                        :
-                        (rarity =="Lendário" && elixir == "8" ?
-                        <Image src={"/images/createcard/legendaryCard8.png"} width={240} height={300} />
-                        :
-                        (rarity =="Lendário" && elixir == "9" ?
-                        <Image src={"/images/createcard/legendaryCard9.png"} width={240} height={300} />
-                        :
-                        (rarity =="Lendário" && elixir == "10" ?
-                        <Image src={"/images/createcard/legendaryCard10.png"} width={240} height={300} />
-                        :
-                        (rarity =="Campeão" && elixir == "1" ?
-                        <Image src={"/images/createcard/championCard1.png"} width={240} height={300} />
-                        :
-                        (rarity =="Campeão" && elixir == "2" ?
-                        <Image src={"/images/createcard/championCard2.png"} width={240} height={300} />
-                        :
-                        (rarity =="Campeão" && elixir == "3" ?
-                        <Image src={"/images/createcard/championCard3.png"} width={240} height={300} />
-                        :
-                        (rarity =="Campeão" && elixir == "4" ?
-                        <Image src={"/images/createcard/championCard4.png"} width={240} height={300} />
-                        :
-                        (rarity =="Campeão" && elixir == "5" ?
-                        <Image src={"/images/createcard/championCard5.png"} width={240} height={300} />
-                        :
-                        (rarity =="Campeão" && elixir == "6" ?
-                        <Image src={"/images/createcard/championCard6.png"} width={240} height={300} />
-                        :
-                        (rarity =="Campeão" && elixir == "7" ?
-                        <Image src={"/images/createcard/championCard7.png"} width={240} height={300} />
-                        :
-                        (rarity =="Campeão" && elixir == "8" ?
-                        <Image src={"/images/createcard/championCard8.png"} width={240} height={300} />
-                        :
-                        (rarity =="Campeão" && elixir == "9" ?
-                        <Image src={"/images/createcard/championCard9.png"} width={240} height={300} />
-                        :
-                        (rarity =="Campeão" && elixir == "10" ?
-                        <Image src={"/images/createcard/championCard10.png"} width={240} height={300} />
-                        :
-                        !elixir ?
-                         <Image src={image} width={250} height={310} />
-                        :
-                        null
-                        )))))))))))))))))))))))))))))))))))))))))))))))))))
-                        }                      
-                           
+                    ) :
+                        (image && typeof image === 'object' ? (
+                            <Image
+                                className={styles.imagecomming}
+                                src={URL.createObjectURL(image)}
+                                width={250}
+                                height={310}
+                            />
+                        ) :
+                            (rarity == "Comum" && elixir == "2" ?
+                                <div>
+                                    <Image src={"/images/createcard/communCard2.png"} width={240} height={300} />
+                                </div>
+                                :
+                                (image && typeof image === 'object' ? (
+                                    <Image
+                                        className={styles.imagecomming}
+                                        src={URL.createObjectURL(image)}
+                                        width={250}
+                                        height={310}
+                                    />
+                                ) :
+                                    (rarity == "Comum" && elixir == "3" ?
+                                        <div>
+                                            {image && typeof image === 'object' ? (
+                                                <Image
+                                                    className={styles.imagecomming}
+                                                    src={URL.createObjectURL(image)}
+                                                    width={250}
+                                                    height={310}
+                                                />
+                                            ) : null}
+                                            <Image src={"/images/createcard/communCard3.png"} width={240} height={300} />
+                                        </div>
+                                        :
+                                        (rarity == "Comum" && elixir == "4" ?
+                                            <div>
+                                                {image && typeof image === 'object' ? (
+                                                    <Image
+                                                        className={styles.imagecomming}
+                                                        src={URL.createObjectURL(image)}
+                                                        width={250}
+                                                        height={310}
+                                                    />
+                                                ) : null}
+                                                <Image src={"/images/createcard/communCard4.png"} width={240} height={300} />
+                                            </div>
+                                            :
+                                            (rarity == "Comum" && elixir == "5" ?
+                                                <div>
+                                                    {image && typeof image === 'object' ? (
+                                                        <Image
+                                                            className={styles.imagecomming}
+                                                            src={URL.createObjectURL(image)}
+                                                            width={250}
+                                                            height={310}
+                                                        />
+                                                    ) : null}
+                                                    <Image src={"/images/createcard/communCard5.png"} width={240} height={300} />
+                                                </div>
+                                                :
+                                                (rarity == "Comum" && elixir == "6" ?
+                                                    <div>
+                                                        {image && typeof image === 'object' ? (
+                                                            <Image
+                                                                className={styles.imagecomming}
+                                                                src={URL.createObjectURL(image)}
+                                                                width={250}
+                                                                height={310}
+                                                            />
+                                                        ) : null}
+                                                        <Image src={"/images/createcard/communCard6.png"} width={240} height={300} />
+                                                    </div>
+                                                    :
+                                                    (rarity == "Comum" && elixir == "7" ?
+                                                        <div>
+                                                            {image && typeof image === 'object' ? (
+                                                                <Image
+                                                                    className={styles.imagecomming}
+                                                                    src={URL.createObjectURL(image)}
+                                                                    width={250}
+                                                                    height={310}
+                                                                />
+                                                            ) : null}
+                                                            <Image src={"/images/createcard/communCard7.png"} width={240} height={300} />
+                                                        </div>
+                                                        :
+                                                        (rarity == "Comum" && elixir == "8" ?
+                                                            <div>
+                                                                {image && typeof image === 'object' ? (
+                                                                    <Image
+                                                                        className={styles.imagecomming}
+                                                                        src={URL.createObjectURL(image)}
+                                                                        width={250}
+                                                                        height={310}
+                                                                    />
+                                                                ) : null}
+                                                                <Image src={"/images/createcard/communCard8.png"} width={240} height={300} />
+                                                            </div>
+                                                            :
+                                                            (rarity == "Comum" && elixir == "9" ?
+                                                                <div>
+                                                                    {image && typeof image === 'object' ? (
+                                                                        <Image
+                                                                            className={styles.imagecomming}
+                                                                            src={URL.createObjectURL(image)}
+                                                                            width={250}
+                                                                            height={310}
+                                                                        />
+                                                                    ) : null}
+                                                                    <Image src={"/images/createcard/communCard9.png"} width={240} height={300} />
+                                                                </div>
+                                                                :
+                                                                (rarity == "Comum" && elixir == "10" ?
+                                                                    <Image src={"/images/createcard/communCard10.png"} width={240} height={300} />
+                                                                    :
+                                                                    (rarity == "Raro" && elixir == "1" ?
+                                                                        <Image src={"/images/createcard/communCard1.png"} width={240} height={300} />
+                                                                        :
+                                                                        (rarity == "Raro" && elixir == "2" ?
+                                                                            <Image src={"/images/createcard/communCard2.png"} width={240} height={300} />
+                                                                            :
+                                                                            (rarity == "Raro" && elixir == "3" ?
+                                                                                <Image src={"/images/createcard/communCard3.png"} width={240} height={300} />
+                                                                                :
+                                                                                (rarity == "Raro" && elixir == "4" ?
+                                                                                    <Image src={"/images/createcard/communCard4.png"} width={240} height={300} />
+                                                                                    :
+                                                                                    (rarity == "Raro" && elixir == "5" ?
+                                                                                        <Image src={"/images/createcard/communCard5.png"} width={240} height={300} />
+                                                                                        :
+                                                                                        (rarity == "Raro" && elixir == "6" ?
+                                                                                            <Image src={"/images/createcard/communCard6.png"} width={240} height={300} />
+                                                                                            :
+                                                                                            (rarity == "Raro" && elixir == "7" ?
+                                                                                                <Image src={"/images/createcard/communCard7.png"} width={240} height={300} />
+                                                                                                :
+                                                                                                (rarity == "Raro" && elixir == "8" ?
+                                                                                                    <Image src={"/images/createcard/communCard8.png"} width={240} height={300} />
+                                                                                                    :
+                                                                                                    (rarity == "Raro" && elixir == "9" ?
+                                                                                                        <Image src={"/images/createcard/communCard9.png"} width={240} height={300} />
+                                                                                                        :
+                                                                                                        (rarity == "Raro" && elixir == "10" ?
+                                                                                                            <Image src={"/images/createcard/communCard10.png"} width={240} height={300} />
+                                                                                                            :
+                                                                                                            (rarity == "Épico" && elixir == "1" ?
+                                                                                                                <Image src={"/images/createcard/communCard1.png"} width={240} height={300} />
+                                                                                                                :
+                                                                                                                (rarity == "Épico" && elixir == "2" ?
+                                                                                                                    <Image src={"/images/createcard/communCard2.png"} width={240} height={300} />
+                                                                                                                    :
+                                                                                                                    (rarity == "Épico" && elixir == "3" ?
+                                                                                                                        <Image src={"/images/createcard/communCard3.png"} width={240} height={300} />
+                                                                                                                        :
+                                                                                                                        (rarity == "Épico" && elixir == "4" ?
+                                                                                                                            <Image src={"/images/createcard/communCard4.png"} width={240} height={300} />
+                                                                                                                            :
+                                                                                                                            (rarity == "Épico" && elixir == "5" ?
+                                                                                                                                <Image src={"/images/createCard5.png"} width={240} height={300} />
+                                                                                                                                :
+                                                                                                                                (rarity == "Épico" && elixir == "6" ?
+                                                                                                                                    <Image src={"/images/createcard/communCard6.png"} width={240} height={300} />
+                                                                                                                                    :
+                                                                                                                                    (rarity == "Épico" && elixir == "7" ?
+                                                                                                                                        <Image src={"/images/createcard/communCard7.png"} width={240} height={300} />
+                                                                                                                                        :
+                                                                                                                                        (rarity == "Épico" && elixir == "8" ?
+                                                                                                                                            <Image src={"/images/createcard/communCard8.png"} width={240} height={300} />
+                                                                                                                                            :
+                                                                                                                                            (rarity == "Épico" && elixir == "9" ?
+                                                                                                                                                <Image src={"/images/createcard/communCard9.png"} width={240} height={300} />
+                                                                                                                                                :
+                                                                                                                                                (rarity == "Épico" && elixir == "10" ?
+                                                                                                                                                    <Image src={"/images/createcard/communCard10.png"} width={240} height={300} />
+                                                                                                                                                    :
+                                                                                                                                                    (rarity == "Lendário" && elixir == "1" ?
+                                                                                                                                                        <Image src={"/images/createcard/legendaryCard1.png"} width={240} height={300} />
+                                                                                                                                                        :
+                                                                                                                                                        (rarity == "Lendário" && elixir == "2" ?
+                                                                                                                                                            <Image src={"/images/createcard/legendaryCard2.png"} width={240} height={300} />
+                                                                                                                                                            :
+                                                                                                                                                            (rarity == "Lendário" && elixir == "3" ?
+                                                                                                                                                                <Image src={"/images/createcard/legendaryCard3.png"} width={240} height={300} />
+                                                                                                                                                                :
+                                                                                                                                                                (rarity == "Lendário" && elixir == "4" ?
+                                                                                                                                                                    <Image src={"/images/createcard/legendaryCard4.png"} width={240} height={300} />
+                                                                                                                                                                    :
+                                                                                                                                                                    (rarity == "Lendário" && elixir == "5" ?
+                                                                                                                                                                        <Image src={"/images/createcard/legendaryCard5.png"} width={240} height={300} />
+                                                                                                                                                                        :
+                                                                                                                                                                        (rarity == "Lendário" && elixir == "6" ?
+                                                                                                                                                                            <Image src={"/images/createcard/legendaryCard6.png"} width={240} height={300} />
+                                                                                                                                                                            :
+                                                                                                                                                                            (rarity == "Lendário" && elixir == "7" ?
+                                                                                                                                                                                <Image src={"/images/createcard/legendaryCard7.png"} width={240} height={300} />
+                                                                                                                                                                                :
+                                                                                                                                                                                (rarity == "Lendário" && elixir == "8" ?
+                                                                                                                                                                                    <Image src={"/images/createcard/legendaryCard8.png"} width={240} height={300} />
+                                                                                                                                                                                    :
+                                                                                                                                                                                    (rarity == "Lendário" && elixir == "9" ?
+                                                                                                                                                                                        <Image src={"/images/createcard/legendaryCard9.png"} width={240} height={300} />
+                                                                                                                                                                                        :
+                                                                                                                                                                                        (rarity == "Lendário" && elixir == "10" ?
+                                                                                                                                                                                            <Image src={"/images/createcard/legendaryCard10.png"} width={240} height={300} />
+                                                                                                                                                                                            :
+                                                                                                                                                                                            (rarity == "Campeão" && elixir == "1" ?
+                                                                                                                                                                                                <Image src={"/images/createcard/championCard1.png"} width={240} height={300} />
+                                                                                                                                                                                                :
+                                                                                                                                                                                                (rarity == "Campeão" && elixir == "2" ?
+                                                                                                                                                                                                    <Image src={"/images/createcard/championCard2.png"} width={240} height={300} />
+                                                                                                                                                                                                    :
+                                                                                                                                                                                                    (rarity == "Campeão" && elixir == "3" ?
+                                                                                                                                                                                                        <Image src={"/images/createcard/championCard3.png"} width={240} height={300} />
+                                                                                                                                                                                                        :
+                                                                                                                                                                                                        (rarity == "Campeão" && elixir == "4" ?
+                                                                                                                                                                                                            <Image src={"/images/createcard/championCard4.png"} width={240} height={300} />
+                                                                                                                                                                                                            :
+                                                                                                                                                                                                            (rarity == "Campeão" && elixir == "5" ?
+                                                                                                                                                                                                                <Image src={"/images/createcard/championCard5.png"} width={240} height={300} />
+                                                                                                                                                                                                                :
+                                                                                                                                                                                                                (rarity == "Campeão" && elixir == "6" ?
+                                                                                                                                                                                                                    <Image src={"/images/createcard/championCard6.png"} width={240} height={300} />
+                                                                                                                                                                                                                    :
+                                                                                                                                                                                                                    (rarity == "Campeão" && elixir == "7" ?
+                                                                                                                                                                                                                        <Image src={"/images/createcard/championCard7.png"} width={240} height={300} />
+                                                                                                                                                                                                                        :
+                                                                                                                                                                                                                        (rarity == "Campeão" && elixir == "8" ?
+                                                                                                                                                                                                                            <Image src={"/images/createcard/championCard8.png"} width={240} height={300} />
+                                                                                                                                                                                                                            :
+                                                                                                                                                                                                                            (rarity == "Campeão" && elixir == "9" ?
+                                                                                                                                                                                                                                <Image src={"/images/createcard/championCard9.png"} width={240} height={300} />
+                                                                                                                                                                                                                                :
+                                                                                                                                                                                                                                (rarity == "Campeão" && elixir == "10" ?
+                                                                                                                                                                                                                                    <Image src={"/images/createcard/championCard10.png"} width={240} height={300} />
+                                                                                                                                                                                                                                    :
+                                                                                                                                                                                                                                    !elixir ?
+                                                                                                                                                                                                                                        <Image src={image} width={250} height={310} />
+                                                                                                                                                                                                                                        :
+                                                                                                                                                                                                                                        null
+                                                                                                                                                                                                                                )))))))))))))))))))))))))))))))))))))))))))))))))))
+                    }
+
                 </div>
                 {
                     rarity == "Comum" && type == "Tropa" ?
@@ -384,8 +389,8 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                                                                                     </div>
                                                                                 </div>
                                                                                 :
-                                                                    null
-                                                                ))))))))))))))
+                                                                                null
+                                                                            ))))))))))))))
                 }
             </div>
             <div className={styles.atributesCondition}>
@@ -396,7 +401,7 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                             Pontos de vida
                         </h1>
                         <h1 className={styles.atributesNames}>
-                        {hp}
+                            {hp}
                         </h1>
                     </div>
                 </div> : null}
@@ -404,11 +409,11 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                     deploytime ? <div className={styles.deploytime}>
                         <Image src={"/images/deploytime.png"} width={60} height={60} />
                         <div className={styles.desc2}>
-                        <h1 className={styles.atributesP}>
-                            Tempo de mobilização
-                        </h1>
+                            <h1 className={styles.atributesP}>
+                                Tempo de mobilização
+                            </h1>
                             <h1 className={styles.atributesNames}>
-                            {deploytime}
+                                {deploytime}
                             </h1>
                         </div>
                     </div> : null
@@ -417,11 +422,11 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                     shieldhp ? <div className={styles.shieldhp}>
                         <Image src={"/images/shieldhp.png"} width={60} height={60} />
                         <div className={styles.desc2}>
-                        <h1 className={styles.atributesP}>
-                            Vida do escudo
-                        </h1>
+                            <h1 className={styles.atributesP}>
+                                Vida do escudo
+                            </h1>
                             <h1 className={styles.atributesNames}>
-                            {shieldhp}
+                                {shieldhp}
                             </h1>
                         </div>
                     </div> : null
@@ -430,11 +435,11 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                     damage ? <div className={styles.damage}>
                         <Image src={"/images/damage.png"} width={60} height={60} />
                         <div className={styles.desc2}>
-                        <h1 className={styles.atributesP}>
-                            Dano
-                        </h1>
+                            <h1 className={styles.atributesP}>
+                                Dano
+                            </h1>
                             <h1 className={styles.atributesNames}>
-                            {damage}
+                                {damage}
                             </h1>
                         </div>
                     </div> : null
@@ -443,11 +448,11 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                     damagepersecond ? <div className={styles.damagepersecond}>
                         <Image src={"/images/damagepersecond.png"} width={60} height={60} />
                         <div className={styles.desc2}>
-                        <h1 className={styles.atributesP}>
-                            Dano por segundo
-                        </h1>
+                            <h1 className={styles.atributesP}>
+                                Dano por segundo
+                            </h1>
                             <h1 className={styles.atributesNames}>
-                            {damagepersecond}
+                                {damagepersecond}
                             </h1>
                         </div>
                     </div> : null
@@ -456,11 +461,11 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                     rangeddamage ? <div className={styles.rangeddamage}>
                         <Image src={"/images/rangeddamage.png"} width={60} height={60} />
                         <div className={styles.desc2}>
-                        <h1 className={styles.atributesP}>
-                            Dano a distância
-                        </h1>
+                            <h1 className={styles.atributesP}>
+                                Dano a distância
+                            </h1>
                             <h1 className={styles.atributesNames}>
-                            {rangeddamage}
+                                {rangeddamage}
                             </h1>
                         </div>
                     </div> : null
@@ -469,11 +474,11 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                     damageondistance ? <div className={styles.damageondistance}>
                         <Image src={"/images/damageondistance.png"} width={60} height={60} />
                         <div className={styles.desc2}>
-                        <h1 className={styles.atributesP}>
-                            Dano a distância
-                        </h1>
+                            <h1 className={styles.atributesP}>
+                                Dano a distância
+                            </h1>
                             <h1 className={styles.atributesNames}>
-                            {damageondistance}
+                                {damageondistance}
                             </h1>
                         </div>
                     </div> : null
@@ -482,11 +487,11 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                     damageonarea ? <div className={styles.damageonarea}>
                         <Image src={"/images/damageonarea.png"} width={60} height={60} />
                         <div className={styles.desc2}>
-                        <h1 className={styles.atributesP}>
-                            Dano em área
-                        </h1>
+                            <h1 className={styles.atributesP}>
+                                Dano em área
+                            </h1>
                             <h1 className={styles.atributesNames}>
-                            {damageonarea}
+                                {damageonarea}
                             </h1>
                         </div>
                     </div> : null
@@ -495,11 +500,11 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                     damageonimpact ? <div className={styles.damageonimpact}>
                         <Image src={"/images/damageonimpact.png"} width={60} height={60} />
                         <div className={styles.desc2}>
-                        <h1 className={styles.atributesP}>
-                            Dano no impacto
-                        </h1>
+                            <h1 className={styles.atributesP}>
+                                Dano no impacto
+                            </h1>
                             <h1 className={styles.atributesNames}>
-                            {damageonimpact}
+                                {damageonimpact}
                             </h1>
                         </div>
                     </div> : null
@@ -508,11 +513,11 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                     damageontower ? <div className={styles.damageontower}>
                         <Image src={"/images/damageontower.png"} width={60} height={60} />
                         <div className={styles.desc2}>
-                        <h1 className={styles.atributesP}>
-                            Dano a torre
-                        </h1>
+                            <h1 className={styles.atributesP}>
+                                Dano a torre
+                            </h1>
                             <h1 className={styles.atributesNames}>
-                            {damageontower}
+                                {damageontower}
                             </h1>
                         </div>
                     </div> : null
@@ -521,11 +526,11 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                     chargedamage ? <div className={styles.chargedamage}>
                         <Image src={"/images/chargedamage.png"} width={60} height={60} />
                         <div className={styles.desc2}>
-                        <h1 className={styles.atributesP}>
-                            Dano carregado
-                        </h1>
+                            <h1 className={styles.atributesP}>
+                                Dano carregado
+                            </h1>
                             <h1 className={styles.atributesNames}>
-                            {chargedamage}
+                                {chargedamage}
                             </h1>
                         </div>
                     </div> : null
@@ -534,11 +539,11 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                     damageondeath ? <div className={styles.damageondeath}>
                         <Image src={"/images/damageondeath.png"} width={60} height={60} />
                         <div className={styles.desc2}>
-                        <h1 className={styles.atributesP}>
-                        Dano na morte
-                        </h1>
+                            <h1 className={styles.atributesP}>
+                                Dano na morte
+                            </h1>
                             <h1 className={styles.atributesNames}>
-                            {damageondeath}
+                                {damageondeath}
                             </h1>
                         </div>
                     </div> : null
@@ -547,11 +552,11 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                     spawnspeed ? <div className={styles.spawnspeed}>
                         <Image src={"/images/spawnspeed.png"} width={60} height={60} />
                         <div className={styles.desc2}>
-                        <h1 className={styles.atributesP}>
-                        Tempo de mobilização    
-                        </h1>
+                            <h1 className={styles.atributesP}>
+                                Tempo de mobilização
+                            </h1>
                             <h1 className={styles.atributesNames}>
-                            {spawnspeed}
+                                {spawnspeed}
                             </h1>
                         </div>
                     </div> : null
@@ -560,11 +565,11 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                     duration ? <div className={styles.duration}>
                         <Image src={"/images/duration.png"} width={60} height={60} />
                         <div className={styles.desc2}>
-                        <h1 className={styles.atributesP}>
-                        Duração
-                        </h1>
+                            <h1 className={styles.atributesP}>
+                                Duração
+                            </h1>
                             <h1 className={styles.atributesNames}>
-                            {duration}
+                                {duration}
                             </h1>
                         </div>
                     </div> : null
@@ -573,11 +578,11 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                     radius ? <div className={styles.radius}>
                         <Image src={"/images/radius.png"} width={60} height={60} />
                         <div className={styles.desc2}>
-                        <h1 className={styles.atributesP}>
-                        Raio
-                        </h1>
+                            <h1 className={styles.atributesP}>
+                                Raio
+                            </h1>
                             <h1 className={styles.atributesNames}>
-                            {radius}
+                                {radius}
                             </h1>
                         </div>
                     </div> : null
@@ -586,11 +591,11 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                     width ? <div className={styles.width}>
                         <Image src={"/images/width.png"} width={60} height={60} />
                         <div className={styles.desc2}>
-                        <h1 className={styles.atributesP}>
-                        Largura
-                        </h1>
+                            <h1 className={styles.atributesP}>
+                                Largura
+                            </h1>
                             <h1 className={styles.atributesNames}>
-                            {width}
+                                {width}
                             </h1>
                         </div>
                     </div> : null
@@ -599,11 +604,11 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                     efecttime ? <div className={styles.efecttime}>
                         <Image src={"/images/efecttime.png"} width={60} height={60} />
                         <div className={styles.desc2}>
-                        <h1 className={styles.atributesP}>
-                        Tempo de efeito
-                        </h1>
+                            <h1 className={styles.atributesP}>
+                                Tempo de efeito
+                            </h1>
                             <h1 className={styles.atributesNames}>
-                            {efecttime}
+                                {efecttime}
                             </h1>
                         </div>
                     </div> : null
@@ -612,11 +617,11 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                     freezetime ? <div className={styles.freezetime}>
                         <Image src={"/images/freezetime.png"} width={60} height={60} />
                         <div className={styles.desc2}>
-                        <h1 className={styles.atributesP}>
-                        Tempo de congelamento
-                        </h1>
+                            <h1 className={styles.atributesP}>
+                                Tempo de congelamento
+                            </h1>
                             <h1 className={styles.atributesNames}>
-                            {freezetime}
+                                {freezetime}
                             </h1>
                         </div>
                     </div> : null
@@ -625,11 +630,11 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                     unities ? <div className={styles.unities}>
                         <Image src={"/images/unities.png"} width={60} height={60} />
                         <div className={styles.desc2}>
-                        <h1 className={styles.atributesP}>
-                        Unidades
-                        </h1>
+                            <h1 className={styles.atributesP}>
+                                Unidades
+                            </h1>
                             <h1 className={styles.atributesNames}>
-                            {unities}
+                                {unities}
                             </h1>
                         </div>
                     </div> : null
@@ -638,11 +643,11 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                     target ? <div className={styles.target}>
                         <Image src={"/images/target.png"} width={60} height={60} />
                         <div className={styles.desc2}>
-                        <h1 className={styles.atributesP}>
-                        Alvos
-                        </h1>
+                            <h1 className={styles.atributesP}>
+                                Alvos
+                            </h1>
                             <h1 className={styles.atributesNames}>
-                            {target}
+                                {target}
                             </h1>
                         </div>
                     </div> : null
@@ -651,11 +656,11 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                     projectilerange ? <div className={styles.projectilerange}>
                         <Image src={"/images/projectilerange.png"} width={60} height={60} />
                         <div className={styles.desc2}>
-                        <h1 className={styles.atributesP}>
-                        Alcance do projétil
-                        </h1>
+                            <h1 className={styles.atributesP}>
+                                Alcance do projétil
+                            </h1>
                             <h1 className={styles.atributesNames}>
-                            {projectilerange}
+                                {projectilerange}
                             </h1>
                         </div>
                     </div> : null
@@ -664,11 +669,11 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                     range ? <div className={styles.range}>
                         <Image src={"/images/range.png"} width={60} height={60} />
                         <div className={styles.desc2}>
-                        <h1 className={styles.atributesP}>
-                        Alcance
-                        </h1>
+                            <h1 className={styles.atributesP}>
+                                Alcance
+                            </h1>
                             <h1 className={styles.atributesNames}>
-                            {range}
+                                {range}
                             </h1>
                         </div>
                     </div> : null
@@ -677,11 +682,11 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                     speed ? <div className={styles.speed}>
                         <Image src={"/images/speed.png"} width={60} height={60} />
                         <div className={styles.desc2}>
-                        <h1 className={styles.atributesP}>
-                        Velocidade
-                        </h1>
+                            <h1 className={styles.atributesP}>
+                                Velocidade
+                            </h1>
                             <h1 className={styles.atributesNames}>
-                            {speed}
+                                {speed}
                             </h1>
                         </div>
                     </div> : null
@@ -690,16 +695,16 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                     impactspeed ? <div className={styles.impactspeed}>
                         <Image src={"/images/impactspeed.png"} width={60} height={60} />
                         <div className={styles.desc2}>
-                        <h1 className={styles.atributesP}>
-                        Velocidade de impacto
-                        </h1>
+                            <h1 className={styles.atributesP}>
+                                Velocidade de impacto
+                            </h1>
                             <h1 className={styles.atributesNames}>
-                            {impactspeed}
+                                {impactspeed}
                             </h1>
                         </div>
                     </div> : null
                 }
-        </div>
+            </div>
         </div>
     )
 }
