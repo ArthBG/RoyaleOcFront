@@ -40,26 +40,26 @@ export default function ModalAtributes({ type }) {
               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                 <select>
                 <option value="">Selecione os atributos</option>
-                <option value="Pontos de Vida"><img src={"/images/aicons/hp.png"}/>Pontos de Vida</option>
-                <option value="Dano"><img src={"/images/aicons/dano.png"}/>Dano</option>
-                <option value="Dano por segundo<"><img src={"/images/aicons/danosegundo.png"}/>Dano por segundo</option>
-                <option value="Dano a distância"><img src={"/images/aicons/danoadistancia.png"}/>Dano a distância</option>
-                <option value="Dano de longa distância"><img src={"/images/aicons/danoaodistancia.png"}/>Dano de longa distância</option>
-                <option value="Dano em área"><img src={"/images/aicons/danoarea.png"}/>Dano em área</option>
-                <option value="Dano no impacto"><img src={"/images/aicons/danoimpacto.png"}/>Dano no impacto</option>
-                <option value="Dano na torre"><img src={"/images/aicons/danotorre.png"}/>Dano na torre</option>
-                <option value="Dano carregado"><img src={"/images/aicons/danocarregado.png"}/>Dano carregado</option>
-                <option value="Dano na morte"><img src={"/images/aicons/danomorte.png"}/>Dano na morte</option>
-                <option value="Velocidade de mobilização"><img src={"/images/aicons/velocidadespawn.png"}/>Velocidade de spawn</option>
-                <option value="Duração"><img src={"/images/aicons/duracao.png"}/>Duração</option>
-                <option value="Tempo de congelamento"><img src={"/images/aicons/tempocongelamento.png"}/>Tempo de congelamento</option>
-                <option value="Unidades"><img src={"/images/aicons/unidades.png"}/>Unidades</option>
-                <option value="Alvo"><img src={"/images/aicons/alvo.png"}/>Alvo</option>
-                <option value="Alcance do projétil"><img src={"/images/aicons/alcanceprojeto.png"}/>Alcance do projétil</option>
-                <option value="Alcance"><img src={"/images/aicons/alcance.png"}/>Alcance</option>
-                <option value="Velocidade"><img src={"/images/aicons/velocidade.png"}/>Velocidade</option>
-                <option value="Velocidade de impacto"><img src={"/images/aicons/velocidadeimpacto.png"}/>Velocidade de impacto</option>
-                <option value="Pontos de vida do escudo"><img src={"/images/aicons/pontosvidaescudo.png"}/>Pontos de vida do escudo</option>
+                <option value="Pontos de Vida"><img src={"/images/hp.png"}/>Pontos de Vida</option>
+                <option value="Dano"><img src={"/images/dano.png"}/>Dano</option>
+                <option value="Dano por segundo<"><img src={"/images/danosegundo.png"}/>Dano por segundo</option>
+                <option value="Dano a distância"><img src={"/images/danoadistancia.png"}/>Dano a distância</option>
+                <option value="Dano de longa distância"><img src={"/images/danoaodistancia.png"}/>Dano de longa distância</option>
+                <option value="Dano em área"><img src={"/images/danoarea.png"}/>Dano em área</option>
+                <option value="Dano no impacto"><img src={"/images/danoimpacto.png"}/>Dano no impacto</option>
+                <option value="Dano na torre"><img src={"/images/danotorre.png"}/>Dano na torre</option>
+                <option value="Dano carregado"><img src={"/images/danocarregado.png"}/>Dano carregado</option>
+                <option value="Dano na morte"><img src={"/images/danomorte.png"}/>Dano na morte</option>
+                <option value="Velocidade de mobilização"><img src={"/images/velocidadespawn.png"}/>Velocidade de spawn</option>
+                <option value="Duração"><img src={"/images/duracao.png"}/>Duração</option>
+                <option value="Tempo de congelamento"><img src={"/images/tempocongelamento.png"}/>Tempo de congelamento</option>
+                <option value="Unidades"><img src={"/images/unidades.png"}/>Unidades</option>
+                <option value="Alvo"><img src={"/images/alvo.png"}/>Alvo</option>
+                <option value="Alcance do projétil"><img src={"/images/alcanceprojeto.png"}/>Alcance do projétil</option>
+                <option value="Alcance"><img src={"/images/alcance.png"}/>Alcance</option>
+                <option value="Velocidade"><img src={"/images/velocidade.png"}/>Velocidade</option>
+                <option value="Velocidade de impacto"><img src={"/images/velocidadeimpacto.png"}/>Velocidade de impacto</option>
+                <option value="Pontos de vida do escudo"><img src={"/images/pontosvidaescudo.png"}/>Pontos de vida do escudo</option>
                 </select>
               </Typography>
               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
@@ -89,20 +89,20 @@ export default function ModalAtributes({ type }) {
               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                 <select>
                 <option value="">Selecione os atributos</option>
-                <option value="Pontos de Vida"><img src={"/images/aicons/hp.png"}/>Pontos de Vida</option>
-                <option value="Dano"><img src={"/images/aicons/dano.png"}/>Dano</option>
-                <option value="Dano por segundo<"><img src={"/images/aicons/danosegundo.png"}/>Dano por segundo</option>
-                <option value="Dano a distância"><img src={"/images/aicons/danoadistancia.png"}/>Dano a distância</option>
-                <option value="Dano de longa distância"><img src={"/images/aicons/danoaodistancia.png"}/>Dano de longa distância</option>
-                <option value="Dano em área"><img src={"/images/aicons/danoarea.png"}/>Dano em área</option>
-                <option value="Dano na torre"><img src={"/images/aicons/danotorre.png"}/>Dano na torre</option>
-                <option value="Dano carregado"><img src={"/images/aicons/danocarregado.png"}/>Dano carregado</option>
-                <option value="Dano na morte"><img src={"/images/aicons/danomorte.png"}/>Dano na morte</option>
-                <option value="Velocidade de mobilização"><img src={"/images/aicons/velocidadespawn.png"}/>Velocidade de spawn</option>
-                <option value="Duração"><img src={"/images/aicons/duracao.png"}/>Duração</option>
-                <option value="Unidades"><img src={"/images/aicons/unidades.png"}/>Unidades</option>
-                <option value="Alvo"><img src={"/images/aicons/alvo.png"}/>Alvo</option>
-                <option value="Alcance"><img src={"/images/aicons/alcance.png"}/>Alcance</option>
+                <option value="Pontos de Vida"><img src={"/images/hp.png"}/>Pontos de Vida</option>
+                <option value="Dano"><img src={"/images/dano.png"}/>Dano</option>
+                <option value="Dano por segundo<"><img src={"/images/danosegundo.png"}/>Dano por segundo</option>
+                <option value="Dano a distância"><img src={"/images/danoadistancia.png"}/>Dano a distância</option>
+                <option value="Dano de longa distância"><img src={"/images/danoaodistancia.png"}/>Dano de longa distância</option>
+                <option value="Dano em área"><img src={"/images/danoarea.png"}/>Dano em área</option>
+                <option value="Dano na torre"><img src={"/images/danotorre.png"}/>Dano na torre</option>
+                <option value="Dano carregado"><img src={"/images/danocarregado.png"}/>Dano carregado</option>
+                <option value="Dano na morte"><img src={"/images/danomorte.png"}/>Dano na morte</option>
+                <option value="Velocidade de mobilização"><img src={"/images/velocidadespawn.png"}/>Velocidade de spawn</option>
+                <option value="Duração"><img src={"/images/duracao.png"}/>Duração</option>
+                <option value="Unidades"><img src={"/images/unidades.png"}/>Unidades</option>
+                <option value="Alvo"><img src={"/images/alvo.png"}/>Alvo</option>
+                <option value="Alcance"><img src={"/images/alcance.png"}/>Alcance</option>
                   </select>
                 </Typography>
                 <div className={styles.containerButtons}>
@@ -129,15 +129,15 @@ export default function ModalAtributes({ type }) {
               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                 <select>
                 <option value="">Selecione os atributos</option>
-                <option value="Dano em área"><img src={"/images/aicons/danoarea.png"}/>Dano em área</option>
-                <option value="Dano na torre"><img src={"/images/aicons/danotorre.png"}/>Dano na torre</option>
-                <option value="Duração"><img src={"/images/aicons/duracao.png"}/>Duração</option>
-                <option value="Tempo de congelamento"><img src={"/images/aicons/tempocongelamento.png"}/>Tempo de congelamento</option>
-                <option value="Unidades"><img src={"/images/aicons/unidades.png"}/>Unidades</option>
-                <option value="Alcance"><img src={"/images/aicons/alcance.png"}/>Alcance</option>
-                <option value="Alvo"><img src={"/images/aicons/alvo.png"}/>Alvo</option>
-                <option value="Raio"><img src={"/images/aicons/alcanceprojeto.png"}/>Raio</option>
-                <option value="Paralisação"><img src={"/images/aicons/tempocongelamento.png"}/>Paralisação</option>
+                <option value="Dano em área"><img src={"/images/danoarea.png"}/>Dano em área</option>
+                <option value="Dano na torre"><img src={"/images/danotorre.png"}/>Dano na torre</option>
+                <option value="Duração"><img src={"/images/duracao.png"}/>Duração</option>
+                <option value="Tempo de congelamento"><img src={"/images/tempocongelamento.png"}/>Tempo de congelamento</option>
+                <option value="Unidades"><img src={"/images/unidades.png"}/>Unidades</option>
+                <option value="Alcance"><img src={"/images/alcance.png"}/>Alcance</option>
+                <option value="Alvo"><img src={"/images/alvo.png"}/>Alvo</option>
+                <option value="Raio"><img src={"/images/alcanceprojeto.png"}/>Raio</option>
+                <option value="Paralisação"><img src={"/images/tempocongelamento.png"}/>Paralisação</option>
   
                   </select>              
               </Typography>
