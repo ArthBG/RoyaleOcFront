@@ -20,14 +20,14 @@ export const Header = () => {
                 <div className={styles.divbutton2}>
                     <div className={styles.shortcut1}>
                         <Link className={styles.a} href={'#'} target='_blank'>
-                            <Image className={styles.image} src={'/images/sobrenosescudo.png'} width={60} height={45}></Image>
+                            <Image className={styles.image} src={'/images/sobrenosescudo.png'} width={60} height={40}></Image>
                             <h1 className={styles.contact}>Sobre Nós</h1>
                         </Link>
                     </div>
                     <div className={styles.shortcut2}>
                         <Link className={styles.a} href={'#'} target='_blank'>
-                            <Image className={styles.image1} src={'/images/contatos.png'} width={50} height={45}></Image>
-                            <h1 className={styles.contact}>Contato</h1>
+                            <Image className={styles.image1} src={'/images/contatoscr.png'} width={45} height={40}></Image>
+                            <h1 className={styles.contact2}>Contato</h1>
                         </Link>
                     </div>
                 </div>
