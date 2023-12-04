@@ -44,6 +44,7 @@ export default function createCard() {
   const [impactspeed, setImpactspeed] = useState("")
   const [id, setId] = useState("")
 
+
   const handleImage = (e) => {
     const file = e.target.files[0]
     setImage(URL.createObjectURL(file))
@@ -153,7 +154,7 @@ export default function createCard() {
 
         <input type = "file" className={styles.file} onChange={handleImage} />
         <textarea className={styles.input} placeholder="Descrição da carta" value={description} onChange={e => setDescription(e.target.value)} />
-        {/* <button className={styles.scbtnyellow} onClick={AtributesModal}>Adicionar atributos</button> */}
+        <button className={styles.scbtnyellow} onClick={AtributesModal}>Adicionar atributos</button> 
         <button className={styles.scbtnyellow} onClick={handleSubmit}>Criar</button>
       </div>
 
