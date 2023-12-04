@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import styles from "./cadastro.module.css";
 import Link from "next/link";
 import Mensagem from "@/app/components/mensagem/msg";
+import Header from "@/app/components/header/header";
+import Footer from "@/app/components/footer/footer";
 
 
 // Componente de registro de novos membros
@@ -59,6 +61,7 @@ export default function Register() {
     // Renderização do componente.
     return (
         <div className={styles.containerPai}>
+            <Header />
 
 
             <Link href="/membros">
@@ -170,6 +173,7 @@ export default function Register() {
 
                 </form >
             </div >
+            <Footer />
         </div >
     );
 }
