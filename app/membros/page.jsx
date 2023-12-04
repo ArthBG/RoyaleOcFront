@@ -63,16 +63,16 @@ export default function Page() {
                                     {/*  Informações do membro */}
                              
                                     <p className={styles.infos}>
-                                        <strong>Nome:</strong> {membro.nome}
+                                        <strong></strong> {membro.nome}
                                     </p>
                                     <p className={styles.infos}>
                                         <strong>Idade:</strong> {membro.idade}
                                     </p>
                                     <p className={styles.infos}>
-                                        <strong>Cargo:</strong> {membro.cargo}
+                                        <strong></strong> {membro.cargo}
                                     </p>
-                                    <p className={styles.infos}>
-                                        <strong>Foto:</strong>
+                                    <p className={styles.infosImg}>
+                                        <strong></strong>
                                         <img className={styles.img} src={membro.foto} width={200} height={200} />
                                     </p>
                                     <p className={styles.descricao}>

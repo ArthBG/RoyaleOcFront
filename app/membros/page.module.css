@@ -1,255 +1,300 @@
-.container{
-    background-image: url("../../public/images/fundoazulcards.png");
-    background-repeat:repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    height: 100%;
-    color: white;
-  
+.container {
+  background-image: url("../../public/images/fundoazulcards.png");
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100%;
+  color: white;
+
 }
-
-
 /*botao delete*/
 
 .btndelete {
-    border: none;
-    border-radius: 5px;
-    font-family: 'clash-font', sans-serif;
-    font-size: inherit;
-    color: inherit;
-    background: none;
-    cursor: pointer;
-    padding: 1rem 1.875rem;
-    display: inline-block;
-    margin:auto;
-    text-transform: uppercase;
-    letter-spacing: 1px;  
-    font-weight: 700;
-    outline: none;
-    position: relative;
-    transition: all 0.3s;
-  }
-  
-  .btndelete {
-    background: red;
-    color: #fff;
-    box-shadow: 0 6px red, -1px 8px 0 black, 0 0 0 2px black, 0px 6px 0px 2px black;
-  }
-  
-  .btndelete:active{
-    box-shadow: 0 0 #ae6a06, 0 0 0 2px black, 0px 0px 0px 2px black;
-    top: 6px;
-  }
-  
-  .btndelete .overlay {
-    width: 95%;
-    height: 87%;
-    position: absolute;
-    background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0px 1px 4px #fe8d0a;
-    border-radius: 5px;
-    top: 2px;
-    left: 5px;
-  }
-  
-  .btndelete .overlay + .overlay{
-    height: 45%;
-    width: 92.5%;
-    left: 7px;
-    border-radius: 5px;
-    top: 6px;
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: none;
-  }
-  
-  .btndelete .overlay + .overlay + .overlay {
-    width: 5px;
-    height: 8px;
-    background: rgba(255, 255, 255, 0.65);
-    border-radius: 200px;
-    right: 8px;
-    left: auto;
-    transform: rotate(-45deg);
-  }
-
-  /*botao update*/
-
-  .btnupdate {
-    border: none;
-    border-radius: 5px;
-    font-family: 'clash-font', sans-serif;
-    font-size: inherit;
-    color: inherit;
-    background: none;
-    cursor: pointer;
-    padding: 1rem 1.875rem;
-    display: inline-block;
-    margin:auto;
-    text-transform: uppercase;
-    letter-spacing: 1px;  
-    font-weight: 700;
-    outline: none;
-    position: relative;
-    transition: all 0.3s;
-  }
-  
-  .btnupdate {
-    background:blue;
-    color: #fff;
-    box-shadow: 0 6px blue, -1px 8px 0 black, 0 0 0 2px black, 0px 6px 0px 2px black;
-  }
-  
-  .btnupdate:active{
-    box-shadow: 0 0 blue, 0 0 0 2px black, 0px 0px 0px 2px black;
-    top: 6px;
-  }
-  
-  .btnupdate .overlay {
-    width: 95%;
-    height: 87%;
-    position: absolute;
-    background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0px 1px 4px blue;
-    border-radius: 5px;
-    top: 2px;
-    left: 5px;
-  }
-  
-  .btnupdate .overlay + .overlay{
-    height: 45%;
-    width: 92.5%;
-    left: 7px;
-    border-radius: 5px;
-    top: 6px;
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: none;
-  }
-  
-  .btnupdate .overlay + .overlay + .overlay {
-    width: 5px;
-    height: 8px;
-    background: rgba(255, 255, 255, 0.65);
-    border-radius: 200px;
-    right: 8px;
-    left: auto;
-    transform: rotate(-45deg);
-  }
-.infos{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    padding: 20px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
-    text-align: center;
-    font-family: 'clash-font', sans-serif;
-    font-size: 1.5rem;
-    color:white;
-    background: none;
-    cursor: pointer;
-    padding: 1rem 1.875rem;
-    display: inline-block;
-    margin:auto;
-    text-transform: uppercase;
-    letter-spacing: 1px;  
-    font-weight: 700;
-    outline: none;
-    position: relative;
-    transition: all 0.3s;
-    
+  border: none;
+  border-radius: 5px;
+  font-family: 'clash-font', sans-serif;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  padding: 1rem 1.875rem;
+  display: inline-block;
+  margin: auto;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  transition: all 0.3s;
 }
-.img{
-    border-radius: 50%;
 
-
-} 
-.divbtn{
-    text-align: center;
+.btndelete {
+  background: red;
+  color: #fff;
+  box-shadow: 0 6px red, -1px 8px 0 black, 0 0 0 2px black, 0px 6px 0px 2px black;
 }
- .divpaiinfos{
 
-    width: 25rem;
-} 
+.btndelete:active {
+  box-shadow: 0 0 #ae6a06, 0 0 0 2px black, 0px 0px 0px 2px black;
+  top: 6px;
+}
+
+.btndelete .overlay {
+  width: 95%;
+  height: 87%;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0px 1px 4px #fe8d0a;
+  border-radius: 5px;
+  top: 2px;
+  left: 5px;
+}
+
+.btndelete .overlay+.overlay {
+  height: 45%;
+  width: 92.5%;
+  left: 7px;
+  border-radius: 5px;
+  top: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: none;
+}
+
+.btndelete .overlay+.overlay+.overlay {
+  width: 5px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 200px;
+  right: 8px;
+  left: auto;
+  transform: rotate(-45deg);
+}
+
+/*botao update*/
+
+.btnupdate {
+  border: none;
+  border-radius: 5px;
+  font-family: 'clash-font', sans-serif;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  padding: 1rem 1.875rem;
+  display: inline-block;
+  margin: auto;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.btnupdate {
+  background: blue;
+  color: #fff;
+  box-shadow: 0 6px blue, -1px 8px 0 black, 0 0 0 2px black, 0px 6px 0px 2px black;
+}
+
+.btnupdate:active {
+  box-shadow: 0 0 blue, 0 0 0 2px black, 0px 0px 0px 2px black;
+  top: 6px;
+}
+
+.btnupdate .overlay {
+  width: 95%;
+  height: 87%;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0px 1px 4px blue;
+  border-radius: 5px;
+  top: 2px;
+  left: 5px;
+}
+
+.btnupdate .overlay+.overlay {
+  height: 45%;
+  width: 92.5%;
+  left: 7px;
+  border-radius: 5px;
+  top: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: none;
+}
+
+.btnupdate .overlay+.overlay+.overlay {
+  width: 5px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 200px;
+  right: 8px;
+  left: auto;
+  transform: rotate(-45deg);
+}
+
+.infos {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-family: 'clash-font', sans-serif;
+  font-size: 1.5rem;
+  color: white;
+  background: none;
+  cursor: pointer;
+  padding: 1rem 1.875rem;
+  margin: auto;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  transition: all 0.3s;
+
+  max-height: 7rem;
+  min-height: 7rem;
+
+}
+
+.infosImg{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+
+  color: white;
+  background: none;
+  cursor: pointer;
+  padding: 1rem 1.875rem;
+
+  margin: auto;
+
+  outline: none;
+  transition: all 0.3s;
+
+
+}
+
+.descricao{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  max-height: 15rem;
+  min-height: 15rem;
+  margin-top: 1rem;
+  text-align: justify;
+  letter-spacing: 0.05rem;
+}
+
+.img {
+  border-radius: 50%;
+
+}
+
+.divbtn {
+  text-align: center;
+  display: flex;
+  margin-top: 3rem;
+  min-height: 3rem;
+}
+
+.divpaiinfos {
+  min-height: 60rem;
+  width: 25rem;
+  margin-bottom: 5rem;
+  max-height: 60rem;
+  padding: 1rem ;
+}
 
 .btncreate {
-    border: none;
-    border-radius: 5px;
-    font-family: 'clash-font', sans-serif;
-    font-size: inherit;
-    color: inherit;
-    background: none;
-    cursor: pointer;
-    padding: 1rem 1.875rem;
-    display: inline-block;
-    margin:auto;
-    text-transform: uppercase;
-    letter-spacing: 1px;  
-    font-weight: 700;
-    outline: none;
-    position: relative;
-    transition: all 0.3s;
-  }
-  
-  .btncreate {
-    background: rgb(100, 254, 100);
-    color: #fff;
-    box-shadow: 0 6px rgb(44, 123, 44), -1px 8px 0 black, 0 0 0 2px black, 0px 6px 0px 2px black;
-  }
-  
-  .btncreate:active{
-    box-shadow: 0 0 rgb(77, 125, 4), 0 0 0 2px black, 0px 0px 0px 2px black;
-    top: 6px;
-  }
-  
-  .btncreate .overlay {
-    width: 95%;
-    height: 87%;
-    position: absolute;
-    background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0px 1px 4px green;
-    border-radius: 5px;
-    top: 2px;
-    left: 5px;
-  }
-  
-  .btncreate .overlay + .overlay{
-    height: 45%;
-    width: 92.5%;
-    left: 7px;
-    border-radius: 5px;
-    top: 6px;
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: none;
-  }
-  
-  .btncreate .overlay + .overlay + .overlay {
-    width: 5px;
-    height: 8px;
-    background: rgba(255, 255, 255, 0.65);
-    border-radius: 200px;
-    right: 8px;
-    left: auto;
-    transform: rotate(-45deg);
-  }
-  .h1{
-    text-align: center;
-  }
-.cria{
-    text-align: center;
+  border: none;
+  border-radius: 5px;
+  font-family: 'clash-font', sans-serif;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  padding: 1rem 1.875rem;
+  display: inline-block;
+  margin: 5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.btncreate {
+  background: rgb(100, 254, 100);
+  color: #fff;
+  box-shadow: 0 6px rgb(44, 123, 44), -1px 8px 0 black, 0 0 0 2px black, 0px 6px 0px 2px black;
+}
+
+.btncreate:active {
+  box-shadow: 0 0 rgb(77, 125, 4), 0 0 0 2px black, 0px 0px 0px 2px black;
+  top: 6px;
+}
+
+.btncreate .overlay {
+  width: 95%;
+  height: 87%;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0px 1px 4px green;
+  border-radius: 5px;
+  top: 2px;
+  left: 5px;
+}
+
+.btncreate .overlay+.overlay {
+  height: 45%;
+  width: 92.5%;
+  left: 7px;
+  border-radius: 5px;
+  top: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: none;
+}
+
+.btncreate .overlay+.overlay+.overlay {
+  width: 5px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 200px;
+  right: 8px;
+  left: auto;
+  transform: rotate(-45deg);
+}
+
+.h1 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.cria {
+  text-align: center;
 }
 
 .map {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
 }
