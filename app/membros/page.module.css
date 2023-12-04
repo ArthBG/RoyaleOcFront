@@ -177,10 +177,10 @@
     text-align: center;
 }
  .divpaiinfos{
-    display: flex;
-    flex-wrap: wrap;
+
     width: 25rem;
 } 
+
 .btncreate {
     border: none;
     border-radius: 5px;
@@ -246,4 +246,10 @@
   }
 .cria{
     text-align: center;
+}
+
+.map {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
 }

@@ -54,12 +54,14 @@ export default function Page() {
                 {/* Se há dados, exibe a lista de membros; caso contrário, exibe uma mensagem de carregamento ou erro. */}
                 {dados.length ? (
                     // Se há membros, mapeia e exibe as informações de cada membro.
+                    <div>
                     <div className={styles.map}>
                         {membros.map((membro) => (
                             <div key={membro.id}>
+                               
                                 <div className={styles.divpaiinfos}>
                                     {/*  Informações do membro */}
-
+                             
                                     <p className={styles.infos}>
                                         <strong>Nome:</strong> {membro.nome}
                                     </p>
@@ -76,6 +78,7 @@ export default function Page() {
                                     <p className={styles.descricao}>
                                         <strong>Descrição:</strong> {membro.descricao}
                                     </p>
+                                    
                                     <div className={styles.divbtn}>
 
                                         <button className={styles.btndelete} onClick={() => deletar(membro.id)}>
@@ -93,11 +96,15 @@ export default function Page() {
                                         </button >
 
                                     </div>
-
+                                    
                                 </div>
+                               
                             </div>
+                           
                         ))}
-                        <div className={styles.cria}>
+                        
+                    </div>
+                    <div className={styles.cria}>
                             <Link href="/membros/cadastro">
                                 <button type="submit" className={styles.btncreate}>
                                     <div className={styles.overlay}></div>
