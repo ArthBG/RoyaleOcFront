@@ -129,18 +129,13 @@ const CardDescription = ({ params }) => {
                         <p className={styles.info}>Dano em Area: {card.damageonarea}</p>
                     </>
                 )}
-
+                {card.deploytime && (
+                    <>
+                        <img src="https://1.bp.blogspot.com/-OMAp4OqQVbE/VyiYzwZUcEI/AAAAAAAAow0/JfpWhtc62qUbVdD6YYemWm-T5ltCWZpAwCLcB/s1600/tempo-de-mobilizacao-clash-royale.png" alt={`imagem tempo de implantação da carta ${card.name}`} />
+                        <p className={styles.info}>Tempo de Implantação: {card.deploytime}</p>
+                    </>
+                )}
                 
-
-
-                
-
-
-
-
-
-
-
 
 
             </div>
