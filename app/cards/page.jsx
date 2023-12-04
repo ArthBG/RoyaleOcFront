@@ -144,7 +144,6 @@ function cardspage() {
             <div className={style.containerCard}>
                 { cardsData.map((card) => (
                     <div key={card.id} >
-                        <Link className={style.linkremove} href={`/cardsdetail/${card.id}`}>
                     <div className={style.card}>       
                     <div className={style.containerButtons}>
                      <div className={style.containerS}>
@@ -156,13 +155,14 @@ function cardspage() {
                         </button>
                     </div>    
                     </div>  
+                        <Link className={style.linkremove} href={`/cardsdetail/${card.id}`}>
                     <div className={style.containerImage}> 
                     <img src={card.image} width={110} height={125}/>
                     </div>
+                </Link>
                      <p className={style.cardName}>{card.name}</p>
                    
                 </div>
-                </Link>
                 </div> 
                 ))
 }
