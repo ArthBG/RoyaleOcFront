@@ -9,6 +9,8 @@ import axios from "axios"
 import { useState, useEffect } from "react"
 import styles from "../createcard/page.module.css"
 import CardInfo from "../../components/cardinfo/cardinfo";
+
+
 const style = {
     position: 'absolute',
     top: '50%',
@@ -223,6 +225,7 @@ export default function createCard() {
 
   return (
     <main className={styles.backgroundimage}>
+      
       <div className={styles.conatainerInputs}>
         <input className={styles.input} type="text" maxLength={30} placeholder="Nome da sua carta" value={name} onChange={e => setName(e.target.value)} />
         <select className={styles.select}
@@ -458,6 +461,7 @@ export default function createCard() {
           level={level}
         />
       </div>
+  
     </main>
   )
 }
