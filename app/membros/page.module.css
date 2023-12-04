@@ -298,3 +298,98 @@
   justify-content: center;
   gap: 1rem;
 }
+
+/* deixe essa pagina responsiva */
+@media (max-width: 768px) {
+  .divpaiinfos {
+    width: 100%;
+    margin-bottom: 5rem;
+    max-height: 100%;
+    padding: 1rem;
+  }
+
+  .infos {
+    max-height: 100%;
+    min-height: 100%;
+  }
+
+  .infosImg{
+    max-height: 100%;
+    min-height: 100%;
+  }
+
+  .descricao{
+    max-height: 100%;
+    min-height: 100%;
+  }
+
+  .divbtn {
+    text-align: center;
+    display: flex;
+    margin-top: 3rem;
+    min-height: 3rem;
+  }
+
+  .map {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .h1 {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .cria {
+    text-align: center;
+  }
+
+  .container {
+    background-image: url("../../public/images/fundoazulcards.png");
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+    color: white;
+  }
+
+  .divpaiinfos {
+    min-height: 60rem;
+    width: 25rem;
+    margin-bottom: 5rem;
+    max-height: 60rem;
+    padding: 1rem;
+  }
+
+  .infos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-family: 'clash-font', sans-serif;
+    font-size: 1.5rem;
+    color: white;
+    background: none;
+    cursor: pointer;
+    padding: 1rem 1.875rem;
+    margin: auto;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    transition: all 0.3s;
+
+    max-height: 7rem;
+    min-height: 7rem;
+  }
+}
+
