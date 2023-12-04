@@ -6,6 +6,8 @@ import { useRouter } from "next/navigation";
 import styles from "./page.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import Header from "../components/header/header";
+import Footer from "../components/footer/footer";
 
 export default function Page() {
     // Estados para armazenar a lista de membros e dados adicionais.
@@ -48,6 +50,7 @@ export default function Page() {
     return (
 
         <div className={styles.container}>
+            <Header/>
             <h1 className={styles.h1}>Membros</h1>
             <div className={styles.divPai}>
 
@@ -119,6 +122,7 @@ export default function Page() {
                     <p>carregando..</p>
                 )}
             </div>
+            <Footer/>
         </div>
     );
 }
