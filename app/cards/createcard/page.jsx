@@ -17,6 +17,32 @@ export default function createCard() {
   const [elixir, setElixir] = useState("")
   const [image, setImage] = useState("")
   const [description, setDescription] = useState("")
+  const [hp, setHp] = useState("")
+  const [deploytime, setDeploytime] = useState("")
+  const [shieldhp, setShieldhp] = useState("")
+  const [damage, setDamage] = useState("")
+  const [damagepersecond, setDamagepersecond] = useState("")
+  const [rangeddamage, setRangeddamage] = useState("")
+  const [damageondistance, setDamageondistance] = useState("")
+  const [damageonarea, setDamageonarea] = useState("")
+  const [damageonimpact, setDamageonimpact] = useState("")
+  const [damageontower, setDamageontower] = useState("")
+  const [chargedamage, setChargedamage] = useState("")
+  const [damageondeath, setDamageondeath] = useState("")
+  const [spawnspeed, setSpawnspeed] = useState("")
+  const [duration, setDuration] = useState("")
+  const [radius, setRadius] = useState("")
+  const [width, setWidth] = useState("")
+  const [efecttime, setEfecttime] = useState("")
+  const [freezetime, setFreezetime] = useState("")
+  const [unities, setUnities] = useState("")
+  const [arena, setArena] = useState("")
+  const [target, setTarget] = useState("")
+  const [projectilerange, setProjectilerange] = useState("")
+  const [range, setRange] = useState("")
+  const [speed, setSpeed] = useState("")
+  const [impactspeed, setImpactspeed] = useState("")
+  const [id, setId] = useState("")
 
   const handleImage = (e) => {
     const file = e.target.files[0]
@@ -135,12 +161,38 @@ export default function createCard() {
       <div className={styles.containerCard}>
         <CardInfo
           name={name}
-          level={level}
-          rarity={rarity}
-          type={type}
-          elixir={elixir}
           image={image}
+          type={type}
+          rarity={rarity}
+          elixir={elixir}
+          hp={hp}
+          deploytime={deploytime}
+          shieldhp={shieldhp}
           description={description}
+          damage={damage}
+          damagepersecond={damagepersecond}
+          rangeddamage={rangeddamage}
+          damageondistance={damageondistance}
+          damageonarea={damageonarea}
+          damageonimpact={damageonimpact}
+          damageontower={damageontower}
+          chargedamage={chargedamage}
+          damageondeath={damageondeath}
+          spawnspeed={spawnspeed}
+          duration={duration}
+          radius={radius}
+          width={width}
+          efecttime={efecttime}
+          freezetime={freezetime}
+          unities={unities}
+          arena={arena}
+          target={target}
+          projectilerange={projectilerange}
+          range={range}
+          speed={speed}
+          impactspeed={impactspeed}
+          id={id}
+          level={level}
         />
       </div>
     </main>
