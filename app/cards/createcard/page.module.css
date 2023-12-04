@@ -1,0 +1,125 @@
+.backgroundimage{
+    background-image: url("../../../public/images/fundoazul.png");
+    background-repeat:repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+   
+
+}
+.title{
+    color: rgb(255, 255, 255);
+    text-shadow: -1px 5px 0 #000,0 2px 0 #000,1px 2px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;
+}
+.prosseguir{
+    margin: auto;
+    padding-top: 10rem;
+    justify-content: center;
+    align-items: center;
+
+}
+.containerButtonsp{
+    margin: auto;
+    text-align: center;
+}
+.containerImageS{
+    display: block;
+    padding-top: 10rem;
+    text-align: center;
+
+}
+.conatainerInputs{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding-top: 5rem;
+    max-width: 50%;
+}
+.conatainerInputs input[type="text"]{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 16px;
+    margin-bottom: 0.5rem;
+}
+.conatainerInputs input[type="text"]:focus{
+    border: 1px solid #000;
+}
+.conatainerInputs input[type="file"]{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 16px;
+    margin-bottom: 0.5rem;
+}
+.input{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 16px;
+    margin-bottom: 0.5rem;
+}
+.select{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    margin-bottom: 0.5rem;
+    font-size: 16px;
+}
+.title{
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+
+}
+.scbtnyellow {
+    margin: 0.75rem;
+    background-color: #f0c44e;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 3px 0 #ff8907, 0 0 0 4px #ffa80c, 0 1px 0 4px #ffa80c, 0 -1px 2px 4px #ffd525, 0 -2px 0 5px #f4e684, 0 6px 0 4px #b06904, 0 3px 0 5px #f4e684, 0 -2px 0 7px #202020, 0 5px 0 7px #202020, 0 7px 0 7px #333;
+    color: #ffc;
+    font-size: 26px;
+    text-shadow: -1px 2px 0 #582d00,0 2px 0 #582d00,1px 2px 0 #582d00,-1px -1px 0 #582d00,1px -1px 0 #582d00,-1px 1px 0 #582d00,1px 1px 0 #582d00;
+}
+
+.scbtnyellow:active {
+    box-shadow: 0 -2px 3px 0 #ff8907,0 0 0 4px #ffa80c,0 -1px 0 4px #ffa80c,0 -1px 2px 4px #ffd525,0 -2px 0 5px #f4e684,0 6px 0 4px #b06904,0 3px 0 5px #f4e684,0 -2px 0 7px #202020,0 5px 0 7px #202020,0 7px 0 7px #333;
+    text-shadow: -1px -1px 0 #582d00,1px -1px 0 #582d00,-1px 1px 0 #582d00,1px 1px 0 #582d00
+}
+
+.containerHeader{
+    background-color: white;
+    display: flex;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.rarity{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+.type{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+.fitrt{
+    display: flex;
+    width: max-content;
+    justify-content: space-between;
+    border-radius: 5px;
+    background-color: rgb(168, 219, 219);
+}
+.containerPoints{
+    background-color: rgb(226, 237, 250);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
