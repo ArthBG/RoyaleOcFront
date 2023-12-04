@@ -1,49 +1,58 @@
- .container{
-    background-image: url("../../../public/images/fundoazul.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    height: 1000vh;
-    color: white;
-}
- 
+ .container {
+     background-image: url("../../../public/images/fundoazul.png");
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center;
+     background-attachment: fixed;
+     height: 1000vh;
+     color: white;
+ }
+
  .infosCartas {
-    background-image: url('../../../public/images/infobg.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100rem;
-    width: 100rem;
-}
+     background-image: url('#');
+     background-repeat: no-repeat;
+     background-position: center;
+     height: 100rem;
+     width: 100rem;
+ }
 
-/* Styles for card name */
-.info {
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-.info h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
+ /* Styles for card name */
+ .info {
+     font-size: 16px;
+     margin-bottom: 6%;
+     color: rgb(255, 255, 255);
+     text-shadow: -2px 0px 0px rgba(18, 17, 17, 1);
 
 
 
+ }
 
-/* Responsive styles using media queries */
-@media only screen and (min-width: 600px) {
-    .infosCartas {
-        justify-content: space-between;
-    }
+ .cardinfo {
+     background-color: rgb(170, 171, 172);
+     width: 50%;
+     border-radius: 26px;
+     box-shadow: -4px 3px 1px -1px rgba(0, 0, 0, 0.43);
+     -webkit-box-shadow: -4px 3px 1px -1px rgba(0, 0, 0, 0.43);
+     -moz-box-shadow: -4px 3px 1px -1px rgba(0, 0, 0, 0.43);
+ }
 
-    .info {
-        width: 48%; 
-    }
-}
 
-@media only screen and (min-width: 768px) {
-    .info {
-        width: 30%; 
-    }
-}
 
+
+
+ /* Responsive styles using media queries */
+ @media only screen and (min-width: 600px) {
+     .infosCartas {
+         justify-content: space-between;
+     }
+
+     .info {
+         width: 48%;
+     }
+ }
+
+ @media only screen and (min-width: 768px) {
+     .info {
+         width: 30%;
+     }
+ }

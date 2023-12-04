@@ -14,44 +14,94 @@ export default function Register() {
     const [cargo, setCargo] = useState("");
     const [foto, setFoto] = useState("");
     const [errorNome, setErrorNome] = useState("");
+    const [errorIdade, setErrorIdade] = useState("");
+    const [errorCargo, setErrorCargo] = useState("");
+    const [errorFoto, setErrorFoto] = useState("");
+    const [errorDescricao, setErrorDescricao] = useState("");
     const [descricao, setDescricao] = useState("");
     const [membros, setMembros] = useState([]);
 
- 
+
 
     // Função para lidar com o envio do formulário de registro.
     const handleSubmit = async (e) => {
         e.preventDefault();
-        
-        if(nome.length < 2){
+
+        // Validação dos campos do formulário
+        if (nome == '') {
             setErrorNome("Preencha o campo nome!");
+            setTimeout(() => {
+                setErrorNome("");
+            }, 3000);
             return;
-           
-        }else if(nome == ''){
-            setErrorNome("Preencha o campo nome!");   
+        } else if (nome.length < 2) {
+            setErrorNome("O nome deve ter mais que 2 caracteres!");
+            setTimeout(() => {
+                setErrorNome("");
+            }, 3000);
             return;
-               
-
-        }else{
-
-        try {
-            // Envia uma requisição POST para a API com os dados do novo membro.
-            await axios.post("/api/membros", { nome, idade, cargo, foto, descricao });
-            // Limpa os campos do formulário 
-            setNome("");
-            setIdade("");
-            setCargo("");
-            setFoto("");
-            setDescricao("");
-        } catch (error) {
-
-            console.error("Error submitting data:", error);
-            // Exibe mensagem de erro
-            setMsg("Erro ao cadastrar membro. Por favor, preencha todos os campos corretamente.");
 
         }
-    }
-};
+        if (!idade || idade <= 15) {
+            setErrorIdade("Idade deve ser maior que 15!");
+            setTimeout(() => {
+                setErrorIdade("");
+            }, 3000);
+            return;
+        } else if (idade == '') {
+            setErrorIdade("Preencha o campo idade!");
+            setTimeout(() => {
+                setErrorIdade("");
+            }, 3000);
+            return;
+        }
+        if (cargo == '') {
+            setErrorCargo("Preencha o campo cargo!");
+            setTimeout(() => {
+                setErrorCargo("");
+            }, 3000);
+            return;
+        }
+        if (foto == '') {
+            setErrorFoto("Preencha o campo foto!");
+            setTimeout(() => {
+                setErrorFoto("");
+            }, 3000);
+            return;
+
+        } if (descricao.length > 1000) {
+            setErrorDescricao("Descrição muito grande!");
+            setTimeout(() => {
+                setErrorDescricao("");
+            }, 3000);
+        } else if (descricao == '') {
+            setErrorDescricao("Preencha o campo descrição!");
+            setTimeout(() => {
+                setErrorDescricao("");
+            }, 3000);
+            return;
+        }
+
+        else {
+
+            try {
+                // Envia uma requisição POST para a API com os dados do novo membro.
+                await axios.post("/api/membros", { nome, idade, cargo, foto, descricao });
+                // Limpa os campos do formulário 
+                setNome("");
+                setIdade("");
+                setCargo("");
+                setFoto("");
+                setDescricao("");
+            } catch (error) {
+
+                console.error("Error submitting data:", error);
+                // Exibe mensagem de erro
+                setMsg("Erro ao cadastrar membro. Por favor, preencha todos os campos corretamente.");
+
+            }
+        }
+    };
 
     // Buscar a lista de membros quando o componente é montado.
     useEffect(() => {
@@ -97,10 +147,10 @@ export default function Register() {
                             id="name"
                             value={nome}
                             onChange={(e) => setNome(e.target.value)}
-                            required
+
                         />
-                        <p>{errorNome}</p>
-                        
+                        <p className={styles.msgError}>{errorNome}</p>
+
                     </div>
 
                     <div className={styles.divInput}>
@@ -113,9 +163,9 @@ export default function Register() {
                             id="idade"
                             value={idade}
                             onChange={(e) => setIdade(e.target.value)}
-                            required
+
                         />
-                        
+                        <p className={styles.msgError}>{errorIdade}</p>
                     </div>
 
                     <div className={styles.divInput}>
@@ -128,9 +178,9 @@ export default function Register() {
                             id="cargo"
                             value={cargo}
                             onChange={(e) => setCargo(e.target.value)}
-                            required
+
                         />
-                        
+                        <p className={styles.msgError}>{errorCargo}</p>
                     </div>
 
                     <div className={styles.divInput}>
@@ -143,10 +193,10 @@ export default function Register() {
                             name="foto"
                             value={foto}
                             onChange={(e) => setFoto(e.target.value)}
-                            required
+
 
                         />
-                        
+                        <p className={styles.msgError}>{errorFoto}</p>
                     </div>
 
 
@@ -160,9 +210,10 @@ export default function Register() {
                             id="descricao"
                             value={descricao}
                             onChange={(e) => setDescricao(e.target.value)}
-                            required
+
                         />
-                        
+                        <p className={styles.msgError}>{errorDescricao}</p>
+
                     </div>
 
                     <button type="submit" className={styles.btn}>
