@@ -1,6 +1,6 @@
 /* Estilos para o contêiner pai. */
 .containerPai {
-  background-image: url("../../");
+  background-image: url("../../../public/images/fundoazul.png");
     font-family: 'clash-font', sans-serif;
     display: flex;
     flex-direction: column;
