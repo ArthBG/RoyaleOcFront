@@ -22,6 +22,7 @@ export default function Page() {
             setMembros(membros.filter((membro) => membro.id !== id));
         } catch (error) {
             console.error("Error deleting membro", error);
+          
         }
     };
     console.log(dados, membros)

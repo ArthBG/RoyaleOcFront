@@ -4,7 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import styles from "./cadastro.module.css";
 import Link from "next/link";
-import Mensagem from "@/app/components/mensagem/msg";
+
 
 
 // Componente de registro de novos membros
@@ -13,7 +13,7 @@ export default function Register() {
     const [idade, setIdade] = useState("");
     const [cargo, setCargo] = useState("");
     const [foto, setFoto] = useState("");
-    const [msg, setMsg] = useState("");
+    const [errorNome, setErrorNome] = useState("");
     const [descricao, setDescricao] = useState("");
     const [membros, setMembros] = useState([]);
 
@@ -22,6 +22,17 @@ export default function Register() {
     // Função para lidar com o envio do formulário de registro.
     const handleSubmit = async (e) => {
         e.preventDefault();
+        
+        if(nome.length < 2){
+            setErrorNome("Preencha o campo nome!");
+            return;
+           
+        }else if(nome == ''){
+            setErrorNome("Preencha o campo nome!");   
+            return;
+               
+
+        }else{
 
         try {
             // Envia uma requisição POST para a API com os dados do novo membro.
@@ -39,7 +50,8 @@ export default function Register() {
             setMsg("Erro ao cadastrar membro. Por favor, preencha todos os campos corretamente.");
 
         }
-    };
+    }
+};
 
     // Buscar a lista de membros quando o componente é montado.
     useEffect(() => {
@@ -87,7 +99,8 @@ export default function Register() {
                             onChange={(e) => setNome(e.target.value)}
                             required
                         />
-                        {msg && nome === "" && <Mensagem msg="Preencha o campo nome!" type="error" />}
+                        <p>{errorNome}</p>
+                        
                     </div>
 
                     <div className={styles.divInput}>
@@ -102,10 +115,7 @@ export default function Register() {
                             onChange={(e) => setIdade(e.target.value)}
                             required
                         />
-                        {
-                            msg ? (idade == "" ? <Mensagem msg="Preencha o campo idade!"
-                            type="error" /> : null) : null
-                        }
+                        
                     </div>
 
                     <div className={styles.divInput}>
@@ -120,9 +130,7 @@ export default function Register() {
                             onChange={(e) => setCargo(e.target.value)}
                             required
                         />
-                        {
-                            msg ? (cargo == "" ? <Mensagem msg={"Preencha o campo cargo!"} type={"error"} /> : null) : null
-                        }
+                        
                     </div>
 
                     <div className={styles.divInput}>
@@ -138,9 +146,7 @@ export default function Register() {
                             required
 
                         />
-                        {
-                            msg ? (foto == "" ? <Mensagem msg={"Preencha o campo foto!"} type={"error"} /> : null) : null
-                        }
+                        
                     </div>
 
 
@@ -156,9 +162,7 @@ export default function Register() {
                             onChange={(e) => setDescricao(e.target.value)}
                             required
                         />
-                        {
-                            msg ? (descricao == "" ? <Mensagem msg={"Preencha o campo descricao!"} type={"error"} /> : null) : null
-                        }
+                        
                     </div>
 
                     <button type="submit" className={styles.btn}>

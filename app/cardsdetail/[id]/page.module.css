@@ -9,9 +9,11 @@
 }
  
  .infosCartas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    background-image: url('../../../public/images/infobg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100rem;
+    width: 100rem;
 }
 
 /* Styles for card name */
@@ -19,6 +21,12 @@
     font-size: 16px;
     margin-bottom: 10px;
 }
+
+.info h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
 
 
 
@@ -29,13 +37,13 @@
     }
 
     .info {
-        width: 48%; /* Adjust width for better spacing on larger screens */
+        width: 48%; 
     }
 }
 
 @media only screen and (min-width: 768px) {
     .info {
-        width: 30%; /* Adjust width for better spacing on larger screens */
+        width: 30%; 
     }
 }
 
