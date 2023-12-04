@@ -19,7 +19,7 @@ export default function Register() {
     const [descricao, setDescricao] = useState("");
     const [membros, setMembros] = useState([]);
 
- 
+
 
     // Função para lidar com o envio do formulário de registro.
     const handleSubmit = async (e) => {
@@ -64,26 +64,14 @@ export default function Register() {
             <Header />
 
 
-            <Link href="/membros">
-                <button type="submit" className={styles.botaoVoltar}>
-                    <div className={styles.overlay}></div>
-                    <div className={styles.overlay}></div>
-                    <div className={styles.overlay}></div>
-                    <span>Voltar</span>
-                </button >
-            </Link>
-
-
             <div className={styles.containerForm}>
-                <h1 className={styles.titulo}>Fazer cadastro</h1>
+                <h1 className={styles.titulo}>Fazer o cadastro:</h1>
 
                 <form className={styles.form} onSubmit={handleSubmit}>
                     <div className={styles.divInput}>
-                        <label className={styles.label} htmlFor="nome">
-                            Nome:
-                        </label>
                         <input
                             className={styles.input}
+                            placeholder="Nome"
                             type="text"
                             id="name"
                             value={nome}
@@ -94,11 +82,9 @@ export default function Register() {
                     </div>
 
                     <div className={styles.divInput}>
-                        <label className={styles.label} htmlFor="idade">
-                            Idade:
-                        </label>
                         <input
                             className={styles.input}
+                            placeholder="Idade"
                             type="number"
                             id="idade"
                             value={idade}
@@ -107,16 +93,14 @@ export default function Register() {
                         />
                         {
                             msg ? (idade == "" ? <Mensagem msg="Preencha o campo idade!"
-                            type="error" /> : null) : null
+                                type="error" /> : null) : null
                         }
                     </div>
 
                     <div className={styles.divInput}>
-                        <label className={styles.label} htmlFor="cargo">
-                            Cargo:
-                        </label>
                         <input
                             className={styles.input}
+                            placeholder="Cargo"
                             type="text"
                             id="cargo"
                             value={cargo}
@@ -129,10 +113,9 @@ export default function Register() {
                     </div>
 
                     <div className={styles.divInput}>
-                        <label className={styles.label} htmlFor="foto">
-                            Foto:
-                        </label>
                         <input
+                            className={styles.input}
+                            placeholder="URL da foto"
                             type="text"
                             id="foto"
                             name="foto"
@@ -148,11 +131,9 @@ export default function Register() {
 
 
                     <div className={styles.divInput}>
-                        <label className={styles.label} htmlFor="descricao">
-                            Descrição:
-                        </label>
                         <input
                             className={styles.input}
+                            placeholder="Descrição"
                             type="text"
                             id="descricao"
                             value={descricao}
@@ -163,13 +144,26 @@ export default function Register() {
                             msg ? (descricao == "" ? <Mensagem msg={"Preencha o campo descricao!"} type={"error"} /> : null) : null
                         }
                     </div>
+                    <div className={styles.containerbtn}>
 
-                    <button type="submit" className={styles.btn}>
-                        <div className={styles.overlay}></div>
-                        <div className={styles.overlay}></div>
-                        <div className={styles.overlay}></div>
-                        <span>Cadastrar</span>
-                    </button >
+                        <Link href="/membros">
+                            <button type="submit" className={styles.botaoVoltar}>
+                                <div className={styles.overlay}></div>
+                                <div className={styles.overlay}></div>
+                                <div className={styles.overlay}></div>
+                                <span className={styles.voltar}>Voltar</span>
+                            </button >
+                        </Link>
+
+
+                        <button type="submit" className={styles.btn}>
+                            <div className={styles.overlay}></div>
+                            <div className={styles.overlay}></div>
+                            <div className={styles.overlay}></div>
+                            <span>Cadastrar</span>
+                        </button >  
+
+                    </div>
 
                 </form >
             </div >
