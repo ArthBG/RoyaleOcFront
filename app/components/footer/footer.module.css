@@ -1,4 +1,5 @@
 .rodape {
+  position: fixed;
   bottom: 0;
   background-color: #06245c;
   color: white;
