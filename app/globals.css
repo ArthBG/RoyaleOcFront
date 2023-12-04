@@ -11,6 +11,6 @@
     scroll-behavior: smooth;
   }
 
-  button{
+  button:hover{
     cursor: pointer;
   }
