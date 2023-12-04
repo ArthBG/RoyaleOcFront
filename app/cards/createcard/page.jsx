@@ -308,7 +308,7 @@ export default function createCard() {
                 <option value="">Selecione os atributos</option>
                 <option value="Pontos de Vida"><img src={"/images/hp.png"}/>Pontos de Vida</option>
                 <option value="Dano"><img src={"/images/dano.png"}/>Dano</option>
-                <option value="Dano por segundo<"><img src={"/images/danosegundo.png"}/>Dano por segundo</option>
+                <option value="Dano por segundo"><img src={"/images/danosegundo.png"}/>Dano por segundo</option>
                 <option value="Dano a distância"><img src={"/images/danoadistancia.png"}/>Dano a distância</option>
                 <option value="Dano de longa distância"><img src={"/images/danoaodistancia.png"}/>Dano de longa distância</option>
                 <option value="Dano em área"><img src={"/images/danoarea.png"}/>Dano em área</option>
