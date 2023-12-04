@@ -19,7 +19,7 @@ export default function Register() {
     const [descricao, setDescricao] = useState("");
     const [membros, setMembros] = useState([]);
 
- 
+
 
     // Função para lidar com o envio do formulário de registro.
     const handleSubmit = async (e) => {
@@ -64,16 +64,6 @@ export default function Register() {
             <Header />
 
 
-            <Link href="/membros">
-                <button type="submit" className={styles.botaoVoltar}>
-                    <div className={styles.overlay}></div>
-                    <div className={styles.overlay}></div>
-                    <div className={styles.overlay}></div>
-                    <span>Voltar</span>
-                </button >
-            </Link>
-
-
             <div className={styles.containerForm}>
                 <h1 className={styles.titulo}>Fazer cadastro</h1>
 
@@ -107,7 +97,7 @@ export default function Register() {
                         />
                         {
                             msg ? (idade == "" ? <Mensagem msg="Preencha o campo idade!"
-                            type="error" /> : null) : null
+                                type="error" /> : null) : null
                         }
                     </div>
 
@@ -163,13 +153,26 @@ export default function Register() {
                             msg ? (descricao == "" ? <Mensagem msg={"Preencha o campo descricao!"} type={"error"} /> : null) : null
                         }
                     </div>
+                    <div className={styles.containerbtn}>
 
-                    <button type="submit" className={styles.btn}>
-                        <div className={styles.overlay}></div>
-                        <div className={styles.overlay}></div>
-                        <div className={styles.overlay}></div>
-                        <span>Cadastrar</span>
-                    </button >
+                        <Link href="/membros">
+                            <button type="submit" className={styles.botaoVoltar}>
+                                <div className={styles.overlay}></div>
+                                <div className={styles.overlay}></div>
+                                <div className={styles.overlay}></div>
+                                <span>Voltar</span>
+                            </button >
+                        </Link>
+
+
+                        <button type="submit" className={styles.btn}>
+                            <div className={styles.overlay}></div>
+                            <div className={styles.overlay}></div>
+                            <div className={styles.overlay}></div>
+                            <span>Cadastrar</span>
+                        </button >  
+
+                    </div>
 
                 </form >
             </div >

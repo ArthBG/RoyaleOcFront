@@ -1,5 +1,6 @@
 /* Estilos para o contêiner pai. */
 .containerPai {
+  background-image: url("../../");
     font-family: 'clash-font', sans-serif;
     display: flex;
     flex-direction: column;
@@ -31,6 +32,7 @@
 /* Estilos para os campos de entrada e rótulos. */
 .divInput {
     margin-bottom: 15px;
+    display: flex;
 }
 
 .label {
@@ -150,13 +152,17 @@
   left: auto;
   transform: rotate(-45deg);
 }
- 
-/* Estilos responsivos com flex-wrap. */
-@media screen and (max-width: 600px) {
-    .containerPai {
-        padding: 20px;
-    }
-    .containerForm {
-        width: 100%;
-    }
+
+.containerbtn{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+
 }
+
+
+
+
+
+ 
+
