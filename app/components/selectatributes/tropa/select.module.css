@@ -1,0 +1,42 @@
+/* SeuArquivoDeEstilos.module.css */
+
+.main {
+    position: relative;
+    font-family: Arial, sans-serif;
+    width: 200px; /* Ajuste a largura conforme necessário */
+  }
+  
+  .select {
+    padding: 1rem;
+    width: 20rem;
+    background-color: rgb(225, 221, 215);
+    cursor: pointer;
+  }
+  
+  .selectUl {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: 20rem; 
+    width: 20rem;
+    overflow-y: auto; 
+    border-top: none;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .selectUl li {
+    transform: scale(1, 5);
+    background-color: #ccc;
+    cursor: pointer;
+  }
+  
+  .selectUl li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .selectUl img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
