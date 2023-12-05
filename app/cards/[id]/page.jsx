@@ -295,7 +295,7 @@ export default function updateCard({ params }) {
           <button className={styles.scbtnyellow} onClick={AtributesModal}>Adicionar atributos</button>
           <button className={styles.scbtnyellow} onClick={handleSubmit}>Editar</button>
         </div>
-        <div className={styles.containerCard}>
+        <div className={styles.containerCardInfo}>
           <CardInfoedit
             name={name}
             image={image}

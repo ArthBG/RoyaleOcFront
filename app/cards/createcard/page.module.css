@@ -145,6 +145,11 @@
 .conatainerCards{
     height: 100%;
     
+
+}
+.containerCardInfo{
+    margin-top: 10rem;
+    padding-bottom: 5rem;
 }
 
 
