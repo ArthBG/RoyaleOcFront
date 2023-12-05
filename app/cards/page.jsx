@@ -23,37 +23,22 @@ function cardspage() {
     useEffect(() => {
         async function fetchData() {
             try {
-
-                console.log(search);
-                console.log(selectedRarity);
-                console.log(selectedType);
-                console.log(selectedElixir);
-    
-                // Construa os parâmetros da URL com base nos valores definidos
                 let queryParams = '';
-    
                 if (search) {
                     queryParams += `name=${search}&`;
                 }
                 if (selectedRarity) {
                     queryParams += `rarity=${selectedRarity}&`;
                 }
-    
                 if (selectedType) {
                     queryParams += `type=${selectedType}&`;
                 }
-    
                 if (selectedElixir) {
                     queryParams += `elixir=${selectedElixir}&`;
                 }
-    
-                // Remova o último "&" se houver parâmetros na URL
                 if (queryParams.length > 0) {
                     queryParams = queryParams.slice(0, -1);
                 }
-
-                console.log(queryParams);
-    
                 const response = await axios.get(`/api/cards?${queryParams}`);
                 setCardsData(response.data.cards);
             } catch (error) {
