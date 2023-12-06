@@ -17,6 +17,9 @@ function cardspage() {
     const [selectedType, setSelectedType] = useState("");
     const [selectedElixir, setSelectedElixir] = useState("");
     const [selectedSorting, setSelectedSorting] = useState("");
+    const [orderbyname, setOrderByName] = useState('');
+    const [orderbyelixir, setOrderByElixir] = useState('');
+    const [orderbyrarity, setOrderByRarity] = useState('');
     const router = useRouter();
 
     console.log(selectedRarity);
@@ -37,26 +40,53 @@ function cardspage() {
                 if (selectedElixir) {
                     queryParams += `elixir=${selectedElixir}&`;
                 }
+                if (selectedSorting) {
+                    if(selectedSorting == "name"){
+                        queryParams += `orderbyname=${orderbyname}&`;
+                    } 
+                    if(selectedSorting == "elixir"){
+                        queryParams += `orderbyelixir=${orderbyelixir}&`;
+                    }
+                    if(selectedSorting == "rarity"){
+                        queryParams += `orderbyrarity=${orderbyrarity}&`;
+                    }
+                }
+               
                 if (queryParams.length > 0) {
                     queryParams = queryParams.slice(0, -1);
                 }
                 const response = await axios.get(`/api/cards?${queryParams}`);
                 setCardsData(response.data.cards);
-                if (selectedSorting) {
-                    handleSorting(selectedSorting);
-                }
             } catch (error) {
                 console.error(error);
             }
         }
 
         fetchData();
-    }, [selectedRarity, selectedType, selectedElixir, selectedSorting, search]);
+    }, [selectedRarity, selectedType, selectedElixir, selectedSorting, orderbyname, orderbyelixir, orderbyrarity, search]);
 
 
     console.log(cardsData);
 
-
+    const handleSorting = (e) => {
+        const selectedSorting = e.target.value;
+      
+        if (selectedSorting == "name") {
+          setOrderByName(orderbyname == 'asc');
+          setOrderByElixir('');
+          setOrderByRarity('');
+        } else if (selectedSorting == "elixir") {
+          setOrderByElixir(orderbyelixir == 'asc');
+          setOrderByName('');
+          setOrderByRarity('');
+        } else if (selectedSorting == "rarity") {
+          setOrderByRarity(orderbyrarity == 'asc');
+          setOrderByName('');
+          setOrderByElixir('');
+        }
+        setSelectedSorting(selectedSorting);
+      };
+      
 
 
     const clearFilters = () => {
@@ -66,31 +96,6 @@ function cardspage() {
         setSelectedSorting("");
         setSearch(""); 
     }
-    
-    const handleSorting = (option) => {
-        let sortedData = [...cardsData];
-      
-        if (option == 'name') {
-          sortedData.sort((a, b) => a.name.localeCompare(b.name));
-        } else if (option == 'elixir') {
-          sortedData.sort((a, b) => a.elixir - b.elixir);
-        } //ordenar por raridade: campeão, lendário, épico, raro, comum
-        else if (option == 'rarity') {
-          sortedData.sort((a, b) => {
-            const rarityOrder = {
-              'Campeão': 0,
-              'Lendário': 1,
-              'Épico': 2,
-              'Raro': 3,
-              'Comum': 4,
-            };
-      
-            return rarityOrder[a.rarity] - rarityOrder[b.rarity];
-          });
-        }
-      
-        setCardsData(sortedData);
-      };  
       
 
     const editCard = (id) => {
@@ -117,7 +122,7 @@ function cardspage() {
                     <FiSearch className={style.icon} />
                 </div>
             <div className={style.containerFilters}>
-                <select className={style.select} value={selectedSorting} onChange={(e) => setSelectedSorting(e.target.value)}>
+                <select className={style.select} value={selectedSorting} onChange={handleSorting}>
                     <option value="">Ordenar por:</option>
                     <option value="name">Nome</option>
                     <option value="elixir">Elixir</option>

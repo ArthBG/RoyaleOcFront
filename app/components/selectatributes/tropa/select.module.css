@@ -21,12 +21,14 @@
     width: 20rem;
     overflow-y: auto; 
     border-top: none;
-    transition: transform 0.3s ease-in-out;
   }
   
   .selectUl li {
-    transform: scale(1, 5);
-    background-color: #ccc;
+    border: 1px solid #020202;
+    border-radius: 4px;
+    text-align: start;
+    font-size: 13px;
+    margin-bottom: 0.5rem;
     cursor: pointer;
   }
   
@@ -35,8 +37,8 @@
   }
   
   .selectUl img {
-    width: 30px;
-    height: 30px;
+    width: 34px;
+    height: 34px;
     margin-right: 10px;
   }
   

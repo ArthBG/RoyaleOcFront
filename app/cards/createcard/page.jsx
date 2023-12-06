@@ -230,6 +230,7 @@ export default function createCard() {
   return (
     <main className={styles.backgroundimage}>
       <Header />
+      
       <div className={styles.conatainerInputs}>
         <input className={styles.input} type="text" maxLength={30} placeholder="Nome da sua carta" value={name} onChange={e => setName(e.target.value)} />
         <select className={styles.select}
