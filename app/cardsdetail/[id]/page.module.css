@@ -1,58 +1,101 @@
- .container {
-     background-image: url("../../../public/images/fundoazul.png");
-     background-repeat: no-repeat;
-     background-size: cover;
-     background-position: center;
-     background-attachment: fixed;
-     height: 1000vh;
-     color: white;
- }
+        .container {
+            background-image: url("../../../public/images/fundoazul.png");
+            background-repeat: repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            color: white;
+        }
+        .imgIcon{
+            background-color: rgba(73, 73, 73, 0.729);
+        }
 
- .infosCartas {
-     background-image: url('#');
-     background-repeat: no-repeat;
-     background-position: center;
-     height: 100rem;
-     width: 100rem;
- }
+        .infosCartas {
+            display: grid;  
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2px;
+            background-color: rgba(210, 210, 210);
+            border: solid 15px rgb(190, 190, 213);
+            box-shadow: -4px 3px 1px -1px rgba(0, 0, 0, 0.43);
+            -webkit-box-shadow: -4px 3px 1px -1px rgba(0, 0, 0, 0.43);
+            -moz-box-shadow: -4px 3px 1px -1px rgba(0, 0, 0, 0.43);
+            border-radius: 15px;
+            width: 85%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+       
+     
+        /* Styles for CardInfo */
+        .cardinfo {
+            margin: auto auto auto auto;
+            width: 50%;
+            height: 51%;
+            background-color: rgb(226, 226, 250);
+            border-radius: 10px;
+            box-shadow: -4px 3px 1px -1px rgba(0, 0, 0, 0.43);
+            -webkit-box-shadow: -4px 3px 1px -1px rgba(0, 0, 0, 0.43);
+            -moz-box-shadow: -4px 3px 1px -1px rgba(0, 0, 0, 0.43);
+            
+        }
 
- /* Styles for card name */
- .info {
-     font-size: 16px;
-     margin-bottom: 6%;
-     color: rgb(255, 255, 255);
-     text-shadow: -2px 0px 0px rgba(18, 17, 17, 1);
+        .cardinfo img {
+            margin-left: -4px;
+            margin-top: -4.5px;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
 
+        .info {
+            color: rgb(22, 22, 53);
+            font-size: 14px;
+            margin-left: 24%;
+            position: relative;
+            top: -64px;
+        }
 
+        .obj {
+            color: white;
+            text-shadow: 1px 2px 1px rgba(1, 1, 1, 1);
+            font-size: 16px;
+            margin-left: 24%;
+            position: relative;
+            top: -58px;
+        }
 
- }
+        /* Styles for TabPanel 2 - Sobre */
+        .Tabs .TabPanel:last-child {
+            padding: 20px;
+        }
 
- .cardinfo {
-     background-color: rgb(170, 171, 172);
-     width: 50%;
-     border-radius: 26px;
-     box-shadow: -4px 3px 1px -1px rgba(0, 0, 0, 0.43);
-     -webkit-box-shadow: -4px 3px 1px -1px rgba(0, 0, 0, 0.43);
-     -moz-box-shadow: -4px 3px 1px -1px rgba(0, 0, 0, 0.43);
- }
+        /* Additional Styles for Description Section in TabPanel 2 */
+        .Tabs .TabPanel:last-child img {
+            width: 100%;
+            max-width: 300px;
+            margin: 20px 0;
+        }
 
+        /* Responsive Styles for Carousel in TabPanel 2 */
+        .Tabs .TabPanel:last-child .carousel .slider-wrapper {
+            max-width: 300px;
+            margin: 0 auto;
+        }
 
+        @media only screen and (max-width: 600px) {
+            .infosCartas {
+                grid-template-columns: 1fr;
+                width: 100%;
+            }
 
+            .cardinfo {
+                width: 100%;
+                margin-bottom: 16px;
+            }
 
-
- /* Responsive styles using media queries */
- @media only screen and (min-width: 600px) {
-     .infosCartas {
-         justify-content: space-between;
-     }
-
-     .info {
-         width: 48%;
-     }
- }
-
- @media only screen and (min-width: 768px) {
-     .info {
-         width: 30%;
-     }
- }
+            .cardinfo img {
+                margin-left: 0;
+                margin-top: 0;
+                border-radius: 0;
+            }
+        }
