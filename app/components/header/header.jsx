@@ -19,6 +19,12 @@ export default function Header (){
                  Criar cartas 
                 </Link>
                 </div>
+                <div className={styles.shortcut1}>
+                        <Link className={styles.a} href={'/cards'}>
+                            <Image className={styles.image} src={'/images/cartasclash.png'} width={60} height={40}></Image>
+                            <h1 className={styles.contact}>Cartas</h1>
+                        </Link>
+                    </div>
                 <div className={styles.divbutton2}>
                     <div className={styles.shortcut1}>
                         <Link className={styles.a} href={'/sobrenos'}>
