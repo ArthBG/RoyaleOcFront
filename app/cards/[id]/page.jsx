@@ -7,6 +7,7 @@ import styles from '../createcard/page.module.css';
 import { useRouter } from 'next/navigation';
 import CardInfo from '@/app/components/cardinfo/cardinfo';
 import CardInfoedit from '@/app/components/cardinfoedit/cardinfoedit';
+import Header from '@/app/components/header/header';
 // npm install react-icons --save
 
 export default function updateCard({ params }) {
@@ -159,6 +160,7 @@ export default function updateCard({ params }) {
 
   return (
     <main className={styles.backgroundimage}>
+      <Header />
       <div className={styles.prosseguir} style={{ display: show ? 'block' : 'none' }} value={show}>
         <h1 className={styles.title}>Deseja editar a Carta?</h1>
         <div className={styles.containerButtonsp}>
