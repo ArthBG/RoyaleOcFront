@@ -7,12 +7,13 @@
             height: 100vh;
             color: white;
         }
-        .imgIcon{
+
+        .imgIcon {
             background-color: rgba(73, 73, 73, 0.729);
         }
 
         .infosCartas {
-            display: grid;  
+            display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 2px;
             background-color: rgba(210, 210, 210);
@@ -25,8 +26,62 @@
             margin-left: auto;
             margin-right: auto;
         }
-       
-     
+
+      
+        /* Estilos base */
+        .minicards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 30%;
+            margin-left: 10px;
+        }
+
+        .minicard {
+            width: 48%;
+            margin-bottom: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .fundoR {
+            background: linear-gradient(to right, #a7cfea, #508afc); 
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 4px ;
+            border-top-right-radius:19px ;
+            padding: 10px;
+            position: relative;
+            box-shadow: 0 1px 10px rgba(13, 13, 13, 1.2);
+            color: #002850;
+        }
+
+        .fundoR::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -10px;
+            height: 100%;
+            border: 10px solid transparent;
+            border-left-color: #002850;
+            
+        }
+        .containerTeT{
+            display: flex;
+        }
+
+        .fundoInfo {
+            background-color: #002850;
+            /* Azul Escuro */
+            color: #a7cfea;
+            padding: 10px;
+            width: 100%;
+            border-top-left-radius:3px ;
+            border-bottom-right-radius:10px ;
+            border-bottom-left-radius:10px ;
+           
+        }
+
+
         /* Styles for CardInfo */
         .cardinfo {
             margin: auto auto auto auto;
@@ -37,7 +92,7 @@
             box-shadow: -4px 3px 1px -1px rgba(0, 0, 0, 0.43);
             -webkit-box-shadow: -4px 3px 1px -1px rgba(0, 0, 0, 0.43);
             -moz-box-shadow: -4px 3px 1px -1px rgba(0, 0, 0, 0.43);
-            
+
         }
 
         .cardinfo img {

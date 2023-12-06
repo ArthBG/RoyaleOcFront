@@ -43,18 +43,33 @@ const CardDescription = ({ params }) => {
                 <TabPanel>
                     <img width={100} height={100} src={card.image} alt={`Imagem da Carta ${card.name}`} />
 
-                    {card.name && <p className={styles.info}> {card.name}</p>}
-                    <div className={styles.minicards}>
-                        {card.rarity && (
-                            <div className={styles.minicard}>
-                                <div className={styles.fundoR}>
-                                    <h2>Raridade</h2>
+                    <div className={styles.containerTeT}>
+                        {card.name && <p className={styles.info}> {card.name}</p>}
+                        <div className={styles.minicards}>
+                            {card.rarity && (
+                                <div className={styles.minicard}>
+                                    <div className={styles.fundoR}>
+                                        <h2 className={styles.h2}>Raridade</h2>
+                                    </div>
+                                    <div className={styles.fundoInfo}>
+                                        <p className={styles.p}>{card.rarity}</p>
+                                    </div>
                                 </div>
-                                <div className={styles.fundoInfo}>
-                                    <p>{card.rarity}</p>
+                            )}
+                        </div>
+
+                        <div className={styles.minicards}>
+                            {card.type && (
+                                <div className={styles.minicard}>
+                                    <div className={styles.fundoR}>
+                                        <h2 className={styles.h2}>Tipo</h2>
+                                    </div>
+                                    <div className={styles.fundoInfo}>
+                                        <p className={styles.p}>{card.type}</p>
+                                    </div>
                                 </div>
-                            </div>
-                        )}
+                            )}
+                        </div>
                     </div>
 
                     <div className={styles.infosCartas}>
