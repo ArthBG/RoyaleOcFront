@@ -142,8 +142,9 @@
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
-.conatainerCards{
-    height: 100%;
+.containerCard{
+    margin-top: 10rem;
+    padding-bottom: 5rem;
     
 
 }
