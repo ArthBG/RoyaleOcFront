@@ -83,16 +83,16 @@ function cardspage() {
             <h1 className={style.title}>RoyaleOcto</h1>
             <div className={style.containerFilters}>
                 <div className={style.containerSearch}>
-                    <input type="text" placeholder="Pesquisar Cartas" className={style.search} onChange={(e) => setSearch(e.target.value)} />
+                    <input type="text" placeholder="Pesquisar Cartas" className={style.search} value={search} onChange={(e) => setSearch(e.target.value)} />
                     <FiSearch className={style.icon}/>
                 </div>
-                <select className={style.select} onChange={(e) => setSelectedType(e.target.value)}>
+                <select className={style.select} value={selectedType} onChange={(e) => setSelectedType(e.target.value)}>
                     <option value="">Tipo:</option>
                     <option value='Tropa'>Tropa</option>
                     <option value='Construção'>Construção</option>
                     <option value='Feitiço'>Feitiço</option>
                 </select>
-                <select className={style.select} onChange={(e) => setSelectedRarity(e.target.value)}>
+                <select className={style.select} value={selectedRarity} onChange={(e) => setSelectedRarity(e.target.value)}>
                     <option value="">Raridade:</option>
                     <option value="Comum">Comum</option>
                     <option value="Raro">Raro</option>
@@ -100,7 +100,7 @@ function cardspage() {
                     <option value="Lendário">Lendário</option>
                     <option value="Campeão">Campeão</option>
                 </select>
-                <select className={style.select} onChange={(e) => setSelectedElixir(e.target.value)}>
+                <select className={style.select} value={selectedElixir} onChange={(e) => setSelectedElixir(e.target.value)}>
                     <option value="">Elixir:</option>
                     <option value={1}>1</option>
                     <option value={2}>2</option>
