@@ -16,6 +16,7 @@ function cardspage() {
     const [selectedRarity, setSelectedRarity] = useState("");
     const [selectedType, setSelectedType] = useState("");
     const [selectedElixir, setSelectedElixir] = useState("");
+    const [selectedSorting, setSelectedSorting] = useState("");
     const router = useRouter();
 
     console.log(selectedRarity);
@@ -41,14 +42,17 @@ function cardspage() {
                 }
                 const response = await axios.get(`/api/cards?${queryParams}`);
                 setCardsData(response.data.cards);
+                if (selectedSorting) {
+                    handleSorting(selectedSorting);
+                }
             } catch (error) {
                 console.error(error);
             }
         }
-    
+
         fetchData();
-    }, [selectedRarity, selectedType, selectedElixir, search]);
-    
+    }, [selectedRarity, selectedType, selectedElixir, selectedSorting, search]);
+
 
     console.log(cardsData);
 
@@ -59,8 +63,35 @@ function cardspage() {
         setSelectedRarity("");
         setSelectedType("");
         setSelectedElixir("");
-        setSearch("");
+        setSelectedSorting("");
+        setSearch(""); 
     }
+    
+    const handleSorting = (option) => {
+        let sortedData = [...cardsData];
+      
+        if (option == 'name') {
+          sortedData.sort((a, b) => a.name.localeCompare(b.name));
+        } else if (option == 'elixir') {
+          sortedData.sort((a, b) => a.elixir - b.elixir);
+        } //ordenar por raridade: campeão, lendário, épico, raro, comum
+        else if (option == 'rarity') {
+          sortedData.sort((a, b) => {
+            const rarityOrder = {
+              'Campeão': 0,
+              'Lendário': 1,
+              'Épico': 2,
+              'Raro': 3,
+              'Comum': 4,
+            };
+      
+            return rarityOrder[a.rarity] - rarityOrder[b.rarity];
+          });
+        }
+      
+        setCardsData(sortedData);
+      };  
+      
 
     const editCard = (id) => {
         router.push(`/cards/${id}`);
@@ -81,11 +112,17 @@ function cardspage() {
         <main className={style.mainBg}>
             <Header />
             <h1 className={style.title}>RoyaleOcto</h1>
-            <div className={style.containerFilters}>
                 <div className={style.containerSearch}>
                     <input type="text" placeholder="Pesquisar Cartas" className={style.search} value={search} onChange={(e) => setSearch(e.target.value)} />
-                    <FiSearch className={style.icon}/>
+                    <FiSearch className={style.icon} />
                 </div>
+            <div className={style.containerFilters}>
+                <select className={style.select} value={selectedSorting} onChange={(e) => setSelectedSorting(e.target.value)}>
+                    <option value="">Ordenar por:</option>
+                    <option value="name">Nome</option>
+                    <option value="elixir">Elixir</option>
+                    <option value="rarity">Raridade</option>
+                </select>
                 <select className={style.select} value={selectedType} onChange={(e) => setSelectedType(e.target.value)}>
                     <option value="">Tipo:</option>
                     <option value='Tropa'>Tropa</option>
@@ -115,6 +152,7 @@ function cardspage() {
                 </select>
                 <button className={style.scbtnred} onClick={clearFilters}>Redefinir Filtros</button>
             </div>
+
             <div className={style.containerCard}>
                 {cardsData.map((card) => (
                     <div key={card.id} >

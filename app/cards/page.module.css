@@ -85,9 +85,19 @@
     align-items: center;
     margin-bottom: 2rem;
   }
+  .containerSearch{
+      padding: 0.75rem;
+      margin: auto;
+      margin-bottom: 1rem;
+    width: fit-content;
+    border: 2px solid #ccc;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    outline: none;
+  }
   
-  .select,
-  .containerSearch {
+  .select {
     padding: 0.75rem;
     border: 2px solid #ccc;
     background-color: #fff;
