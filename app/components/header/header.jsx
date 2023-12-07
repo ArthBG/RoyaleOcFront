@@ -7,7 +7,7 @@ export default function Header (){
     return (
         <header className={styles.main}>
             <div className={styles.container1}>
-            <Link className={styles.a3} href={'/cards'} target='_parent'>
+            <Link className={styles.a3} href={'/'} target='_parent'>
                 <Image className={styles.imagemain} src={'/images/coroaicone.png'} alt="Logo da empresa" width={60} height={60}></Image>
                 <h1 className={styles.title}>Royale.oc</h1>
                 </Link>
