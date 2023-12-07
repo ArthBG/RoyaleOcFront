@@ -6,37 +6,65 @@
      background-position: center;
      background-attachment: fixed;
      height: 100%;
+     display: flex;
+     flex-direction: column;
      color: white;
  }
-/* titulos ou escritas */
+
+ /* titulos ou escritas */
  .name {
-        font-size: 30px;
-        font-weight: bold;
-        text-align: center;
-        text-shadow: 1px 2px 1px rgba(1, 1, 1, 1);
+     font-size: 30px;
+     font-weight: bold;
+     text-align: center;
+     text-shadow: 1px 4px 1px rgba(1, 1, 1, 1);
+ }
+
+ .descricao {
+     position: relative;
+     bottom: 30px;
  }
 
  .info {
-    color: rgb(22, 22, 53);
-    font-size: 14px;
-    margin-left: 24%;
-    position: relative;
-    top: -64px;
-}
+     color: rgb(22, 22, 53);
+     font-size: 14px;
+     margin-left: 24%;
+     position: relative;
+     top: -64px;
+ }
 
-.obj {
-    color: white;
-    text-shadow: 1px 2px 1px rgba(1, 1, 1, 1);
-    font-size: 16px;
-    margin-left: 24%;
-    position: relative;
-    top: -58px;
-}
+ .obj {
+     color: white;
+     text-shadow: 0 3px 1px rgba(1, 1, 1, 1);
+     font-size: 16px;
+     margin-left: 24%;
+     position: relative;
+     top: -58px;
+ }
 
+
+ /* imagens */
+ .imgIcon {
+     background-color: rgba(73, 73, 73, 0.729);
+ }
+
+ .imgCard {
+     position: relative;
+     bottom: 10px;
+     left: 95px;
+ }
+
+ .cardinfo img {
+     margin-left: -4px;
+     margin-top: -4.5px;
+     border-top-left-radius: 10px;
+     border-bottom-left-radius: 10px;
+ }
+
+
+ /* divs */
  .infosCartas {
      display: grid;
      grid-template-columns: repeat(2, 1fr);
-     gap: 2px;
      background-color: rgba(210, 210, 210);
      border: solid 15px rgb(179, 179, 202);
      box-shadow: -4px 3px 1px -1px rgba(0, 0, 0, 0.43);
@@ -47,26 +75,9 @@
      margin-left: auto;
      margin-right: auto;
      position: relative;
-     bottom: 130px;
+     bottom: 4px;
  }
- /* imagens */
- .imgIcon {
-    background-color: rgba(73, 73, 73, 0.729);
-}
-.imgCard {
-    position: relative;
-    bottom: 30px;
-    left: 95px;
-}
-.cardinfo img {
-    margin-left: -4px;
-    margin-top: -4.5px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
 
-
-/* divs */
  .minicards {
      display: flex;
      flex-wrap: wrap;
@@ -88,7 +99,6 @@
      border-bottom-left-radius: 4px;
      border-top-right-radius: 19px;
      padding: 10px;
-     position: relative;
      box-shadow: 0 1px 10px rgba(13, 13, 13, 1.2);
      color: #002850;
  }
@@ -102,12 +112,11 @@
      border: 10px solid transparent;
      border-left-color: #002850;
  }
-.containerTeT {
+
+ .containerTeT {
      display: flex;
      flex-direction: row;
      justify-content: end;
-     position: relative;
-     bottom: 150px;
  }
 
  .fundoInfo {
@@ -121,7 +130,7 @@
  }
 
  .cardinfo {
-     position: relative;
+
      margin: auto auto auto auto;
      width: 50%;
      height: 51%;
@@ -132,7 +141,7 @@
      -moz-box-shadow: -4px 3px 1px -1px rgba(0, 0, 0, 0.43);
  }
 
-/* tab */
+ /* tab */
  .Tabs .TabPanel:last-child {
      padding: 20px;
  }
@@ -153,18 +162,15 @@
      .infosCartas {
          grid-template-columns: 1fr;
          width: 90%;
-         margin-left: auto;
-         margin-right: auto;
      }
 
      .minicards {
          width: 100%;
-         margin-left: 0;
      }
 
      .minicard {
          width: 100%;
-         margin-bottom: 10px;
+
      }
 
      .cardinfo {
@@ -173,27 +179,11 @@
 
      .minicards {
          width: 100%;
-         margin-left: 0;
      }
 
      .minicard {
          width: 100%;
      }
-
-     .fundoR {
-         border-top-left-radius: 10px;
-         border-bottom-left-radius: 10px;
-         border-top-right-radius: 10px;
-         padding: 10px;
-         box-shadow: 0 1px 10px rgba(13, 13, 13, 1.2);
-     }
-
-     .fundoR::before {
-         right: -5px;
-         border: 5px solid transparent;
-         border-left-color: #002850;
-     }
-
 
 
  }
