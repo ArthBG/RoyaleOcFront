@@ -7,6 +7,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import 'react-tabs/style/react-tabs.css';
+import GameCharacter from '@/app/components/showCharacter/show';
 import Link from 'next/link';
 
 // Componente funcional para exibir detalhes da carta
@@ -73,18 +74,19 @@ const CardDescription = ({ params }) => {
                         </div>
                     </div>
                     <p className={styles.info}>{card.description ? card.description : "Não disponível"}</p>
-                    <Carousel showArrows={true}>
+                    <Carousel showArrows={true} style={{ width: '400px' }}>
                         <div>
-                            <img style={{ maxWidth: '300px', width: '100%', height: 'auto' }} src={"https://www.clashroyaledicas.com/wp-content/uploads/2016/05/principe-clash-royale-hd-image-supercell.jpg"} alt={`Imagem da Carta ${card.name}`} />
+                            <img style={{ maxWidth: '200px', width: '100%', height: 'auto' }} src={"https://www.clashroyaledicas.com/wp-content/uploads/2016/05/principe-clash-royale-hd-image-supercell.jpg"} alt={`Imagem da Carta ${card.name}`} />
                         </div>
                         <div>
-                            <img style={{ maxWidth: '300px', width: '100%', height: 'auto' }} src={"https://media.tenor.com/hdJRQZpvbzAAAAAd/clash-royale.gif"} alt={`Imagem da Carta ${card.name}`} />
+                            <img style={{ maxWidth: '200px', width: '100%', height: 'auto' }} src={"https://media.tenor.com/hdJRQZpvbzAAAAAd/clash-royale.gif"} alt={`Imagem da Carta ${card.name}`} />
                         </div>
                         <div>
-                            <img style={{ maxWidth: '300px', width: '100%', height: 'auto' }} src={"https://www.clashroyaledicas.com/wp-content/uploads/2016/02/principe-do-clash-royale.png"} alt={`Imagem da Carta ${card.name}`} />
+                            <img style={{ maxWidth: '200px', width: '100%', height: 'auto' }} src={"https://www.clashroyaledicas.com/wp-content/uploads/2016/02/principe-do-clash-royale.png"} alt={`Imagem da Carta ${card.name}`} />
                         </div>
                     </Carousel>
-                   
+
+                    <GameCharacter />
 
                 </TabPanel>
 
@@ -290,7 +292,7 @@ const CardDescription = ({ params }) => {
                         )}
                     </div>
 
-
+                    <GameCharacter />
                 </TabPanel>
             </Tabs>
 
