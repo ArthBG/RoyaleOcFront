@@ -36,15 +36,16 @@ const CardDescription = ({ params }) => {
         <div className={styles.container}>
             <Tabs>
                 <TabList>
+                    <Tab>Sobre</Tab>
                     <Tab>Detalhes</Tab>
-                    <Tab>sobre</Tab>
                 </TabList>
 
                 <TabPanel>
-                    <img width={100} height={100} src={card.image} alt={`Imagem da Carta ${card.name}`} />
+                    {card.name && <p className={styles.name}> {card.name}</p>}
+                    <img className={styles.imgCard} width={200} height={200} src={card.image} alt={`Imagem da Carta ${card.name}`} />
 
                     <div className={styles.containerTeT}>
-                        {card.name && <p className={styles.info}> {card.name}</p>}
+
                         <div className={styles.minicards}>
                             {card.rarity && (
                                 <div className={styles.minicard}>
@@ -71,7 +72,53 @@ const CardDescription = ({ params }) => {
                             )}
                         </div>
                     </div>
+                    <p className={styles.info}>{card.description ? card.description : "Não disponível"}</p>
+                    <Carousel showArrows={true}>
+                        <div>
+                            <img style={{ maxWidth: '300px', width: '100%', height: 'auto' }} src={"https://www.clashroyaledicas.com/wp-content/uploads/2016/05/principe-clash-royale-hd-image-supercell.jpg"} alt={`Imagem da Carta ${card.name}`} />
+                        </div>
+                        <div>
+                            <img style={{ maxWidth: '300px', width: '100%', height: 'auto' }} src={"https://media.tenor.com/hdJRQZpvbzAAAAAd/clash-royale.gif"} alt={`Imagem da Carta ${card.name}`} />
+                        </div>
+                        <div>
+                            <img style={{ maxWidth: '300px', width: '100%', height: 'auto' }} src={"https://www.clashroyaledicas.com/wp-content/uploads/2016/02/principe-do-clash-royale.png"} alt={`Imagem da Carta ${card.name}`} />
+                        </div>
+                    </Carousel>
+                   
 
+                </TabPanel>
+
+                <TabPanel>
+                    {card.name && <p className={styles.name}> {card.name}</p>}
+                    <img className={styles.imgCard} width={200} height={200} src={card.image} alt={`Imagem da Carta ${card.name}`} />
+                    <div className={styles.containerTeT}>
+
+                        <div className={styles.minicards}>
+                            {card.rarity && (
+                                <div className={styles.minicard}>
+                                    <div className={styles.fundoR}>
+                                        <h2 className={styles.h2}>Raridade</h2>
+                                    </div>
+                                    <div className={styles.fundoInfo}>
+                                        <p className={styles.p}>{card.rarity}</p>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+
+                        <div className={styles.minicards}>
+                            {card.type && (
+                                <div className={styles.minicard}>
+                                    <div className={styles.fundoR}>
+                                        <h2 className={styles.h2}>Tipo</h2>
+                                    </div>
+                                    <div className={styles.fundoInfo}>
+                                        <p className={styles.p}>{card.type}</p>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    </div>
                     <div className={styles.infosCartas}>
 
                         {card.hp && (
@@ -232,25 +279,16 @@ const CardDescription = ({ params }) => {
                                 <p className={styles.obj}>{card.damageontower}</p>
                             </div>
                         )}
+                        {card.chargedamage && (
+                            <div className={styles.cardinfo}>
+
+                                <img width={65} height={65} className={styles.imgIcon} src="https://3.bp.blogspot.com/-fyad3zyp33E/WQnVBIX9cdI/AAAAAAAAzxY/r9_0QsD0YYcCRwSm4DDdZtmPj8ofsh1mwCLcB/s1600/alcance-de-habilidade.png" alt={`Imagem do Dano do Choque da carta ${card.name}`} />
+
+                                <h2 className={styles.info}>Dano de Carga</h2>
+                                <p className={styles.obj}>{card.chargedamage}</p>
+                            </div>
+                        )}
                     </div>
-
-                </TabPanel>
-
-                <TabPanel>
-                    <p className={styles.info}> {card.name ? card.name : "Não disponível"}</p>
-                    <img src={card.image} alt={`Imagem da Carta ${card.name}`} />
-                    <p className={styles.info}>Descrição: {card.description ? card.description : "Não disponível"}</p>
-                    <Carousel showArrows={true}>
-                        <div>
-                            <img src={"https://designdobom.com.br/wp-content/uploads/2018/09/imagem_para_sexta_51.jpg"} alt={`Imagem da Carta ${card.name}`} />
-                        </div>
-                        <div>
-                            <img src={""} alt={`Imagem da Carta ${card.name}`} />
-                        </div>
-                        <div>
-                            <img src={""} alt={`Imagem da Carta ${card.name}`} />
-                        </div>
-                    </Carousel>
 
 
                 </TabPanel>
