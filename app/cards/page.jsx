@@ -140,7 +140,11 @@ function cardspage() {
                     <option value={7}>7</option>
                     <option value={8}>8</option>
                     <option value={9}>9</option>
-                    <option value={10}>10</option>
+                    {cardsData.map((card) => ( 
+                        card.elixir > 9 ? 
+                        <option value={10}>10</option> 
+                        : null)) 
+                    }
                 </select>
                 <button className={style.scbtnred} onClick={() => clearFilters("teste")}>Redefinir Filtros</button>
             </div>
