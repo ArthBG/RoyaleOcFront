@@ -16,6 +16,10 @@ function cardspage() {
     const [selectedRarity, setSelectedRarity] = useState("");
     const [selectedType, setSelectedType] = useState("");
     const [selectedElixir, setSelectedElixir] = useState("");
+    const [selectedSorting, setSelectedSorting] = useState("");
+    const [orderbyname, setOrderByName] = useState('');
+    const [orderbyelixir, setOrderByElixir] = useState('');
+    const [orderbyrarity, setOrderByRarity] = useState('');
     const router = useRouter();
 
     console.log(selectedRarity);
@@ -23,51 +27,66 @@ function cardspage() {
     useEffect(() => {
         async function fetchData() {
             try {
-
-                console.log(search);
-                console.log(selectedRarity);
-                console.log(selectedType);
-                console.log(selectedElixir);
-    
-                // Construa os parâmetros da URL com base nos valores definidos
                 let queryParams = '';
-    
                 if (search) {
                     queryParams += `name=${search}&`;
                 }
                 if (selectedRarity) {
                     queryParams += `rarity=${selectedRarity}&`;
                 }
-    
                 if (selectedType) {
                     queryParams += `type=${selectedType}&`;
                 }
-    
                 if (selectedElixir) {
                     queryParams += `elixir=${selectedElixir}&`;
                 }
-    
-                // Remova o último "&" se houver parâmetros na URL
+                // if (selectedSorting) {
+                //     if(selectedSorting == "name"){
+                //         queryParams += `orderbyname=${orderbyname}&`;
+                //     } 
+                //     if(selectedSorting == "elixir"){
+                //         queryParams += `orderbyelixir=${orderbyelixir}&`;
+                //     }
+                //     if(selectedSorting == "rarity"){
+                //         queryParams += `orderbyrarity=${orderbyrarity}&`;
+                //     }
+                // }
+               
                 if (queryParams.length > 0) {
                     queryParams = queryParams.slice(0, -1);
                 }
-
-                console.log(queryParams);
-    
                 const response = await axios.get(`/api/cards?${queryParams}`);
                 setCardsData(response.data.cards);
             } catch (error) {
                 console.error(error);
             }
         }
-    
+
         fetchData();
     }, [selectedRarity, selectedType, selectedElixir, search]);
-    
+
 
     console.log(cardsData);
 
-
+    // const handleSorting = (e) => {
+    //     const selectedSorting = e.target.value;
+      
+    //     if (selectedSorting == "name") {
+    //       setOrderByName(orderbyname == 'asc');
+    //       setOrderByElixir('');
+    //       setOrderByRarity('');
+    //     } else if (selectedSorting == "elixir") {
+    //       setOrderByElixir(orderbyelixir == 'asc');
+    //       setOrderByName('');
+    //       setOrderByRarity('');
+    //     } else if (selectedSorting == "rarity") {
+    //       setOrderByRarity(orderbyrarity == 'asc');
+    //       setOrderByName('');
+    //       setOrderByElixir('');
+    //     }
+    //     setSelectedSorting(selectedSorting);
+    //   };
+      
 
 
     function clearFilters(teste) {
@@ -76,7 +95,7 @@ function cardspage() {
         setSelectedElixir("");
         setSearch("");
         console.log(teste);
-
+        setSearch(""); 
     }
     const editCard = (id) => {
         router.push(`/cards/${id}`);
@@ -97,18 +116,24 @@ function cardspage() {
         <main className={style.mainBg}>
             <Header />
             <h1 className={style.title}>RoyaleOcto</h1>
-            <div className={style.containerFilters}>
                 <div className={style.containerSearch}>
-                    <input type="text" placeholder="Pesquisar Cartas" className={style.search} onChange={(e) => setSearch(e.target.value)} />
-                    <FiSearch className={style.icon}/>
+                    <input type="text" placeholder="Pesquisar Cartas" className={style.search} value={search} onChange={(e) => setSearch(e.target.value)} />
+                    <FiSearch className={style.icon} />
                 </div>
-                <select className={style.select} onChange={(e) => setSelectedType(e.target.value)}>
+            <div className={style.containerFilters}>
+                {/* <select className={style.select} value={selectedSorting} onChange={handleSorting}>
+                    <option value="">Ordenar por:</option>
+                    <option value="name">Nome</option>
+                    <option value="elixir">Elixir</option>
+                    <option value="rarity">Raridade</option>
+                </select> */}
+                <select className={style.select} value={selectedType} onChange={(e) => setSelectedType(e.target.value)}>
                     <option value="">Tipo:</option>
                     <option value='Tropa'>Tropa</option>
                     <option value='Construção'>Construção</option>
                     <option value='Feitiço'>Feitiço</option>
                 </select>
-                <select className={style.select} onChange={(e) => setSelectedRarity(e.target.value)}>
+                <select className={style.select} value={selectedRarity} onChange={(e) => setSelectedRarity(e.target.value)}>
                     <option value="">Raridade:</option>
                     <option value="Comum">Comum</option>
                     <option value="Raro">Raro</option>
@@ -116,7 +141,7 @@ function cardspage() {
                     <option value="Lendário">Lendário</option>
                     <option value="Campeão">Campeão</option>
                 </select>
-                <select className={style.select} onChange={(e) => setSelectedElixir(e.target.value)}>
+                <select className={style.select} value={selectedElixir} onChange={(e) => setSelectedElixir(e.target.value)}>
                     <option value="">Elixir:</option>
                     <option value={1}>1</option>
                     <option value={2}>2</option>
@@ -131,6 +156,7 @@ function cardspage() {
                 </select>
                 <button className={style.scbtnred} onClick={() => clearFilters("teste")}>Redefinir Filtros</button>
             </div>
+
             <div className={style.containerCard}>
                 {cardsData.map((card) => (
                     <div key={card.id} >

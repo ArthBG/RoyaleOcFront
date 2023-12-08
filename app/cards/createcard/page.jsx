@@ -9,6 +9,10 @@ import axios from "axios"
 import { useState, useEffect } from "react"
 import styles from "../createcard/page.module.css"
 import CardInfo from "../../components/cardinfo/cardinfo";
+import SelectTroop from "@/app/components/selectatributes/tropa/select";
+import SelectConstruction from "@/app/components/selectatributes/construction/select";
+import SelectSpell from "@/app/components/selectatributes/spelll/select";
+import Header from "@/app/components/header/header";
 
 
 const style = {
@@ -225,6 +229,7 @@ export default function createCard() {
 
   return (
     <main className={styles.backgroundimage}>
+      <Header />
       
       <div className={styles.conatainerInputs}>
         <input className={styles.input} type="text" maxLength={30} placeholder="Nome da sua carta" value={name} onChange={e => setName(e.target.value)} />
@@ -307,29 +312,7 @@ export default function createCard() {
                 Atributos para tropas
               </Typography>
               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                <select>
-                <option value="">Selecione os atributos</option>
-                <option value="Pontos de Vida"><img src={"/images/hp.png"}/>Pontos de Vida</option>
-                <option value="Dano"><img src={"/images/dano.png"}/>Dano</option>
-                <option value="Dano por segundo"><img src={"/images/danosegundo.png"}/>Dano por segundo</option>
-                <option value="Dano a distância"><img src={"/images/danoadistancia.png"}/>Dano a distância</option>
-                <option value="Dano de longa distância"><img src={"/images/danoaodistancia.png"}/>Dano de longa distância</option>
-                <option value="Dano em área"><img src={"/images/danoarea.png"}/>Dano em área</option>
-                <option value="Dano no impacto"><img src={"/images/danoimpacto.png"}/>Dano no impacto</option>
-                <option value="Dano na torre"><img src={"/images/danotorre.png"}/>Dano na torre</option>
-                <option value="Dano carregado"><img src={"/images/danocarregado.png"}/>Dano carregado</option>
-                <option value="Dano na morte"><img src={"/images/danomorte.png"}/>Dano na morte</option>
-                <option value="Velocidade de mobilização"><img src={"/images/velocidadespawn.png"}/>Velocidade de spawn</option>
-                <option value="Duração"><img src={"/images/duracao.png"}/>Duração</option>
-                <option value="Tempo de congelamento"><img src={"/images/tempocongelamento.png"}/>Tempo de congelamento</option>
-                <option value="Unidades"><img src={"/images/unidades.png"}/>Unidades</option>
-                <option value="Alvo"><img src={"/images/alvo.png"}/>Alvo</option>
-                <option value="Alcance do projétil"><img src={"/images/alcanceprojeto.png"}/>Alcance do projétil</option>
-                <option value="Alcance"><img src={"/images/alcance.png"}/>Alcance</option>
-                <option value="Velocidade"><img src={"/images/velocidade.png"}/>Velocidade</option>
-                <option value="Velocidade de impacto"><img src={"/images/velocidadeimpacto.png"}/>Velocidade de impacto</option>
-                <option value="Pontos de vida do escudo"><img src={"/images/pontosvidaescudo.png"}/>Pontos de vida do escudo</option>
-                </select>
+              <SelectTroop />
               </Typography>
               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                 <input type="text" className={stylesM.atributos} placeholder="Valor do atributo" />
@@ -356,23 +339,7 @@ export default function createCard() {
                 Atributos para construção
               </Typography>
               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                <select>
-                <option value="">Selecione os atributos</option>
-                <option value="Pontos de Vida"><img src={"/images/hp.png"}/>Pontos de Vida</option>
-                <option value="Dano"><img src={"/images/dano.png"}/>Dano</option>
-                <option value="Dano por segundo<"><img src={"/images/danosegundo.png"}/>Dano por segundo</option>
-                <option value="Dano a distância"><img src={"/images/danoadistancia.png"}/>Dano a distância</option>
-                <option value="Dano de longa distância"><img src={"/images/danoaodistancia.png"}/>Dano de longa distância</option>
-                <option value="Dano em área"><img src={"/images/danoarea.png"}/>Dano em área</option>
-                <option value="Dano na torre"><img src={"/images/danotorre.png"}/>Dano na torre</option>
-                <option value="Dano carregado"><img src={"/images/danocarregado.png"}/>Dano carregado</option>
-                <option value="Dano na morte"><img src={"/images/danomorte.png"}/>Dano na morte</option>
-                <option value="Velocidade de mobilização"><img src={"/images/velocidadespawn.png"}/>Velocidade de spawn</option>
-                <option value="Duração"><img src={"/images/duracao.png"}/>Duração</option>
-                <option value="Unidades"><img src={"/images/unidades.png"}/>Unidades</option>
-                <option value="Alvo"><img src={"/images/alvo.png"}/>Alvo</option>
-                <option value="Alcance"><img src={"/images/alcance.png"}/>Alcance</option>
-                  </select>
+              <SelectConstruction />
                 </Typography>
                 <div className={stylesM.containerButtons}>
                 <button className={stylesM.scbtnyellow} onClick={addAtributes}>Adicionar atributo</button>
@@ -396,19 +363,7 @@ export default function createCard() {
                 Atributos para feitiços
               </Typography>
               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                <select>
-                <option value="">Selecione os atributos</option>
-                <option value="Dano em área"><img src={"/images/danoarea.png"}/>Dano em área</option>
-                <option value="Dano na torre"><img src={"/images/danotorre.png"}/>Dano na torre</option>
-                <option value="Duração"><img src={"/images/duracao.png"}/>Duração</option>
-                <option value="Tempo de congelamento"><img src={"/images/tempocongelamento.png"}/>Tempo de congelamento</option>
-                <option value="Unidades"><img src={"/images/unidades.png"}/>Unidades</option>
-                <option value="Alcance"><img src={"/images/alcance.png"}/>Alcance</option>
-                <option value="Alvo"><img src={"/images/alvo.png"}/>Alvo</option>
-                <option value="Raio"><img src={"/images/alcanceprojeto.png"}/>Raio</option>
-                <option value="Paralisação"><img src={"/images/tempocongelamento.png"}/>Paralisação</option>
-  
-                  </select>              
+                 <SelectSpell />         
               </Typography>
               <div className={stylesM.containerButtons}>
                 <button className={stylesM.scbtnyellow} onClick={addAtributes}>Adicionar atributo</button>

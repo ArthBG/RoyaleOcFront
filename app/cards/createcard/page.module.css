@@ -4,7 +4,8 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
    
 
 }
@@ -141,9 +142,15 @@
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
-.conatainerCards{
-    height: 100%;
+.containerCard{
+    margin-top: 10rem;
+    padding-bottom: 5rem;
     
+
+}
+.containerCardInfo{
+    margin-top: 10rem;
+    padding-bottom: 5rem;
 }
 
 

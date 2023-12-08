@@ -12,7 +12,6 @@ export async function GET(request) {
     const elixir = searchParams.get("elixir")
     const type = searchParams.get("type")
     const name = searchParams.get("name")
-    console.log(rarity, elixir, type, name)
     
     try {
         if(name || rarity || elixir || type){
