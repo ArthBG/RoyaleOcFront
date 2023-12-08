@@ -13,6 +13,9 @@
 
  /* titulos ou escritas */
  .name {
+     position: relative;
+     right: 45%;
+        top: 10px;
      font-size: 30px;
      font-weight: bold;
      text-align: center;
@@ -20,8 +23,9 @@
  }
 
  .descricao {
+     margin-left: 35%;
      position: relative;
-     bottom: 30px;
+     top: -60px;
  }
 
  .info {
@@ -49,8 +53,8 @@
 
  .imgCard {
      position: relative;
-     bottom: 10px;
-     left: 95px;
+     top: 40px;
+     left: 90px;
  }
 
  .cardinfo img {
@@ -87,10 +91,8 @@
  }
 
  .minicard {
-     width: 48%;
+     width: 100%;
      margin-bottom: 10px;
-     overflow: hidden;
-     position: relative;
  }
 
  .fundoR {
@@ -103,20 +105,11 @@
      color: #002850;
  }
 
- .fundoR::before {
-     content: '';
-     position: absolute;
-     top: 0;
-     right: -10px;
-     height: 100%;
-     border: 10px solid transparent;
-     border-left-color: #002850;
- }
-
  .containerTeT {
      display: flex;
      flex-direction: row;
-     justify-content: end;
+     justify-content: center;
+
  }
 
  .fundoInfo {
@@ -141,21 +134,7 @@
      -moz-box-shadow: -4px 3px 1px -1px rgba(0, 0, 0, 0.43);
  }
 
- /* tab */
- .Tabs .TabPanel:last-child {
-     padding: 20px;
- }
 
- .Tabs .TabPanel:last-child img {
-     width: 100%;
-     max-width: 300px;
-     margin: 20px 0;
- }
-
- .Tabs .TabPanel:last-child .carousel .slider-wrapper {
-     max-width: 300px;
-     margin: 0 auto;
- }
 
  /* responsividadde*/
  @media only screen and (max-width: 600px) {

@@ -34,44 +34,48 @@ const CardDescription = ({ params }) => {
     return (
         <div className={styles.container}>
 
-
-            {card.name && <p className={styles.name}> {card.name}</p>}
-            <img className={styles.imgCard} width={200} height={200} src={card.image} alt={`Imagem da Carta ${card.name}`} />
-            <div className={styles.descricao}>
-                <p className={styles.info}>{card.description ? card.description : "Não disponível"}</p>
-            </div>
-
-
-            <div className={styles.containerTeT}>
-
-                <div className={styles.minicards}>
-                    {card.rarity && (
-                        <div className={styles.minicard}>
-                            <div className={styles.fundoR}>
-                                <h2 className={styles.h2}>Raridade</h2>
-                            </div>
-                            <div className={styles.fundoInfo}>
-                                <p className={styles.p}>{card.rarity}</p>
-                            </div>
-                        </div>
-                    )}
-                </div>
-
-                <div className={styles.minicards}>
-                    {card.type && (
-                        <div className={styles.minicard}>
-                            <div className={styles.fundoR}>
-                                <h2 className={styles.h2}>Tipo</h2>
-                            </div>
-                            <div className={styles.fundoInfo}>
-                                <p className={styles.p}>{card.type}</p>
-                            </div>
-                        </div>
-                    )}
-                </div>
-            </div>
-
             <div className={styles.infosCartas}>
+
+                <img className={styles.imgCard} width={200} height={200} src={card.image} alt={`Imagem da Carta ${card.name}`} />
+                {card.name && <p className={styles.name}> {card.name}</p>}
+                <div className={styles.descricao}>
+                    <p className={styles.info}>{card.description ? card.description : "Não disponível"}</p>
+                </div>
+
+
+                <div className={styles.containerTeT}>
+
+                    <div className={styles.minicards}>
+                        {card.rarity && (
+                            <div className={styles.minicard}>
+                                <div className={styles.fundoR}>
+                                    <h2 className={styles.h2}>Raridade</h2>
+                                </div>
+                                <div className={styles.fundoInfo}>
+                                    <p className={styles.p}>{card.rarity}</p>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+
+                    <div className={styles.minicards}>
+                        {card.type && (
+                            <div className={styles.minicard}>
+                                <div className={styles.fundoR}>
+                                    <h2 className={styles.h2}>Tipo</h2>
+                                </div>
+                                <div className={styles.fundoInfo}>
+                                    <p className={styles.p}>{card.type}</p>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                </div>
+
+
+
+
+
 
                 {card.hp && (
                     <div className={styles.cardinfo}>
