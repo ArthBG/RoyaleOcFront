@@ -134,35 +134,4 @@
      -moz-box-shadow: -4px 3px 1px -1px rgba(0, 0, 0, 0.43);
  }
 
-
-
  /* responsividadde*/
- @media only screen and (max-width: 600px) {
-     .infosCartas {
-         grid-template-columns: 1fr;
-         width: 90%;
-     }
-
-     .minicards {
-         width: 100%;
-     }
-
-     .minicard {
-         width: 100%;
-
-     }
-
-     .cardinfo {
-         width: 100%;
-     }
-
-     .minicards {
-         width: 100%;
-     }
-
-     .minicard {
-         width: 100%;
-     }
-
-
- }
