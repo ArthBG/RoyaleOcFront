@@ -23,10 +23,6 @@ export const Header = () => {
                             <Image className={styles.image} src={'/images/sobrenosescudo.png'} width={60} height={40}></Image>
                             <h1 className={styles.contact}>Sobre Nós</h1>
                         </Link>
-                        <Link className={styles.a} href={'/membros'} target='_parent'>
-                            <Image className={styles.image} src={'/images/sobrenosescudo.png'} width={60} height={40}></Image>
-                            <h1 className={styles.contact}>Sobre Nós</h1>
-                        </Link>
                     </div>
                     <div className={styles.shortcut2}>
                         <Link className={styles.a} href={'/contatos'} target='_parent'>

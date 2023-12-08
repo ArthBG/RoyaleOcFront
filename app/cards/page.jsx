@@ -70,13 +70,14 @@ function cardspage() {
 
 
 
-    const clearFilters = () => {
+    function clearFilters(teste) {
         setSelectedRarity("");
         setSelectedType("");
         setSelectedElixir("");
         setSearch("");
-    }
+        console.log(teste);
 
+    }
     const editCard = (id) => {
         router.push(`/cards/${id}`);
     }
@@ -128,7 +129,7 @@ function cardspage() {
                     <option value={9}>9</option>
                     <option value={10}>10</option>
                 </select>
-                <button className={style.scbtnred} onClick={clearFilters}>Redefinir Filtros</button>
+                <button className={style.scbtnred} onClick={() => clearFilters("teste")}>Redefinir Filtros</button>
             </div>
             <div className={style.containerCard}>
                 {cardsData.map((card) => (
