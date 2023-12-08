@@ -89,12 +89,10 @@ function cardspage() {
       
 
 
-    function clearFilters(teste) {
+    function clearFilters() {
         setSelectedRarity("");
         setSelectedType("");
         setSelectedElixir("");
-        setSearch("");
-        console.log(teste);
         setSearch(""); 
     }
     const editCard = (id) => {
