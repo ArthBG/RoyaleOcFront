@@ -125,8 +125,8 @@ export default function UpdateMembro({ params }) {
                                 <button className={styles.btnv}>Voltar</button>
                             </Link>
 
-                            <button className={styles.btna} type="submit">Atualizar
-                            </button>
+                            <button className={styles.btna} type="submit">Atualizar</button>
+                            
                         </div>
 
                     </form>
