@@ -1,46 +1,45 @@
 "use client";
-
+// Importações
+import axios from "axios";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import axios from 'axios';
-import Header from '../components/header/header';
-import Footer from '../components/footer/footer';
-import styles from './contato.module.css';
+import Image from "next/image";
+import Header from "../components/header/header";
+import Footer from "../components/footer/footer";
 
-export default function Forms() {
-    const [contatos, setContatos] = useState("");
-    const [nome, setNome] = useState("");
-    const [email, setEmail] = useState("");
-    const [telefone, setTelefone] = useState("");
-    const [comentario, setComentario] = useState([]);
+export default function Page() {
+    // Estados para armazenar a lista de membros e dados adicionais.
+    const [contatos, setContatos] = useState([]);
+    const [dados, setDados] = useState([]);
+    const router = useRouter();
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-
+    // Função para deletar um comentario.
+    const deletar = async (id) => {
+        const url = `/api/contatos/${id}`;
         try {
-            // Envia uma requisição POST para a API com os dados do novo membro.
-            await axios.post("/api/contatos", { nome, email, telefone, comentario });
-            // Limpa os campos do formulário 
-            setNome("");
-            setEmail("");
-            setTelefone("");
-            setComentario("");
+            await axios.delete(url);
+            setDados(dados.filter((contato) => contato.id !== id));
+            setContatos(contatos.filter((contato) => contato.id !== id));
         } catch (error) {
-
-            console.error("Error submitting data:", error);
-            // Exibe mensagem de erro
-
+            console.error("Error deleting contato", error);
         }
     };
+    console.log(dados, contatos)
 
-    // Buscar a lista de membros quando o componente é montado.
+    
+    const update = (id) => {
+        router.push(`/contatos/${id}`);
+    };
+
+
     useEffect(() => {
         async function fetchContatos() {
             try {
-                // Realiza uma requisição GET para obter a lista de membros da API.
+                // Atualiza os estados com a lista de membros e dados adicionais.
                 const response = await axios.get("/api/contatos");
-                // Atualiza o estado com a lista de membros obtida.
-                setContatos(response.data);
+                setContatos(response.data.contatos);
+                setDados(response.data.contatos);
             } catch (error) {
                 console.error("Error fetching data:", error);
             }
@@ -48,70 +47,86 @@ export default function Forms() {
 
         fetchContatos();
     }, []);
+    // Renderização do componente.
+    return (
+
+        <div>
+            <Header />
+
+            <h1>Contatos</h1>
+
+            <Link href="/contatos/cadastroCtt">
+                <button type="submit">
+                    Voltar
+                </button >
+            </Link>
 
 
-  return (
-    <main className={styles.body}>
-        <Header />
-        <div className={styles.container}>
-        <form className={styles.form} onSubmit={handleSubmit}>
 
-                    <div className={styles.divInput}>
-                        <input
-                            className={styles.input}
-                            placeholder="Nome"
-                            type="text"
-                            id="nome"
-                            value={nome}
-                            onChange={(e) => setNome(e.target.value)}
-                            required
-                        />
-                       
+            <div>
+
+                {/* Se há dados, exibe a lista de membros; caso contrário, exibe uma mensagem de carregamento ou erro. */}
+                {dados && dados.length !== 0 ? (
+                    // Se há membros, mapeia e exibe as informações de cada membro.
+                    <div>
+                        <div>
+                            {contatos.map((contato) => (
+                                <div key={contato.id}>
+
+                                    <div>
+                                        {/*  Informações do comentario */}
+
+                                        <p>
+                                            <strong></strong> {contato.nome}
+                                        </p>
+                                        <p>
+                                            <strong>Idade:</strong> {contato.idade}
+                                        </p>
+                                        <p>
+                                            <strong></strong> {contato.cargo}
+                                        </p>
+                                        <p>
+                                            <strong></strong>
+                                            <img src={contato.foto} width={200} height={200} />
+                                        </p>
+                                        <p>
+                                            <strong>Descrição:</strong> {contato.descricao}
+                                        </p>
+
+                                        <div>
+
+                                            <button onClick={() => deletar(contato.id)}>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <span>Deletar</span>
+                                            </button >
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            ))}
+
+                        </div>
+                        <div>
+                            <Link href="/contatos/cadastroCtt">
+                                <button type="submit">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <span>Cadastro</span>
+                                </button >
+                            </Link>
+                        </div>
                     </div>
-
-                    <div className={styles.divInput}>
-                        <input
-                            className={styles.input}
-                            placeholder="Email"
-                            type="text"
-                            id="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            required
-                        />
-                       
-                    </div>
-
-                    <div className={styles.divInput}>
-                        <input
-                            className={styles.input}
-                            placeholder="Telefone"
-                            type="text"
-                            maxLength={11}
-                            id="telefone"
-                            value={telefone}
-                            onChange={(e) => setTelefone(e.target.value)}
-                            required
-                        />
-                       
-                    </div>
-
-                    <div className={styles.containerbtn}>
-
-
-                        <button type="submit" className={styles.btn}>
-                            <div className={styles.overlay}></div>
-                            <div className={styles.overlay}></div>
-                            <div className={styles.overlay}></div>
-                            <span>Cadastrar</span>
-                        </button >  
-
-                    </div>
-
-                </form >
+                ) : (
+                    <p>carregando..</p>
+                )}
+            </div>
+            <Footer />
         </div>
-        <Footer />
-    </main>
-  )
+    );
 }
-
