@@ -33,13 +33,15 @@ const CardDescription = ({ params }) => {
     // Estrutura para renderizar detalhes da carta usando React-Responsive-Carousel e React-Tabs
     return (
         <div className={styles.container}>
-
             <div className={styles.infosCartas}>
-
-                <img className={styles.imgCard} width={200} height={200} src={card.image} alt={`Imagem da Carta ${card.name}`} />
-                {card.name && <p className={styles.name}> {card.name}</p>}
-                <div className={styles.descricao}>
-                    <p className={styles.info}>{card.description ? card.description : "Não disponível"}</p>
+                <div className={styles.cardDetails}>
+                    <img className={styles.imgCard} width={200} height={200} src={card.image} alt={`Imagem da Carta ${card.name}`} />
+                    <div>
+                        {card.name && <p className={styles.name}>{card.name}</p>}
+                        <div className={styles.descricao}>
+                            <p className={styles.info}>{card.description ? card.description : "Não disponível"}</p>
+                        </div>
+                    </div>
                 </div>
 
 
@@ -71,11 +73,6 @@ const CardDescription = ({ params }) => {
                         )}
                     </div>
                 </div>
-
-
-
-
-
 
                 {card.hp && (
                     <div className={styles.cardinfo}>
