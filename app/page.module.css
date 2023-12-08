@@ -1,10 +1,70 @@
-
-.backgroundimage{
+.backgroundimage {
     background-image: url("../public/images/fundoazul.png");
-    background-repeat:repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    height: 100vh;
-   
+
 }
+
+.divcard1 {
+    margin-top: 4rem;
+    width: 40%;
+    margin-left: 4.5rem;
+}
+
+.a2 {
+    text-decoration: none;
+    background-color: #0d8af7;
+    border: none;
+    height:100%;
+    border-radius: 5px;
+    box-shadow: 0 2px 3px 0 #0772ff, 0 0 0 4px #0772ff, 0 1px 0 4px #0772ff, 0 -1px 2px 4px #0772ff, 0 -2px 0 5px #0772ff, 0 6px 0 4px #0772ff, 0 3px 0 5px #0772ff, 0 -2px 0 7px #202020, 0 5px 0 7px #202020, 0 7px 0 7px #333;
+    color: rgb(204, 255, 254);
+    font-size: 10px;
+    text-shadow: -1px 2px 0 #582d00, 0 2px 0 #582d00, 1px 2px 0 #582d00, -1px -1px 0 #582d00, 1px -1px 0 #582d00, -1px 1px 0 #582d00, 1px 1px 0 #582d00;
+}
+
+.a2:active {
+    box-shadow: 0 -2px 3px 0 #0d8af7, 0 0 0 4px #0d8af7, 0 -1px 0 4px #0d8af7, 0 -1px 2px 4px #0d8af7, 0 -2px 0 5px #0d8af7, 0 6px 0 4px #0d8af7, 0 3px 0 5px #0d8af7, 0 -2px 0 7px #202020, 0 5px 0 7px #202020, 0 7px 0 7px #333;
+    text-shadow: -1px -1px 0 #582d00, 1px -1px 0 #582d00, -1px 1px 0 #582d00, 1px 1px 0 #582d00
+}
+
+.divcard2 {
+    margin-top: 4rem;
+    width: 40%;
+    margin-left: 6rem;
+}
+
+.a3 {
+    text-decoration: none;
+    background-color: #5bec1c;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 3px 0 #07ff0b, 0 0 0 4px #0cff30, 0 1px 0 4px #0cff30, 0 -1px 2px 4px #0cff30, 0 -2px 0 5px #0cff30, 0 6px 0 4px #0cff30, 0 3px 0 5px #0cff30, 0 -2px 0 7px #202020, 0 5px 0 7px #202020, 0 7px 0 7px #333;
+    color: #ffc;
+    font-size: 10px;
+    text-shadow: -1px 2px 0 #582d00, 0 2px 0 #582d00, 1px 2px 0 #582d00, -1px -1px 0 #582d00, 1px -1px 0 #582d00, -1px 1px 0 #582d00, 1px 1px 0 #582d00;
+}
+
+.a3:active {
+    box-shadow: 0 -2px 3px 0 #0cff30, 0 0 0 4px #0cff30, 0 -1px 0 4px #0cff30, 0 -1px 2px 4px #0cff30, 0 -2px 0 5px #0cff30, 0 6px 0 4px #b06904, 0 3px 0 5px #0cff30, 0 -2px 0 7px #202020, 0 5px 0 7px #202020, 0 7px 0 7px #333;
+    text-shadow: -1px -1px 0 #582d00, 1px -1px 0 #582d00, -1px 1px 0 #582d00, 1px 1px 0 #582d00
+}
+
+.cards {
+    display: flex;
+}
+
+.font {
+font-size: 0.6rem
+}
+
+.titulo {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+.carrossel{
+    margin-top: 5rem;
+    margin-left: 14rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+}
+
+
