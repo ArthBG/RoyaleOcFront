@@ -13,27 +13,18 @@
 /* titulos ou escritas */
 .name {
     text-align: center;
-    /*   position: relative;
-    left: 28%; */
     font-size: 2rem;
     text-shadow: 2px 2px rgba(0, 0, 0, 1);
     margin: 0 auto;
-    margin-bottom: 22%;
+    margin-bottom: 10%
 }
 
 .description {
     max-width: 400px;
     margin: 0 auto;
     flex: 1;
-    /*  position: relative;
-    right: 70%; */
 }
 
-.descricao {
-    max-width: 400px;
-    margin: 0 auto;
-   /*  margin-left: 12%; */
-}
 
 .info {
     font-size: 1rem;
@@ -44,8 +35,9 @@
 }
 
 .description {
-    text-shadow: 0 3px 1px rgba(1, 1, 1, 1);
-    width: 100%;
+    max-width: 400px;
+    flex: 1; 
+    margin-bottom: 20px; 
 }
 
 .obj {
@@ -65,19 +57,19 @@
 }
 
 .imgCard {
-    margin-top: 10%;
-    position: relative;
-    right: 78%;
-    margin-bottom: 10%;
+    width: 200px;
+    height: 200px;
+    margin-right: 20px; 
 }
 
 /* divs */
 .cardDetails {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
 }
+
 
 .infosCartas {
     display: flex;
@@ -96,13 +88,44 @@
     flex-direction: row;
     justify-content: center;
 }
-
-/* Estilo da bandeira do Clash Royale */
-.container {
-    background-color: rgb(92, 92, 200);
-    color: white;
-    padding: 20px;
+.containerTeT {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
+.minicards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 48%; 
+    margin-bottom: 10px; 
+}
+.minicard {
+    width: 100%;
+    margin-bottom: 10px; 
+}
+
+.fundoR {
+    background: linear-gradient(to right, #a7cfea, #508afc);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 1vw;
+    width: 100%;
+    box-shadow: 0 0.1vw 1vw rgba(13, 13, 13, 1.2);
+    color: #002850;
+}
+
+.fundoInfo {
+    background-color: #002850;
+    color: #a7cfea;
+    padding: 1vw;
+    width: 100%;
+    border-top-left-radius: 0.3vw;
+    border-bottom-right-radius: 1vw;
+    border-bottom-left-radius: 1vw;
+}
+
 
 .minicards {
     display: flex;
