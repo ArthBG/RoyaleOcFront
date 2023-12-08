@@ -1,9 +1,8 @@
 .rodape {
-  position: absolute;
+  display: flex;
   bottom: 0;
   background-color: #06245c;
   color: white;
-  height: auto;
   width: 100%;
   font-size: 11px;
   font-family: helvetica;
