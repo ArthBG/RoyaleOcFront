@@ -8,6 +8,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
+// npm install @coreui/react
 
 export default function Home() {
   return (
@@ -39,123 +40,125 @@ export default function Home() {
         </div>
       </div>
 
-      <Carousel className={styles.carrossel} width={800}>
+      <Carousel className={styles.carrossel} width={400}>
        
         <div>
-          <h2>.......</h2>
-          <img src={'/images/'} />
-          <p>Arena 1</p>
+          <h2 className={styles.h2}>Estádio Goblin</h2>
+          <div className={styles.divimg}>
+          <img src={'/images/arena-1.png'}/>
+          </div>
+          <p className={styles.tituloarena}>Arena 1</p>
         </div>
         <div>
-          <h2>.......</h2>
-          <img src="https://s2-techtudo.glbimg.com/L9wb1xt7tjjL-Ocvos-Ju0tVmfc=/0x0:1200x800/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/q/l/TIdfl2SA6J16XZAy56Mw/canvaai.png" />
-          <p>Arena 2</p>
+          <h2 className={styles.h2}>Fosso Dos Ossos</h2>
+          <img src={'/images/arena-2.png'} />
+          <p className={styles.tituloarena}>Arena 2</p>
         </div>
         <div>
-          <h2>.......</h2>
-          <img src="https://s2-techtudo.glbimg.com/L9wb1xt7tjjL-Ocvos-Ju0tVmfc=/0x0:1200x800/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/q/l/TIdfl2SA6J16XZAy56Mw/canvaai.png" />
-          <p>Arena 3</p>
+          <h2 className={styles.h2} >Torneio Bárbaro</h2>
+          <img src={'/images/arena-3.png'} />
+          <p className={styles.tituloarena}>Arena 3</p>
         </div>
         <div>
-          <h2>.......</h2>
-          <img src="https://s2-techtudo.glbimg.com/L9wb1xt7tjjL-Ocvos-Ju0tVmfc=/0x0:1200x800/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/q/l/TIdfl2SA6J16XZAy56Mw/canvaai.png" />
-          <p>Arena 4</p>
+          <h2  className={styles.h2}>Vale dos Feitiços</h2>
+          <img src={'/images/arena-4.png'} />
+          <p className={styles.tituloarena}>Arena 4</p>
         </div>
         <div>
-          <h2>.......</h2>
-          <img src="https://s2-techtudo.glbimg.com/L9wb1xt7tjjL-Ocvos-Ju0tVmfc=/0x0:1200x800/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/q/l/TIdfl2SA6J16XZAy56Mw/canvaai.png" />
-          <p>Arena 5</p>
+          <h2  className={styles.h2}>Oficina do Construtor</h2>
+          <img src={'/images/arena-5.png'} />
+          <p className={styles.tituloarena}>Arena 5</p>
         </div>
         <div>
-          <h2>.......</h2>
-          <img src="https://s2-techtudo.glbimg.com/L9wb1xt7tjjL-Ocvos-Ju0tVmfc=/0x0:1200x800/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/q/l/TIdfl2SA6J16XZAy56Mw/canvaai.png" />
-          <p>Arena 6</p>
+          <h2  className={styles.h2}>Parquinho da P.E.K.K.A</h2>
+          <img src={'/images/arena-6.png'} />
+          <p className={styles.tituloarena}>Arena 6</p>
         </div>
         <div>
-          <h2>.......</h2>
-          <img src="https://s2-techtudo.glbimg.com/L9wb1xt7tjjL-Ocvos-Ju0tVmfc=/0x0:1200x800/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/q/l/TIdfl2SA6J16XZAy56Mw/canvaai.png" />
-          <p>Arena 7</p>
+          <h2  className={styles.h2}>Arena Real</h2>
+          <img src={'/images/arena-7.png'} />
+          <p className={styles.tituloarena}>Arena 7</p>
         </div>
         <div>
-          <h2>.......</h2>
-          <img src="https://s2-techtudo.glbimg.com/L9wb1xt7tjjL-Ocvos-Ju0tVmfc=/0x0:1200x800/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/q/l/TIdfl2SA6J16XZAy56Mw/canvaai.png" />
-          <p>Arena 8</p>
+          <h2  className={styles.h2}>Pico Congelado</h2>
+          <img src={'/images/arena-8.png'} />
+          <p className={styles.tituloarena}>Arena 8</p>
         </div>
 
         <div>
-          <h2>.......</h2>
-          <img src="https://s2-techtudo.glbimg.com/L9wb1xt7tjjL-Ocvos-Ju0tVmfc=/0x0:1200x800/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/q/l/TIdfl2SA6J16XZAy56Mw/canvaai.png" />
-          <p>Arena 9</p>
+          <h2  className={styles.h2}>Arena Da Selva</h2>
+          <img src={'/images/arena-9.png'} />
+          <p className={styles.tituloarena}>Arena 9</p>
         </div>
         <div>
-          <h2>.......</h2>
-          <img src="https://s2-techtudo.glbimg.com/L9wb1xt7tjjL-Ocvos-Ju0tVmfc=/0x0:1200x800/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/q/l/TIdfl2SA6J16XZAy56Mw/canvaai.png" />
-          <p>Arena 10</p>
+          <h2  className={styles.h2}>Montanha do Porco</h2>
+          <img src={'/images/arena-10.png'} />
+          <p className={styles.tituloarena}>Arena 10</p>
         </div>
         <div>
-          <h2>.......</h2>
-          <img src="https://s2-techtudo.glbimg.com/L9wb1xt7tjjL-Ocvos-Ju0tVmfc=/0x0:1200x800/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/q/l/TIdfl2SA6J16XZAy56Mw/canvaai.png" />
-          <p>Arena 11</p>
+          <h2  className={styles.h2}>Eletrovale</h2>
+          <img src={'/images/arena-11.png'} />
+          <p className={styles.tituloarena}>Arena 11</p>
         </div>
         <div>
-          <h2>.......</h2>
-          <img src="https://s2-techtudo.glbimg.com/L9wb1xt7tjjL-Ocvos-Ju0tVmfc=/0x0:1200x800/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/q/l/TIdfl2SA6J16XZAy56Mw/canvaai.png" />
-          <p>Arena 12</p>
+          <h2  className={styles.h2}>Cidade Assombrada</h2>
+          <img src={'/images/arena-12.png'} />
+          <p className={styles.tituloarena}>Arena 12</p>
         </div>
         <div>
-          <h2>.......</h2>
-          <img src="https://s2-techtudo.glbimg.com/L9wb1xt7tjjL-Ocvos-Ju0tVmfc=/0x0:1200x800/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/q/l/TIdfl2SA6J16XZAy56Mw/canvaai.png" />
-          <p>Arena 13</p>
+          <h2  className={styles.h2}>Covil dos Patifes</h2>
+          <img src={'/images/arena-13.png'} />
+          <p className={styles.tituloarena}>Arena 13</p>
         </div>
         <div>
-          <h2>.......</h2>
-          <img src="https://s2-techtudo.glbimg.com/L9wb1xt7tjjL-Ocvos-Ju0tVmfc=/0x0:1200x800/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/q/l/TIdfl2SA6J16XZAy56Mw/canvaai.png" />
-          <p>Arena 14</p>
+          <h2  className={styles.h2}>Pico Sereno</h2>
+          <img src={'/images/arena-14.png'} />
+          <p className={styles.tituloarena}>Arena 14</p>
         </div>
         <div>
-          <h2>.......</h2>
-          <img src="https://s2-techtudo.glbimg.com/L9wb1xt7tjjL-Ocvos-Ju0tVmfc=/0x0:1200x800/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/q/l/TIdfl2SA6J16XZAy56Mw/canvaai.png" />
-          <p>Arena 15</p>
+          <h2  className={styles.h2}>Mina do Mineiro</h2>
+          <img src={'/images/arena-15.png'} />
+          <p className={styles.tituloarena}>Arena 15</p>
         </div>
         <div>
-          <h2>.......</h2>
-          <img src="https://s2-techtudo.glbimg.com/L9wb1xt7tjjL-Ocvos-Ju0tVmfc=/0x0:1200x800/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/q/l/TIdfl2SA6J16XZAy56Mw/canvaai.png" />
-          <p>Arena 16</p>
+          <h2  className={styles.h2}>A cozinha do Executor</h2>
+          <img src={'/images/arena-16.png'} />
+          <p className={styles.tituloarena}>Arena 16</p>
         </div>
         <div>
-          <h2>.......</h2>
-          <img src="https://s2-techtudo.glbimg.com/L9wb1xt7tjjL-Ocvos-Ju0tVmfc=/0x0:1200x800/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/q/l/TIdfl2SA6J16XZAy56Mw/canvaai.png" />
-          <p>Arena 17</p>
+          <h2  className={styles.h2}>Cripta Real</h2>
+          <img src={'/images/arena-17.png'} />
+          <p className={styles.tituloarena}>Arena 17</p>
         </div>
         <div>
-          <h2>.......</h2>
-          <img src="https://s2-techtudo.glbimg.com/L9wb1xt7tjjL-Ocvos-Ju0tVmfc=/0x0:1200x800/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/q/l/TIdfl2SA6J16XZAy56Mw/canvaai.png" />
-          <p>Arena 18</p>
+          <h2  className={styles.h2}>Santuário Silencioso</h2>
+          <img src={'/images/arena-18.png'} />
+          <p className={styles.tituloarena}>Arena 18</p>
         </div>
         <div>
-          <h2>.......</h2>
-          <img src="https://s2-techtudo.glbimg.com/L9wb1xt7tjjL-Ocvos-Ju0tVmfc=/0x0:1200x800/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/q/l/TIdfl2SA6J16XZAy56Mw/canvaai.png" />
-          <p>Arena 19</p>
+          <h2  className={styles.h2}>Spa de Dragões </h2>
+          <img src={'/images/arena-19.png'} />
+          <p className={styles.tituloarena}>Arena 19</p>
         </div>
         <div>
-          <h2>.......</h2>
-          <img src="https://s2-techtudo.glbimg.com/L9wb1xt7tjjL-Ocvos-Ju0tVmfc=/0x0:1200x800/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/q/l/TIdfl2SA6J16XZAy56Mw/canvaai.png" />
-          <p>Arena 20</p>
+          <h2  className={styles.h2}>Campo de Treinamento</h2>
+          <img src={'/images/arena24.webp'}  />
+          <p className={styles.tituloarenatop}>Arena 20</p>
         </div>
         <div>
-          <h2>.......</h2>
-          <img src="https://s2-techtudo.glbimg.com/L9wb1xt7tjjL-Ocvos-Ju0tVmfc=/0x0:1200x800/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/q/l/TIdfl2SA6J16XZAy56Mw/canvaai.png" />
-          <p>Arena 21</p>
+          <h2  className={styles.h2}>Festa Clash</h2>
+          <img src={'/images/arena21.webp'} />
+          <p className={styles.tituloarenatop}>Arena 21</p>
         </div>
         <div>
-          <h2>.......</h2>
-          <img src="https://s2-techtudo.glbimg.com/L9wb1xt7tjjL-Ocvos-Ju0tVmfc=/0x0:1200x800/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/q/l/TIdfl2SA6J16XZAy56Mw/canvaai.png" />
-          <p>Arena 22</p>
+          <h2  className={styles.h2}>Panquecas</h2>
+          <img src={'/images/arena22.webp'}  />
+          <p className={styles.tituloarenatop}>Arena 22</p>
         </div>
         <div>
-          <h2>.......</h2>
-          <img src="https://s2-techtudo.glbimg.com/L9wb1xt7tjjL-Ocvos-Ju0tVmfc=/0x0:1200x800/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/q/l/TIdfl2SA6J16XZAy56Mw/canvaai.png" />
-          <p>Arena 23</p>
+          <h2  className={styles.h2}>Arena Lendária</h2>
+          <img src={'/images/arena-20.png'} />
+          <p className={styles.tituloarena23}>Arena 23</p>
         </div>
       </Carousel>
 
