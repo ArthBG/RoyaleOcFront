@@ -5,6 +5,7 @@
     max-width: 60rem;
     background-size: cover;	
     margin: auto;
+    min-height: fit-content;
     height: 75rem;
 }
 .cardName{
@@ -99,6 +100,8 @@
         justify-content: center;
         align-items: center;
         margin-top: 10rem;
+        overflow-y: scroll;
+        max-height:35rem;
     }
     .atributesCondition div{
         background-color: rgb(255, 255, 255);

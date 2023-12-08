@@ -371,11 +371,11 @@ export default function createCard() {
                     Atributos para tropas
                   </Typography>
                   <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                    <select onChange={(e) => setSelectedOption(e.target.value)} className={styled.selectUl} value={selectedOption}>
+                    <select onChange={(e) => setSelectedOption(e.target.value)} value={selectedOption}>
                       {
                         options.map((option) => {
                           return (
-                            <option className={styled.selectUl} value={option.title}>
+                            <option  value={option.title}>
                               <img src={option.imageSrc} alt={option.label} />
                               {option.label}
                             </option>
@@ -387,10 +387,10 @@ export default function createCard() {
 
                   </Typography>
                   <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                    <input type="text" className={stylesM.atributos} value={inputvalue} onChange={(e) => setInputValue(e.target.value)} placeholder="Valor do atributo" />
+                    <input type="text" value={inputvalue} onChange={(e) => setInputValue(e.target.value)} placeholder="Valor do atributo" />
                   </Typography>
-                  <div className={stylesM.containerButtons}>
-                    <button className={stylesM.scbtnyellow} onClick={addAtributes}>Adicionar atributo</button>
+                  <div>
+                    <button onClick={addAtributes}>Adicionar atributo</button>
                   </div>
                 </Box>
               </Modal>

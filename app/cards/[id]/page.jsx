@@ -250,8 +250,6 @@ export default function updateCard({ params }) {
           <input id="damage" className={styles.input} type="number" value={damage} onChange={e => setDamage(e.target.value)} />
           <label htmlFor="damagepersecond">Dano por segundo</label>
           <input id="damagepersecond" className={styles.input} type="number" value={damagepersecond} onChange={e => setDamagepersecond(e.target.value)} />
-          <label htmlFor="rangeddamage">Dano a distância</label>
-          <input id="rangeddamage" className={styles.input} type="number" value={rangeddamage} onChange={e => setRangeddamage(e.target.value)} />
           <label htmlFor="damageondistance">Dano a distância</label>
           <input id="damageondistance" className={styles.input} type="number" value={damageondistance} onChange={e => setDamageondistance(e.target.value)} />
           <label htmlFor="damageonarea">Dano em área</label>
