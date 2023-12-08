@@ -4,10 +4,6 @@ import Header from "./components/header/header"
 import styles from "./page.module.css"
 import Link from "next/link"
 import Footer from "./components/footer/footer"
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
 // npm install @coreui/react
 
 export default function Home() {
