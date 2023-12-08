@@ -41,17 +41,6 @@ function cardspage() {
                 if (selectedElixir) {
                     queryParams += `elixir=${selectedElixir}&`;
                 }
-                // if (selectedSorting) {
-                //     if(selectedSorting == "name"){
-                //         queryParams += `orderbyname=${orderbyname}&`;
-                //     } 
-                //     if(selectedSorting == "elixir"){
-                //         queryParams += `orderbyelixir=${orderbyelixir}&`;
-                //     }
-                //     if(selectedSorting == "rarity"){
-                //         queryParams += `orderbyrarity=${orderbyrarity}&`;
-                //     }
-                // }
                
                 if (queryParams.length > 0) {
                     queryParams = queryParams.slice(0, -1);
@@ -157,7 +146,8 @@ function cardspage() {
             </div>
 
             <div className={style.containerCard}>
-                {cardsData.map((card) => (
+                { //map percorre o array e retorna um novo array com ordem de elixir crescente
+                    cardsData.sort((a, b) => a.elixir - b.elixir).map((card) => ( 
                     <div key={card.id} >
                         <div className={style.card}>
                             <div className={style.containerButtons}>
