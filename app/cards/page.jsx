@@ -7,6 +7,7 @@ import style from './page.module.css';
 import { useRouter } from 'next/navigation';
 import { FiSearch } from 'react-icons/fi';
 import Link from 'next/link';
+import CardInfo from '../components/cardinfo/cardinfo';
 // npm install react-icons --save
 // Todas as funções devem ser comentadas
 

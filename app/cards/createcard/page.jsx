@@ -176,38 +176,7 @@ export default function createCard() {
 
 
 
-  const removeAtributes = async (id) => {
-    try {
-      const response = await axios.delete(`/api/cards/${id}`)
-      setHp("")
-      setDeploytime("")
-      setShieldhp("")
-      setDamage("")
-      setDamagepersecond("")
-      setRangeddamage("")
-      setDamageondistance("")
-      setDamageonarea("")
-      setDamageonimpact("")
-      setDamageontower("")
-      setChargedamage("")
-      setDamageondeath("")
-      setSpawnspeed("")
-      setDuration("")
-      setRadius("")
-      setWidth("")
-      setEfecttime("")
-      setFreezetime("")
-      setUnities("")
-      setArena("")
-      setTarget("")
-      setProjectilerange("")
-      setRange("")
-      setSpeed("")
-      setImpactspeed("")
-    } catch (error) {
-      console.log(error)
-    }
-  }
+  
 
   const options = [
     {
