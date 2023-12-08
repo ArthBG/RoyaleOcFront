@@ -13,43 +13,62 @@
 /* titulos ou escritas */
 .name {
     text-align: center;
+    /*   position: relative;
+    left: 28%; */
     font-size: 2rem;
     text-shadow: 2px 2px rgba(0, 0, 0, 1);
+    margin: 0 auto;
+    margin-bottom: 22%;
+}
+
+.description {
+    max-width: 400px;
+    margin: 0 auto;
+    flex: 1;
+    /*  position: relative;
+    right: 70%; */
 }
 
 .descricao {
     max-width: 400px;
+    margin: 0 auto;
+   /*  margin-left: 12%; */
 }
 
 .info {
     font-size: 1rem;
+    position: relative;
+    top: -3.5rem;
     margin-left: 24%;
     color: rgb(22, 22, 53);
+}
+
+.description {
+    text-shadow: 0 3px 1px rgba(1, 1, 1, 1);
+    width: 100%;
 }
 
 .obj {
     font-size: 1.2rem;
     margin-left: 24%;
     color: white;
+    position: relative;
+    top: -3.5rem;
     text-shadow: 0 3px 1px rgba(1, 1, 1, 1);
 }
 
 /* imagens */
 .imgIcon {
     background-color: rgba(73, 73, 73, 0.729);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .imgCard {
-    width: 200px;
-    height: 200px;
-    margin-right: 20px;
-}
-
-.cardinfo img {
-    margin-left: -4px;
-    margin-top: -4.5px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    margin-top: 10%;
+    position: relative;
+    right: 78%;
+    margin-bottom: 10%;
 }
 
 /* divs */
@@ -72,86 +91,45 @@
     margin: 0 auto 4px auto;
 }
 
-.minicards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 30%;
-    margin-left: 2%;
-}
-
-.minicard {
-    width: 100%;
-    margin-bottom: 1rem;
-}
-
-.fundoR {
-    background: linear-gradient(to right, #a7cfea, #508afc);
-    border-top-left-radius: 1vw;
-    border-bottom-left-radius: 0.4vw;
-    border-top-right-radius: 1.9vw;
-    padding: 1vw;
-    box-shadow: 0 0.1vw 1vw rgba(13, 13, 13, 1.2);
-    color: #002850;
-}
-
 .containerTeT {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-.fundoInfo {
-    background-color: #002850;
-    color: #a7cfea;
-    padding: 1vw;
-    width: 100%;
-    border-top-left-radius: 0.3vw;
-    border-bottom-right-radius: 1vw;
-    border-bottom-left-radius: 1vw;
+/* Estilo da bandeira do Clash Royale */
+.container {
+    background-color: rgb(92, 92, 200);
+    color: white;
+    padding: 20px;
 }
 
- .cardinfo {
+.minicards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 
-     margin: auto auto auto auto;
-     width: 50%;
-     height: 51%;
-     background-color: rgb(226, 226, 250);
-     border-radius: 10px;
-     box-shadow: -4px 3px 1px -1px rgba(0, 0, 0, 0.43);
-     -webkit-box-shadow: -4px 3px 1px -1px rgba(0, 0, 0, 0.43);
-     -moz-box-shadow: -4px 3px 1px -1px rgba(0, 0, 0, 0.43);
- }
+.cardinfo {
+    margin: auto auto auto auto;
+    width: 40%;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(226, 226, 250);
+    border-radius: 1vw;
+    box-shadow: -0.4vw 0.3vw 0.1vw -0.1vw rgba(0, 0, 0, 0.43);
+    margin-bottom: 2%;
+}
 
+@media (max-width: 768px) {
+    .infosCartas {
+        flex-direction: column;
+        align-items: center;
+    }
 
-
- /* responsividadde*/
- @media only screen and (max-width: 600px) {
-     .infosCartas {
-         grid-template-columns: 1fr;
-         width: 90%;
-     }
-
-     .minicards {
-         width: 100%;
-     }
-
-     .minicard {
-         width: 100%;
-
-     }
-
-     .cardinfo {
-         width: 100%;
-     }
-
-     .minicards {
-         width: 100%;
-     }
-
-     .minicard {
-         width: 100%;
-     }
-
-
- }
+    .cardinfo {
+        width: 80%;
+        margin-bottom: 2rem;
+    }
+}
