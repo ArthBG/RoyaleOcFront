@@ -1,5 +1,9 @@
 .containerPai {
     background-image: url("../../../public/images/fundoazul.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
