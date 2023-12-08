@@ -27,7 +27,7 @@ export default function Header (){
                     </div>
                 <div className={styles.divbutton2}>
                     <div className={styles.shortcut1}>
-                        <Link className={styles.a} href={'/sobrenos'}>
+                        <Link className={styles.a} href={'/membros'}>
                             <Image className={styles.image} src={'/images/sobrenosescudo.png'} width={60} height={40}></Image>
                             <h1 className={styles.contact}>Sobre Nós</h1>
                         </Link>
