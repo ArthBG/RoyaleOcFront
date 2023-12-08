@@ -12,7 +12,7 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                     {elixir == "1" && rarity == "Comum" ? (
                         <div className={styles.imagecomming} style={{
                             backgroundImage: `url(${image})`,
-                            width: 240,
+                            width: "fit-content",
                             height: 284,
                             backgroundPosition: "center",
                             backgroundPositionX: -10,
@@ -24,7 +24,7 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                             backgroundSize: "cover",
                         }}>
                             
-                            <Image src={"/images/createcard/communCard1.png"} className={styles.oi0} width={260} height={300} />
+                            <Image src={"/images/createcard/communCard1.png"} className={styles.oi0} width={290} height={300} />
                         </div>
                     ) : null}
 

@@ -1,10 +1,10 @@
-const Option = ({ value, label, imageSrc }) => {
+const Option2 = ({ value, label, imageSrc }) => {
   return (
-    <li data-value={value}>
+    <option data-value={value}>
       <img src={imageSrc} alt={label} />
       {label}
-    </li>
+    </option>
   );
 };
 
- export default Option;
+ export default Option2;
