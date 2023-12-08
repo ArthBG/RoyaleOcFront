@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image"
-import stylesM from "../../components/modalatributes/modalatributes.module.css"
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';

@@ -1,8 +1,7 @@
 "use client";
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import ModalAtributes from '@/app/components/modalatributes/modalatributes';
-import Image from 'next/image';
+  import Image from 'next/image';
 import styles from '../createcard/page.module.css';
 import { useRouter } from 'next/navigation';
 import CardInfo from '@/app/components/cardinfo/cardinfo';
