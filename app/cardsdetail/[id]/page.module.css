@@ -111,24 +111,47 @@
     border-bottom-left-radius: 1vw;
 }
 
-.cardinfo {
-    margin: auto auto auto auto;
-    width: 40%;
-    height: 40%;
-    margin-bottom: 2%;
-    background-color: rgb(226, 226, 250);
-    border-radius: 1vw;
-    box-shadow: -0.4vw 0.3vw 0.1vw -0.1vw rgba(0, 0, 0, 0.43);
-}
+ .cardinfo {
 
-@media (max-width: 768px) {
-    .infosCartas {
-        flex-direction: column;
-        align-items: center;
-    }
+     margin: auto auto auto auto;
+     width: 50%;
+     height: 51%;
+     background-color: rgb(226, 226, 250);
+     border-radius: 10px;
+     box-shadow: -4px 3px 1px -1px rgba(0, 0, 0, 0.43);
+     -webkit-box-shadow: -4px 3px 1px -1px rgba(0, 0, 0, 0.43);
+     -moz-box-shadow: -4px 3px 1px -1px rgba(0, 0, 0, 0.43);
+ }
 
-    .cardinfo {
-        width: 80%;
-        margin-bottom: 2rem;
-    }
-}
+
+
+ /* responsividadde*/
+ @media only screen and (max-width: 600px) {
+     .infosCartas {
+         grid-template-columns: 1fr;
+         width: 90%;
+     }
+
+     .minicards {
+         width: 100%;
+     }
+
+     .minicard {
+         width: 100%;
+
+     }
+
+     .cardinfo {
+         width: 100%;
+     }
+
+     .minicards {
+         width: 100%;
+     }
+
+     .minicard {
+         width: 100%;
+     }
+
+
+ }
