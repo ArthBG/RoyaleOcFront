@@ -126,14 +126,66 @@
    margin-right: -26%;
    margin-bottom: 2%;
 }
-@media (max-width: 768px) {
-    .infosCartas {
+
+@media (max-width: 600px) {
+    /* .name */
+    .name {
+        margin-bottom: 5px; /* Redução da margem inferior */
+    } 
+     .infosCartas {
         flex-direction: column;
         align-items: center;
     }
 
+    /* .description */
+    .description {
+        max-width: 100%; /* Ajuste a largura máxima para ocupar a largura total */
+        margin-top: 2%; /* Redução da margem superior */
+    }
+
+    /* .info e .obj */
+    .info,
+    .obj {
+        font-size: 0.8rem; /* Redução do tamanho da fonte */
+        margin-left: 0; /* Remoção da margem esquerda */
+        text-align: center; /* Centralização do texto */
+    }
+
+    /* .imgCard */
+    .imgCard {
+        margin-left: 0; /* Remoção da margem esquerda */
+        margin-bottom: 2%;
+        max-width: 100%; /* Ajuste a largura máxima para ocupar a largura total */
+    }
+
+    /* .infosCartas */
+    .infosCartas {
+        width: 100%; /* Ajuste para ocupar a largura total */
+        margin: 0 auto 4px auto;
+    }
+
+    /* .cardinfo */
     .cardinfo {
-        width: 80%;
-        margin-bottom: 2rem;
+        width: 100%; /* Ajuste para ocupar a largura total */
+        height: auto; /* Ajuste para altura automática */
+        margin-bottom: 2%;
+    }
+
+    /* .minicards */
+    .minicards {
+        width: 100%; /* Ajuste para ocupar a largura total */
+        text-align: center;
+        margin-right: 0; /* Redução da margem direita */
+        margin-bottom: 2%;
+    }
+
+    /* .containerTeT */
+    .containerTeT {
+        justify-content: center; /* Ajuste para o centro em dispositivos menores */
+    }
+
+    /* .fundoR */
+    .fundoR {
+        margin-bottom: 5px; /* Adicionando margem inferior para separar do próximo elemento */
     }
 }
