@@ -52,7 +52,7 @@ const CardDescription = ({ params }) => {
                                 </div>
                             )}
                         </div>
-
+                                        
                         <div className={styles.minicards}>
                             {card.type && (
                                 <div className={styles.minicard}>
