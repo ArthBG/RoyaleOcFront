@@ -18,6 +18,15 @@
 .containerImage{
     margin: 1rem;
 }
+.oi{
+    position: relative;
+}
+.oi2{
+    position: absolute;
+    top: -25px;
+    left: -40px;
+
+}
 .layer{
     background-color: #000;
     opacity: 0.5;
