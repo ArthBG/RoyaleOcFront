@@ -112,6 +112,8 @@
     }
     .containerCards20{
         display: flex;
+        position: absolute;
+        left: 500px;
         width: 250px;
         height: 290px;
         align-items: center;
@@ -123,7 +125,6 @@
         justify-content: center;
         align-items: center;
         margin-top: 10rem;
-        overflow-y: scroll;
         max-height:35rem;
     }
     .atributesCondition div{

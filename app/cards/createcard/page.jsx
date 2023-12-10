@@ -88,6 +88,10 @@ export default function createCard() {
   }
 
   const addAtributes = () => {
+    //coloque um limite de 10 atributos possiveis
+    if (atributes.length >= 10) {
+      return;
+    } else {
     const valueAndName = {
       value: inputvalue,
       name: selectedOption
@@ -96,7 +100,10 @@ export default function createCard() {
 
     setAtributes(valueAndName)
     setItens(valueAndName);
+
     setInputValue("")
+    setSelectedOption("")
+  }
   }
 
   const createImageOfaDiv = async () => {
@@ -123,7 +130,6 @@ export default function createCard() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(atributes);
 
     try {
       const response = await axios.post("/api/cards", {
@@ -313,7 +319,6 @@ export default function createCard() {
 
   }
 
-  console.log({ image })
   return (
     <main className={styles.backgroundimage}>
       <Header />
@@ -430,7 +435,8 @@ export default function createCard() {
       </div>
 
 
-      <div className={styles.containerCard}>
+      
+        <div className={styles.containerVisibility}>
         <div className={styles3.containerCards20} ref={divRef} >
         <div className={styles3.containerCards2}>
             {
@@ -948,9 +954,11 @@ export default function createCard() {
 
         </div>
         </div>
-        {/* <CardInfo
+        </div>
+        <div className={styles.containerCard}>
+        <CardInfo
           name={name}
-          image={image}
+          image={imageupdated}
           type={type}
           rarity={rarity}
           elixir={elixir}
@@ -982,7 +990,7 @@ export default function createCard() {
           impactspeed={impactspeed}
           id={id}
           level={level}
-        /> */}
+        /> 
       </div>
 
     </main>

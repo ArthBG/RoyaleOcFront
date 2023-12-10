@@ -142,8 +142,11 @@
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
+
 .containerCard{
+    position: relative;
     margin-left: 10rem;
+    margin: auto;
     padding-bottom: 5rem;
 
 }
