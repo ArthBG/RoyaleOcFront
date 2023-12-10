@@ -9,13 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@coreui/coreui": "^4.3.2",
+
     "@coreui/react": "^4.11.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "@mui/material": "^5.14.18",
-    "@mui/styled-engine-sc": "^6.0.0-alpha.6",
+    "@mui/material": "^5.14.20",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.7",
     "axios": "^1.6.2",
+    "html2canvas": "^1.4.1",
     "next": "14.0.3",
     "react": "^18",
     "react-dom": "^18",
@@ -24,6 +25,5 @@
     "react-responsive-carousel": "^3.2.23",
     "react-tabs": "^6.0.2",
     "styled-components": "^6.1.1",
-    "wxios": "^1.0.0"
   }
 }

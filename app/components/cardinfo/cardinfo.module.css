@@ -1,12 +1,12 @@
 
 .CardInfo{
     background-image: url("/images/infobg.png");
-    height: 75rem;
-    min-width: 60rem;
-    max-width: fit-content;
+    min-width: 30rem;
+    max-width: 60rem;
     background-size: cover;	
     margin: auto;
-    margin-top: 10rem;
+    min-height: fit-content;
+    height: 75rem;
 }
 .cardName{
     text-align: center;
@@ -18,6 +18,15 @@
 .containerImage{
     margin: 1rem;
 }
+.oi{
+    position: relative;
+}
+.oi2{
+    position: absolute;
+    top: -10px;
+    left: -8px;
+}
+
 .layer{
     background-color: #000;
     opacity: 0.5;
@@ -86,11 +95,63 @@
 }
 .desc{
     width: 30rem;
-    max-width: 50rem;
+    max-width: 48rem;
 }
     .containerCards{
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         margin-top: 5rem;
+    }
+    .containerCards2{
+        display: flex;
+        padding-top: 5px;
+        width: fit-content;
+        height: fit-content;
+        margin: auto;
+    }
+    .containerCards20{
+        display: flex;
+        position: absolute;
+        left: 500px;
+        width: 250px;
+        height: 290px;
+        align-items: center;
+        
+    }
+    .atributesCondition{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10rem;
+        max-height:35rem;
+    }
+    .atributesCondition div{
+        background-color: rgb(255, 255, 255);
+        border-radius: 3px;
+        width: 20rem;
+        margin: 0.5rem;
+        display: flex;
+    }
+    .atributesNames{
+        font-size: 14px;
+        color: rgb(255, 255, 255);
+        text-shadow: -1px 4px 0 #000,0 2px 0 #000,1px 2px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;
+    }
+    .atributesP{
+        font-size: 14px;
+    }
+    .cardImage{
+        margin-left: 2rem;
+    }
+    .cardTroop{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 1rem;
+    }
+    .desc2{
+        display: flex;
+        flex-direction: column;
     }

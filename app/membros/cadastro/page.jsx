@@ -4,6 +4,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import styles from "./cadastro.module.css";
 import Link from "next/link";
+import Mensagem from "@/app/components/mensagem/msg";
+import Header from "@/app/components/header/header";
+import Footer from "@/app/components/footer/footer";
 
 
 
@@ -121,28 +124,17 @@ export default function Register() {
     // Renderização do componente.
     return (
         <div className={styles.containerPai}>
-
-
-            <Link href="/membros">
-                <button type="submit" className={styles.botaoVoltar}>
-                    <div className={styles.overlay}></div>
-                    <div className={styles.overlay}></div>
-                    <div className={styles.overlay}></div>
-                    <span>Voltar</span>
-                </button >
-            </Link>
+            <Header />
 
 
             <div className={styles.containerForm}>
-                <h1 className={styles.titulo}>Fazer cadastro</h1>
+                <h1 className={styles.titulo}>Fazer o cadastro:</h1>
 
                 <form className={styles.form} onSubmit={handleSubmit}>
                     <div className={styles.divInput}>
-                        <label className={styles.label} htmlFor="nome">
-                            Nome:
-                        </label>
                         <input
                             className={styles.input}
+                            placeholder="Nome"
                             type="text"
                             id="name"
                             value={nome}
@@ -154,26 +146,29 @@ export default function Register() {
                     </div>
 
                     <div className={styles.divInput}>
-                        <label className={styles.label} htmlFor="idade">
-                            Idade:
-                        </label>
                         <input
                             className={styles.input}
+                            placeholder="Idade"
                             type="number"
                             id="idade"
                             value={idade}
                             onChange={(e) => setIdade(e.target.value)}
 
                         />
+
                         <p className={styles.msgError}>{errorIdade}</p>
+
+                        {
+                            msg ? (idade == "" ? <Mensagem msg="Preencha o campo idade!"
+                                type="error" /> : null) : null
+                        }
+
                     </div>
 
                     <div className={styles.divInput}>
-                        <label className={styles.label} htmlFor="cargo">
-                            Cargo:
-                        </label>
                         <input
                             className={styles.input}
+                            placeholder="Cargo"
                             type="text"
                             id="cargo"
                             value={cargo}
@@ -184,10 +179,9 @@ export default function Register() {
                     </div>
 
                     <div className={styles.divInput}>
-                        <label className={styles.label} htmlFor="foto">
-                            Foto:
-                        </label>
                         <input
+                            className={styles.input}
+                            placeholder="URL da foto"
                             type="text"
                             id="foto"
                             name="foto"
@@ -201,11 +195,9 @@ export default function Register() {
 
 
                     <div className={styles.divInput}>
-                        <label className={styles.label} htmlFor="descricao">
-                            Descrição:
-                        </label>
                         <input
                             className={styles.input}
+                            placeholder="Descrição"
                             type="text"
                             id="descricao"
                             value={descricao}
@@ -215,16 +207,30 @@ export default function Register() {
                         <p className={styles.msgError}>{errorDescricao}</p>
 
                     </div>
+                    <div className={styles.containerbtn}>
 
-                    <button type="submit" className={styles.btn}>
-                        <div className={styles.overlay}></div>
-                        <div className={styles.overlay}></div>
-                        <div className={styles.overlay}></div>
-                        <span>Cadastrar</span>
-                    </button >
+                        <Link href="/membros">
+                            <button type="submit" className={styles.botaoVoltar}>
+                                <div className={styles.overlay}></div>
+                                <div className={styles.overlay}></div>
+                                <div className={styles.overlay}></div>
+                                <span className={styles.voltar}>Voltar</span>
+                            </button >
+                        </Link>
+
+
+                        <button type="submit" className={styles.btn}>
+                            <div className={styles.overlay}></div>
+                            <div className={styles.overlay}></div>
+                            <div className={styles.overlay}></div>
+                            <span>Cadastrar</span>
+                        </button >  
+
+                    </div>
 
                 </form >
             </div >
+            <Footer />
         </div >
     );
 }

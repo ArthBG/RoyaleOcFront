@@ -3,9 +3,11 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import styles from "./membro.module.css";
+import styles from "./page.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import Header from "../components/header/header";
+import Footer from "../components/footer/footer";
 
 export default function Page() {
     // Estados para armazenar a lista de membros e dados adicionais.
@@ -47,61 +49,81 @@ export default function Page() {
     }, []);
     // Renderização do componente.
     return (
-        <div className={styles.divPai}>
-            <div>
-                <Link href="/membros/cadastro">
-                    <button type="submit" className={styles.botaoCadastro}>
-                        <div className={styles.overlay}></div>
-                        <div className={styles.overlay}></div>
-                        <div className={styles.overlay}></div>
-                        <span>Cadastro</span>
-                    </button >
-                </Link>
-            </div>
 
-            <div className={styles.divMembros}>
-                <h1 className={styles.titulo}>Membros</h1>
+        <div className={styles.container}>
+            <Header/>
+            <h1 className={styles.h1}>Membros</h1>
+            <div className={styles.divPai}>
+
                 {/* Se há dados, exibe a lista de membros; caso contrário, exibe uma mensagem de carregamento ou erro. */}
                 {dados.length ? (
                     // Se há membros, mapeia e exibe as informações de cada membro.
+                    <div>
                     <div className={styles.map}>
                         {membros.map((membro) => (
                             <div key={membro.id}>
-                                <div>
+                               
+                                <div className={styles.divpaiinfos}>
                                     {/*  Informações do membro */}
-                                 
+                             
                                     <p className={styles.infos}>
-                                        <strong>Nome:</strong> {membro.nome}
+                                        <strong></strong> {membro.nome}
                                     </p>
                                     <p className={styles.infos}>
                                         <strong>Idade:</strong> {membro.idade}
                                     </p>
                                     <p className={styles.infos}>
-                                        <strong>Cargo:</strong> {membro.cargo}
+                                        <strong></strong> {membro.cargo}
                                     </p>
-                                    <p className={styles.infos}>
-                                        <strong>Foto:</strong>
-                                        <img src={membro.foto} width={200} height={200} />
+                                    <p className={styles.infosImg}>
+                                        <strong></strong>
+                                        <img className={styles.img} src={membro.foto} width={200} height={200} />
                                     </p>
-                                    <p className={styles.infos}>
+                                    <p className={styles.descricao}>
                                         <strong>Descrição:</strong> {membro.descricao}
                                     </p>
+                                    
+                                    <div className={styles.divbtn}>
+
+                                        <button className={styles.btndelete} onClick={() => deletar(membro.id)}>
+                                            <div className={styles.overlay}></div>
+                                            <div className={styles.overlay}></div>
+                                            <div className={styles.overlay}></div>
+                                            <span>Deletar</span>
+                                        </button >
+
+                                        <button className={styles.btnupdate} onClick={() => update(membro.id)}>
+                                            <div className={styles.overlay}></div>
+                                            <div className={styles.overlay}></div>
+                                            <div className={styles.overlay}></div>
+                                            <span>Editar</span>
+                                        </button >
+
+                                    </div>
+                                    
                                 </div>
-                                <div>
-                                    <button onClick={() => deletar(membro.id)}>
-                                        deletar
-                                    </button>
-                                    <button onClick={() => update(membro.id)}>
-                                        editar
-                                    </button>
-                                </div>
+                               
                             </div>
+                           
                         ))}
+                        
+                    </div>
+                    <div className={styles.cria}>
+                            <Link href="/membros/cadastro">
+                                <button type="submit" className={styles.btncreate}>
+                                    <div className={styles.overlay}></div>
+                                    <div className={styles.overlay}></div>
+                                    <div className={styles.overlay}></div>
+                                    <span>Cadastro</span>
+                                </button >
+                            </Link>
+                        </div>
                     </div>
                 ) : (
                     <p>carregando..</p>
                 )}
             </div>
+            <Footer/>
         </div>
     );
 }

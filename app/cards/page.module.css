@@ -4,6 +4,7 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    min-height: 100vh;
     height: 100%;
 }
 .card{
@@ -16,7 +17,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: #f5f5f5;
+    background-color: rgb(255, 255, 255);
     border-radius: 10px;
     box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
     position: relative;
@@ -84,9 +85,19 @@
     align-items: center;
     margin-bottom: 2rem;
   }
+  .containerSearch{
+      padding: 0.75rem;
+      margin: auto;
+      margin-bottom: 1rem;
+    width: fit-content;
+    border: 2px solid #ccc;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    outline: none;
+  }
   
-  .select,
-  .containerSearch {
+  .select {
     padding: 0.75rem;
     border: 2px solid #ccc;
     background-color: #fff;

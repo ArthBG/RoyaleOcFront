@@ -4,6 +4,8 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import styles from "./page.module.css"
+import Header from "@/app/components/header/header";
+import Footer from "@/app/components/footer/footer";
 
 export default function UpdateMembro({ params }) {
     const [nome, setNome] = useState("");
@@ -53,13 +55,10 @@ export default function UpdateMembro({ params }) {
 
     return (
         <div className={styles.containerPai}>
-            <div>
-                <Link href={`/membros`}>
-                    <button className={styles.botaoV}>Voltar</button>
-                </Link>
-            </div>
+            <Header />
+
             <div className={styles.divForm}>
-                <h1 className={styles.h1}>atualizar membro</h1>
+                <h1 className={styles.h1}>Atualizar Membro</h1>
 
                 {id ? (
                     <form className={styles.form} onSubmit={handleSubmit}>
@@ -110,22 +109,32 @@ export default function UpdateMembro({ params }) {
                         </div>
                         <div className={styles.divInputs}>
                             <label htmlFor="descricao">Descrição</label>
-                            <input
-                                className={styles.input}
+                            <textarea
+                                className={styles.textarea}
                                 id="descricao"
-                                type="text"
+                                type="textarea"
+                                cols={20}
+                                rows={6}
                                 value={descricao}
                                 onChange={(e) => setDescricao(e.target.value)}
                                 required
                             />
                         </div>
-                        <button type="submit">Atualizar
-                        </button>
+                        <div className={styles.divpaibtn}>
+                            <Link href={`/membros`}>
+                                <button className={styles.btnv}>Voltar</button>
+                            </Link>
+
+                            <button className={styles.btna} type="submit">Atualizar</button>
+                            
+                        </div>
+
                     </form>
                 ) : (
                     <p>Carregando...</p>
                 )}
             </div>
+            <Footer />
         </div>
     );
 }
