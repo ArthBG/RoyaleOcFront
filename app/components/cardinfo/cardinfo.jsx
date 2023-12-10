@@ -13,15 +13,15 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                         <div className={styles.imagecomming} style={{
                             backgroundImage: `url(${image})`,
                             backgroundRepeat: "no-repeat",
-                            backgroundSize: "245px 270px",
+                            backgroundSize: "200px 210px",
                             borderRadius: "40px",
                             backgroundPositionY: "3px",
-                            backgroundPositionX: "5px",
+                            backgroundPositionX: "center",
                             backgroundPosition: "center",                            
                         }}>
                             <div className={styles.oi}>
-                            <Image src={"/images/createcard/normal.png"} className={styles.oi0} width={260} height={280} />
-                            <Image src={"/images/createcard/communCard1.png"} className={styles.oi2} width={80} height={80} />
+                            <Image src={"/images/createcard/normal.png"} className={styles.oi0} width={200} height={220} />
+                            <Image src={"/images/createcard/communCard1.png"} className={styles.oi2} width={65} height={65} />
                             </div>
                         </div>
                     ) : null}

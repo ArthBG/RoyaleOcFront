@@ -1,18 +1,20 @@
 "use client";
+import axios from 'axios';
+import html2canvas from 'html2canvas';
 import Image from "next/image"
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import axios from "axios"
-import { useState, useEffect } from "react"
+import { useRef, useState, useEffect } from "react"
 import styles from "../createcard/page.module.css"
 import CardInfo from "../../components/cardinfo/cardinfo";
 import SelectTroop from "@/app/components/selectatributes/tropa/select";
 import SelectConstruction from "@/app/components/selectatributes/construction/select";
 import SelectSpell from "@/app/components/selectatributes/spelll/select";
 import Header from "@/app/components/header/header";
-import styled from "../../components/selectatributes/tropa/select.module.css";
+import styles3 from "@/app/components/cardinfo/cardinfo.module.css";
+// npm install html2canvas
 
 
 const style = {
@@ -31,6 +33,7 @@ const style = {
 
 
 export default function createCard() {
+  const divRef = useRef(null);
   const [cards, setCards] = useState([])
   const [name, setName] = useState("")
   const [level, setLevel] = useState("")
@@ -38,6 +41,7 @@ export default function createCard() {
   const [type, setType] = useState("")
   const [elixir, setElixir] = useState("")
   const [image, setImage] = useState("")
+  const [imageupdated, setImageUpdated] = useState("")
   const [description, setDescription] = useState("")
   const [hp, setHp] = useState('')
   const [deploytime, setDeploytime] = useState("")
@@ -70,6 +74,7 @@ export default function createCard() {
   const [atributes, setAtributes] = useState([]);
   const [selectedOption, setSelectedOption] = useState('');
   const [inputvalue, setInputValue] = useState('');
+  const [divUpdatedImage, setDivUpdatedImage] = useState("");
 
 
 
@@ -79,7 +84,7 @@ export default function createCard() {
 
   const handleImage = (e) => {
     const file = e.target.files[0]
-    setImage(URL.createObjectURL(file))
+    setImageUpdated(URL.createObjectURL(file))
   }
 
   const addAtributes = () => {
@@ -93,6 +98,27 @@ export default function createCard() {
     setItens(valueAndName);
     setInputValue("")
   }
+
+  const createImageOfaDiv = async () => {
+    const div = divRef.current;
+
+    if (div) {
+      try {
+        const canvas = await html2canvas(div, { useCORS: true });
+
+        // Verifica se o canvas foi criado corretamente
+        if (canvas) {
+          // Converte o canvas para uma imagem Data URL
+          const dataURL = canvas.toDataURL('image/JPEG');
+          setImage(dataURL); // Define o Data URL no estado
+        } else {
+          console.error('Canvas vazio ou não foi criado corretamente');
+        }
+      } catch (error) {
+        console.error('Erro ao criar a imagem:', error);
+      }
+    }
+  };
 
 
   const handleSubmit = async (e) => {
@@ -141,6 +167,7 @@ export default function createCard() {
       setType("")
       setElixir("")
       setImage("")
+      setImageUpdated("")
       setDescription("")
       setHp("")
       setDeploytime("")
@@ -175,7 +202,7 @@ export default function createCard() {
 
 
 
-  
+
 
   const options = [
     {
@@ -286,6 +313,7 @@ export default function createCard() {
 
   }
 
+  console.log({ image })
   return (
     <main className={styles.backgroundimage}>
       <Header />
@@ -375,7 +403,7 @@ export default function createCard() {
                       {
                         options.map((option) => {
                           return (
-                            <option  value={option.title}>
+                            <option value={option.title}>
                               <img src={option.imageSrc} alt={option.label} />
                               {option.label}
                             </option>
@@ -396,62 +424,37 @@ export default function createCard() {
               </Modal>
             </div>
           ) : (
-            type == "Construção" ? (
-              <div className={styles.shabuya}>
-                <button className={styles.scbtnyellow2} onClick={handleOpen}>Adicionar Atributos</button>
-                <Modal
-                  open={open}
-                  onClose={handleClose}
-                  aria-labelledby="modal-modal-title"
-                  aria-describedby="modal-modal-description"
-                >
-                  <Box sx={style}>
-                    <Typography id="modal-modal-title" variant="h6" component="h2">
-                      Atributos para construção
-                    </Typography>
-                    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                      <SelectConstruction />
-                    </Typography>
-                    <div className={stylesM.containerButtons}>
-                      <button className={stylesM.scbtnyellow} onClick={addAtributes}>Adicionar atributo</button>
-                      <button className={stylesM.scbtnyellow} onClick={removeAtributes}>Remover atributo</button>
-                    </div>
-                  </Box>
-                </Modal>
-              </div>
-            ) : (
-              type == "Feitiço" ? (
-                <div className={styles.shabuya}>
-                  <button className={styles.scbtnyellow2} onClick={handleOpen}>Adicionar Atributos</button>
-                  <Modal
-                    open={open}
-                    onClose={handleClose}
-                    aria-labelledby="modal-modal-title"
-                    aria-describedby="modal-modal-description"
-                  >
-                    <Box sx={style}>
-                      <Typography id="modal-modal-title" variant="h6" component="h2">
-                        Atributos para feitiços
-                      </Typography>
-                      <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        <SelectSpell />
-                      </Typography>
-                      <div className={stylesM.containerButtons}>
-                        <button className={stylesM.scbtnyellow} onClick={addAtributes}>Adicionar atributo</button>
-                        <button className={stylesM.scbtnyellow} onClick={removeAtributes}>Remover atributo</button>
-                      </div>
-                    </Box>
-                  </Modal>
-                </div>
-              ) : null
-            )
+            null
           )
         }
       </div>
 
 
       <div className={styles.containerCard}>
-        <CardInfo
+        <div className={styles3.containerCards20} ref={divRef} >
+        <div className={styles3.containerCards2}>
+            {
+            elixir == "1" && rarity == "Comum" ? (
+              createImageOfaDiv(),
+              <div className={styles3.imagecomming} style={{
+                backgroundImage: `url(${imageupdated})`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "230px 246px",
+                borderRadius: "40px",
+                backgroundPositionY: "3px",
+                backgroundPositionX: "center",
+                backgroundPosition: "center",
+              }}>
+                <div className={styles3.oi}>
+                  <Image src={"/images/createcard/normal.png"} className={styles3.oi0} width={230} height={256} />
+                  <Image src={"/images/createcard/communCard1.png"} className={styles3.oi2} width={63} height={63} />
+                </div>
+              </div>
+            ) : null}
+
+        </div>
+        </div>
+        {/* <CardInfo
           name={name}
           image={image}
           type={type}
@@ -485,7 +488,7 @@ export default function createCard() {
           impactspeed={impactspeed}
           id={id}
           level={level}
-        />
+        /> */}
       </div>
 
     </main>

@@ -23,10 +23,10 @@
 }
 .oi2{
     position: absolute;
-    top: -20px;
-    left: -15px;
-
+    top: -10px;
+    left: -8px;
 }
+
 .layer{
     background-color: #000;
     opacity: 0.5;
@@ -102,6 +102,20 @@
         flex-direction: row;
         justify-content: space-around;
         margin-top: 5rem;
+    }
+    .containerCards2{
+        display: flex;
+        padding-top: 5px;
+        width: fit-content;
+        height: fit-content;
+        margin: auto;
+    }
+    .containerCards20{
+        display: flex;
+        width: 250px;
+        height: 290px;
+        align-items: center;
+        
     }
     .atributesCondition{
         display: flex;
