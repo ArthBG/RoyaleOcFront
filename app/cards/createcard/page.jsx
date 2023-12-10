@@ -119,11 +119,10 @@ export default function createCard() {
       try {
         const canvas = await html2canvas(div, { useCORS: true });
 
-        // Verifica se o canvas foi criado corretamente
         if (canvas) {
-          // Converte o canvas para uma imagem Data URL
+          
           const dataURL = canvas.toDataURL('image/JPEG');
-          setImage(dataURL); // Define o Data URL no estado
+          setImage(dataURL);
         } else {
           console.error('Canvas vazio ou não foi criado corretamente');
         }
