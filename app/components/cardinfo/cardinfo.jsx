@@ -202,7 +202,7 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                                       }}>
                                         <div className={styles.oi}>
                                           <Image src={"/images/createcard/legendary.png"} className={styles.oi0} width={230} height={256} />
-                                          <Image src={"/images/createcard/communCard1.png"} className={styles.oi2} width={63} height={63} />
+                                          <Image src={"/images/createcard/communCard2.png"} className={styles.oi2} width={63} height={63} />
                                         </div>
                                       </div>
                                     ) : (
@@ -223,7 +223,7 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                                         }}>
                                           <div className={styles.oi}>
                                             <Image src={"/images/createcard/legendary.png"} className={styles.oi0} width={230} height={256} />
-                                            <Image src={"/images/createcard/communCard1.png"} className={styles.oi2} width={63} height={63} />
+                                            <Image src={"/images/createcard/communCard3.png"} className={styles.oi2} width={63} height={63} />
                                           </div>
                                         </div>
                                       ) : (
@@ -244,7 +244,7 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                                           }}>
                                             <div className={styles.oi}>
                                               <Image src={"/images/createcard/legendary.png"} className={styles.oi0} width={230} height={256} />
-                                              <Image src={"/images/createcard/communCard1.png"} className={styles.oi2} width={63} height={63} />
+                                              <Image src={"/images/createcard/communCard4.png"} className={styles.oi2} width={63} height={63} />
                                             </div>
                                           </div>
                                         ) : (
@@ -265,7 +265,7 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                                             }}>
                                               <div className={styles.oi}>
                                                 <Image src={"/images/createcard/legendary.png"} className={styles.oi0} width={230} height={256} />
-                                                <Image src={"/images/createcard/communCard1.png"} className={styles.oi2} width={63} height={63} />
+                                                <Image src={"/images/createcard/communCard5.png"} className={styles.oi2} width={63} height={63} />
                                               </div>
                                             </div>
                                           ) : (
@@ -286,7 +286,7 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                                               }}>
                                                 <div className={styles.oi}>
                                                   <Image src={"/images/createcard/legendary.png"} className={styles.oi0} width={230} height={256} />
-                                                  <Image src={"/images/createcard/communCard1.png"} className={styles.oi2} width={63} height={63} />
+                                                  <Image src={"/images/createcard/communCard6.png"} className={styles.oi2} width={63} height={63} />
                                                 </div>
                                               </div>
                                             ) : (
@@ -307,7 +307,7 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                                                 }}>
                                                   <div className={styles.oi}>
                                                     <Image src={"/images/createcard/legendary.png"} className={styles.oi0} width={230} height={256} />
-                                                    <Image src={"/images/createcard/communCard1.png"} className={styles.oi2} width={63} height={63} />
+                                                    <Image src={"/images/createcard/communCard7.png"} className={styles.oi2} width={63} height={63} />
                                                   </div>
                                                 </div>
                                               ) : (
@@ -328,7 +328,7 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                                                   }}>
                                                     <div className={styles.oi}>
                                                       <Image src={"/images/createcard/legendary.png"} className={styles.oi0} width={230} height={256} />
-                                                      <Image src={"/images/createcard/communCard1.png"} className={styles.oi2} width={63} height={63} />
+                                                      <Image src={"/images/createcard/communCard8.png"} className={styles.oi2} width={63} height={63} />
                                                     </div>
                                                   </div>
                                                 ) : (
@@ -349,7 +349,7 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                                                     }}>
                                                       <div className={styles.oi}>
                                                         <Image src={"/images/createcard/legendary.png"} className={styles.oi0} width={230} height={256} />
-                                                        <Image src={"/images/createcard/communCard1.png"} className={styles.oi2} width={63} height={63} />
+                                                        <Image src={"/images/createcard/communCard9.png"} className={styles.oi2} width={63} height={63} />
                                                       </div>
                                                     </div>
                                                   ) : (
@@ -370,7 +370,7 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                                                       }}>
                                                         <div className={styles.oi}>
                                                           <Image src={"/images/createcard/legendary.png"} className={styles.oi0} width={230} height={256} />
-                                                          <Image src={"/images/createcard/communCard1.png"} className={styles.oi2} width={63} height={63} />
+                                                          <Image src={"/images/createcard/communCard10.png"} className={styles.oi2} width={63} height={63} />
                                                         </div>
                                                       </div>
                                                     ) : (
@@ -379,9 +379,12 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                                                         <div className={styles.imagecomming} style={{
                                                           backgroundImage: `url(${image})`,
                                                           backgroundRepeat: "no-repeat",
-                                                          backgroundSize: "230px 246px",
-                                                          borderRadius: "40px",
-                                                          backgroundPositionY: "3px",
+                                                          backgroundSize: "220px 210px",
+                                                          borderBottomLeftRadius: "190px",
+                                                          borderBottomRightRadius: "190px",
+                                                          borderTopLeftRadius: "137px",
+                                                          borderTopRightRadius: "160px",
+                                                          backgroundPositionY: "25px",
                                                           backgroundPositionX: "center",
                                                           backgroundPosition: "center",
                                                         }}>
@@ -392,13 +395,15 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                                                         </div>
                                                       ) : (
                                                         elixir == "2" && rarity == "Campeão" ? (
-
                                                           <div className={styles.imagecomming} style={{
                                                             backgroundImage: `url(${image})`,
                                                             backgroundRepeat: "no-repeat",
-                                                            backgroundSize: "230px 246px",
-                                                            borderRadius: "40px",
-                                                            backgroundPositionY: "3px",
+                                                            backgroundSize: "220px 210px",
+                                                            borderBottomLeftRadius: "190px",
+                                                            borderBottomRightRadius: "190px",
+                                                            borderTopLeftRadius: "137px",
+                                                            borderTopRightRadius: "160px",
+                                                            backgroundPositionY: "25px",
                                                             backgroundPositionX: "center",
                                                             backgroundPosition: "center",
                                                           }}>
@@ -413,9 +418,12 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                                                             <div className={styles.imagecomming} style={{
                                                               backgroundImage: `url(${image})`,
                                                               backgroundRepeat: "no-repeat",
-                                                              backgroundSize: "230px 246px",
-                                                              borderRadius: "40px",
-                                                              backgroundPositionY: "3px",
+                                                              backgroundSize: "220px 210px",
+                                                              borderBottomLeftRadius: "190px",
+                                                              borderBottomRightRadius: "190px",
+                                                              borderTopLeftRadius: "137px",
+                                                              borderTopRightRadius: "160px",
+                                                              backgroundPositionY: "25px",
                                                               backgroundPositionX: "center",
                                                               backgroundPosition: "center",
                                                             }}>
@@ -430,9 +438,12 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                                                               <div className={styles.imagecomming} style={{
                                                                 backgroundImage: `url(${image})`,
                                                                 backgroundRepeat: "no-repeat",
-                                                                backgroundSize: "230px 246px",
-                                                                borderRadius: "40px",
-                                                                backgroundPositionY: "3px",
+                                                                backgroundSize: "220px 210px",
+                                                                borderBottomLeftRadius: "190px",
+                                                                borderBottomRightRadius: "190px",
+                                                                borderTopLeftRadius: "137px",
+                                                                borderTopRightRadius: "160px",
+                                                                backgroundPositionY: "25px",
                                                                 backgroundPositionX: "center",
                                                                 backgroundPosition: "center",
                                                               }}>
@@ -447,9 +458,12 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                                                                 <div className={styles.imagecomming} style={{
                                                                   backgroundImage: `url(${image})`,
                                                                   backgroundRepeat: "no-repeat",
-                                                                  backgroundSize: "230px 246px",
-                                                                  borderRadius: "40px",
-                                                                  backgroundPositionY: "3px",
+                                                                  backgroundSize: "220px 210px",
+                                                                  borderBottomLeftRadius: "190px",
+                                                                  borderBottomRightRadius: "190px",
+                                                                  borderTopLeftRadius: "137px",
+                                                                  borderTopRightRadius: "160px",
+                                                                  backgroundPositionY: "25px",
                                                                   backgroundPositionX: "center",
                                                                   backgroundPosition: "center",
                                                                 }}>
@@ -464,9 +478,12 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                                                                   <div className={styles.imagecomming} style={{
                                                                     backgroundImage: `url(${image})`,
                                                                     backgroundRepeat: "no-repeat",
-                                                                    backgroundSize: "230px 246px",
-                                                                    borderRadius: "40px",
-                                                                    backgroundPositionY: "3px",
+                                                                    backgroundSize: "220px 210px",
+                                                                    borderBottomLeftRadius: "190px",
+                                                                    borderBottomRightRadius: "190px",
+                                                                    borderTopLeftRadius: "137px",
+                                                                    borderTopRightRadius: "160px",
+                                                                    backgroundPositionY: "25px",
                                                                     backgroundPositionX: "center",
                                                                     backgroundPosition: "center",
                                                                   }}>
@@ -481,9 +498,12 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                                                                     <div className={styles.imagecomming} style={{
                                                                       backgroundImage: `url(${image})`,
                                                                       backgroundRepeat: "no-repeat",
-                                                                      backgroundSize: "230px 246px",
-                                                                      borderRadius: "40px",
-                                                                      backgroundPositionY: "3px",
+                                                                      backgroundSize: "220px 210px",
+                                                                      borderBottomLeftRadius: "190px",
+                                                                      borderBottomRightRadius: "190px",
+                                                                      borderTopLeftRadius: "137px",
+                                                                      borderTopRightRadius: "160px",
+                                                                      backgroundPositionY: "25px",
                                                                       backgroundPositionX: "center",
                                                                       backgroundPosition: "center",
                                                                     }}>
@@ -498,9 +518,12 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                                                                       <div className={styles.imagecomming} style={{
                                                                         backgroundImage: `url(${image})`,
                                                                         backgroundRepeat: "no-repeat",
-                                                                        backgroundSize: "230px 246px",
-                                                                        borderRadius: "40px",
-                                                                        backgroundPositionY: "3px",
+                                                                        backgroundSize: "220px 210px",
+                                                                        borderBottomLeftRadius: "190px",
+                                                                        borderBottomRightRadius: "190px",
+                                                                        borderTopLeftRadius: "137px",
+                                                                        borderTopRightRadius: "160px",
+                                                                        backgroundPositionY: "25px",
                                                                         backgroundPositionX: "center",
                                                                         backgroundPosition: "center",
                                                                       }}>
@@ -515,9 +538,12 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                                                                         <div className={styles.imagecomming} style={{
                                                                           backgroundImage: `url(${image})`,
                                                                           backgroundRepeat: "no-repeat",
-                                                                          backgroundSize: "230px 246px",
-                                                                          borderRadius: "40px",
-                                                                          backgroundPositionY: "3px",
+                                                                          backgroundSize: "220px 210px",
+                                                                          borderBottomLeftRadius: "190px",
+                                                                          borderBottomRightRadius: "190px",
+                                                                          borderTopLeftRadius: "137px",
+                                                                          borderTopRightRadius: "160px",
+                                                                          backgroundPositionY: "25px",
                                                                           backgroundPositionX: "center",
                                                                           backgroundPosition: "center",
                                                                         }}>
@@ -532,9 +558,12 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                                                                           <div className={styles.imagecomming} style={{
                                                                             backgroundImage: `url(${image})`,
                                                                             backgroundRepeat: "no-repeat",
-                                                                            backgroundSize: "230px 246px",
-                                                                            borderRadius: "40px",
-                                                                            backgroundPositionY: "3px",
+                                                                            backgroundSize: "220px 210px",
+                                                                            borderBottomLeftRadius: "190px",
+                                                                            borderBottomRightRadius: "190px",
+                                                                            borderTopLeftRadius: "137px",
+                                                                            borderTopRightRadius: "160px",
+                                                                            backgroundPositionY: "25px",
                                                                             backgroundPositionX: "center",
                                                                             backgroundPosition: "center",
                                                                           }}>
@@ -649,33 +678,34 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                                       {description}
                                     </div>
                                   </div>
-                                  :
-                                  (rarity == "Campeão" && type == "Tropa" ?
-                                    <div className={styles.campeaotropa}>
-                                      <Image src={"/images/campeaotropa.png"} width={450} height={100} />
-                                      <div className={styles.desc}>
-                                        {description}
-                                      </div>
-                                    </div>
-                                    :
-                                    (rarity == "Campeão" && type == "Feitiço" ?
-                                      <div className={styles.campeaofeitico}>
-                                        <Image src={"/images/campeaofeiti.png"} width={450} height={100} />
-                                        <div className={styles.desc}>
-                                          {description}
-                                        </div>
-                                      </div>
-                                      :
-                                      (rarity == "Campeão" && type == "Construção" ?
-                                        <div className={styles.campeaoconstrucao}>
-                                          <Image src={"/images/campeaoconst.png"} width={450} height={100} />
-                                          <div className={styles.desc}>
-                                            {description}
-                                          </div>
-                                        </div>
+                                  
+                                  // (rarity == "Campeão" && type == "Tropa" ?
+                                  //   <div className={styles.campeaotropa}>
+                                  //     <Image src={"/images/campeaotropa.png"} width={450} height={100} />
+                                  //     <div className={styles.desc}>
+                                  //       {description}
+                                  //     </div>
+                                  //   </div>
+                                  //   :
+                                  //   (rarity == "Campeão" && type == "Feitiço" ?
+                                  //     <div className={styles.campeaofeitico}>
+                                  //       <Image src={"/images/campeaofeiti.png"} width={450} height={100} />
+                                  //       <div className={styles.desc}>
+                                  //         {description}
+                                  //       </div>
+                                  //     </div>
+                                  //     :
+                                  //     (rarity == "Campeão" && type == "Construção" ?
+                                  //       <div className={styles.campeaoconstrucao}>
+                                  //         <Image src={"/images/campeaoconst.png"} width={450} height={100} />
+                                  //         <div className={styles.desc}>
+                                  //           {description}
+                                  //         </div>
+                                  //       </div>
                                         :
                                         null
-                                      ))))))))))))))
+                                      )))))))))))
+                                
         }
       </div>
       <div className={styles.atributesCondition}>
