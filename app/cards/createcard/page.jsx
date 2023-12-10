@@ -302,11 +302,11 @@ export default function createCard() {
     const newAtributes = atributes.filter((item) => {
       return item.name !== atribute.name;
     });
+    setItensToNull(atribute);
     setOpen(true);
     setAtributes(newAtributes);
     setInputValue(atribute.value);
     setSelectedOption(atribute.name);
-    setItensToNull(atribute);
   };
 
 
