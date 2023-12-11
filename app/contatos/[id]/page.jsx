@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import axios from 'axios';
+import styles from '../[id]/page.module.css';
 import Header from '../../components/header/header.jsx';
 import Footer from '../../components/footer/footer.jsx';
 import { useRouter } from 'next/navigation'
@@ -110,11 +111,13 @@ export default function updateForms({params}) {
             <Header />
             <div>
                 <Link href="/contatos">
-                    <button type="submit">
-                        Voltar
-                    </button >
+                    <div className={styles.divbutton1}>
+                        <button type="submit" className={styles.botaovoltar}>
+                            Voltar
+                        </button >
+                    </div>
                 </Link>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} className={styles.divforms}>
 
                     <div>
                         <input
@@ -123,9 +126,10 @@ export default function updateForms({params}) {
                             id="nome"
                             value={nome}
                             onChange={(e) => setNome(e.target.value)}
-                           
+                            className={styles.inputs}
+
                         />
-                        <p>{errorNome}</p>
+                        <p className={styles.errormessage}>{errorNome}</p>
                     </div>
 
                     <div>
@@ -135,9 +139,10 @@ export default function updateForms({params}) {
                             id="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                           
+                            className={styles.inputs}
+
                         />
-                        <p>{errorEmail}</p>
+                        <p className={styles.errormessage}>{errorEmail}</p>
                     </div>
 
                     <div>
@@ -148,9 +153,10 @@ export default function updateForms({params}) {
                             id="telefone"
                             value={telefone}
                             onChange={(e) => setTelefone(e.target.value)}
-                           
+                            className={styles.inputs}
+
                         />
-                         <p>{errorTelefone}</p>
+                        <p className={styles.errormessage}>{errorTelefone}</p>
                     </div>
 
                     <div>
@@ -161,18 +167,20 @@ export default function updateForms({params}) {
                             id="comentario"
                             value={comentario}
                             onChange={(e) => setComentario(e.target.value)}
-                           
+                            className={styles.inputs}
+
                         />
-                         <p>{errorComentario}</p>
+                        <p className={styles.errormessage}>{errorComentario}</p>
                     </div>
 
-                    <button type="submit">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <span>Editar</span>
-                    </button >
-
+                    <div className={styles.divbutton1}>
+                        <button type="submit" className={styles.botaocadastro}>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <span>Editar</span>
+                        </button >
+                    </div>
                 </form >
             </div>
             <Footer />
