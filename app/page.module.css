@@ -52,9 +52,15 @@
 
 .cards {
     display: flex;
+    margin-bottom: 2rem;
 }
 
 .font {
     font-size: 0.6rem
+}
+.divimgs{
+    margin: auto;
+    margin-bottom: 6rem;
+    text-align: center;
 }
 

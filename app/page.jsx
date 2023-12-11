@@ -103,7 +103,7 @@ export default function Home() {
           </Carousel.Item>
           <Carousel.Item>
             <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/"} width={700} height={500} />
+              <Image className={styles.img} src={"/images/"} width={600} height={400} />
             </div>
             <Carousel.Caption>
               <h3>Pico Congelado</h3>
