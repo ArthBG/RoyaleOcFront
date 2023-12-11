@@ -84,6 +84,7 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 2rem;
+    width: 80%;
   }
   .containerSearch{
       padding: 0.75rem;

@@ -17,10 +17,6 @@ function cardspage() {
     const [selectedRarity, setSelectedRarity] = useState("");
     const [selectedType, setSelectedType] = useState("");
     const [selectedElixir, setSelectedElixir] = useState("");
-    const [selectedSorting, setSelectedSorting] = useState("");
-    const [orderbyname, setOrderByName] = useState('');
-    const [orderbyelixir, setOrderByElixir] = useState('');
-    const [orderbyrarity, setOrderByRarity] = useState('');
     const router = useRouter();
 
     console.log(selectedRarity);
@@ -57,25 +53,6 @@ function cardspage() {
 
 
     console.log(cardsData);
-
-    // const handleSorting = (e) => {
-    //     const selectedSorting = e.target.value;
-      
-    //     if (selectedSorting == "name") {
-    //       setOrderByName(orderbyname == 'asc');
-    //       setOrderByElixir('');
-    //       setOrderByRarity('');
-    //     } else if (selectedSorting == "elixir") {
-    //       setOrderByElixir(orderbyelixir == 'asc');
-    //       setOrderByName('');
-    //       setOrderByRarity('');
-    //     } else if (selectedSorting == "rarity") {
-    //       setOrderByRarity(orderbyrarity == 'asc');
-    //       setOrderByName('');
-    //       setOrderByElixir('');
-    //     }
-    //     setSelectedSorting(selectedSorting);
-    //   };
       
 
 
@@ -109,12 +86,6 @@ function cardspage() {
                     <FiSearch className={style.icon} />
                 </div>
             <div className={style.containerFilters}>
-                {/* <select className={style.select} value={selectedSorting} onChange={handleSorting}>
-                    <option value="">Ordenar por:</option>
-                    <option value="name">Nome</option>
-                    <option value="elixir">Elixir</option>
-                    <option value="rarity">Raridade</option>
-                </select> */}
                 <select className={style.select} value={selectedType} onChange={(e) => setSelectedType(e.target.value)}>
                     <option value="">Tipo:</option>
                     <option value='Tropa'>Tropa</option>
