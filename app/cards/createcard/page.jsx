@@ -695,7 +695,7 @@ export default function createCard() {
         <div className={styles3.containerCards20} ref={divRef} >
           <div className={styles3.containerCards2}>
             {
-              elixir == "1" && rarity == "Comum" || rarity == "Raro" || rarity == "Épico" ? (
+              elixir == "1" && rarity == "Comum" ||  elixir == "1" && rarity == "Raro" || elixir == "1" && rarity == "Épico" ? (
                 createImageOfaDiv(),
                 <div className={styles3.imagecomming} style={{
                   backgroundImage: `url(${imageupdated})`,
@@ -712,7 +712,7 @@ export default function createCard() {
                   </div>
                 </div>
               ) : (
-                elixir == "2" && rarity == "Comum" || rarity == "Raro" || rarity == "Épico" ? (
+                elixir == "2" && rarity == "Comum" || elixir == "2" && rarity == "Raro" || elixir == "2" && rarity == "Épico" ? (
                   createImageOfaDiv(),
                   <div className={styles3.imagecomming} style={{
                     backgroundImage: `url(${imageupdated})`,
@@ -729,7 +729,7 @@ export default function createCard() {
                     </div>
                   </div>
                 ) : (
-                  elixir == "3" && rarity == "Comum" || rarity == "Raro" || rarity == "Épico" ? (
+                  elixir == "3" && rarity == "Comum" || elixir == "3" && rarity == "Raro" || elixir == "3" && rarity == "Épico" ? (
                     createImageOfaDiv(),
                     <div className={styles3.imagecomming} style={{
                       backgroundImage: `url(${imageupdated})`,
@@ -746,7 +746,7 @@ export default function createCard() {
                       </div>
                     </div>
                   ) : (
-                    elixir == "4" && rarity == "Comum" || rarity == "Raro" || rarity == "Épico" ? (
+                    elixir == "4" && rarity == "Comum" || elixir == "4" && rarity == "Raro" || elixir == "4" && rarity == "Épico" ? (
                       createImageOfaDiv(),
                       <div className={styles3.imagecomming} style={{
                         backgroundImage: `url(${imageupdated})`,
@@ -763,7 +763,7 @@ export default function createCard() {
                         </div>
                       </div>
                     ) : (
-                      elixir == "5" && rarity == "Comum" || rarity == "Raro" || rarity == "Épico" ? (
+                      elixir == "5" && rarity == "Comum" || elixir == "5" && rarity == "Raro" || elixir == "5" && rarity == "Épico" ? (
                         createImageOfaDiv(),
                         <div className={styles3.imagecomming} style={{
                           backgroundImage: `url(${imageupdated})`,
@@ -780,7 +780,7 @@ export default function createCard() {
                           </div>
                         </div>
                       ) : (
-                        elixir == "6" && rarity == "Comum" || rarity == "Raro" || rarity == "Épico" ? (
+                        elixir == "6" && rarity == "Comum" || elixir == "6" && rarity == "Raro" || elixir == "6" && rarity == "Épico" ? (
                           createImageOfaDiv(),
                           <div className={styles3.imagecomming} style={{
                             backgroundImage: `url(${imageupdated})`,
@@ -797,7 +797,7 @@ export default function createCard() {
                             </div>
                           </div>
                         ) : (
-                          elixir == "7" && rarity == "Comum" || rarity == "Raro" || rarity == "Épico" ? (
+                          elixir == "7" && rarity == "Comum" || elixir == "7" && rarity == "Raro" || elixir == "7" && rarity == "Épico" ? (
                             createImageOfaDiv(),
                             <div className={styles3.imagecomming} style={{
                               backgroundImage: `url(${imageupdated})`,
@@ -814,7 +814,7 @@ export default function createCard() {
                               </div>
                             </div>
                           ) : (
-                            elixir == "8" && rarity == "Comum" || rarity == "Raro" || rarity == "Épico" ? (
+                            elixir == "8" && rarity == "Comum" || elixir == "8" && rarity == "Raro" || elixir == "8" && rarity == "Épico" ? (
                               createImageOfaDiv(),
                               <div className={styles3.imagecomming} style={{
                                 backgroundImage: `url(${imageupdated})`,
@@ -831,7 +831,7 @@ export default function createCard() {
                                 </div>
                               </div>
                             ) : (
-                              elixir == "9" && rarity == "Comum" || rarity == "Raro" || rarity == "Épico" ? (
+                              elixir == "9" && rarity == "Comum" || elixir == "9" && rarity == "Raro" || elixir == "9" && rarity == "Épico" ? (
                                 createImageOfaDiv(),
                                 <div className={styles3.imagecomming} style={{
                                   backgroundImage: `url(${imageupdated})`,
@@ -846,7 +846,7 @@ export default function createCard() {
                                   </div>
                                 </div>
                               ) : (
-                                elixir == "10" && rarity == "Comum" || rarity == "Raro" || rarity == "Épico" ? (
+                                elixir == "10" && rarity == "Comum" || elixir == "10" && rarity == "Raro" || elixir == "10" && rarity == "Épico" ? (
                                   createImageOfaDiv(),
                                   <div className={styles3.imagecomming} style={{
                                     backgroundImage: `url(${imageupdated})`,
