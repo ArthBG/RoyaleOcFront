@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation';
 import { FiSearch } from 'react-icons/fi';
 import Link from 'next/link';
 import CardInfo from '../components/cardinfo/cardinfo';
+import Footer from '../components/footer/footer';
 // npm install react-icons --save
 // Todas as funções devem ser comentadas
 
@@ -147,7 +148,7 @@ function cardspage() {
                 ))
                 }
             </div>
-
+                <Footer />
         </main>
 
     )
