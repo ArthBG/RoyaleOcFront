@@ -25,12 +25,18 @@
   text-align: center;
   color: #fff;
 }
-
+.divInput{
+  display: flex;
+  flex-direction: column;
+}
 /* Estilos para o formulário. */
 .form {
   font-family: 'clash-font', sans-serif;
   display: flex;
   flex-direction: column;
+}
+.msgError{
+  color: red;
 }
 
 /* Estilos para os campos de entrada e rótulos. */

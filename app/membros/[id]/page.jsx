@@ -13,6 +13,11 @@ export default function UpdateMembro({ params }) {
     const [cargo, setCargo] = useState("");
     const [foto, setFoto] = useState("");
     const [descricao, setDescricao] = useState("");
+    const [errorNome, setErrorNome] = useState("");
+    const [errorIdade, setErrorIdade] = useState("");
+    const [errorCargo, setErrorCargo] = useState("");
+    const [errorFoto, setErrorFoto] = useState("");
+    const [errorDescricao, setErrorDescricao] = useState("");
     const router = useRouter();
     const { id } = params;
 
@@ -37,6 +42,58 @@ export default function UpdateMembro({ params }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if (nome == '') {
+            setErrorNome("Preencha o campo nome!");
+            setTimeout(() => {
+                setErrorNome("");
+            }, 3000);
+            return;
+        } else if (nome.length < 2) {
+            setErrorNome("O nome deve ter mais que 2 caracteres!");
+            setTimeout(() => {
+                setErrorNome("");
+            }, 3000);
+            return;
+        }
+        if (!idade || idade <= 15) {
+            setErrorIdade("Idade deve ser maior que 15!");
+            setTimeout(() => {
+                setErrorIdade("");
+            }, 3000);
+            return;
+        } else if (idade == '') {
+            setErrorIdade("Preencha o campo idade!");
+            setTimeout(() => {
+                setErrorIdade("");
+            }, 3000);
+            return;
+        }
+        if (cargo == '') {
+            setErrorCargo("Preencha o campo cargo!");
+            setTimeout(() => {
+                setErrorCargo("");
+            }, 3000);
+            return;
+        }
+        if (foto == '') {
+            setErrorFoto("Preencha o campo foto!");
+            setTimeout(() => {
+                setErrorFoto("");
+            }, 3000);
+            return;
+
+        } if (descricao.length > 1000) {
+            setErrorDescricao("Descrição muito grande!");
+            setTimeout(() => {
+                setErrorDescricao("");
+            }, 3000);
+        } else if (descricao == '') {
+            setErrorDescricao("Preencha o campo descrição!");
+            setTimeout(() => {
+                setErrorDescricao("");
+            }, 3000);
+            return;
+        }
         try {
             await axios.put(`/api/membros/${id}`, { nome, idade, cargo, foto, descricao });
             setNome("");
@@ -70,8 +127,9 @@ export default function UpdateMembro({ params }) {
                                 type="text"
                                 value={nome}
                                 onChange={(e) => setNome(e.target.value)}
-                                required
+
                             />
+                            <p className={styles.pzin}>{errorNome}</p>
                         </div>
                         <div className={styles.divInputs}>
                             <label htmlFor="idade">Idade</label>
@@ -81,8 +139,9 @@ export default function UpdateMembro({ params }) {
                                 type="text"
                                 value={idade}
                                 onChange={(e) => setIdade(e.target.value)}
-                                required
+
                             />
+                            <p className={styles.pzin}>{errorIdade}</p>
                         </div>
                         <div className={styles.divInputs}>
                             <label htmlFor="cargo">Cargo</label>
@@ -92,8 +151,9 @@ export default function UpdateMembro({ params }) {
                                 type="text"
                                 value={cargo}
                                 onChange={(e) => setCargo(e.target.value)}
-                                required
+
                             />
+                            <p className={styles.pzin}>{errorCargo}</p>
                         </div>
                         <div className={styles.divInputs}>
 
@@ -104,8 +164,9 @@ export default function UpdateMembro({ params }) {
                                 type="text"
                                 value={foto}
                                 onChange={(e) => setFoto(e.target.value)}
-                                required
+
                             />
+                            <p className={styles.pzin}>{errorFoto}</p>
                         </div>
                         <div className={styles.divInputs}>
                             <label htmlFor="descricao">Descrição</label>
@@ -117,8 +178,9 @@ export default function UpdateMembro({ params }) {
                                 rows={6}
                                 value={descricao}
                                 onChange={(e) => setDescricao(e.target.value)}
-                                required
+
                             />
+                            <p className={styles.pzin}>{errorDescricao}</p>
                         </div>
                         <div className={styles.divpaibtn}>
                             <Link href={`/membros`}>
@@ -126,7 +188,7 @@ export default function UpdateMembro({ params }) {
                             </Link>
 
                             <button className={styles.btna} type="submit">Atualizar</button>
-                            
+
                         </div>
 
                     </form>

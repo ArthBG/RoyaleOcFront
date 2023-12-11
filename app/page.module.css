@@ -79,7 +79,17 @@
     text-align: center;
     margin-top: 1rem;
 }
+.imgrei{
+    border-radius: 12px;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
 
+}
+.reiimg{
+
+    margin: auto;
+    text-align: center;
+}
 
 @media (max-width: 768px) {
     .divcard1 {
