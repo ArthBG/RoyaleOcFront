@@ -813,7 +813,7 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
         }
         {
           damageonimpact ? <div className={styles.damageonimpact}>
-            <Image src={"/images/damageonimpact.png"} width={60} height={60} />
+            <Image src={"/images/damage.png"} width={60} height={60} />
             <div className={styles.desc2}>
               <h1 className={styles.atributesP}>
                 Dano no impacto

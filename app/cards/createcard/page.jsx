@@ -295,17 +295,30 @@ export default function createCard() {
     }
 
   }
-
+  
   const editAtribute = (atribute) => {
+    // Salva os atributos atuais antes de fazer qualquer alteração
+    const previousAtributes = [...atributes];
+  
     const newAtributes = atributes.filter((item) => {
       return item.name !== atribute.name;
     });
-    setItensToNull(atribute);
+  
+    // Verifica se os atributos foram alterados
+    const hasChanges = JSON.stringify(newAtributes) !== JSON.stringify(previousAtributes);
+  
     setOpen(true);
     setAtributes(newAtributes);
     setInputValue(atribute.value);
     setSelectedOption(atribute.name);
+  
+    // Ativa setItensToNull apenas se houver alterações nos atributos
+    if (hasChanges) {
+      setItensToNull(atribute);
+    }
   };
+  
+  
 
 
   const options = [
