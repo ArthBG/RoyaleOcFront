@@ -1,5 +1,7 @@
 .backgroundimage {
     background-image: url("../public/images/fundoazul.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 
 }
 
@@ -54,38 +56,4 @@
 
 .font {
     font-size: 0.6rem
-}
-
-.titulo {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-}
-
-.carrossel {
-    margin-top: 4rem;
-    margin-left: 27rem;
-}
-
-.tituloarena {
-    font-size: 14px;
-    margin-top: -2.5rem;
-    color: #cfcdcd;
-    margin-left: 1rem;
-}
-
-.tituloarenatop {
-    margin-top: -4rem;
-    color: #cfcdcd;
-}
-
-.tituloarena23 {
-    color: #cfcdcd;
-    margin-top: -3rem;
-    margin-left: 0.5rem;
-}
-
-.h2 {
-    color: #57fa51;
-    margin: auto;
-    
 }
