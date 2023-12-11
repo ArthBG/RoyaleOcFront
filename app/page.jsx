@@ -223,7 +223,7 @@ export default function Home() {
           </Carousel.Item>
           <Carousel.Item>
             <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena22.png"} width={300} height={200} />
+              <Image className={styles.img} src={"/images/arena22.png"} width={600} height={400} />
             </div>
             <Carousel.Caption>
               <h3>Panquecas</h3>
@@ -231,7 +231,7 @@ export default function Home() {
           </Carousel.Item>
           <Carousel.Item>
             <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena23.webp"} width={300} height={200} />
+              <Image className={styles.img} src={"/images/arena23.webp"} width={600} height={400} />
             </div>
             <Carousel.Caption>
               <h3>Arena Lendária</h3>
