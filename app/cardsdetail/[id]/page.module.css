@@ -37,6 +37,13 @@
     color: rgb(22, 22, 53);
 }
 
+.background {
+    background-color: rgb(37, 37, 151);
+    width: 80%;
+    margin: auto;
+
+}
+
 .obj {
     font-size: 1.2rem;
     color: white;
@@ -52,9 +59,10 @@
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
+
 .imgCard {
-  margin-left: auto;
-  margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* divs */
@@ -64,9 +72,11 @@
     justify-content: center;
     align-items: flex-start;
 }
-.carrousel{
+
+.carrousel {
     border: solid 15px rgb(179, 179, 202);
 }
+
 .infosCartas {
     display: flex;
     flex-wrap: wrap;
@@ -120,12 +130,87 @@
     margin-bottom: 2%;
     margin-top: 2%;
 }
+
+
+
 .minicards {
     width: 20%;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
 }
+
+/* carrousel */
+.slider {
+    overflow: hidden;
+    width: auto;
+    height: auto;
+    width: 96%;
+    margin: auto;
+}
+
+.gifcarr {
+    width: 85%;
+    height: 65%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 15px rgb(179, 179, 202);
+    border-radius: 10px;
+}
+
+.gif {
+    width: 100%;
+    height: 100%;
+}
+
+.descricao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(210, 210, 210);
+    border: solid 1vw rgb(179, 179, 202);
+    box-shadow: -0.4vw 0.3vw 0.1vw -0.1vw rgba(0, 0, 0, 0.43);
+    border-radius: 1.5vw;
+    width: 85%;
+    height: 65%;
+    margin: 0 auto 4px auto;
+    text-align: center;
+    color: rgb(43, 43, 43);
+    font-size: 20px;
+}
+
+.slider>.sliderContent {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    transition: all 500ms ease;
+}
+
+.slider>.sliderContent>.sliderItem {
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+.slider>input:nth-child(1):checked~.sliderContent {
+    transform: translateX(0%);
+}
+
+.slider>input:nth-child(2):checked~.sliderContent {
+    transform: translateX(-100%);
+}
+
+.slider>input:nth-child(3):checked~.sliderContent {
+    transform: translateX(-200%);
+}
+
+.slider>input:nth-child(4):checked~.sliderContent {
+    transform: translateX(-300%);
+}
+
+
 
 @media (max-width: 600px) {
     .container {
@@ -166,10 +251,11 @@
     .cardinfo {
         width: 100%;
     }
-    .minicards{
+
+    .minicards {
         width: auto;
     }
 
-   
+
 
 }
