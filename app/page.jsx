@@ -151,7 +151,7 @@ export default function Home() {
           </Carousel.Item>
           <Carousel.Item>
             <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena13.webp"} width={300} height={200} />
+              <Image className={styles.img} src={"/images/arena13.png"} width={300} height={200} />
             </div>
             <Carousel.Caption>
               <h3>Covil do Patifes</h3>
@@ -159,7 +159,7 @@ export default function Home() {
           </Carousel.Item>
           <Carousel.Item>
             <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena14.webp"} width={300} height={200} />
+              <Image className={styles.img} src={"/images/arena14.png"} width={300} height={200} />
             </div>
             <Carousel.Caption>
               <h3>Pico Sereno</h3>
@@ -167,7 +167,7 @@ export default function Home() {
           </Carousel.Item>
           <Carousel.Item>
             <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena15.webp"} width={300} height={200} />
+              <Image className={styles.img} src={"/images/arena15.png"} width={300} height={200} />
             </div>
             <Carousel.Caption>
               <h3>Mina do Mineiro</h3>
@@ -175,7 +175,7 @@ export default function Home() {
           </Carousel.Item>
           <Carousel.Item>
             <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena16.webp"} width={300} height={200} />
+              <Image className={styles.img} src={"/images/arena16.png"} width={300} height={200} />
             </div>
             <Carousel.Caption>
               <h3>A cozinha do Executor</h3>
@@ -183,7 +183,7 @@ export default function Home() {
           </Carousel.Item>
           <Carousel.Item>
             <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena17.webp"} width={300} height={200} />
+              <Image className={styles.img} src={"/images/arena17.png"} width={300} height={200} />
             </div>
             <Carousel.Caption>
               <h3>Cripta Real</h3>
@@ -191,7 +191,7 @@ export default function Home() {
           </Carousel.Item>
           <Carousel.Item>
             <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena18.webp"} width={300} height={200} />
+              <Image className={styles.img} src={"/images/arena18.png"} width={300} height={200} />
             </div>
             <Carousel.Caption>
               <h3>Santuário Silencioso</h3>
@@ -199,7 +199,7 @@ export default function Home() {
           </Carousel.Item>
           <Carousel.Item>
             <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena19.webp"} width={300} height={200} />
+              <Image className={styles.img} src={"/images/arena19.png"} width={300} height={200} />
             </div>
             <Carousel.Caption>
               <h3>Spa de Dragões </h3>
@@ -207,7 +207,7 @@ export default function Home() {
           </Carousel.Item>
           <Carousel.Item>
             <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena20.webp"} width={300} height={200} />
+              <Image className={styles.img} src={"/images/arena20.png"} width={300} height={200} />
             </div>
             <Carousel.Caption>
               <h3>Campo de Treinamentos</h3>
@@ -215,7 +215,7 @@ export default function Home() {
           </Carousel.Item>
           <Carousel.Item>
             <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena21.webp"} width={300} height={200} />
+              <Image className={styles.img} src={"/images/arena21.png"} width={300} height={200} />
             </div>
             <Carousel.Caption>
               <h3>Festa Clash</h3>
@@ -223,7 +223,7 @@ export default function Home() {
           </Carousel.Item>
           <Carousel.Item>
             <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena22.webp"} width={300} height={200} />
+              <Image className={styles.img} src={"/images/arena22.png"} width={300} height={200} />
             </div>
             <Carousel.Caption>
               <h3>Panquecas</h3>
