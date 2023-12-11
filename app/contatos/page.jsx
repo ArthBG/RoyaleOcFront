@@ -7,6 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Header from "../components/header/header";
 import Footer from "../components/footer/footer";
+import styles from "../contatos/page.module.css";
 
 export default function Page() {
     // Estados para armazenar a lista de contatos e dados adicionais.
@@ -46,12 +47,14 @@ export default function Page() {
 
         <div>
             <Header/>
-            <h1>Contatos</h1>
+            <h1 className={styles.cadastrotitulo}>Contatos registrados:</h1>
 
             <Link href="/contatos/cadastroCtt">
-                    <button type="submit">
+                <div className={styles.divbutton1}>
+                    <button type="submit" className={styles.botaocadastro} >
                         Voltar
                     </button >
+                </div>
                 </Link>
             <div>
                     <div>
@@ -102,12 +105,12 @@ export default function Page() {
                         
                     </div>
                     <div>
-                            <Link href="/contatos/cadastroCtt">
-                                <button type="submit">
+                            <Link href="/contatos/cadastroCtt"  className={styles.divbutton1}>
+                                <button type="submit" className={styles.botaocadastro}>
                                     <div></div>
                                     <div></div>
                                     <div></div>
-                                    <span>Cadastro</span>
+                                    <span>Editar</span>
                                 </button >
                             </Link>
                         </div>

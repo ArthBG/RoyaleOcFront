@@ -178,7 +178,7 @@ export default function updateForms({params}) {
                             <div></div>
                             <div></div>
                             <div></div>
-                            <span>Editarr</span>
+                            <span>Editar</span>
                         </button >
                     </div>
                 </form >
