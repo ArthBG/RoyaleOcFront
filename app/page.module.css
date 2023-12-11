@@ -89,39 +89,3 @@
     margin: auto;
     
 }
-.divimg{
-    margin-bottom: 5rem;
-}
-/* deixe essa pagina responsiva */
-@media (max-width: 768px) {
-    .divcard1 {
-        margin-top: 4rem;
-        width: 100%;
-        margin-left: 0rem;
-    }
-
-    .divcard2 {
-        margin-top: 4rem;
-        width: 100%;
-        margin-left: 0rem;
-    }
-
-    .carrossel {
-        margin-top: 4rem;
-        margin-left: 0rem;
-    }
-
-    .divimg{
-        margin-bottom: 0rem;
-    }
-    .cards{
-        display: flex;
-        flex-direction: column;
-        margin-left: auto;
-        margin-right: auto;
-        width: auto;
-        text-align: justify;
-        padding: 5%;
-    }
-
-}

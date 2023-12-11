@@ -4,7 +4,7 @@ import Header from "./components/header/header"
 import styles from "./page.module.css"
 import Link from "next/link"
 import Footer from "./components/footer/footer"
-// npm install @coreui/react
+
 
 export default function Home() {
   return (
