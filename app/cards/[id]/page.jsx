@@ -43,6 +43,7 @@ export default function updateCard({ params }) {
   const [impactspeed, setImpactspeed] = useState("");
   const [level, setLevel] = useState("");
   const [showInput, setShowInput] = useState(false);
+  const [imageUpdated, setImageUpdated] = useState("");
   const [show, setShow] = useState(true);
 
   const router = useRouter();
@@ -146,7 +147,7 @@ export default function updateCard({ params }) {
 
   const handleImage = (e) => {
     const file = e.target.files[0]
-    setImage(URL.createObjectURL(file))
+    setImageUpdated(URL.createObjectURL(file))
   }
 
   const AtributesModal = () => {
@@ -297,7 +298,8 @@ export default function updateCard({ params }) {
         <div className={styles.containerCardInfo}>
           <CardInfoedit
             name={name}
-            image={image}
+            image={imageUpdated}
+            imageupdated={image}
             type={type}
             rarity={rarity}
             elixir={elixir}
