@@ -109,10 +109,12 @@ export default function UpdateMembro({ params }) {
                         </div>
                         <div className={styles.divInputs}>
                             <label htmlFor="descricao">Descrição</label>
-                            <input
-                                className={styles.input}
+                            <textarea
+                                className={styles.textarea}
                                 id="descricao"
-                                type="text"
+                                type="textarea"
+                                cols={20}
+                                rows={6}
                                 value={descricao}
                                 onChange={(e) => setDescricao(e.target.value)}
                                 required
@@ -123,8 +125,8 @@ export default function UpdateMembro({ params }) {
                                 <button className={styles.btnv}>Voltar</button>
                             </Link>
 
-                            <button className={styles.btna} type="submit">Atualizar
-                            </button>
+                            <button className={styles.btna} type="submit">Atualizar</button>
+                            
                         </div>
 
                     </form>

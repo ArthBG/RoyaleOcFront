@@ -24,9 +24,7 @@ export const Footer = () => {
                 <div className={styles.rodapediv3}>
                     <div className={styles.rodapediv3coluna}>
                         <span><strong className={styles.titulos}>Sobre Nós</strong></span>
-                        <p className={styles.home}><Link href={'/sobrenos'} target={'parent'}>Integrantes</Link></p>
-                        <p className={styles.home}><Link href={'/sobrenos'} target={'parent'}>Sobre</Link></p>
-                        <p className={styles.home}><Link href={'/sobrenos'} target={'parent'}>Se torne um integrante!</Link></p>
+                        <p className={styles.home}><Link href={'/membros'} target={'parent'}>Integrantes</Link></p>
                     </div>
                 </div>
 

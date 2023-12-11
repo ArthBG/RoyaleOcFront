@@ -53,7 +53,11 @@
     box-shadow: 0 -2px 3px 0 #ff8907,0 0 0 4px #ffa80c,0 -1px 0 4px #ffa80c,0 -1px 2px 4px #ffd525,0 -2px 0 5px #f4e684,0 6px 0 4px #b06904,0 3px 0 5px #f4e684,0 -2px 0 7px #202020,0 5px 0 7px #202020,0 7px 0 7px #333;
     text-shadow: -1px -1px 0 #582d00,1px -1px 0 #582d00,-1px 1px 0 #582d00,1px 1px 0 #582d00
 }
-
+.a3{
+    text-decoration: none;
+    border: none;
+    display: flex;
+}
 .divbutton2{
     display: flex;
     gap: 5rem;
@@ -78,4 +82,48 @@
     font-size: 12px;
     color: white;
     margin-top: -10%;
+}
+
+
+@media (max-width: 768px) {
+    .main{
+        flex-direction: column;
+        height: 20%;
+    }
+
+    .container1{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    .container2{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    .divbutton2{
+        display: flex;
+        gap: 1rem;
+        margin-right: 0.5rem;
+    }
+
+    .divbutton1{
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    .image1{
+        margin-left: 0.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .contact2{
+        font-size: 12px;
+        color: white;
+        margin-top: -10%;
+    }
 }
