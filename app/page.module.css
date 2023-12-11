@@ -8,14 +8,16 @@
 .divcard1 {
     margin-top: 4rem;
     width: 40%;
-    margin-left: 4.5rem;
+    margin: auto;
+ 
 }
 
 .a2 {
+    margin-top: 4rem;
+    padding: 3.8rem;
     text-decoration: none;
     background-color: #0d8af7;
     border: none;
-    height: 100%;
     border-radius: 5px;
     box-shadow: 0 2px 3px 0 #0772ff, 0 0 0 4px #0772ff, 0 1px 0 4px #0772ff, 0 -1px 2px 4px #0772ff, 0 -2px 0 5px #0772ff, 0 6px 0 4px #0772ff, 0 3px 0 5px #0772ff, 0 -2px 0 7px #202020, 0 5px 0 7px #202020, 0 7px 0 7px #333;
     color: rgb(204, 255, 254);
@@ -31,10 +33,14 @@
 .divcard2 {
     margin-top: 4rem;
     width: 40%;
-    margin-left: 6rem;
+    padding: 0.5rem;
+    margin: auto;
 }
 
 .a3 {
+
+    padding: 3rem;
+    margin-top: 4rem;
     text-decoration: none;
     background-color: #5bec1c;
     border: none;
@@ -56,11 +62,45 @@
 }
 
 .font {
-    font-size: 0.6rem
+    font-size: 0.9rem
 }
 .divimgs{
     margin: auto;
     margin-bottom: 6rem;
     text-align: center;
 }
+.gigaimg{
+    margin: auto;
+    text-align: center;
+    margin-top: 1rem;
+}
+.prince{
+    margin: auto;
+    text-align: center;
+    margin-top: 1rem;
+}
 
+
+@media (max-width: 768px) {
+    .divcard1 {
+        width: 100%;
+    }
+
+    .divcard2 {
+        width: 100%;
+    }
+    .divimgs{
+        width: 100%;
+    }
+    .gigaimg{
+        width: 100%;
+    }
+    .prince{
+        width: 100%;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+}
