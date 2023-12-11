@@ -208,108 +208,6 @@ export default function createCard() {
       console.log(error)
     }
   }
-
-
-
-  const removeAtribute = (atribute) => {
-    const newAtributes = atributes.filter((item) => {
-      return item.name !== atribute.name;
-    }
-    );
-    setAtributes(newAtributes);
-    setItensToNull(atribute);
-  }
-
-  const setItensToNull = (atributes) => {
-
-    if (atributes.name == "Pontos de Vida") {
-      setHp("")
-    }
-
-    if (atributes.name == "Dano") {
-      setDamage("")
-    }
-
-    if (atributes.name == "Dano por segundo") {
-      setDamagepersecond("")
-    }
-
-    if (atributes.name == "Dano a distância") {
-      setDamageondistance("")
-    }
-
-    if (atributes.name == "Dano em área") {
-      setDamageonarea("")
-    }
-
-    if (atributes.name == "Dano no impacto") {
-      setDamageonimpact("")
-    }
-
-    if (atributes.name == "Dano na torre") {
-      setDamageontower("")
-    }
-
-    if (atributes.name == "Dano carregado") {
-      setChargedamage("")
-    }
-
-    if (atributes.name == "Dano na morte") {
-      setDamageondeath("")
-    }
-
-    if (atributes.name == "Velocidade de mobilização") {
-      setDeploytime("")
-    }
-
-    if (atributes.name == "Duração") {
-      setDuration("")
-    }
-
-    if (atributes.name == "Tempo de congelamento") {
-      setFreezetime("")
-    }
-
-    if (atributes.name == "Unidades") {
-      setUnities("")
-    }
-
-    if (atributes.name == "Alvo") {
-      setTarget("")
-    }
-
-    if (atributes.name == "Alcance do projétil") {
-      setProjectilerange("")
-    }
-
-    if(atributes.name == "Raio") {
-      setRadius("")
-    }
-
-    if (atributes.name == "Alcance") {
-      setRange("")
-    }
-
-    if (atributes.name == "Velocidade") {
-      setSpeed("")
-    }
-
-    if (atributes.name == "Velocidade de impacto") {
-      setImpactspeed("")
-    }
-
-  }
-  
-  const editAtribute = (atribute) => {
-    const newAtributes = atributes.filter((item) => {
-      return item.name !== atribute.name;
-    });
-    setOpen(true);
-    setAtributes(newAtributes);
-    setInputValue(atribute.value);
-    setSelectedOption(atribute.name);
-
-  };
   
   
 
@@ -663,30 +561,6 @@ export default function createCard() {
            ))
           }
           
-      </div>
-
-      {/* div que contem todos os atributos adicionados pelo usuario onde sera possivel deletar e editar */}
-      <div className={styles.containerAllATributes}>
-        {
-          atributes ? atributes.map((atribute) => {
-            return (
-              <div className={styles.containerAtribute}>
-                <div className={styles.containerAtributeName}>
-                  <p>{atribute.name}</p>
-                </div>
-                <div className={styles.containerAtributeValue}>
-                  <p>{atribute.value}</p>
-                </div>
-                <div className={styles.containerAtributeButtons}>
-                  <button onClick={() => removeAtribute(atribute)}>X</button>
-                  <button onClick={() => editAtribute(atribute)}>Editar</button>
-                </div>
-              </div>
-            )
-          }) : (
-            null
-          )
-        }
       </div>
 
 
