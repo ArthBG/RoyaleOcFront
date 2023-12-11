@@ -56,7 +56,7 @@
     border-radius: 10px;
     box-shadow: -0.4vw 0.3vw 0.1vw -0.1vw rgba(0, 0, 0, 0.43);
     border-radius: 1.5vw;
-    width: 65%;
+    width: 60%;
     height: fit-content;
     margin: auto;
 }
@@ -79,10 +79,13 @@
 .cardDetailsHeader{
     display: flex;
     flex-direction: column;
-    margin-left: 7rem;
-
+    margin-left: 7.25rem;
+    margin-top: 3.5rem;
 }
-
+.cardImage1{
+    margin-top: 4rem;
+    margin-left: 1rem;
+}
 .fundoR::before {
     content: '';
     position: absolute;

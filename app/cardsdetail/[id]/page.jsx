@@ -38,7 +38,9 @@ const CardDescription = ({ params }) => {
         <div className={styles.container}>
             <div className={styles.infosCartas}>
                 <div className={styles.cardDetails}>
+                    <div className={styles.cardImage1}>
                     <img className={styles.imgCard} width={200} height={200} src={card.image} alt={`Imagem da Carta ${card.name}`} />
+                    </div>
                     {/* <p className={styles.description}>{card.description ? card.description : "Não disponível"}</p> */}
                     <div className={styles.cardDetailsHeader}>
                         {card.name && <p className={styles.name}>{card.name}</p>}
