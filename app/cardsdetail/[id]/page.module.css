@@ -5,8 +5,6 @@
     background-position: center;
     background-attachment: fixed;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
     color: white;
 }
 
@@ -18,7 +16,13 @@
     margin: 0 auto;
     margin-bottom: 10%
 }
-
+.cardRousel{
+    background-color: #E4EBF3;
+    width: 90%;
+    margin: auto;
+    border: 15px solid  #828bc1;
+    border-radius: 10px;
+}
 .description {
     max-width: 400px;
     margin-top: 4%;
@@ -26,22 +30,7 @@
     text-shadow: 1px 2px 1px rgba(1, 1, 1, 1);
 }
 
-.info {
-    font-size: 1rem;
-    position: relative;
-    top: -3.5rem;
-    margin-left: 24%;
-    color: rgb(22, 22, 53);
-}
 
-.obj {
-    font-size: 1.2rem;
-    margin-left: 24%;
-    color: white;
-    position: relative;
-    top: -3.5rem;
-    text-shadow: 0 3px 1px rgba(1, 1, 1, 1);
-}
 
 /* imagens */
 .imgIcon {
@@ -58,27 +47,23 @@
 /* divs */
 .cardDetails {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
 }
 
 .infosCartas {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    background-color: rgba(210, 210, 210);
-    border: solid 1vw rgb(179, 179, 202);
+    background-color: #3a478f;
+    border-radius: 10px;
     box-shadow: -0.4vw 0.3vw 0.1vw -0.1vw rgba(0, 0, 0, 0.43);
     border-radius: 1.5vw;
-    width: 85%;
-    margin: 0 auto 4px auto;
+    width: 65%;
+    height: fit-content;
+    margin: auto;
 }
 
 .containerTeT {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: end;
+
 }
 .fundoR {
     background: linear-gradient(to right, #a7cfea, #508afc);
@@ -86,9 +71,16 @@
     border-bottom-left-radius: 4px;
     border-top-right-radius: 19px;
     padding: 10px;
+    width: 15rem;
     position: relative;
     box-shadow: 0 1px 10px rgba(13, 13, 13, 1.2);
     color: #002850;
+}
+.cardDetailsHeader{
+    display: flex;
+    flex-direction: column;
+    margin-left: 7rem;
+
 }
 
 .fundoR::before {
@@ -109,22 +101,41 @@
     border-bottom-left-radius: 10px;
 
 }
+.minicardsDiv{
+    display: flex;
+}
 .cardinfo {
-    margin: auto auto auto auto;
+    margin: auto;
     width: 40%;
     height: 80px;
     display: flex;
-    flex-direction: column;
-    background-color: rgb(226, 226, 250);
+    background-color: #D2DEEE;
     border-radius: 1vw;
     box-shadow: -0.4vw 0.3vw 0.1vw -0.1vw rgba(0, 0, 0, 0.43);
     margin-bottom: 2%;
 }
+.info {
+    font-size: 1rem;
+    color: rgb(22, 22, 53);
+}
+
+.obj {
+    font-size: 1.2rem;
+    color: white;
+    text-shadow: 0 4px 1px rgba(1, 1, 1, 1);
+}
+.fundoRa2{
+    display: flex;
+    flex-direction: column;
+    margin: auto 1rem;
+}
+.cardAtributes{
+    display: flex;
+    flex-wrap: wrap;
+}
 .minicards {
-   width: 80%;
-   text-align: center;
-   margin-right: -26%;
-   margin-bottom: 2%;
+    width: 100%;
+    margin: 0.5rem;
 }
 
 @media (max-width: 600px) {
