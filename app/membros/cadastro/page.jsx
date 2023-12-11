@@ -154,7 +154,7 @@ export default function Register() {
 
                         <p className={styles.msgError}>{errorIdade}</p>
 
-                      
+
 
                     </div>
 
