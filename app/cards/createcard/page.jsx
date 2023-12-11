@@ -282,6 +282,10 @@ export default function createCard() {
       setProjectilerange("")
     }
 
+    if(atributes.name == "Raio") {
+      setRadius("")
+    }
+
     if (atributes.name == "Alcance") {
       setRange("")
     }
@@ -297,25 +301,14 @@ export default function createCard() {
   }
   
   const editAtribute = (atribute) => {
-    // Salva os atributos atuais antes de fazer qualquer alteração
-    const previousAtributes = [...atributes];
-  
     const newAtributes = atributes.filter((item) => {
       return item.name !== atribute.name;
     });
-  
-    // Verifica se os atributos foram alterados
-    const hasChanges = JSON.stringify(newAtributes) !== JSON.stringify(previousAtributes);
-  
     setOpen(true);
     setAtributes(newAtributes);
     setInputValue(atribute.value);
     setSelectedOption(atribute.name);
-  
-    // Ativa setItensToNull apenas se houver alterações nos atributos
-    if (hasChanges) {
-      setItensToNull(atribute);
-    }
+
   };
   
   
@@ -352,6 +345,49 @@ export default function createCard() {
     { title: 'Pontos de vida do escudo', label: 'Vida do escudo', imageSrc: '/images/shieldhp.png' },
   ];
 
+  const constructionOptions = [
+    {
+      title: 'Selecione um atributo',
+      label: 'Selecione um atributo',
+      imageSrc: ''
+    },
+    { title: 'Pontos de Vida', label: 'Pontos de Vida', imageSrc: '/images/hp.png' },
+    { title: 'Dano', label: 'Dano', imageSrc: '/images/damage.png' },
+    { title: 'Dano por segundo', label: 'Dano por segundo', imageSrc: '/images/damagepersecond.png' },
+    { title: 'Dano a distância', label: 'Dano a distância', imageSrc: '/images/damageondistance.png' },
+    { title: 'Dano em área', label: 'Dano em área', imageSrc: '/images/damageonarea.png' },
+    { title: 'Dano no impacto', label: 'Dano no impacto', imageSrc: '/images/damage.png' },
+    { title: 'Dano na torre', label: 'Dano na torre', imageSrc: '/images/damageontower.png' },
+    { title: 'Dano carregado', label: 'Dano carregado', imageSrc: '/images/damageondistance.png' },
+    { title: 'Dano na morte', label: 'Dano na morte', imageSrc: '/images/damageondeath.png' },
+    { title: 'Velocidade de mobilização', label: 'Velocidade de mobilização', imageSrc: '/images/deploytime.png' },
+    { title: 'Duração', label: 'Duração', imageSrc: '/images/lifetime.png' },
+    { title: 'Alvo', label: 'Alvo', imageSrc: '/images/target.png' },
+    { title: 'Alcance', label: 'Alcance', imageSrc: '/images/range.png' },
+    { title: 'Velocidade de impacto', label: 'Velocidade de impacto', imageSrc: '/images/impactspeed.png' },
+  ]
+
+  const spellOptions = [
+    {
+      title: 'Selecione um atributo',
+      label: 'Selecione um atributo',
+      imageSrc: ''
+    },
+    { title: 'Dano', label: 'Dano', imageSrc: '/images/damage.png' },
+    { title: 'Dano por segundo', label: 'Dano por segundo', imageSrc: '/images/damagepersecond.png' },
+    { title: 'Dano a distância', label: 'Dano a distância', imageSrc: '/images/damageondistance.png' },
+    { title: 'Dano em área', label: 'Dano em área', imageSrc: '/images/damageonarea.png' },
+    { title: 'Dano no impacto', label: 'Dano no impacto', imageSrc: '/images/damage.png' },
+    { title: 'Dano na torre', label: 'Dano na torre', imageSrc: '/images/damageontower.png' },
+    { title: 'Dano carregado', label: 'Dano carregado', imageSrc: '/images/damageondistance.png' },
+    { title: 'Dano na morte', label: 'Dano na morte', imageSrc: '/images/damageondeath.png' },
+    { title: 'Duração', label: 'Duração', imageSrc: '/images/lifetime.png' },
+    { title: 'Unidades', label: 'Unidades', imageSrc: '/images/unities.png' },
+    { title: 'Tempo de congelamento', label: 'Tempo de congelamento', imageSrc: '/images/freezetime.png' },
+    { title: 'Alvo', label: 'Alvo', imageSrc: '/images/target.png' },
+    { title: 'Alcance', label: 'Alcance', imageSrc: '/images/range.png' },
+    { title: 'Raio', label: 'Raio', imageSrc: '/images/radius.png' }
+  ]
 
 
   const setItens = (atributes) => {
@@ -422,6 +458,10 @@ export default function createCard() {
 
     if (atributes.name == "Alcance") {
       setRange(atributes.value)
+    }
+
+    if(atributes.name == "Raio") {
+      setRadius(Number(atributes.value))
     }
 
     if (atributes.name == "Velocidade") {
@@ -544,9 +584,85 @@ export default function createCard() {
               </Modal>
             </div>
           ) : (
-            null
-          )
-        }
+            type == "Construção" ?
+            <div className={styles.shabuya}>
+            <button className={styles.scbtnyellow2} onClick={handleOpen}>Adicionar Atributos</button>
+            <Modal
+              open={open}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+            >
+              <Box sx={style}>
+                <button onClick={handleClose}> X </button>
+                <Typography id="modal-modal-title" variant="h6" component="h2">
+                  Atributos para tropas
+                </Typography>
+                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                  <select onChange={(e) => setSelectedOption(e.target.value)} value={selectedOption}>
+                    {
+                      constructionOptions.map((option) => {
+                        return (
+                          <option value={option.title}>
+                            <img src={option.imageSrc} alt={option.label} />
+                            {option.label}
+                          </option>
+                        );
+                      })
+                    }
+                  </select>
+
+                </Typography>
+                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                  <input type="text" value={inputvalue} onChange={(e) => setInputValue(e.target.value)} placeholder="Valor do atributo" />
+                </Typography>
+                <div>
+                  <button onClick={addAtributes}>Adicionar atributo</button>
+                </div>
+              </Box>
+            </Modal>
+          </div>
+           : (
+            type == "Feitiço" ?
+            <div className={styles.shabuya}>
+            <button className={styles.scbtnyellow2} onClick={handleOpen}>Adicionar Atributos</button>
+            <Modal
+              open={open}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+            >
+              <Box sx={style}>
+                <button onClick={handleClose}> X </button>
+                <Typography id="modal-modal-title" variant="h6" component="h2">
+                  Atributos para tropas
+                </Typography>
+                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                  <select onChange={(e) => setSelectedOption(e.target.value)} value={selectedOption}>
+                    {
+                      spellOptions.map((option) => {
+                        return (
+                          <option value={option.title}>
+                            <img src={option.imageSrc} alt={option.label} />
+                            {option.label}
+                          </option>
+                        );
+                      })
+                    }
+                  </select>
+
+                </Typography>
+                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                  <input type="text" value={inputvalue} onChange={(e) => setInputValue(e.target.value)} placeholder="Valor do atributo" />
+                </Typography>
+                <div>
+                  <button onClick={addAtributes}>Adicionar atributo</button>
+                </div>
+              </Box>
+            </Modal>
+          </div>
+          : null
+           ))
+          }
+          
       </div>
 
       {/* div que contem todos os atributos adicionados pelo usuario onde sera possivel deletar e editar */}

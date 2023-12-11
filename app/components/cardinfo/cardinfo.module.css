@@ -112,11 +112,7 @@
     }
     .containerCards20{
         display: flex;
-        position: absolute;
-        left: 500px;
-        width: 250px;
-        height: 290px;
-        align-items: center;
+       margin: auto;
         
     }
     .atributesCondition{
