@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image"
 import { useEffect, useState } from "react";
 import axios from 'axios';
+import styles from '../cadastroCtt/page.module.css';
 import Header from '../../components/header/header.jsx';
 import Footer from '../../components/footer/footer.jsx';
 import { useRouter } from 'next/navigation';
@@ -19,65 +21,65 @@ export default function Forms() {
     const [errorTelefone, setErrorTelefone] = useState("");
     const [errorComentario, setErrorComentario] = useState("");
 
-        // Buscar a lista de membros quando o componente é montado.
-        useEffect(() => {
-            async function fetchContatos() {
-                try {
-                    // Realiza uma requisição GET para obter a lista de membros da API.
-                    const response = await axios.get("/api/contatos");
-                    // Atualiza o estado com a lista de membros obtida.
-                    setContatos(response.data.contatos);
-                } catch (error) {
-                    console.error("Error fetching data:", error);
-                }
+    // Buscar a lista de membros quando o componente é montado.
+    useEffect(() => {
+        async function fetchContatos() {
+            try {
+                // Realiza uma requisição GET para obter a lista de membros da API.
+                const response = await axios.get("/api/contatos");
+                // Atualiza o estado com a lista de membros obtida.
+                setContatos(response.data.contatos);
+            } catch (error) {
+                console.error("Error fetching data:", error);
             }
-    
-            fetchContatos();
-        }, []);
+        }
+
+        fetchContatos();
+    }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (nome == ''){
+        if (nome == '') {
             setErrorNome("Preencha o campo!");
             setTimeout(() => {
                 setErrorNome("");
-            },3000);
+            }, 3000);
             return;
-        } else if (nome < 2){
+        } else if (nome < 2) {
             setErrorNome("O nome deve ter no mínimo 2 caracteres!");
             setTimeout(() => {
                 setErrorNome("");
-            },3000);
-        }   if (!email.includes('@')){
+            }, 3000);
+        } if (!email.includes('@')) {
             setErrorEmail("O email é inválido!");
             setTimeout(() => {
                 setErrorEmail("");
-            },3000);
+            }, 3000);
             return;
         } else if (email == '') {
             setErrorEmail("Preencha o Campo!");
             setTimeout(() => {
                 setErrorEmail("");
-            },3000);
-        } if (telefone == ''){
+            }, 3000);
+        } if (telefone == '') {
             setErrorTelefone("Preencha o campo!");
             setTimeout(() => {
                 setErrorNome("");
-            },3000);
+            }, 3000);
             return;
-        } else if (telefone < 10){
+        } else if (telefone < 10) {
             setErrorTelefone("O telefone é inválido");
             setTimeout(() => {
                 setErrorTelefone("");
-            },3000);
+            }, 3000);
         }
 
 
         try {
             telefone = Number(telefone);
             // Envia uma requisição POST para a API com os dados do novo membro.
-            await axios.post("/api/contatos", { nome, email, telefone, comentario});
+            await axios.post("/api/contatos", { nome, email, telefone, comentario });
             // Limpa os campos do formulário 
             setNome("");
             setEmail("");
@@ -101,11 +103,13 @@ export default function Forms() {
             <Header />
             <div>
                 <Link href="/contatos">
-                    <button type="submit">
-                        Voltar
-                    </button >
+                    <div className={styles.divbutton1}>
+                        <button type="submit" className={styles.botaovoltar}>
+                            Voltar
+                        </button >
+                    </div>
                 </Link>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} className={styles.divforms}>
 
                     <div>
                         <input
@@ -114,9 +118,10 @@ export default function Forms() {
                             id="nome"
                             value={nome}
                             onChange={(e) => setNome(e.target.value)}
-                           
+                            className={styles.inputs}
+
                         />
-                        <p>{errorNome}</p>
+                        <p className={styles.errormessage}>{errorNome}</p>
                     </div>
 
                     <div>
@@ -126,9 +131,10 @@ export default function Forms() {
                             id="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                           
+                            className={styles.inputs}
+
                         />
-                        <p>{errorEmail}</p>
+                        <p className={styles.errormessage}>{errorEmail}</p>
                     </div>
 
                     <div>
@@ -139,9 +145,10 @@ export default function Forms() {
                             id="telefone"
                             value={telefone}
                             onChange={(e) => setTelefone(e.target.value)}
-                           
+                            className={styles.inputs}
+
                         />
-                         <p>{errorTelefone}</p>
+                        <p className={styles.errormessage}>{errorTelefone}</p>
                     </div>
 
                     <div>
@@ -152,18 +159,20 @@ export default function Forms() {
                             id="comentario"
                             value={comentario}
                             onChange={(e) => setComentario(e.target.value)}
-                           
+                            className={styles.inputs}
+
                         />
-                         <p>{errorComentario}</p>
+                        <p className={styles.errormessage}>{errorComentario}</p>
                     </div>
 
-                    <button type="submit">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <span>Cadastrar</span>
-                    </button >
-
+                    <div className={styles.divbutton1}>
+                        <button type="submit" className={styles.botaocadastro}>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <span>Cadastrar</span>
+                        </button >
+                    </div>
                 </form >
             </div>
             <Footer />
