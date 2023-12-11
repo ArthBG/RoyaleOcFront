@@ -170,7 +170,7 @@ export default function updateForms({params}) {
                         <div></div>
                         <div></div>
                         <div></div>
-                        <span>Cadastrar</span>
+                        <span>Editar</span>
                     </button >
 
                 </form >
