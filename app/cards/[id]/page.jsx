@@ -316,7 +316,7 @@ const createImageOfaDiv = async () => {
           <textarea className={styles.input} placeholder="Descrição da carta" value={description} onChange={e => setDescription(e.target.value)} />
           <button className={styles.scbtnyellow} onClick={handleSubmit}>Editar</button>
         </div>
-        <div className={styles3.containerCards20} ref={divRef} >
+        {/* <div className={styles3.containerCards20} ref={divRef} >
           <div className={styles3.containerCards2}>
             {
               elixir == "1" && rarity == "Comum" ||  elixir == "1" && rarity == "Raro" || elixir == "1" && rarity == "Épico" ? (
@@ -1114,7 +1114,7 @@ const createImageOfaDiv = async () => {
                                                                                           )))))))))))))))))))))))))))))))))))))))
                                 }
           </div>
-        </div>
+        </div> */}
         <div className={styles.containerCardInfo}>
           <CardInfoedit
             name={name}

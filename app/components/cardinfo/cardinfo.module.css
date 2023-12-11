@@ -105,15 +105,17 @@
     }
     .containerCards2{
         display: flex;
-        padding-top: 5px;
-        width: fit-content;
-        height: fit-content;
         margin: auto;
+        align-items: center ;
     }
     .containerCards20{
         display: flex;
-           margin: auto;
-        
+        position: absolute;
+        left: 900px;
+        width: 250px;
+        height: 300px;
+        align-items: center;
+
     }
     .atributesCondition{
         display: flex;

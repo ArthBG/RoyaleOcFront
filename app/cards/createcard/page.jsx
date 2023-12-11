@@ -564,8 +564,7 @@ export default function createCard() {
       </div>
 
 
-
-      <div className={styles.containerVisibility}>
+          
         <div className={styles3.containerCards20} ref={divRef} >
           <div className={styles3.containerCards2}>
             {
@@ -1364,7 +1363,6 @@ export default function createCard() {
                                                                                           )))))))))))))))))))))))))))))))))))))))
                                 }
           </div>
-        </div>
       </div>
       <div className={styles.containerCard}>
         <CardInfo
