@@ -5,8 +5,9 @@ import { useEffect, useState } from "react";
 import axios from 'axios';
 import Header from '../../components/header/header.jsx';
 import Footer from '../../components/footer/footer.jsx';
-import { useRouter } from 'next/navigation';
-export default function Forms() {
+import { useRouter } from 'next/navigation'
+
+export default function updateForms({params}) {
     const [nome, setNome] = useState("");
     const [email, setEmail] = useState("");
     const [msg, setMsg] = useState("");
@@ -18,22 +19,29 @@ export default function Forms() {
     const [errorEmail, setErrorEmail] = useState("");
     const [errorTelefone, setErrorTelefone] = useState("");
     const [errorComentario, setErrorComentario] = useState("");
+    const { id } = params;
+    const router = useRouter();
 
         // Buscar a lista de membros quando o componente é montado.
         useEffect(() => {
             async function fetchContatos() {
                 try {
                     // Realiza uma requisição GET para obter a lista de membros da API.
-                    const response = await axios.get("/api/contatos");
-                    // Atualiza o estado com a lista de membros obtida.
-                    setContatos(response.data.contatos);
+                    const response = await axios.get(`/api/contatos/${id}`);
+                    const contato = response.data
+                    setNome(contato.nome);
+                    setEmail(contato.email);
+                    setTelefone(contato.telefone);
+                    setComentario(contato.comentario);
+
                 } catch (error) {
                     console.error("Error fetching data:", error);
                 }
             }
-    
-            fetchContatos();
-        }, []);
+            if(id){
+                fetchContatos()
+            }
+        }, [id]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -77,7 +85,8 @@ export default function Forms() {
         try {
             telefone = Number(telefone);
             // Envia uma requisição POST para a API com os dados do novo membro.
-            await axios.post("/api/contatos", { nome, email, telefone, comentario});
+            await axios.put(`/api/contatos/${id}`, { nome, email, telefone, comentario});
+            router.push(`/contatos/${id}`)
             // Limpa os campos do formulário 
             setNome("");
             setEmail("");
