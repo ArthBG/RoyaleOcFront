@@ -1,155 +1,156 @@
-
 .CardInfo{
-    background-image: url("/images/infobg.png");
-    min-width: 30rem;
-    max-width: 60rem;
-    background-size: cover;	
-    margin: auto;
-    min-height: fit-content;
-    height: 75rem;
+background-image: url("/images/infobg.png");
+min-width: 30rem;
+max-width: 60rem;
+background-size: cover;	
+margin: auto;
+min-height: fit-content;
+height: 75rem;
 }
 .cardName{
-    text-align: center;
-    font-size: 1.5rem;
-    padding-top: 2rem;
-    font-weight: bold;
-    color: #fff;
+text-align: center;
+font-size: 1.5rem;
+padding-top: 2rem;
+font-weight: bold;
+color: #fff;
 }
 .containerImage{
-    margin: 1rem;
+margin: 1rem;
 }
 .oi{
-    position: relative;
+position: relative;
 }
 .oi2{
-    position: absolute;
-    top: -10px;
-    left: -8px;
+position: absolute;
+top: -10px;
+left: -8px;
 }
 
 .layer{
-    background-color: #000;
-    opacity: 0.5;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
+background-color: #000;
+opacity: 0.5;
+width: 100%;
+height: 100%;
+position: absolute;
+top: 0;
+left: 0;
 
 }
 
 .imageBase{
-    width: 100%;
-    height: 100%;
-    position: relative; 
+width: 100%;
+height: 100%;
+position: relative; 
 }
 .communtropa{
-    display: flex;
-    flex-direction: column;
-    margin-right: 1rem;
+display: flex;
+flex-direction: column;
+margin-right: 1rem;
 }
 .communfeitico{
-    display: flex;
-    flex-direction: column;
+display: flex;
+flex-direction: column;
 }
 .communconstrucao{
-    display: flex;
-    flex-direction: column;
+display: flex;
+flex-direction: column;
 }
 .rarotropa{
-    display: flex;
-    flex-direction: column;
+display: flex;
+flex-direction: column;
 }
 .rarofeitico{
-    display: flex;
-    flex-direction: column;
+display: flex;
+flex-direction: column;
 }
 .raroconstrucao{
-    display: flex;
-    flex-direction: column;
+display: flex;
+flex-direction: column;
 }
 
 .epicotropa{
-    display: flex;
-    flex-direction: column;
+display: flex;
+flex-direction: column;
 }
 .epicofeitico{
-    display: flex;
-    flex-direction: column;
+display: flex;
+flex-direction: column;
 }
 .epicoconstrucao{
-    display: flex;
-    flex-direction: column;
+display: flex;
+flex-direction: column;
 }
 .lendariotropa{
-    display: flex;
-    flex-direction: column;
+display: flex;
+flex-direction: column;
 }
 .lendariofeitico{
-    display: flex;
-    flex-direction: column;
+display: flex;
+flex-direction: column;
 }
 .lendarioconstrucao{
+display: flex;
+flex-direction: column;
+}
+.desc{
+width: 30rem;
+max-width: 48rem;
+}
+.containerCards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 5rem;
+}
+.containerCards2{
+    display: flex;
+    padding-top: 5px;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+}
+.containerCards20{
+    display: flex;
+    position: absolute;
+    left: 500px;
+    width: 250px;
+    height: 290px;
+    align-items: center;
+    
+}
+.atributesCondition{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+    max-height:35rem;
+}
+.atributesCondition div{
+    background-color: rgb(255, 255, 255);
+    border-radius: 3px;
+    width: 20rem;
+    margin: 0.5rem;
+    display: flex;
+}
+.atributesNames{
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    text-shadow: -1px 4px 0 #000,0 2px 0 #000,1px 2px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;
+}
+.atributesP{
+    font-size: 14px;
+}
+.cardImage{
+    margin-left: 2rem;
+}
+.cardTroop{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+.desc2{
     display: flex;
     flex-direction: column;
 }
-.desc{
-    width: 30rem;
-    max-width: 48rem;
-}
-    .containerCards{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        margin-top: 5rem;
-    }
-    .containerCards2{
-        display: flex;
-        margin: auto;
-        align-items: center ;
-    }
-    .containerCards20{
-        display: flex;
-        position: absolute;
-        left: 900px;
-        width: 250px;
-        height: 300px;
-        align-items: center;
-
-    }
-    .atributesCondition{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        margin-top: 10rem;
-        max-height:35rem;
-    }
-    .atributesCondition div{
-        background-color: rgb(255, 255, 255);
-        border-radius: 3px;
-        width: 20rem;
-        margin: 0.5rem;
-        display: flex;
-    }
-    .atributesNames{
-        font-size: 14px;
-        color: rgb(255, 255, 255);
-        text-shadow: -1px 4px 0 #000,0 2px 0 #000,1px 2px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;
-    }
-    .atributesP{
-        font-size: 14px;
-    }
-    .cardImage{
-        margin-left: 2rem;
-    }
-    .cardTroop{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        margin-top: 1rem;
-    }
-    .desc2{
-        display: flex;
-        flex-direction: column;
-    }
