@@ -1,9 +1,9 @@
 "use client";
-import {useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import html2canvas from 'html2canvas';
 import styles3 from "@/app/components/cardinfo/cardinfo.module.css";
 import axios from 'axios';
-  import Image from 'next/image';
+import Image from 'next/image';
 import styles from '../createcard/page.module.css';
 import { useRouter } from 'next/navigation';
 import CardInfo from '@/app/components/cardinfo/cardinfo';
@@ -48,14 +48,15 @@ export default function updateCard({ params }) {
   const [showInput, setShowInput] = useState(false);
   const [imageupdated, setImageUpdated] = useState("");
   const [show, setShow] = useState(true);
-  const [isCreated, setIsCreated] = useState("");
+  const [iscreated, setIsCreated] = useState("");
+  const [imageurl, setImageurl] = useState("");
 
   const router = useRouter();
   const divRef = useRef(null);
   const { id } = params;
 
 
-
+  console.log({ iscreated })
 
   useEffect(() => {
     async function fetchData() {
@@ -64,7 +65,7 @@ export default function updateCard({ params }) {
         const card = response.data;
         console.log(card);
         setName(card.name);
-        setImage(card.image);
+        setImageUpdated(card.image);
         setType(card.type);
         setRarity(card.rarity);
         setElixir(card.elixir);
@@ -106,9 +107,10 @@ export default function updateCard({ params }) {
       fetchData();
     }
   }, [id]);
-
+  console.log({ image })
   const handleSubmit = async (e) => {
     e.preventDefault();
+    createImageOfaDiv();
     try {
       const response = await axios.put(`/api/cards/${id}`, {
         name,
@@ -156,9 +158,9 @@ export default function updateCard({ params }) {
     setImageUpdated(URL.createObjectURL(file))
   }
 
-  
 
-const createImageOfaDiv = async () => {
+
+  const createImageOfaDiv = async () => {
     const div = divRef.current;
 
     if (div) {
@@ -199,10 +201,10 @@ const createImageOfaDiv = async () => {
       <div style={{ display: showInput ? 'block' : 'none' }} value={showInput} >
         <div className={styles.conatainerInputs}>
           <button className={styles.scbtnyellow} onClick={() => router.push(`/cards`)}>Voltar</button>
-          
+
           <label htmlFor="name">Nome</label>
           <input className={styles.input} type="text" maxLength={30} placeholder="Nome da sua carta" value={name} onChange={e => setName(e.target.value)} />
-          
+
           <label htmlFor="level">Nível</label>
           <select className={styles.select}
             value={level}
@@ -227,7 +229,7 @@ const createImageOfaDiv = async () => {
           </select>
 
 
-          <label htmlFor="rarity">Raridade</label> 
+          <label htmlFor="rarity">Raridade</label>
           <select className={styles.select}
             value={rarity}
             onChange={e => setRarity(e.target.value)}
@@ -251,30 +253,30 @@ const createImageOfaDiv = async () => {
             <option value="Construção">Construção</option>
           </select>
 
-          { isCreated == "Criada" ? (
+          {iscreated == "Criado" ? (
             <>
-               <label htmlFor="elixir">Elixir</label>
-               <select className={styles.select} value={elixir} onChange={e => setElixir(e.target.value)}>
-                 <option value="">Selecione a quantidade de elixir</option>
-                 <option value={1}>1 Elixir</option>
-                 <option value={2}>2 Elixir</option>
-                 <option value={3}>3 Elixir</option>
-                 <option value={4}>4 Elixir</option>
-                 <option value={5}>5 Elixir</option>
-                 <option value={6}>6 Elixir</option>
-                 <option value={7}>7 Elixir</option>
-                 <option value={8}>8 Elixir</option>
-                 <option value={9}>9 Elixir</option>
-                 <option value={10}>10 Elixir</option>
-               </select> 
-               </>
-               ) : (
-                null
-               )}
+              <label htmlFor="elixir">Elixir</label>
+              <select className={styles.select} value={elixir} onChange={e => setElixir(e.target.value)}>
+                <option value="">Selecione a quantidade de elixir</option>
+                <option value={1}>1 Elixir</option>
+                <option value={2}>2 Elixir</option>
+                <option value={3}>3 Elixir</option>
+                <option value={4}>4 Elixir</option>
+                <option value={5}>5 Elixir</option>
+                <option value={6}>6 Elixir</option>
+                <option value={7}>7 Elixir</option>
+                <option value={8}>8 Elixir</option>
+                <option value={9}>9 Elixir</option>
+                <option value={10}>10 Elixir</option>
+              </select>
+            </>
+          ) : (
+            null
+          )}
           <label htmlFor="hp">Pontos de vida</label>
-          <input id="hp" className={styles.input} type="number" value={hp} onChange={e => setHp(e.target.value)}/>
+          <input id="hp" className={styles.input} type="number" value={hp} onChange={e => setHp(e.target.value)} />
           <label htmlFor="deploytime">Tempo de implantação</label>
-          <input id="deploytime" className={styles.input} type="number" value={deploytime} onChange={e => setDeploytime(e.target.value)}/>
+          <input id="deploytime" className={styles.input} type="number" value={deploytime} onChange={e => setDeploytime(e.target.value)} />
           <label htmlFor="damage">Dano</label>
           <input id="damage" className={styles.input} type="number" value={damage} onChange={e => setDamage(e.target.value)} />
           <label htmlFor="damagepersecond">Dano por segundo</label>
@@ -322,196 +324,182 @@ const createImageOfaDiv = async () => {
           <textarea className={styles.input} placeholder="Descrição da carta" value={description} onChange={e => setDescription(e.target.value)} />
           <button className={styles.scbtnyellow} onClick={handleSubmit}>Editar</button>
         </div>
-        {/* <div className={styles3.containerCards20} ref={divRef} >
+        <div className={styles3.containerCards20} ref={divRef} >
           <div className={styles3.containerCards2}>
             {
-              elixir == "1" && rarity == "Comum" ||  elixir == "1" && rarity == "Raro" || elixir == "1" && rarity == "Épico" ? (
-                createImageOfaDiv(),
-                <div className={styles3.imagecomming} style={{
-                  backgroundImage: `url(${imageupdated})`,
-                  backgroundRepeat: "no-repeat",
-                  backgroundSize: "230px 246px",
-                  borderRadius: "40px",
-                  backgroundPositionY: "3px",
-                  backgroundPositionX: "center",
-                  backgroundPosition: "center",
-                }}>
-                  <div className={styles3.oi}>
-                    <Image src={"/images/createcard/normal.png"} className={styles3.oi0} width={230} height={256} />
-                    <Image src={"/images/createcard/communCard1.png"} className={styles3.oi2} width={63} height={63} />
-                  </div>
-                </div>
-              ) : (
-                elixir == "2" && rarity == "Comum" || elixir == "2" && rarity == "Raro" || elixir == "2" && rarity == "Épico" ? (
-                  createImageOfaDiv(),
+              iscreated == "Criado" ? (
+                elixir == "1" && rarity == "Comum" || elixir == "1" && rarity == "Raro" || elixir == "1" && rarity == "Épico" ? (
                   <div className={styles3.imagecomming} style={{
                     backgroundImage: `url(${imageupdated})`,
                     backgroundRepeat: "no-repeat",
-                    backgroundSize: "230px 246px",
+                    backgroundSize: "250px 290px",
                     borderRadius: "40px",
-                    backgroundPositionY: "3px",
-                    backgroundPositionX: "center",
+                    backgroundPositionY: "-21px",
+                    backgroundPositionX: "-11px",
                     backgroundPosition: "center",
                   }}>
                     <div className={styles3.oi}>
                       <Image src={"/images/createcard/normal.png"} className={styles3.oi0} width={230} height={256} />
-                      <Image src={"/images/createcard/communCard2.png"} className={styles3.oi2} width={63} height={63} />
+                      <Image src={"/images/createcard/communCard1.png"} className={styles3.oi2} width={63} height={63} />
                     </div>
                   </div>
                 ) : (
-                  elixir == "3" && rarity == "Comum" || elixir == "3" && rarity == "Raro" || elixir == "3" && rarity == "Épico" ? (
+                  elixir == "2" && rarity == "Comum" || elixir == "2" && rarity == "Raro" || elixir == "2" && rarity == "Épico" ? (
                     createImageOfaDiv(),
                     <div className={styles3.imagecomming} style={{
                       backgroundImage: `url(${imageupdated})`,
                       backgroundRepeat: "no-repeat",
-                      backgroundSize: "230px 246px",
+                      backgroundSize: "250px 295px",
                       borderRadius: "40px",
-                      backgroundPositionY: "3px",
-                      backgroundPositionX: "center",
+                      backgroundPositionY: "-21px",
+                      backgroundPositionX: "-11px",
                       backgroundPosition: "center",
                     }}>
                       <div className={styles3.oi}>
                         <Image src={"/images/createcard/normal.png"} className={styles3.oi0} width={230} height={256} />
-                        <Image src={"/images/createcard/communCard3.png"} className={styles3.oi2} width={63} height={63} />
+                        <Image src={"/images/createcard/communCard2.png"} className={styles3.oi2} width={63} height={63} />
                       </div>
                     </div>
                   ) : (
-                    elixir == "4" && rarity == "Comum" || elixir == "4" && rarity == "Raro" || elixir == "4" && rarity == "Épico" ? (
+                    elixir == "3" && rarity == "Comum" || elixir == "3" && rarity == "Raro" || elixir == "3" && rarity == "Épico" ? (
                       createImageOfaDiv(),
                       <div className={styles3.imagecomming} style={{
                         backgroundImage: `url(${imageupdated})`,
                         backgroundRepeat: "no-repeat",
-                        backgroundSize: "230px 246px",
+                        backgroundSize: "250px 295px",
                         borderRadius: "40px",
-                        backgroundPositionY: "3px",
-                        backgroundPositionX: "center",
+                        backgroundPositionY: "-21px",
+                        backgroundPositionX: "-11px",
                         backgroundPosition: "center",
                       }}>
                         <div className={styles3.oi}>
                           <Image src={"/images/createcard/normal.png"} className={styles3.oi0} width={230} height={256} />
-                          <Image src={"/images/createcard/communCard4.png"} className={styles3.oi2} width={63} height={63} />
+                          <Image src={"/images/createcard/communCard3.png"} className={styles3.oi2} width={63} height={63} />
                         </div>
                       </div>
                     ) : (
-                      elixir == "5" && rarity == "Comum" || elixir == "5" && rarity == "Raro" || elixir == "5" && rarity == "Épico" ? (
+                      elixir == "4" && rarity == "Comum" || elixir == "4" && rarity == "Raro" || elixir == "4" && rarity == "Épico" ? (
                         createImageOfaDiv(),
                         <div className={styles3.imagecomming} style={{
                           backgroundImage: `url(${imageupdated})`,
                           backgroundRepeat: "no-repeat",
-                          backgroundSize: "230px 246px",
+                          backgroundSize: "250px 295px",
                           borderRadius: "40px",
-                          backgroundPositionY: "3px",
-                          backgroundPositionX: "center",
+                          backgroundPositionY: "-21px",
+                          backgroundPositionX: "-11px",
                           backgroundPosition: "center",
                         }}>
                           <div className={styles3.oi}>
                             <Image src={"/images/createcard/normal.png"} className={styles3.oi0} width={230} height={256} />
-                            <Image src={"/images/createcard/communCard5.png"} className={styles3.oi2} width={63} height={63} />
+                            <Image src={"/images/createcard/communCard4.png"} className={styles3.oi2} width={63} height={63} />
                           </div>
                         </div>
                       ) : (
-                        elixir == "6" && rarity == "Comum" || elixir == "6" && rarity == "Raro" || elixir == "6" && rarity == "Épico" ? (
+                        elixir == "5" && rarity == "Comum" || elixir == "5" && rarity == "Raro" || elixir == "5" && rarity == "Épico" ? (
                           createImageOfaDiv(),
                           <div className={styles3.imagecomming} style={{
                             backgroundImage: `url(${imageupdated})`,
                             backgroundRepeat: "no-repeat",
-                            backgroundSize: "230px 246px",
+                            backgroundSize: "250px 295px",
                             borderRadius: "40px",
-                            backgroundPositionY: "3px",
-                            backgroundPositionX: "center",
+                            backgroundPositionY: "-21px",
+                            backgroundPositionX: "-11px",
                             backgroundPosition: "center",
                           }}>
                             <div className={styles3.oi}>
                               <Image src={"/images/createcard/normal.png"} className={styles3.oi0} width={230} height={256} />
-                              <Image src={"/images/createcard/communCard6.png"} className={styles3.oi2} width={63} height={63} />
+                              <Image src={"/images/createcard/communCard5.png"} className={styles3.oi2} width={63} height={63} />
                             </div>
                           </div>
                         ) : (
-                          elixir == "7" && rarity == "Comum" || elixir == "7" && rarity == "Raro" || elixir == "7" && rarity == "Épico" ? (
+                          elixir == "6" && rarity == "Comum" || elixir == "6" && rarity == "Raro" || elixir == "6" && rarity == "Épico" ? (
                             createImageOfaDiv(),
                             <div className={styles3.imagecomming} style={{
                               backgroundImage: `url(${imageupdated})`,
                               backgroundRepeat: "no-repeat",
-                              backgroundSize: "230px 246px",
+                              backgroundSize: "250px 295px",
                               borderRadius: "40px",
-                              backgroundPositionY: "3px",
-                              backgroundPositionX: "center",
+                              backgroundPositionY: "-21px",
+                              backgroundPositionX: "-11px",
                               backgroundPosition: "center",
                             }}>
                               <div className={styles3.oi}>
                                 <Image src={"/images/createcard/normal.png"} className={styles3.oi0} width={230} height={256} />
-                                <Image src={"/images/createcard/communCard7.png"} className={styles3.oi2} width={63} height={63} />
+                                <Image src={"/images/createcard/communCard6.png"} className={styles3.oi2} width={63} height={63} />
                               </div>
                             </div>
                           ) : (
-                            elixir == "8" && rarity == "Comum" || elixir == "8" && rarity == "Raro" || elixir == "8" && rarity == "Épico" ? (
+                            elixir == "7" && rarity == "Comum" || elixir == "7" && rarity == "Raro" || elixir == "7" && rarity == "Épico" ? (
                               createImageOfaDiv(),
                               <div className={styles3.imagecomming} style={{
                                 backgroundImage: `url(${imageupdated})`,
                                 backgroundRepeat: "no-repeat",
-                                backgroundSize: "230px 246px",
+                                backgroundSize: "250px 295px",
                                 borderRadius: "40px",
-                                backgroundPositionY: "3px",
-                                backgroundPositionX: "center",
+                                backgroundPositionY: "-21px",
+                                backgroundPositionX: "-11px",
                                 backgroundPosition: "center",
                               }}>
                                 <div className={styles3.oi}>
                                   <Image src={"/images/createcard/normal.png"} className={styles3.oi0} width={230} height={256} />
-                                  <Image src={"/images/createcard/communCard8.png"} className={styles3.oi2} width={63} height={63} />
+                                  <Image src={"/images/createcard/communCard7.png"} className={styles3.oi2} width={63} height={63} />
                                 </div>
                               </div>
                             ) : (
-                              elixir == "9" && rarity == "Comum" || elixir == "9" && rarity == "Raro" || elixir == "9" && rarity == "Épico" ? (
+                              elixir == "8" && rarity == "Comum" || elixir == "8" && rarity == "Raro" || elixir == "8" && rarity == "Épico" ? (
                                 createImageOfaDiv(),
                                 <div className={styles3.imagecomming} style={{
                                   backgroundImage: `url(${imageupdated})`,
                                   backgroundRepeat: "no-repeat",
-                                  backgroundSize: "230px 246px",
+                                  backgroundSize: "250px 295px",
                                   borderRadius: "40px",
+                                  backgroundPositionY: "-21px",
+                                  backgroundPositionX: "-11px",
                                   backgroundPosition: "center",
                                 }}>
                                   <div className={styles3.oi}>
                                     <Image src={"/images/createcard/normal.png"} className={styles3.oi0} width={230} height={256} />
-                                    <Image src={"/images/createcard/communCard9.png"} className={styles3.oi2} width={63} height={63} />
+                                    <Image src={"/images/createcard/communCard8.png"} className={styles3.oi2} width={63} height={63} />
                                   </div>
                                 </div>
                               ) : (
-                                elixir == "10" && rarity == "Comum" || elixir == "10" && rarity == "Raro" || elixir == "10" && rarity == "Épico" ? (
+                                elixir == "9" && rarity == "Comum" || elixir == "9" && rarity == "Raro" || elixir == "9" && rarity == "Épico" ? (
+                                  createImageOfaDiv(),
                                   createImageOfaDiv(),
                                   <div className={styles3.imagecomming} style={{
                                     backgroundImage: `url(${imageupdated})`,
                                     backgroundRepeat: "no-repeat",
-                                    backgroundSize: "230px 246px",
+                                    backgroundSize: "250px 295px",
                                     borderRadius: "40px",
+                                    backgroundPositionY: "-21px",
+                                    backgroundPositionX: "-11px",
                                     backgroundPosition: "center",
                                   }}>
                                     <div className={styles3.oi}>
                                       <Image src={"/images/createcard/normal.png"} className={styles3.oi0} width={230} height={256} />
-                                      <Image src={"/images/createcard/communCard10.png"} className={styles3.oi2} width={63} height={63} />
+                                      <Image src={"/images/createcard/communCard9.png"} className={styles3.oi2} width={63} height={63} />
                                     </div>
                                   </div>
                                 ) : (
-                                  elixir == "1" && rarity == "Lendário" ? (
+                                  elixir == "10" && rarity == "Comum" || elixir == "10" && rarity == "Raro" || elixir == "10" && rarity == "Épico" ? (
+                                    createImageOfaDiv(),
                                     createImageOfaDiv(),
                                     <div className={styles3.imagecomming} style={{
                                       backgroundImage: `url(${imageupdated})`,
                                       backgroundRepeat: "no-repeat",
-                                      backgroundSize: "220px 215px",
-                                      borderBottomLeftRadius: "180px",
-                                      borderBottomRightRadius: "180px",
-                                      borderTopLeftRadius: "100px",
-                                      borderTopRightRadius: "170px",
-                                      backgroundPositionY: "20px",
-                                      backgroundPositionX: "center",
+                                      backgroundSize: "250px 295px",
+                                      borderRadius: "40px",
+                                      backgroundPositionY: "-21px",
+                                      backgroundPositionX: "-11px",
                                       backgroundPosition: "center",
                                     }}>
                                       <div className={styles3.oi}>
-                                        <Image src={"/images/createcard/legendary.png"} className={styles3.oi0} width={230} height={256} />
-                                        <Image src={"/images/createcard/communCard1.png"} className={styles3.oi2} width={63} height={63} />
+                                        <Image src={"/images/createcard/normal.png"} className={styles3.oi0} width={230} height={256} />
+                                        <Image src={"/images/createcard/communCard10.png"} className={styles3.oi2} width={63} height={63} />
                                       </div>
                                     </div>
                                   ) : (
-                                    elixir == "2" && rarity == "Lendário" ? (
+                                    elixir == "1" && rarity == "Lendário" ? (
                                       createImageOfaDiv(),
                                       <div className={styles3.imagecomming} style={{
                                         backgroundImage: `url(${imageupdated})`,
@@ -527,11 +515,11 @@ const createImageOfaDiv = async () => {
                                       }}>
                                         <div className={styles3.oi}>
                                           <Image src={"/images/createcard/legendary.png"} className={styles3.oi0} width={230} height={256} />
-                                          <Image src={"/images/createcard/communCard2.png"} className={styles3.oi2} width={63} height={63} />
+                                          <Image src={"/images/createcard/communCard1.png"} className={styles3.oi2} width={63} height={63} />
                                         </div>
                                       </div>
                                     ) : (
-                                      elixir == "3" && rarity == "Lendário" ? (
+                                      elixir == "2" && rarity == "Lendário" ? (
                                         createImageOfaDiv(),
                                         <div className={styles3.imagecomming} style={{
                                           backgroundImage: `url(${imageupdated})`,
@@ -547,11 +535,11 @@ const createImageOfaDiv = async () => {
                                         }}>
                                           <div className={styles3.oi}>
                                             <Image src={"/images/createcard/legendary.png"} className={styles3.oi0} width={230} height={256} />
-                                            <Image src={"/images/createcard/communCard3.png"} className={styles3.oi2} width={63} height={63} />
+                                            <Image src={"/images/createcard/communCard2.png"} className={styles3.oi2} width={63} height={63} />
                                           </div>
                                         </div>
                                       ) : (
-                                        elixir == "4" && rarity == "Lendário" ? (
+                                        elixir == "3" && rarity == "Lendário" ? (
                                           createImageOfaDiv(),
                                           <div className={styles3.imagecomming} style={{
                                             backgroundImage: `url(${imageupdated})`,
@@ -567,11 +555,11 @@ const createImageOfaDiv = async () => {
                                           }}>
                                             <div className={styles3.oi}>
                                               <Image src={"/images/createcard/legendary.png"} className={styles3.oi0} width={230} height={256} />
-                                              <Image src={"/images/createcard/communCard4.png"} className={styles3.oi2} width={63} height={63} />
+                                              <Image src={"/images/createcard/communCard3.png"} className={styles3.oi2} width={63} height={63} />
                                             </div>
                                           </div>
                                         ) : (
-                                          elixir == "5" && rarity == "Lendário" ? (
+                                          elixir == "4" && rarity == "Lendário" ? (
                                             createImageOfaDiv(),
                                             <div className={styles3.imagecomming} style={{
                                               backgroundImage: `url(${imageupdated})`,
@@ -587,11 +575,11 @@ const createImageOfaDiv = async () => {
                                             }}>
                                               <div className={styles3.oi}>
                                                 <Image src={"/images/createcard/legendary.png"} className={styles3.oi0} width={230} height={256} />
-                                                <Image src={"/images/createcard/communCard5.png"} className={styles3.oi2} width={63} height={63} />
+                                                <Image src={"/images/createcard/communCard4.png"} className={styles3.oi2} width={63} height={63} />
                                               </div>
                                             </div>
                                           ) : (
-                                            elixir == "6" && rarity == "Lendário" ? (
+                                            elixir == "5" && rarity == "Lendário" ? (
                                               createImageOfaDiv(),
                                               <div className={styles3.imagecomming} style={{
                                                 backgroundImage: `url(${imageupdated})`,
@@ -607,13 +595,12 @@ const createImageOfaDiv = async () => {
                                               }}>
                                                 <div className={styles3.oi}>
                                                   <Image src={"/images/createcard/legendary.png"} className={styles3.oi0} width={230} height={256} />
-                                                  <Image src={"/images/createcard/communCard6.png"} className={styles3.oi2} width={63} height={63} />
+                                                  <Image src={"/images/createcard/communCard5.png"} className={styles3.oi2} width={63} height={63} />
                                                 </div>
                                               </div>
                                             ) : (
-                                              elixir == "7" && rarity == "Lendário" ? (
+                                              elixir == "6" && rarity == "Lendário" ? (
                                                 createImageOfaDiv(),
-                                                
                                                 <div className={styles3.imagecomming} style={{
                                                   backgroundImage: `url(${imageupdated})`,
                                                   backgroundRepeat: "no-repeat",
@@ -628,12 +615,13 @@ const createImageOfaDiv = async () => {
                                                 }}>
                                                   <div className={styles3.oi}>
                                                     <Image src={"/images/createcard/legendary.png"} className={styles3.oi0} width={230} height={256} />
-                                                    <Image src={"/images/createcard/communCard7.png"} className={styles3.oi2} width={63} height={63} />
+                                                    <Image src={"/images/createcard/communCard6.png"} className={styles3.oi2} width={63} height={63} />
                                                   </div>
                                                 </div>
                                               ) : (
-                                                elixir == "8" && rarity == "Lendário" ? (
+                                                elixir == "7" && rarity == "Lendário" ? (
                                                   createImageOfaDiv(),
+
                                                   <div className={styles3.imagecomming} style={{
                                                     backgroundImage: `url(${imageupdated})`,
                                                     backgroundRepeat: "no-repeat",
@@ -648,11 +636,11 @@ const createImageOfaDiv = async () => {
                                                   }}>
                                                     <div className={styles3.oi}>
                                                       <Image src={"/images/createcard/legendary.png"} className={styles3.oi0} width={230} height={256} />
-                                                      <Image src={"/images/createcard/communCard8.png"} className={styles3.oi2} width={63} height={63} />
+                                                      <Image src={"/images/createcard/communCard7.png"} className={styles3.oi2} width={63} height={63} />
                                                     </div>
                                                   </div>
                                                 ) : (
-                                                  elixir == "9" && rarity == "Lendário" ? (
+                                                  elixir == "8" && rarity == "Lendário" ? (
                                                     createImageOfaDiv(),
                                                     <div className={styles3.imagecomming} style={{
                                                       backgroundImage: `url(${imageupdated})`,
@@ -668,13 +656,12 @@ const createImageOfaDiv = async () => {
                                                     }}>
                                                       <div className={styles3.oi}>
                                                         <Image src={"/images/createcard/legendary.png"} className={styles3.oi0} width={230} height={256} />
-                                                        <Image src={"/images/createcard/communCard9.png"} className={styles3.oi2} width={63} height={63} />
+                                                        <Image src={"/images/createcard/communCard8.png"} className={styles3.oi2} width={63} height={63} />
                                                       </div>
                                                     </div>
                                                   ) : (
-                                                    elixir == "10" && rarity == "Lendário" ? (
+                                                    elixir == "9" && rarity == "Lendário" ? (
                                                       createImageOfaDiv(),
-                                                     
                                                       <div className={styles3.imagecomming} style={{
                                                         backgroundImage: `url(${imageupdated})`,
                                                         backgroundRepeat: "no-repeat",
@@ -689,51 +676,50 @@ const createImageOfaDiv = async () => {
                                                       }}>
                                                         <div className={styles3.oi}>
                                                           <Image src={"/images/createcard/legendary.png"} className={styles3.oi0} width={230} height={256} />
-                                                          <Image src={"/images/createcard/communCard10.png"} className={styles3.oi2} width={63} height={63} />
+                                                          <Image src={"/images/createcard/communCard9.png"} className={styles3.oi2} width={63} height={63} />
                                                         </div>
                                                       </div>
                                                     ) : (
-                                                      elixir == "1" && rarity == "Campeão" ? (
+                                                      elixir == "10" && rarity == "Lendário" ? (
                                                         createImageOfaDiv(),
+
                                                         <div className={styles3.imagecomming} style={{
                                                           backgroundImage: `url(${imageupdated})`,
                                                           backgroundRepeat: "no-repeat",
-                                                          backgroundSize: "230px 246px",
-                                                          borderRadius: "40px",
-                                                          backgroundPositionY: "3px",
+                                                          backgroundSize: "220px 215px",
+                                                          borderBottomLeftRadius: "180px",
+                                                          borderBottomRightRadius: "180px",
+                                                          borderTopLeftRadius: "100px",
+                                                          borderTopRightRadius: "170px",
+                                                          backgroundPositionY: "20px",
                                                           backgroundPositionX: "center",
                                                           backgroundPosition: "center",
                                                         }}>
                                                           <div className={styles3.oi}>
-                                                            <Image src={"/images/createcard/champion.png"} className={styles3.oi0} width={230} height={256} />
-                                                            <Image src={"/images/createcard/communCard1.png"} className={styles3.oi2} width={63} height={63} />
+                                                            <Image src={"/images/createcard/legendary.png"} className={styles3.oi0} width={230} height={256} />
+                                                            <Image src={"/images/createcard/communCard10.png"} className={styles3.oi2} width={63} height={63} />
                                                           </div>
                                                         </div>
                                                       ) : (
-                                                        elixir == "2" && rarity == "Lendário" ? (
+                                                        elixir == "1" && rarity == "Campeão" ? (
                                                           createImageOfaDiv(),
                                                           <div className={styles3.imagecomming} style={{
                                                             backgroundImage: `url(${imageupdated})`,
                                                             backgroundRepeat: "no-repeat",
-                                                            backgroundSize: "220px 215px",
-                                                            borderBottomLeftRadius: "180px",
-                                                            borderBottomRightRadius: "180px",
-                                                            borderTopLeftRadius: "100px",
-                                                            borderTopRightRadius: "170px",
-                                                            backgroundPositionY: "20px",
+                                                            backgroundSize: "230px 246px",
+                                                            borderRadius: "40px",
+                                                            backgroundPositionY: "3px",
                                                             backgroundPositionX: "center",
                                                             backgroundPosition: "center",
                                                           }}>
                                                             <div className={styles3.oi}>
-                                                              <Image src={"/images/createcard/legendary.png"} className={styles3.oi0} width={230} height={256} />
-                                                              <Image src={"/images/createcard/communCard2.png"} className={styles3.oi2} width={63} height={63} />
+                                                              <Image src={"/images/createcard/champion.png"} className={styles3.oi0} width={230} height={256} />
+                                                              <Image src={"/images/createcard/communCard1.png"} className={styles3.oi2} width={63} height={63} />
                                                             </div>
                                                           </div>
                                                         ) : (
-                                                          elixir == "3" && rarity == "Lendário" ? (
+                                                          elixir == "2" && rarity == "Lendário" ? (
                                                             createImageOfaDiv(),
-                    
-                    
                                                             <div className={styles3.imagecomming} style={{
                                                               backgroundImage: `url(${imageupdated})`,
                                                               backgroundRepeat: "no-repeat",
@@ -748,14 +734,14 @@ const createImageOfaDiv = async () => {
                                                             }}>
                                                               <div className={styles3.oi}>
                                                                 <Image src={"/images/createcard/legendary.png"} className={styles3.oi0} width={230} height={256} />
-                                                                <Image src={"/images/createcard/communCard3.png"} className={styles3.oi2} width={63} height={63} />
+                                                                <Image src={"/images/createcard/communCard2.png"} className={styles3.oi2} width={63} height={63} />
                                                               </div>
                                                             </div>
                                                           ) : (
-                                                            elixir == "4" && rarity == "Lendário" ? (
+                                                            elixir == "3" && rarity == "Lendário" ? (
                                                               createImageOfaDiv(),
-                    
-                    
+
+
                                                               <div className={styles3.imagecomming} style={{
                                                                 backgroundImage: `url(${imageupdated})`,
                                                                 backgroundRepeat: "no-repeat",
@@ -770,14 +756,14 @@ const createImageOfaDiv = async () => {
                                                               }}>
                                                                 <div className={styles3.oi}>
                                                                   <Image src={"/images/createcard/legendary.png"} className={styles3.oi0} width={230} height={256} />
-                                                                  <Image src={"/images/createcard/communCard4.png"} className={styles3.oi2} width={63} height={63} />
+                                                                  <Image src={"/images/createcard/communCard3.png"} className={styles3.oi2} width={63} height={63} />
                                                                 </div>
                                                               </div>
                                                             ) : (
-                                                              elixir == "5" && rarity == "Lendário" ? (
+                                                              elixir == "4" && rarity == "Lendário" ? (
                                                                 createImageOfaDiv(),
-                    
-                    
+
+
                                                                 <div className={styles3.imagecomming} style={{
                                                                   backgroundImage: `url(${imageupdated})`,
                                                                   backgroundRepeat: "no-repeat",
@@ -792,14 +778,14 @@ const createImageOfaDiv = async () => {
                                                                 }}>
                                                                   <div className={styles3.oi}>
                                                                     <Image src={"/images/createcard/legendary.png"} className={styles3.oi0} width={230} height={256} />
-                                                                    <Image src={"/images/createcard/communCard5.png"} className={styles3.oi2} width={63} height={63} />
+                                                                    <Image src={"/images/createcard/communCard4.png"} className={styles3.oi2} width={63} height={63} />
                                                                   </div>
                                                                 </div>
                                                               ) : (
-                                                                elixir == "6" && rarity == "Lendário" ? (
+                                                                elixir == "5" && rarity == "Lendário" ? (
                                                                   createImageOfaDiv(),
-                    
-                    
+
+
                                                                   <div className={styles3.imagecomming} style={{
                                                                     backgroundImage: `url(${imageupdated})`,
                                                                     backgroundRepeat: "no-repeat",
@@ -814,14 +800,14 @@ const createImageOfaDiv = async () => {
                                                                   }}>
                                                                     <div className={styles3.oi}>
                                                                       <Image src={"/images/createcard/legendary.png"} className={styles3.oi0} width={230} height={256} />
-                                                                      <Image src={"/images/createcard/communCard6.png"} className={styles3.oi2} width={63} height={63} />
+                                                                      <Image src={"/images/createcard/communCard5.png"} className={styles3.oi2} width={63} height={63} />
                                                                     </div>
                                                                   </div>
                                                                 ) : (
-                                                                  elixir == "7" && rarity == "Lendário" ? (
+                                                                  elixir == "6" && rarity == "Lendário" ? (
                                                                     createImageOfaDiv(),
-                    
-                    
+
+
                                                                     <div className={styles3.imagecomming} style={{
                                                                       backgroundImage: `url(${imageupdated})`,
                                                                       backgroundRepeat: "no-repeat",
@@ -836,14 +822,14 @@ const createImageOfaDiv = async () => {
                                                                     }}>
                                                                       <div className={styles3.oi}>
                                                                         <Image src={"/images/createcard/legendary.png"} className={styles3.oi0} width={230} height={256} />
-                                                                        <Image src={"/images/createcard/communCard7.png"} className={styles3.oi2} width={63} height={63} />
+                                                                        <Image src={"/images/createcard/communCard6.png"} className={styles3.oi2} width={63} height={63} />
                                                                       </div>
                                                                     </div>
                                                                   ) : (
-                                                                    elixir == "8" && rarity == "Lendário" ? (
+                                                                    elixir == "7" && rarity == "Lendário" ? (
                                                                       createImageOfaDiv(),
-                    
-                    
+
+
                                                                       <div className={styles3.imagecomming} style={{
                                                                         backgroundImage: `url(${imageupdated})`,
                                                                         backgroundRepeat: "no-repeat",
@@ -858,14 +844,14 @@ const createImageOfaDiv = async () => {
                                                                       }}>
                                                                         <div className={styles3.oi}>
                                                                           <Image src={"/images/createcard/legendary.png"} className={styles3.oi0} width={230} height={256} />
-                                                                          <Image src={"/images/createcard/communCard8.png"} className={styles3.oi2} width={63} height={63} />
+                                                                          <Image src={"/images/createcard/communCard7.png"} className={styles3.oi2} width={63} height={63} />
                                                                         </div>
                                                                       </div>
                                                                     ) : (
-                                                                      elixir == "9" && rarity == "Lendário" ? (
+                                                                      elixir == "8" && rarity == "Lendário" ? (
                                                                         createImageOfaDiv(),
-                    
-                    
+
+
                                                                         <div className={styles3.imagecomming} style={{
                                                                           backgroundImage: `url(${imageupdated})`,
                                                                           backgroundRepeat: "no-repeat",
@@ -880,14 +866,14 @@ const createImageOfaDiv = async () => {
                                                                         }}>
                                                                           <div className={styles3.oi}>
                                                                             <Image src={"/images/createcard/legendary.png"} className={styles3.oi0} width={230} height={256} />
-                                                                            <Image src={"/images/createcard/communCard9.png"} className={styles3.oi2} width={63} height={63} />
+                                                                            <Image src={"/images/createcard/communCard8.png"} className={styles3.oi2} width={63} height={63} />
                                                                           </div>
                                                                         </div>
                                                                       ) : (
-                                                                        elixir == "10" && rarity == "Lendário" ? (
+                                                                        elixir == "9" && rarity == "Lendário" ? (
                                                                           createImageOfaDiv(),
-                    
-                    
+
+
                                                                           <div className={styles3.imagecomming} style={{
                                                                             backgroundImage: `url(${imageupdated})`,
                                                                             backgroundRepeat: "no-repeat",
@@ -902,33 +888,35 @@ const createImageOfaDiv = async () => {
                                                                           }}>
                                                                             <div className={styles3.oi}>
                                                                               <Image src={"/images/createcard/legendary.png"} className={styles3.oi0} width={230} height={256} />
-                                                                              <Image src={"/images/createcard/communCard10.png"} className={styles3.oi2} width={63} height={63} />
+                                                                              <Image src={"/images/createcard/communCard9.png"} className={styles3.oi2} width={63} height={63} />
                                                                             </div>
                                                                           </div>
                                                                         ) : (
-                                                                          elixir == "1" && rarity == "Campeão" ? (
+                                                                          elixir == "10" && rarity == "Lendário" ? (
                                                                             createImageOfaDiv(),
-                    
+
+
                                                                             <div className={styles3.imagecomming} style={{
                                                                               backgroundImage: `url(${imageupdated})`,
                                                                               backgroundRepeat: "no-repeat",
-                                                                              backgroundSize: "220px 210px",
-                                                                              borderBottomLeftRadius: "190px",
-                                                                              borderBottomRightRadius: "190px",
-                                                                              borderTopLeftRadius: "137px",
-                                                                              borderTopRightRadius: "160px",
-                                                                              backgroundPositionY: "25px",
+                                                                              backgroundSize: "220px 215px",
+                                                                              borderBottomLeftRadius: "180px",
+                                                                              borderBottomRightRadius: "180px",
+                                                                              borderTopLeftRadius: "100px",
+                                                                              borderTopRightRadius: "170px",
+                                                                              backgroundPositionY: "20px",
                                                                               backgroundPositionX: "center",
                                                                               backgroundPosition: "center",
                                                                             }}>
                                                                               <div className={styles3.oi}>
-                                                                                <Image src={"/images/createcard/champion.png"} className={styles3.oi0} width={230} height={256} />
-                                                                                <Image src={"/images/createcard/communCard1.png"} className={styles3.oi2} width={63} height={63} />
+                                                                                <Image src={"/images/createcard/legendary.png"} className={styles3.oi0} width={230} height={256} />
+                                                                                <Image src={"/images/createcard/communCard10.png"} className={styles3.oi2} width={63} height={63} />
                                                                               </div>
                                                                             </div>
                                                                           ) : (
-                                                                            elixir == "2" && rarity == "Campeão" ? (
+                                                                            elixir == "1" && rarity == "Campeão" ? (
                                                                               createImageOfaDiv(),
+
                                                                               <div className={styles3.imagecomming} style={{
                                                                                 backgroundImage: `url(${imageupdated})`,
                                                                                 backgroundRepeat: "no-repeat",
@@ -943,13 +931,12 @@ const createImageOfaDiv = async () => {
                                                                               }}>
                                                                                 <div className={styles3.oi}>
                                                                                   <Image src={"/images/createcard/champion.png"} className={styles3.oi0} width={230} height={256} />
-                                                                                  <Image src={"/images/createcard/communCard2.png"} className={styles3.oi2} width={63} height={63} />
+                                                                                  <Image src={"/images/createcard/communCard1.png"} className={styles3.oi2} width={63} height={63} />
                                                                                 </div>
                                                                               </div>
                                                                             ) : (
-                                                                              elixir == "3" && rarity == "Campeão" ? (
+                                                                              elixir == "2" && rarity == "Campeão" ? (
                                                                                 createImageOfaDiv(),
-                    
                                                                                 <div className={styles3.imagecomming} style={{
                                                                                   backgroundImage: `url(${imageupdated})`,
                                                                                   backgroundRepeat: "no-repeat",
@@ -964,13 +951,13 @@ const createImageOfaDiv = async () => {
                                                                                 }}>
                                                                                   <div className={styles3.oi}>
                                                                                     <Image src={"/images/createcard/champion.png"} className={styles3.oi0} width={230} height={256} />
-                                                                                    <Image src={"/images/createcard/communCard3.png"} className={styles3.oi2} width={63} height={63} />
+                                                                                    <Image src={"/images/createcard/communCard2.png"} className={styles3.oi2} width={63} height={63} />
                                                                                   </div>
                                                                                 </div>
                                                                               ) : (
-                                                                                elixir == "4" && rarity == "Campeão" ? (
+                                                                                elixir == "3" && rarity == "Campeão" ? (
                                                                                   createImageOfaDiv(),
-                    
+
                                                                                   <div className={styles3.imagecomming} style={{
                                                                                     backgroundImage: `url(${imageupdated})`,
                                                                                     backgroundRepeat: "no-repeat",
@@ -985,13 +972,13 @@ const createImageOfaDiv = async () => {
                                                                                   }}>
                                                                                     <div className={styles3.oi}>
                                                                                       <Image src={"/images/createcard/champion.png"} className={styles3.oi0} width={230} height={256} />
-                                                                                      <Image src={"/images/createcard/communCard4.png"} className={styles3.oi2} width={63} height={63} />
+                                                                                      <Image src={"/images/createcard/communCard3.png"} className={styles3.oi2} width={63} height={63} />
                                                                                     </div>
                                                                                   </div>
                                                                                 ) : (
-                                                                                  elixir == "5" && rarity == "Campeão" ? (
+                                                                                  elixir == "4" && rarity == "Campeão" ? (
                                                                                     createImageOfaDiv(),
-                    
+
                                                                                     <div className={styles3.imagecomming} style={{
                                                                                       backgroundImage: `url(${imageupdated})`,
                                                                                       backgroundRepeat: "no-repeat",
@@ -1006,13 +993,13 @@ const createImageOfaDiv = async () => {
                                                                                     }}>
                                                                                       <div className={styles3.oi}>
                                                                                         <Image src={"/images/createcard/champion.png"} className={styles3.oi0} width={230} height={256} />
-                                                                                        <Image src={"/images/createcard/communCard5.png"} className={styles3.oi2} width={63} height={63} />
+                                                                                        <Image src={"/images/createcard/communCard4.png"} className={styles3.oi2} width={63} height={63} />
                                                                                       </div>
                                                                                     </div>
                                                                                   ) : (
-                                                                                    elixir == "6" && rarity == "Campeão" ? (
+                                                                                    elixir == "5" && rarity == "Campeão" ? (
                                                                                       createImageOfaDiv(),
-                    
+
                                                                                       <div className={styles3.imagecomming} style={{
                                                                                         backgroundImage: `url(${imageupdated})`,
                                                                                         backgroundRepeat: "no-repeat",
@@ -1027,13 +1014,13 @@ const createImageOfaDiv = async () => {
                                                                                       }}>
                                                                                         <div className={styles3.oi}>
                                                                                           <Image src={"/images/createcard/champion.png"} className={styles3.oi0} width={230} height={256} />
-                                                                                          <Image src={"/images/createcard/communCard6.png"} className={styles3.oi2} width={63} height={63} />
+                                                                                          <Image src={"/images/createcard/communCard5.png"} className={styles3.oi2} width={63} height={63} />
                                                                                         </div>
                                                                                       </div>
                                                                                     ) : (
-                                                                                      elixir == "7" && rarity == "Campeão" ? (
+                                                                                      elixir == "6" && rarity == "Campeão" ? (
                                                                                         createImageOfaDiv(),
-                    
+
                                                                                         <div className={styles3.imagecomming} style={{
                                                                                           backgroundImage: `url(${imageupdated})`,
                                                                                           backgroundRepeat: "no-repeat",
@@ -1048,13 +1035,13 @@ const createImageOfaDiv = async () => {
                                                                                         }}>
                                                                                           <div className={styles3.oi}>
                                                                                             <Image src={"/images/createcard/champion.png"} className={styles3.oi0} width={230} height={256} />
-                                                                                            <Image src={"/images/createcard/communCard7.png"} className={styles3.oi2} width={63} height={63} />
+                                                                                            <Image src={"/images/createcard/communCard6.png"} className={styles3.oi2} width={63} height={63} />
                                                                                           </div>
                                                                                         </div>
                                                                                       ) : (
-                                                                                        elixir == "8" && rarity == "Campeão" ? (
+                                                                                        elixir == "7" && rarity == "Campeão" ? (
                                                                                           createImageOfaDiv(),
-                    
+
                                                                                           <div className={styles3.imagecomming} style={{
                                                                                             backgroundImage: `url(${imageupdated})`,
                                                                                             backgroundRepeat: "no-repeat",
@@ -1069,13 +1056,13 @@ const createImageOfaDiv = async () => {
                                                                                           }}>
                                                                                             <div className={styles3.oi}>
                                                                                               <Image src={"/images/createcard/champion.png"} className={styles3.oi0} width={230} height={256} />
-                                                                                              <Image src={"/images/createcard/communCard8.png"} className={styles3.oi2} width={63} height={63} />
+                                                                                              <Image src={"/images/createcard/communCard7.png"} className={styles3.oi2} width={63} height={63} />
                                                                                             </div>
                                                                                           </div>
                                                                                         ) : (
-                                                                                          elixir == "9" && rarity == "Campeão" ? (
+                                                                                          elixir == "8" && rarity == "Campeão" ? (
                                                                                             createImageOfaDiv(),
-                    
+
                                                                                             <div className={styles3.imagecomming} style={{
                                                                                               backgroundImage: `url(${imageupdated})`,
                                                                                               backgroundRepeat: "no-repeat",
@@ -1090,13 +1077,13 @@ const createImageOfaDiv = async () => {
                                                                                             }}>
                                                                                               <div className={styles3.oi}>
                                                                                                 <Image src={"/images/createcard/champion.png"} className={styles3.oi0} width={230} height={256} />
-                                                                                                <Image src={"/images/createcard/communCard9.png"} className={styles3.oi2} width={63} height={63} />
+                                                                                                <Image src={"/images/createcard/communCard8.png"} className={styles3.oi2} width={63} height={63} />
                                                                                               </div>
                                                                                             </div>
                                                                                           ) : (
-                                                                                            elixir == "10" && rarity == "Campeão" ? (
+                                                                                            elixir == "9" && rarity == "Campeão" ? (
                                                                                               createImageOfaDiv(),
-                    
+
                                                                                               <div className={styles3.imagecomming} style={{
                                                                                                 backgroundImage: `url(${imageupdated})`,
                                                                                                 backgroundRepeat: "no-repeat",
@@ -1111,21 +1098,43 @@ const createImageOfaDiv = async () => {
                                                                                               }}>
                                                                                                 <div className={styles3.oi}>
                                                                                                   <Image src={"/images/createcard/champion.png"} className={styles3.oi0} width={230} height={256} />
-                                                                                                  <Image src={"/images/createcard/communCard10.png"} className={styles3.oi2} width={63} height={63} />
+                                                                                                  <Image src={"/images/createcard/communCard9.png"} className={styles3.oi2} width={63} height={63} />
                                                                                                 </div>
                                                                                               </div>
                                                                                             ) : (
-                                                                                              null
-                                                                                            )
-                                                                                          )))))))))))))))))))))))))))))))))))))))
-                                }
+                                                                                              elixir == "10" && rarity == "Campeão" ? (
+                                                                                                createImageOfaDiv(),
+
+                                                                                                <div className={styles3.imagecomming} style={{
+                                                                                                  backgroundImage: `url(${imageupdated})`,
+                                                                                                  backgroundRepeat: "no-repeat",
+                                                                                                  backgroundSize: "220px 210px",
+                                                                                                  borderBottomLeftRadius: "190px",
+                                                                                                  borderBottomRightRadius: "190px",
+                                                                                                  borderTopLeftRadius: "137px",
+                                                                                                  borderTopRightRadius: "160px",
+                                                                                                  backgroundPositionY: "25px",
+                                                                                                  backgroundPositionX: "center",
+                                                                                                  backgroundPosition: "center",
+                                                                                                }}>
+                                                                                                  <div className={styles3.oi}>
+                                                                                                    <Image src={"/images/createcard/champion.png"} className={styles3.oi0} width={230} height={256} />
+                                                                                                    <Image src={"/images/createcard/communCard10.png"} className={styles3.oi2} width={63} height={63} />
+                                                                                                  </div>
+                                                                                                </div>
+                                                                                              ) : (
+                                                                                                null
+                                                                                              )
+                                                                                            )))))))))))))))))))))))))))))))))))))))) :
+                null
+            }
           </div>
-        </div> */}
+        </div>
         <div className={styles.containerCardInfo}>
           <CardInfoedit
             name={name}
-            image={imageupdated}
-            imageupdated={image}
+            image={image}
+            imageupdated={imageupdated}
             type={type}
             rarity={rarity}
             elixir={elixir}
