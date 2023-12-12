@@ -110,15 +110,13 @@ export default function updateForms({params}) {
         <div className={styles.bg}>
             <Header />
             <div>
-                <Link href="/contatos">
-                    <div className={styles.divbutton1}>
-                        <button type="submit" className={styles.botaovoltar}>
+                <Link className={styles.Link} href="/contatos">
+                        <div className={styles.botaovoltar}>
                             Voltar
-                        </button >
-                    </div>
+                        </div >
                 </Link>
                 <form onSubmit={handleSubmit} className={styles.divforms}>
-
+                    <h1 className={styles.titulo}>Editar Contato</h1>
                     <div>
                         <input
                             placeholder="Nome"
