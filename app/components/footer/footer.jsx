@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export const Footer = () => {
     return (
-        <footer className={styles.rodape}>
+        <div className={styles.rodape}>
             <div className={styles.rodapediv}>
 
                 <div className={styles.rodapediv1}>
@@ -42,7 +42,7 @@ export const Footer = () => {
                 <p><Image src={'/images/LOGO-octopus.png'} width={60} height={60} className={styles.octopus}></Image></p>
             </div>
             <p className={styles.rodapedireitos}>Octopus © 2023, Todos os Direitos Reservados.</p>
-        </footer>
+        </div>
     )
 }
 export default Footer;
