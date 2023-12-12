@@ -14,15 +14,19 @@ export default function Page() {
     const [contatos, setContatos] = useState([]);
     const [show, setShow] = useState(true);
     const [showInput, setShowInput] = useState(false);
+    const [passwordValue, setPasswordValue] = useState('');
     const router = useRouter();
     const prosseguir = () => {
         setShowInput(true);
         setShow(false);
     }
 
+    const handlePasswordChange = (event) => {
+        setPasswordValue(event.target.value); 
+    }
+
     const verifyPassword = () => {
-        const password = document.querySelector('input[type="text"]').value;
-        if (password == 'contatooc') {
+        if (passwordValue === 'contatooc') {
             prosseguir();
         } else {
             router.push('/contatos/cadastroCtt');
@@ -62,10 +66,21 @@ export default function Page() {
         <div className={styles.bg}>
             <Header />
             <div className={styles.prosseguir} style={{ display: show ? 'block' : 'none' }} value={show}>
-                <h1 className={styles.cadastrotitulo}>Contatos Recebidos</h1>
+                <h1 className={styles.titulo}>DEVELOPERS AREA</h1>
+                <div className={styles.containerImgand}>
+                <Image src={"/images/contatocl.png"} width={350} height={350} />
                 <div className={styles.containerInputs}>
-                    <input className={styles.inputSend} type="text" placeholder="Senha de acesso" />
-                    <button className={styles.botao} onClick={verifyPassword}>Enviar</button>
+            <input
+                className={styles.inputSend}
+                type="text"
+                placeholder="Senha de acesso"
+                value={passwordValue} // Use state value here
+                onChange={handlePasswordChange} // Handle input change
+            />
+            <button className={styles.botao} onClick={verifyPassword}>
+                Enviar
+            </button>
+        </div>
                 </div>
             </div>
             <div className={styles.prosseguir} style={{ display: showInput ? 'block' : 'none' }} value={showInput}>

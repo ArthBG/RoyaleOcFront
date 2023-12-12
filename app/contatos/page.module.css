@@ -10,17 +10,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    margin-left: 20rem;
-    margin-right: 20rem;
+    margin-left: 10rem;
+    margin-top: 5rem;
     background-color: rgb(4, 4, 112);
     border-radius: 10px;
     border: 2px solid #f0c44e;
     box-shadow: 0 0 30px rgb(103, 217, 255);
-    padding: 2rem;
+    width: fit-content;
+    height: 9rem;
 
+}
+.titulo{
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 15px #000000;
+    text-align: center;
+}
+.containerImgand{
+    display: flex;
+    margin: 2rem;
 }
 
 .botao {
@@ -43,7 +50,6 @@
     border-radius: 5px;
     border: 2px solid #f0c44e;
     padding: 0.5rem;
-    width: fit-content;
     background-color: #fbfbfb;
     color: rgb(0, 0, 0);
     font-size: 10px;
@@ -205,5 +211,10 @@
     .botaocadastro {
         margin-left: 1rem;
         margin-right: 1rem;
+    }
+    .containerImgand{
+        display: flex;
+        flex-direction: column;
+        margin: 2rem;
     }
 }

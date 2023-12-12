@@ -114,10 +114,11 @@ export default function Forms() {
             <div>
             <Link href="/contatos">
                         <button type="submit" className={styles.botaovoltar}>
-                            Contatos Cadstrados
+                            DEVELEPORSOCTOPUSAREA
                         </button >
                         </Link>
                 <form onSubmit={handleSubmit} className={styles.divforms}>
+                        <h1 className={styles.cadastrotitulo}>Entre em contato</h1>
 
                     <div>
                         <input
