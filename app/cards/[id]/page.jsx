@@ -159,7 +159,6 @@ export default function updateCard({ params }) {
   }
 
 
-
   const createImageOfaDiv = async () => {
     const div = divRef.current;
 
@@ -227,8 +226,9 @@ export default function updateCard({ params }) {
             <option value={14}>Nível 14</option>
             <option value={15}>Nível 15</option>
           </select>
-
-
+      {iscreated == "Criado" ? (
+        null ) :
+        <>
           <label htmlFor="rarity">Raridade</label>
           <select className={styles.select}
             value={rarity}
@@ -241,6 +241,8 @@ export default function updateCard({ params }) {
             <option value="Lendário">Lendário</option>
             <option value="Campeão">Campeão</option>
           </select>
+          </>
+  }
 
           <label htmlFor="type">Tipo</label>
           <select className={styles.select}
