@@ -68,7 +68,7 @@ export default function Page() {
             <div className={styles.prosseguir} style={{ display: show ? 'block' : 'none' }} value={show}>
                 <h1 className={styles.titulo}>DEVELOPERS AREA</h1>
                 <div className={styles.containerImgand}>
-                <Image src={"/images/contatocl.png"} width={350} height={350} />
+                <Image className={styles.image} src={"/images/contatocl.png"} width={340} height={330} />
                 <div className={styles.containerInputs}>
             <input
                 className={styles.inputSend}
