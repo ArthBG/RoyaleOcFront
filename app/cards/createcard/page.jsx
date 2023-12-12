@@ -78,6 +78,7 @@ export default function createCard() {
   const [divUpdatedImage, setDivUpdatedImage] = useState("");
   const [iscreated, setIsCreated] = useState("");
   const [error, setError] = useState("");
+  const [errorA, setErrorA] = useState("");
 
 
 
@@ -104,9 +105,17 @@ export default function createCard() {
       return;
     }
     else if (inputvalue == "" || selectedOption == "") {
+      setErrorA("Atributo ou valor não pode ser vazio")
+      setTimeout(() => {
+        setErrorA("")
+      }, 3000)
       return;
     }
     else if (atributes.some((item) => item.name === selectedOption)) {
+      setErrorA("Atributo já existe")
+      setTimeout(() => {
+        setErrorA("")
+      }, 3000)
       return;
     } else {
       const valueAndName = {
@@ -181,23 +190,9 @@ export default function createCard() {
       }, 3000)
       return;
     }
-    else if (arena == "") {
-      setError("Arena da carta é obrigatório")
-      setTimeout(() => {
-        setError("")
-      }, 3000)
-      return;
-    }
     //é necessario ter pelo menos 1 atributo
     else if (atributes.length == 0) {
       setError("É necessário ter pelo menos 1 atributo")
-      setTimeout(() => {
-        setError("")
-      }, 3000)
-      return;
-    }
-    else if (atributes.length > 8) {
-      setError("É permitido apenas 8 atributos")
       setTimeout(() => {
         setError("")
       }, 3000)
@@ -589,6 +584,7 @@ export default function createCard() {
                     <input type="text" value={inputvalue} onChange={(e) => setInputValue(e.target.value)} placeholder="Valor do atributo" />
                   </Typography>
                   <div>
+                  <p className={styles.error}>{errorA}</p>
                     <button onClick={addAtributes}>Adicionar atributo</button>
                   </div>
                 </Box>
@@ -627,6 +623,7 @@ export default function createCard() {
                   <input type="text" value={inputvalue} onChange={(e) => setInputValue(e.target.value)} placeholder="Valor do atributo" />
                 </Typography>
                 <div>
+                  <p className={styles.error}>{errorA}</p>
                   <button onClick={addAtributes}>Adicionar atributo</button>
                 </div>
               </Box>
@@ -665,6 +662,7 @@ export default function createCard() {
                   <input type="text" value={inputvalue} onChange={(e) => setInputValue(e.target.value)} placeholder="Valor do atributo" />
                 </Typography>
                 <div>
+                <p className={styles.error}>{errorA}</p>
                   <button onClick={addAtributes}>Adicionar atributo</button>
                 </div>
               </Box>
