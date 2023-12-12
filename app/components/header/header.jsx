@@ -33,7 +33,7 @@ export default function Header (){
                         </Link>
                     </div>
                     <div className={styles.shortcut2}>
-                        <Link className={styles.a} href={'/contatos'} target='_parent'>
+                        <Link className={styles.a} href={'/contatos/cadastroCtt'} target='_parent'>
                             <Image className={styles.image1} src={'/images/contatoscr.png'} width={45} height={40}></Image>
                             <h1 className={styles.contact2}>Contato</h1>
                         </Link>

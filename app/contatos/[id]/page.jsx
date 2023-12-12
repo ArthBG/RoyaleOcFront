@@ -107,7 +107,7 @@ export default function updateForms({params}) {
 
 
     return (
-        <div>
+        <div className={styles.bg}>
             <Header />
             <div>
                 <Link href="/contatos">

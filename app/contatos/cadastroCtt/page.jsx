@@ -68,12 +68,22 @@ export default function Forms() {
                 setErrorNome("");
             }, 3000);
             return;
-        } else if (telefone < 10) {
+        } 
+        //se telefone for menor que 11 ou não for número
+        else if (telefone.length < 11 || isNaN(telefone)) {
             setErrorTelefone("O telefone é inválido");
             setTimeout(() => {
                 setErrorTelefone("");
             }, 3000);
+            return;
+        } if(comentario == ''){
+            setErrorComentario("Preencha o campo!");
+            setTimeout(() => {
+                setErrorComentario("");
+            }, 3000);
+            return;
         }
+
 
 
         try {
@@ -99,16 +109,14 @@ export default function Forms() {
 
 
     return (
-        <div>
+        <div className={styles.bg}>
             <Header />
             <div>
-                <Link href="/contatos">
-                    <div className={styles.divbutton1}>
+            <Link href="/contatos">
                         <button type="submit" className={styles.botaovoltar}>
-                            Voltar
+                            Contatos Cadstrados
                         </button >
-                    </div>
-                </Link>
+                        </Link>
                 <form onSubmit={handleSubmit} className={styles.divforms}>
 
                     <div>
