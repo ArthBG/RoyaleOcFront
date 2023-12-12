@@ -14,6 +14,7 @@ import SelectConstruction from "@/app/components/selectatributes/construction/se
 import SelectSpell from "@/app/components/selectatributes/spelll/select";
 import Header from "@/app/components/header/header";
 import styles3 from "@/app/components/cardinfo/cardinfo.module.css";
+import Footer from '@/app/components/footer/footer';
 // npm install html2canvas
 
 
@@ -1401,7 +1402,7 @@ export default function createCard() {
           level={level}
         />
       </div>
-
+     <Footer />
     </main>
   )
 }

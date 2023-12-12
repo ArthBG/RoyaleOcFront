@@ -9,6 +9,7 @@ import { useRouter } from 'next/navigation';
 import CardInfo from '@/app/components/cardinfo/cardinfo';
 import CardInfoedit from '@/app/components/cardinfoedit/cardinfoedit';
 import Header from '@/app/components/header/header';
+import Footer from '@/app/components/footer/footer';
 // npm install react-icons --save
 
 export default function updateCard({ params }) {
@@ -1153,6 +1154,7 @@ const createImageOfaDiv = async () => {
           />
         </div>
       </div>
+      <Footer />
     </main>
   )
 }
