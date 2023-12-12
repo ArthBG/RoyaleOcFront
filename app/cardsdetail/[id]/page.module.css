@@ -30,29 +30,35 @@
 }
 
 .info {
-    font-size: 1rem;
-    position: relative;
-    top: -3.5rem;
-    margin-left: 24%;
+    font-size: 14px;
     color: rgb(22, 22, 53);
 }
 
 .background {
-    background-color: rgb(37, 37, 151);
-    width: 80%;
+    background-color: #303E7B;
+    width: 55%;
+    border-radius: 10px;
     margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
 
+}
+
+.containername{
+    display: flex;
 }
 
 .obj {
-    font-size: 1.2rem;
+    font-size: 16px;
     color: white;
-    position: relative;
-    margin-left: 24%;
-    top: -3.5rem;
-    text-shadow: 0 3px 1px rgba(1, 1, 1, 1);
+    text-shadow: 1px 2px 1px rgba(1, 1, 1, 1);
 }
-
+.containerNameObj{
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.5rem;
+    margin-top: 1rem;
+}
 /* imagens */
 .imgIcon {
     background-color: rgba(73, 73, 73, 0.729);
@@ -80,12 +86,12 @@
 .infosCartas {
     display: flex;
     flex-wrap: wrap;
-    background-color: rgba(210, 210, 210);
-    border: solid 1vw rgb(179, 179, 202);
+    background-color: #ebf2ff;
+    border: solid 1vw rgb(190, 190, 233);
     box-shadow: -0.4vw 0.3vw 0.1vw -0.1vw rgba(0, 0, 0, 0.43);
     border-radius: 1.5vw;
     width: 85%;
-    margin: 0 auto 4px auto;
+    margin: auto;
 }
 
 .containerTeT {
@@ -119,25 +125,21 @@
 }
 
 .cardinfo {
-    margin: auto auto auto auto;
-    width: 40%;
+    width: 18rem;
+    margin: 0.5rem;
     height: 80px;
     display: flex;
-    flex-direction: column;
-    background-color: rgb(226, 226, 250);
+    background-color: #D5DCEF;
     border-radius: 1vw;
     box-shadow: -0.4vw 0.3vw 0.1vw -0.1vw rgba(0, 0, 0, 0.43);
-    margin-bottom: 2%;
-    margin-top: 2%;
 }
 
 
 
 .minicards {
-    width: 20%;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    width: 15rem;
+    margin: 0.5rem;
+    margin-top: 4rem;
 }
 
 /* carrousel */
@@ -170,8 +172,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgba(210, 210, 210);
-    border: solid 1vw rgb(179, 179, 202);
+    background-color: #ebf2ff;
+    border: solid 1vw rgb(190, 190, 233);
     box-shadow: -0.4vw 0.3vw 0.1vw -0.1vw rgba(0, 0, 0, 0.43);
     border-radius: 1.5vw;
     width: 85%;
@@ -188,12 +190,13 @@
     width: 100%;
     transition: all 500ms ease;
 }
-
+.slider input[type=radio] {
+    margin: auto;
+}
 .slider>.sliderContent>.sliderItem {
     flex: 0 0 auto;
     width: 100%;
 }
-
 .slider>input:nth-child(1):checked~.sliderContent {
     transform: translateX(0%);
 }
