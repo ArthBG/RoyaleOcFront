@@ -48,6 +48,7 @@ export default function updateCard({ params }) {
   const [showInput, setShowInput] = useState(false);
   const [imageupdated, setImageUpdated] = useState("");
   const [show, setShow] = useState(true);
+  const [isCreated, setIsCreated] = useState("");
 
   const router = useRouter();
   const divRef = useRef(null);
@@ -94,7 +95,9 @@ export default function updateCard({ params }) {
         setSpeed(card.speed);
         setImpactspeed(card.impactspeed);
         setLevel(card.level);
+        setIsCreated(card.iscreated)
 
+        console.log(card)
       } catch (error) {
         console.error(error);
       }
@@ -103,7 +106,6 @@ export default function updateCard({ params }) {
       fetchData();
     }
   }, [id]);
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -249,23 +251,26 @@ const createImageOfaDiv = async () => {
             <option value="Construção">Construção</option>
           </select>
 
-          <label htmlFor="elixir">Elixir</label>
-          <select className={styles.select}
-            value={elixir}
-            onChange={e => setElixir(e.target.value)}
-          >
-            <option value="">Selecione a quantidade de elixir</option>
-            <option value={1}>1 Elixir</option>
-            <option value={2}>2 Elixir</option>
-            <option value={3}>3 Elixir</option>
-            <option value={4}>4 Elixir</option>
-            <option value={5}>5 Elixir</option>
-            <option value={6}>6 Elixir</option>
-            <option value={7}>7 Elixir</option>
-            <option value={8}>8 Elixir</option>
-            <option value={9}>9 Elixir</option>
-            <option value={10}>10 Elixir</option>
-          </select>
+          { isCreated == "Criada" ? (
+            <>
+               <label htmlFor="elixir">Elixir</label>
+               <select className={styles.select} value={elixir} onChange={e => setElixir(e.target.value)}>
+                 <option value="">Selecione a quantidade de elixir</option>
+                 <option value={1}>1 Elixir</option>
+                 <option value={2}>2 Elixir</option>
+                 <option value={3}>3 Elixir</option>
+                 <option value={4}>4 Elixir</option>
+                 <option value={5}>5 Elixir</option>
+                 <option value={6}>6 Elixir</option>
+                 <option value={7}>7 Elixir</option>
+                 <option value={8}>8 Elixir</option>
+                 <option value={9}>9 Elixir</option>
+                 <option value={10}>10 Elixir</option>
+               </select> 
+               </>
+               ) : (
+                null
+               )}
           <label htmlFor="hp">Pontos de vida</label>
           <input id="hp" className={styles.input} type="number" value={hp} onChange={e => setHp(e.target.value)}/>
           <label htmlFor="deploytime">Tempo de implantação</label>

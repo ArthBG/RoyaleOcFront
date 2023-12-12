@@ -76,7 +76,18 @@ export default function createCard() {
   const [selectedOption, setSelectedOption] = useState('');
   const [inputvalue, setInputValue] = useState('');
   const [divUpdatedImage, setDivUpdatedImage] = useState("");
+  const [iscreated, setIsCreated] = useState("");
+  const [error, setError] = useState("");
 
+
+
+  useEffect(() => {
+    const getCards = async () => {
+      const response = await axios.get("/api/cards")
+      setCards(response.data.cards)
+    }
+    getCards()
+  }, [])
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -111,6 +122,98 @@ export default function createCard() {
       setSelectedOption("")
     }
   }
+  const validate = () => {
+    //validação geral do formulario
+    if (name == "") {
+      setError("Nome da carta não pode ser vazio")
+      setTimeout(() => {
+        setError("")
+      }, 3000)
+      return;
+    } 
+    // se o nome for repetido não deixa criar
+    else if (cards.some((item) => item.name === name)) {
+      setError("Nome da carta já existe")
+      setTimeout(() => {
+        setError("")
+      }, 3000)
+      return;
+    }
+    else if (level == "") {
+      setError("Nível da carta não pode ser vazio")
+      setTimeout(() => {
+        setError("")
+      }, 3000)
+      return;
+    }
+    else if (rarity == "") {
+      setError("Raridade da carta é obrigatório")
+      setTimeout(() => {
+        setError("")
+      }, 3000)
+      return;
+    }
+    else if (type == "") {
+      setError("Tipo da carta é obrigatório")
+      setTimeout(() => {
+        setError("")
+      }, 3000)
+      return;
+    }
+    else if (elixir == "") {
+      setError("Elixir da carta é obrigatório")
+      setTimeout(() => {
+        setError("")
+      }, 3000)
+      return;
+    }
+    else if (image == "") {
+      setError("Imagem da carta é obrigatório")
+      setTimeout(() => {
+        setError("")
+      }, 3000)
+      return;
+    }
+    else if (description == "") {
+      setError("Descrição da carta é obrigatório")
+      setTimeout(() => {
+        setError("")
+      }, 3000)
+      return;
+    }
+    else if (arena == "") {
+      setError("Arena da carta é obrigatório")
+      setTimeout(() => {
+        setError("")
+      }, 3000)
+      return;
+    }
+    //é necessario ter pelo menos 1 atributo
+    else if (atributes.length == 0) {
+      setError("É necessário ter pelo menos 1 atributo")
+      setTimeout(() => {
+        setError("")
+      }, 3000)
+      return;
+    }
+    else if (atributes.length > 8) {
+      setError("É permitido apenas 8 atributos")
+      setTimeout(() => {
+        setError("")
+      }, 3000)
+      return;
+    }
+    else {
+      setIsCreated("Criado")
+    }
+  }
+
+
+
+
+
+
+
 
   const createImageOfaDiv = async () => {
     const div = divRef.current;
@@ -134,6 +237,11 @@ export default function createCard() {
 
 
   const handleSubmit = async (e) => {
+    if (iscreated == "") {
+      validate();
+      return;
+    }
+    else{
     e.preventDefault();
 
     try {
@@ -170,6 +278,7 @@ export default function createCard() {
         range,
         speed,
         impactspeed,
+        iscreated
       })
       console.log(response.data)
       setName("")
@@ -205,9 +314,11 @@ export default function createCard() {
       setRange("")
       setSpeed("")
       setImpactspeed("")
+      setIsCreated("")
     } catch (error) {
       console.log(error)
     }
+  }
   }
   
   
@@ -443,6 +554,7 @@ export default function createCard() {
 
         <input type="file" className={styles.file} onChange={handleImage} />
         <textarea className={styles.input} placeholder="Descrição da carta" value={description} onChange={e => setDescription(e.target.value)} />
+        <p className={styles.error}>{error}</p>
         <button className={styles.scbtnyellow} onClick={handleSubmit}>Criar</button>
         {
           type == "Tropa" ? (
