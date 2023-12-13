@@ -11,6 +11,7 @@ import CardInfo from '../components/cardinfo/cardinfo';
 import Footer from '../components/footer/footer';
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
+import { Rings } from 'react-loader-spinner';
 // npm install react-icons --save
 // Todas as funções devem ser comentadas
 
@@ -40,7 +41,7 @@ function cardspage() {
                 if (selectedElixir) {
                     queryParams += `elixir=${selectedElixir}&`;
                 }
-               
+
                 if (queryParams.length > 0) {
                     queryParams = queryParams.slice(0, -1);
                 }
@@ -56,14 +57,14 @@ function cardspage() {
 
 
     console.log(cardsData);
-      
+
 
 
     function clearFilters() {
         setSelectedRarity("");
         setSelectedType("");
         setSelectedElixir("");
-        setSearch(""); 
+        setSearch("");
     }
     const editCard = (id) => {
         router.push(`/cards/${id}`);
@@ -93,17 +94,17 @@ function cardspage() {
             <Header />
             <div className={style.containerScrolls}>
                 <button onClick={scrollToUp}>
-            <IoIosArrowUp  />
+                    <IoIosArrowUp />
                 </button>
-                <button  onClick={scrollToDown}>
-            <IoIosArrowDown />
+                <button onClick={scrollToDown}>
+                    <IoIosArrowDown />
                 </button>
             </div>
             <h1 className={style.title}>RoyaleOcto</h1>
-                <div className={style.containerSearch}>
-                    <input type="text" placeholder="Pesquisar Cartas" className={style.search} value={search} onChange={(e) => setSearch(e.target.value)} />
-                    <FiSearch className={style.icon} />
-                </div>
+            <div className={style.containerSearch}>
+                <input type="text" placeholder="Pesquisar Cartas" className={style.search} value={search} onChange={(e) => setSearch(e.target.value)} />
+                <FiSearch className={style.icon} />
+            </div>
             <div className={style.containerFilters}>
                 <select className={style.select} value={selectedType} onChange={(e) => setSelectedType(e.target.value)}>
                     <option value="">Tipo:</option>
@@ -130,43 +131,58 @@ function cardspage() {
                     <option value={7}>7</option>
                     <option value={8}>8</option>
                     <option value={9}>9</option>
-                    {cardsData.map((card) => ( 
-                        card.elixir > 9 ? 
-                        <option value={10}>10</option> 
-                        : null)) 
+                    {cardsData.map((card) => (
+                        card.elixir > 9 ?
+                            <option value={10}>10</option>
+                            : null))
                     }
                 </select>
                 <button className={style.scbtnred} onClick={() => clearFilters("teste")}>Redefinir Filtros</button>
             </div>
 
             <div className={style.containerCard}>
-                { //map percorre o array e retorna um novo array com ordem de elixir crescente
-                    cardsData.sort((a, b) => a.elixir - b.elixir).map((card) => ( 
-                    <div key={card.id} >
-                        <div className={style.card}>
-                            <div className={style.containerButtons}>
-                                <div className={style.containerS}>
-                                    <button className={style.buttonEdit}>
-                                        <img src={"/images/info.png"} width={31} height={29} onClick={() => editCard(card.id)} />
-                                    </button>
-                                    <button className={style.buttonDelete}>
-                                        <img src={"/images/excluir.png"} width={34} height={30} onClick={() => deleteCard(card.id)} />
-                                    </button>
+
+                {
+                    cardsData.length === 0 ?
+                        <div className={style.containerLoading}>
+                            <Rings
+                                height="300"
+                                width="400"
+                                color="#fff"
+                                radius="6"
+                                wrapperStyle={{}}
+                                wrapperClass=""
+                                visible={true}
+                                ariaLabel="rings-loading"
+                            />
+                        </div> :
+                        //map percorre o array e retorna um novo array com ordem de elixir crescente
+                        cardsData.sort((a, b) => a.elixir - b.elixir).map((card) => (
+                            <div key={card.id} >
+                                <div className={style.card}>
+                                    <div className={style.containerButtons}>
+                                        <div className={style.containerS}>
+                                            <button className={style.buttonEdit}>
+                                                <img src={"/images/info.png"} width={31} height={29} onClick={() => editCard(card.id)} />
+                                            </button>
+                                            <button className={style.buttonDelete}>
+                                                <img src={"/images/excluir.png"} width={34} height={30} onClick={() => deleteCard(card.id)} />
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <Link className={style.linkremove} href={`/cardsdetail/${card.id}`}>
+                                        <div className={style.containerImage}>
+                                            <img src={card.image} width={110} height={125} />
+                                        </div>
+                                    </Link>
+                                    <p className={style.cardName}>{card.name}</p>
+
                                 </div>
                             </div>
-                            <Link className={style.linkremove} href={`/cardsdetail/${card.id}`}>
-                                <div className={style.containerImage}>
-                                    <img src={card.image} width={110} height={125} />
-                                </div>
-                            </Link>
-                            <p className={style.cardName}>{card.name}</p>
-
-                        </div>
-                    </div>
-                ))
+                        ))
                 }
             </div>
-                <Footer />
+            <Footer />
         </main>
 
     )

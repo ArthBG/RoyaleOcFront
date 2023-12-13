@@ -670,7 +670,7 @@ export default function createCard() {
 
 
           
-        <div className={styles3.containerCards20} ref={divRef} >
+        <div className={styles.containerCards20} ref={divRef} >
           <div className={styles3.containerCards2}>
             {
               elixir == "1" && rarity == "Comum" ||  elixir == "1" && rarity == "Raro" || elixir == "1" && rarity == "Épico" ? (

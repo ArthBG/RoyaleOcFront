@@ -142,7 +142,16 @@
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
-
+.containerCards20{
+    display: flex;
+    position: absolute;
+    left: 500px;
+    bottom: -450px;
+    width: 250px;
+    height: 290px;
+    align-items: center;
+    
+}
 .containerCard{
     position: relative;
     margin-top: 5rem;
@@ -241,3 +250,22 @@
     margin-bottom: 10px;
   }
   
+  @media (max-width: 768px) {
+    .containerCard{
+        display: none;
+    }
+    .containerCard2{
+        display: none;
+    }
+    .containerCards20{
+        display: block;
+        position: static;
+        left: 0px;
+        right: 0px;
+        margin: auto;
+        margin-top: 2.5rem;
+        width: 250px;
+        height: 290px;
+        align-items: center;
+    }
+}

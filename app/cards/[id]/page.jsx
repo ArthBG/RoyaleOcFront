@@ -324,7 +324,9 @@ export default function updateCard({ params }) {
           <label htmlFor="impactspeed">Velocidade de impacto</label>
           <input id="impactspeed" className={styles.input} type="number" value={impactspeed} onChange={e => setImpactspeed(e.target.value)} />
           <label className={styles.label} htmlFor="file">Selecione uma imagem</label>
+          {iscreated == "Criado" ? (
           <input className={styles.file} type="file" id="file" onChange={handleImage} />
+          ) : null}
           <textarea className={styles.input} placeholder="Descrição da carta" value={description} onChange={e => setDescription(e.target.value)} />
           <button className={styles.scbtnyellow} onClick={handleSubmit}>Editar</button>
         </div>
