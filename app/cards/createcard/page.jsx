@@ -15,6 +15,7 @@ import SelectSpell from "@/app/components/selectatributes/spelll/select";
 import Header from "@/app/components/header/header";
 import styles3 from "@/app/components/cardinfo/cardinfo.module.css";
 import Footer from '@/app/components/footer/footer';
+import { useRouter } from 'next/navigation';
 // npm install html2canvas
 
 
@@ -79,6 +80,7 @@ export default function createCard() {
   const [iscreated, setIsCreated] = useState("");
   const [error, setError] = useState("");
   const [errorA, setErrorA] = useState("");
+  const router = useRouter();
 
 
 
@@ -275,7 +277,8 @@ export default function createCard() {
         impactspeed,
         iscreated
       })
-      console.log(response.data)
+      setCards([...cards, response.data.card])
+      router.push(`/cards`)
       setName("")
       setLevel("")
       setRarity("")
@@ -561,12 +564,10 @@ export default function createCard() {
                 aria-describedby="modal-modal-description"
               >
                 <Box sx={style}>
-                  <button onClick={handleClose}> X </button>
-                  <Typography id="modal-modal-title" variant="h6" component="h2">
-                    Atributos para tropas
-                  </Typography>
+                <button className={styles.closeBtn} onClick={handleClose}> X </button>
+                    <h1 className={styles.title}>Atributos para tropas</h1>
                   <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                    <select onChange={(e) => setSelectedOption(e.target.value)} value={selectedOption}>
+                    <select className={styles.royaleSelect} onChange={(e) => setSelectedOption(e.target.value)} value={selectedOption}>
                       {
                         options.map((option) => {
                           return (
@@ -580,12 +581,11 @@ export default function createCard() {
                     </select>
 
                   </Typography>
-                  <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                    <input type="text" value={inputvalue} onChange={(e) => setInputValue(e.target.value)} placeholder="Valor do atributo" />
-                  </Typography>
+                    <input className={style.inputatribute} type="text" value={inputvalue} onChange={(e) => setInputValue(e.target.value)} placeholder="Valor do atributo" />
+                  
                   <div>
                   <p className={styles.error}>{errorA}</p>
-                    <button onClick={addAtributes}>Adicionar atributo</button>
+                    <button className={styles.addBtn} onClick={addAtributes}>Adicionar atributo</button>
                   </div>
                 </Box>
               </Modal>
@@ -600,12 +600,10 @@ export default function createCard() {
               aria-describedby="modal-modal-description"
             >
               <Box sx={style}>
-                <button onClick={handleClose}> X </button>
-                <Typography id="modal-modal-title" variant="h6" component="h2">
-                  Atributos para tropas
-                </Typography>
+              <button className={styles.closeBtn} onClick={handleClose}> X </button>
+                  <h1 className={styles.title}>Atributos para Construção</h1>
                 <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                  <select onChange={(e) => setSelectedOption(e.target.value)} value={selectedOption}>
+                  <select className={styles.royaleSelect} onChange={(e) => setSelectedOption(e.target.value)} value={selectedOption}>
                     {
                       constructionOptions.map((option) => {
                         return (
@@ -619,12 +617,11 @@ export default function createCard() {
                   </select>
 
                 </Typography>
-                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                  <input type="text" value={inputvalue} onChange={(e) => setInputValue(e.target.value)} placeholder="Valor do atributo" />
-                </Typography>
+                  <input className={style.inputatribute} type="text" value={inputvalue} onChange={(e) => setInputValue(e.target.value)} placeholder="Valor do atributo" />
+                
                 <div>
-                  <p className={styles.error}>{errorA}</p>
-                  <button onClick={addAtributes}>Adicionar atributo</button>
+                <p className={styles.error}>{errorA}</p>
+                  <button className={styles.addBtn} onClick={addAtributes}>Adicionar atributo</button>
                 </div>
               </Box>
             </Modal>
@@ -639,12 +636,10 @@ export default function createCard() {
               aria-describedby="modal-modal-description"
             >
               <Box sx={style}>
-                <button onClick={handleClose}> X </button>
-                <Typography id="modal-modal-title" variant="h6" component="h2">
-                  Atributos para tropas
-                </Typography>
+              <button className={styles.closeBtn} onClick={handleClose}> X </button>
+                  <h1 className={styles.title}>Atributos para Feitiço</h1>
                 <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                  <select onChange={(e) => setSelectedOption(e.target.value)} value={selectedOption}>
+                  <select className={styles.royaleSelect} onChange={(e) => setSelectedOption(e.target.value)} value={selectedOption}>
                     {
                       spellOptions.map((option) => {
                         return (
@@ -658,12 +653,11 @@ export default function createCard() {
                   </select>
 
                 </Typography>
-                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                  <input type="text" value={inputvalue} onChange={(e) => setInputValue(e.target.value)} placeholder="Valor do atributo" />
-                </Typography>
+                  <input className={style.inputatribute} type="text" value={inputvalue} onChange={(e) => setInputValue(e.target.value)} placeholder="Valor do atributo" />
+                
                 <div>
                 <p className={styles.error}>{errorA}</p>
-                  <button onClick={addAtributes}>Adicionar atributo</button>
+                  <button className={styles.addBtn} onClick={addAtributes}>Adicionar atributo</button>
                 </div>
               </Box>
             </Modal>
