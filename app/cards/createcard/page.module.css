@@ -83,7 +83,7 @@
     margin: auto;
 }
 .scbtnyellow2 {
-    margin: 0.75rem;
+    margin-top: 0.75rem;
     background-color: #f0c44e;
     border: none;
     border-radius: 5px;
@@ -145,8 +145,7 @@
 
 .containerCard{
     position: relative;
-    margin-left: 10rem;
-    margin: auto;
+    margin-top: 5rem;
     padding-bottom: 5rem;
 
 }

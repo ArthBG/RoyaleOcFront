@@ -2,7 +2,6 @@
 background-image: url("/images/infobg.png");
 min-width: 30rem;
 max-width: 60rem;
-width: 742px;
 background-size: contain;	
 background-repeat: no-repeat;
 margin: auto;
@@ -95,7 +94,7 @@ flex-direction: column;
 }
 .desc{
 width: 30rem;
-max-width: 48rem;
+max-width: 32rem;
 }
 .containerCards{
     display: flex;
