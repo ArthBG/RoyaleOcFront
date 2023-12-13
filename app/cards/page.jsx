@@ -100,7 +100,7 @@ function cardspage() {
                     <IoIosArrowDown />
                 </button>
             </div>
-            <h1 className={style.title}>RoyaleOcto</h1>
+            <h1 className={style.title}>RoyaleOc</h1>
             <div className={style.containerSearch}>
                 <input type="text" placeholder="Pesquisar Cartas" className={style.search} value={search} onChange={(e) => setSearch(e.target.value)} />
                 <FiSearch className={style.icon} />
