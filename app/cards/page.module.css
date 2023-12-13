@@ -161,7 +161,7 @@
     position: fixed;
     display: flex;
     flex-direction: column;
-    left: 5px;
+    right: 5px;
     top: 40%;
 }
 .containerScrolls button{

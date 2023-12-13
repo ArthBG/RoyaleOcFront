@@ -252,36 +252,18 @@ export default function Home() {
                 Estes incluem a Clash Royale League (CRL), que é uma liga de equipes profissionais
                 competindo em várias regiões ao redor do mundo. Discutir os destaques desses torneios,
                 as equipes mais fortes e as jogadas incríveis pode ser bastante empolgante.
+              </p>
             <div className={styles.prince}>
               <Image className={styles.img} src={"/images/pricipe.gif"} width={300} height={200} />
             </div>
-              </p>
             </div>
           </div>
           <div className={styles.divcard1}>
             <div className={styles.a2}>
               <h2 className={styles.titulo}>Dicas e Truques:</h2>
-              <p className={styles.font}>
-                <h6> Econômico de Elixir:</h6>
-
-                Aprenda a gerenciar seu elixir de forma eficiente para maximizar suas jogadas.
-
-                <h6>Controle de Ciclo de Cartas:</h6>
-
-                Descubra como criar um ciclo de cartas rápido e eficiente para ter sempre a vantagem nas batalhas.
-
-                <h6> Avaliação de Trocas:</h6>
-
-                Saiba quando e como trocar suas cartas para obter uma vantagem estratégica sobre o oponente.
-
-                <h6> Tática de Empurrão de Torres:</h6>
-
-                Domine a técnica de empurrar as torres do adversário para obter uma vitória rápida e satisfatória.
-
               <div className={styles.gigaimg}>
                 <Image className={styles.img} src={"/images/gigante.gif"} width={300} height={200} />
               </div>
-              </p>
             </div>
           </div>
         </div>
