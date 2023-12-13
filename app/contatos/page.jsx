@@ -26,11 +26,15 @@ export default function Page() {
     }
 
     const verifyPassword = () => {
+        if(contatos.length > 0) {
         if (passwordValue === 'contatooc') {
             prosseguir();
         } else {
             router.push('/contatos/cadastroCtt');
         }
+    } else {
+        router.push('/contatos/cadastroCtt');
+    }
     }
     //  //    Função para deletar um comentario.
     const deletar = async (id) => {
