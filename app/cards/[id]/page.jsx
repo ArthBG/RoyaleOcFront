@@ -50,6 +50,7 @@ export default function updateCard({ params }) {
   const [show, setShow] = useState(true);
   const [iscreated, setIsCreated] = useState("");
   const [imageurl, setImageurl] = useState("");
+  const [change, setChange] = useState("");
 
   const router = useRouter();
   const divRef = useRef(null);
@@ -170,6 +171,7 @@ export default function updateCard({ params }) {
 
           const dataURL = canvas.toDataURL('image/JPEG');
           setImage(dataURL);
+          setChange("Não")
         } else {
           console.error('Canvas vazio ou não foi criado corretamente');
         }
@@ -1135,8 +1137,8 @@ export default function updateCard({ params }) {
         <div className={styles.containerCardInfo}>
           <CardInfoedit
             name={name}
-            image={image}
-            imageupdated={imageupdated}
+            image={imageupdated}
+            imageupdated={image}
             type={type}
             rarity={rarity}
             elixir={elixir}
@@ -1167,6 +1169,7 @@ export default function updateCard({ params }) {
             speed={speed}
             impactspeed={impactspeed}
             level={level}
+            change={change}
           />
         </div>
       </div>

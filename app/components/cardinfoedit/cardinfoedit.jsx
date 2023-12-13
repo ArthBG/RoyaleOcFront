@@ -1,14 +1,14 @@
 import Image from "next/image"
 import styles from "../cardinfo/cardinfo.module.css"
-export default function CardInfoedit({ name, image, imageupdated, type, rarity, elixir, hp, deploytime, shieldhp, description, damage, damagepersecond, rangeddamage, damageondistance, damageonarea, damageonimpact, damageontower, chargedamage, damageondeath, spawnspeed, duration, radius, width, efecttime, freezetime, unities, arena, target, projectilerange, range, speed, impactspeed, id, level }) {
+export default function CardInfoedit({ name, image, imageupdated, type, rarity, elixir, hp, deploytime, shieldhp, description, damage, damagepersecond, rangeddamage, damageondistance, damageonarea, damageonimpact, damageontower, chargedamage, damageondeath, spawnspeed, duration, radius, width, efecttime, freezetime, unities, arena, target, projectilerange, range, speed, impactspeed, id, level, change }) {
     return (
         <div className={styles.CardInfo} >
 
             <h1 className={styles.cardName}>{name} Nível {level}</h1>
             <div className={styles.containerCards}>
             <div className={styles.containerCards2}>
-                {imageupdated && !image ? <Image src={imageupdated} width={250} height={300} /> : null}
-                {image ?
+                {imageupdated && !image ? <Image src={imageupdated} width={250} height={300} /> : change == "Não" && !image ? (<Image src={imageupdated} width={250} height={300} />) : null}
+                {image || change == "Sim" ?
                     elixir == "1" && rarity == "Comum" || rarity == "Raro" || rarity == "Épico" ? (
                         <div className={styles.imagecomming} style={{
                             backgroundImage: `url(${image})`,
