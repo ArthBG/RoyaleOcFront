@@ -78,9 +78,21 @@ function cardspage() {
         }
     }
 
+    const scrollToUp = () => {
+        window.scrollTo(0, 0);
+    }
+
+    const scrollToDown = () => {
+        window.scrollTo(0, 1000000);
+    }
+
     return (
         <main className={style.mainBg}>
             <Header />
+            <div className={style.containerScrolls}>
+            <button className={style.scbtn} onClick={scrollToUp}>^</button>
+            <button className={style.scbtn} onClick={scrollToDown}>v</button>
+            </div>
             <h1 className={style.title}>RoyaleOcto</h1>
                 <div className={style.containerSearch}>
                     <input type="text" placeholder="Pesquisar Cartas" className={style.search} value={search} onChange={(e) => setSearch(e.target.value)} />
