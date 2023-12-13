@@ -47,7 +47,7 @@ const CardDescription = ({ params }) => {
                 {card.name && <p className={styles.name}>{card.name}</p>}
                 <img className={styles.imgCard} width={200} height={200} src={card.image} alt={`Imagem da Carta ${card.name}`} />
                 <div className={styles.containerTeT}>
-                <p className={styles.nivel}>Nível 10</p>
+                    <p className={styles.nivel}>Nível 10</p>
 
                     <div className={styles.minicards}>
                         {card.rarity && (
@@ -74,21 +74,21 @@ const CardDescription = ({ params }) => {
                             </div>
                         )}
                     </div>
-                    
+
                 </div>
 
 
                 <section className={styles.slider}>
-                  
-                        <input className={styles.ipt} name='slide' type="radio" />
-                        <input className={styles.ipt} name='slide' type="radio" />
-                        <input className={styles.ipt} name='slide' type="radio" />
-                  
+
+                    <input className={styles.ipt} name='slide' type="radio" />
+                    <input className={styles.ipt} name='slide' type="radio" />
+                    <input className={styles.ipt} name='slide' type="radio" />
+
 
                     <div className={styles.sliderContent}>
                         <div className={styles.sliderItem}>
                             <div className={styles.gifcarr}>
-                                <img className={styles.gif} src="https://media.tenor.com/dSX52n58RXsAAAAM/attack-clash-royale.gif" alt="gif" />
+                                <img className={styles.gif} src="https://2.bp.blogspot.com/-SxUJ0-iUyeg/WDLWrHkHx5I/AAAAAAAAvBc/JERayZh8lSEG5c4572B4hMgIYIJQcz-PwCLcB/s640/dicas-esqueleto-gigante-e-tornado-clash-royale-truques.gif" alt="Descrição da imagem para acessibilidade" />
                             </div>
                         </div>
                         <div className={styles.sliderItem}>
@@ -222,7 +222,7 @@ const CardDescription = ({ params }) => {
                                 )}
                                 {card.efecttime && (
                                     <div className={styles.cardinfo}>
-                                        <img width={80} height={80} className={styles.imgIcon} src="" alt={`Imagem do Tempo de Efeito da carta ${card.name}`} />
+                                        <img width={80} height={80} className={styles.imgIcon} src="https://2.bp.blogspot.com/-QS3vMwqbV9w/VrJXwS1l8YI/AAAAAAAAlt0/XfIIGlkSZRY/s200/tempo-de-explosao-clash-royale.png" alt={`Imagem do Tempo de Efeito da carta ${card.name}`} />
 
                                         <h2 className={styles.info}>Tempo de Efeito</h2>
                                         <p className={styles.obj}>{card.efecttime}</p>

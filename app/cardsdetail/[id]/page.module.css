@@ -18,8 +18,8 @@
     display: flex;
     justify-content: center;
     margin-left: 34%;
-   margin-top: 4%;
-    
+    margin-top: 4%;
+
 }
 
 .nivel {
@@ -154,7 +154,7 @@
 
 }
 
-.cardinfo { 
+.cardinfo {
     margin: auto auto auto auto;
     width: 40%;
     height: 80px;
@@ -200,7 +200,7 @@
     height: 100%;
 }
 
-.ipt {
+.ipt, .iptGif {
     appearance: none;
     width: 16px;
     height: 16px;
@@ -216,6 +216,12 @@
 /* Estilizando o input selecionado */
 .ipt:checked {
     background-color: rgb(238, 226, 7);
+    border-color: rgb(8, 8, 8);
+    transform: scale(1.2);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+.iptGif:checked{
+     background-color: rgb(238, 226, 7);
     border-color: rgb(8, 8, 8);
     transform: scale(1.2);
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
@@ -265,7 +271,17 @@
     }
 
     .name {
+        margin: 0;
         font-size: 1.5rem;
+        order: 1;
+    }
+    .nivel {
+    display: none;
+    }
+
+    .background {
+        width: 90%;
+       
     }
 
     .description {
@@ -286,8 +302,7 @@
     }
 
     .imgCard {
-        width: auto;
-        height: auto;
+       margin-left: 22%;
     }
 
     .cardinfo {
@@ -295,7 +310,11 @@
     }
 
     .minicards {
+        margin-top: 12%;
         width: auto;
+    }
+    .gif, .gifcarr{
+        display: none;
     }
 
 }
