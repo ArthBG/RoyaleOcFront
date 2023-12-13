@@ -162,17 +162,21 @@
     display: flex;
     flex-direction: column;
     right: 5px;
-    top: 40%;
+    top: 44%;
 }
 .containerScrolls button{
-    background-color: white;
-    padding: 0.5rem;
+    margin: 0.75rem;
+    background-color: #ffa80c;
     border: none;
-    outline: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 3px 0 #ff8907, 0 0 0 4px #ffa80c, 0 1px 0 4px #ffa80c, 0 -1px 2px 4px #ffd525, 0 -2px 0 5px #f4e684, 0 6px 0 4px #b06904, 0 3px 0 5px #f4e684, 0 -2px 0 7px #202020, 0 5px 0 7px #202020, 0 7px 0 7px #333;
+    color: #ffc;
+    font-size: 20px;
+    text-shadow: -1px 2px 0 #582d00,0 2px 0 #582d00,1px 2px 0 #582d00,-1px -1px 0 #582d00,1px -1px 0 #582d00,-1px 1px 0 #582d00,1px 1px 0 #582d00;
 }
 .containerScrolls button:hover{
     cursor: pointer;
-    color: #4179fc;
+    color: #c8c8c8;
 }
 
 @media only screen and (max-width: 600px) and (min-width: 320px){
