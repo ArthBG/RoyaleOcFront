@@ -92,11 +92,11 @@ function cardspage() {
         <main className={style.mainBg}>
             <Header />
             <div className={style.containerScrolls}>
-                <button>
-            <IoIosArrowUp onClick={scrollToUp} />
+                <button onClick={scrollToUp}>
+            <IoIosArrowUp  />
                 </button>
-                <button>
-            <IoIosArrowDown onClick={scrollToDown} />
+                <button  onClick={scrollToDown}>
+            <IoIosArrowDown />
                 </button>
             </div>
             <h1 className={style.title}>RoyaleOcto</h1>
