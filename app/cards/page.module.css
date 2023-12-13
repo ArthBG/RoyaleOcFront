@@ -161,8 +161,18 @@
     position: fixed;
     display: flex;
     flex-direction: column;
-    left: 0;
+    left: 5px;
     top: 40%;
+}
+.containerScrolls button{
+    background-color: white;
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+}
+.containerScrolls button:hover{
+    cursor: pointer;
+    color: #4179fc;
 }
 
 @media only screen and (max-width: 600px) and (min-width: 320px){

@@ -9,6 +9,8 @@ import { FiSearch } from 'react-icons/fi';
 import Link from 'next/link';
 import CardInfo from '../components/cardinfo/cardinfo';
 import Footer from '../components/footer/footer';
+import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowUp } from "react-icons/io";
 // npm install react-icons --save
 // Todas as funções devem ser comentadas
 
@@ -90,8 +92,12 @@ function cardspage() {
         <main className={style.mainBg}>
             <Header />
             <div className={style.containerScrolls}>
-            <button className={style.scbtn} onClick={scrollToUp}>^</button>
-            <button className={style.scbtn} onClick={scrollToDown}>v</button>
+                <button>
+            <IoIosArrowUp onClick={scrollToUp} />
+                </button>
+                <button>
+            <IoIosArrowDown onClick={scrollToDown} />
+                </button>
             </div>
             <h1 className={style.title}>RoyaleOcto</h1>
                 <div className={style.containerSearch}>
