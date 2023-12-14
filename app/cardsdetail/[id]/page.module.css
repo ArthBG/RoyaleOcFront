@@ -49,7 +49,7 @@
     margin: 0 auto 4px auto;
     text-align: center;
     color: rgb(43, 43, 43);
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .description {
@@ -83,7 +83,7 @@
     font-size: 1rem;
     color: white;
     position: relative;
-    margin-left: 32%;
+    margin-left: 31%;
     top: -3.5rem;
     text-shadow: 0 3px 1px rgba(1, 1, 1, 1);
 }
