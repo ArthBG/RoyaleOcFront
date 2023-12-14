@@ -27,7 +27,7 @@ export default function Home() {
         <div className={styles.divIntro1}>
           <h1 className={styles.title}>ROYALEOC</h1>
           <p className={styles.description}>
-            Se você é fã de Clash Royale, aqui é o seu lugar! Aqui você encontra tudo sobre o jogo, desde dicas e truques até as arenas e cartas do jogo. Além disso, você pode encontrar informações sobre os torneios e campeonatos de Clash Royale. Seja bem-vindo ao Royaleoc!
+            Se você é fã de Clash Royale, aqui é o seu lugar! Aqui você encontra diversas informações sobre as cartas do jogo, notícias entre outros. Além disso, você pode encontrar informações detalhadas das cartas de Clash Royale. Seja bem-vindo ao Royaleoc!
           </p>
           {/* botao para descer até o meio da página */}
           <button className={styles.buttonSeemore} onClick={seeMore}>
