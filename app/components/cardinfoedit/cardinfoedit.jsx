@@ -4,7 +4,7 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
     return (
         <div className={styles.CardInfo} >
 
-            <h1 className={styles.cardName}>{name} Nível {level}</h1>
+            <h1 className={styles.cardName}>{name}</h1>
             <div className={styles.containerCards}>
             <div className={styles.containerCards2}>
                 {imageupdated && !image ? <Image src={imageupdated} width={250} height={300} /> : change == "Não" && !image ? (<Image src={imageupdated} width={250} height={300} />) : null}
