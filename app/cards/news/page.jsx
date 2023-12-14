@@ -1,14 +1,14 @@
 import React from 'react';
 import Header from '@/app/components/header/header';
-import Styles from './page.module.css'; // Arquivo de estilos
+import Styles from '@/app/cards/news/page.module.css'; 
 import Footer from '@/app/components/footer/footer';
 import Image from 'next/image';
 
-function GameUpdate() {
+export default function GameUpdate() {
   return (
     <div className={Styles.maindiv}>
     <Header />
-      <main className={styles.main22}>
+      <main className={Styles.main22}>
     <div className={Styles.newsContainer}>
       <h1 className={Styles.title}>ATUALIZAÇÃO DO JOGO - 13 DE DEZEMBRO</h1>
       <h2 className={Styles.subtitle}>GRANDES MUDANÇAS NA SUA TORRE PRINCESA!</h2>
@@ -44,4 +44,4 @@ function GameUpdate() {
   );
 }
 
-export default GameUpdate;
+
