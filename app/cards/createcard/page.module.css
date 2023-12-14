@@ -335,5 +335,8 @@
             z-index: 999;
             right: 90%;
         }
+        .containerCardInfo{
+            display: none;
+        }
     
 }
