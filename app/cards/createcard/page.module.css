@@ -297,7 +297,7 @@
     color: #c8c8c8;
 }
   
-  @media (max-width: 768px) {
+@media only screen and (max-width: 600px) and (min-width: 320px){
     .containerCard{
         display: none;
     }
@@ -315,4 +315,25 @@
         height: 290px;
         align-items: center;
     }
+        .containerFilters{
+            display: flex;
+            flex-direction: column;
+        }
+        .containerFilters select{
+            width: 72%;
+        }
+        .containerFilters input{
+            width: 72%;
+        }
+        .search{
+            width: 75%;
+        }
+        .containerSearch input{
+            width: 72%;
+        }
+        .containerScrolls{
+            z-index: 999;
+            right: 90%;
+        }
+    
 }
