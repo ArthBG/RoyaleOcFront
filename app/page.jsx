@@ -25,41 +25,41 @@ export default function Home() {
       <Header />
       <div className={styles.divIntro4}>
         <div className={styles.divIntro1}>
-        <h1 className={styles.title}>ROYALEOC</h1>
-        <p className={styles.description}>
-          Se você é fã de Clash Royale, aqui é o seu lugar! Aqui você encontra tudo sobre o jogo, desde dicas e truques até as arenas e cartas do jogo. Além disso, você pode encontrar informações sobre os torneios e campeonatos de Clash Royale. Seja bem-vindo ao Royaleoc!
-        </p>
-        {/* botao para descer até o meio da página */}
-        <button className={styles.buttonSeemore} onClick={seeMore}>
-          Explore ▶
-        </button>
-         </div>
+          <h1 className={styles.title}>ROYALEOC</h1>
+          <p className={styles.description}>
+            Se você é fã de Clash Royale, aqui é o seu lugar! Aqui você encontra tudo sobre o jogo, desde dicas e truques até as arenas e cartas do jogo. Além disso, você pode encontrar informações sobre os torneios e campeonatos de Clash Royale. Seja bem-vindo ao Royaleoc!
+          </p>
+          {/* botao para descer até o meio da página */}
+          <button className={styles.buttonSeemore} onClick={seeMore}>
+            Explore ▶
+          </button>
+        </div>
         <div className={styles.divRender}>
-        <Image className={styles.img} src={"/images/Crender.png"} width={400} height={500} />
+          <Image className={styles.img} src={"/images/Crender.png"} width={400} height={500} />
         </div>
-        </div>
+      </div>
 
       <div>
-      <div className={styles.divAbout}>
-      
-      <div className={styles.divText}>
-        <Image src={"/images/aminipekka.png" } width={450} height={500} />
-        <div className={styles.divText2}>
+        <div className={styles.divAbout}>
+
+          <div className={styles.divText}>
+            <Image src={"/images/aminipekka.png"} width={450} height={500} />
+            <div className={styles.divText2}>
               <h2 className={styles.titles}>Clash Royale</h2>
-              <p className={styles.Techtugen}>Clash Royale é um jogo de estratégia freemium desenvolvido e publicado pela Supercell, empresa sediada em Helsinki, na Finlândia. O objetivo do jogo é destruir as torres inimigas usando cartas que poderão ser desbloqueadas ao longo do tempo. Algumas delas são trazidas de outro jogo da Supercell: Clash of Clans. Cada carta durante uma partida possui um preço de elixir, um recurso utilizado durante partidas, sendo acumulado ao longo do tempo a servir de energia para posicionar no campo de batalha as cartas selecionadas em menu. Clash Royale também possui um sistema de clãs, sentes grupos a que pessoas se juntam para conversar e jogarem juntos.</p>
-             <div className={styles.divBtns}>
-              <Link className={styles.a} href={'https://play.google.com/store/apps/details?id=com.supercell.clashroyale'} target="_blank">
-                <Image src={"/images/googleplay.webp"} width={200} height={70} />
-              </Link>
-              <Link className={styles.a} href={'https://apps.apple.com/us/app/clash-royale/id1053012308'} target="_blank">
-                <Image src={"/images/appstore.webp"} width={200} height={70} />
-              </Link>
+              <p className={styles.Techtugen}>Clash Royale é um jogo multiplayer em tempo real estrelado pelos Royales, seus personagens favoritos de Clash e muito, muito mais. Colete e melhore dezenas de cartas apresentando tropas, feitiços e defesas de Clash of Clans que você conhece e adora, além dos Royales: Princesas, Cavaleiros, Dragões Bebês e mais. Derrube o Rei inimigo e as Princesas de suas torres para derrotar seus oponentes e ganhar Troféus, Coroas e glória na Arena.</p>
+              <div className={styles.divBtns}>
+                <Link className={styles.a} href={'https://play.google.com/store/apps/details?id=com.supercell.clashroyale'} target="_blank">
+                  <Image src={"/images/googleplay.webp"} width={200} height={70} />
+                </Link>
+                <Link className={styles.a} href={'https://apps.apple.com/us/app/clash-royale/id1053012308'} target="_blank">
+                  <Image src={"/images/appstore.webp"} width={200} height={70} />
+                </Link>
               </div>
-    </div>
-    </div>
-    </div>
+            </div>
+          </div>
+        </div>
         <Carousel activeIndex={index} onSelect={handleSelect}>
-        <Carousel.Item>
+          <Carousel.Item>
             <div className={styles.divimgs}>
               <Image className={styles.img} src={"/images/arena-01.png"} width={600} height={400} />
             </div>
@@ -254,7 +254,7 @@ export default function Home() {
 
 
         </Carousel>
-       
+
         <div className={styles.cards}>
           <div className={styles.divcard2}>
             <div className={styles.a3}>
@@ -267,23 +267,44 @@ export default function Home() {
                 competindo em várias regiões ao redor do mundo. Discutir os destaques desses torneios,
                 as equipes mais fortes e as jogadas incríveis pode ser bastante empolgante.
               </p>
-            <div className={styles.prince}>
-              <Image className={styles.img} src={"/images/pricipe.gif"} width={300} height={200} />
-            </div>
+              <div className={styles.prince}>
+                <Image className={styles.img} src={"/images/pricipe.gif"} width={300} height={200} />
+              </div>
             </div>
           </div>
           <div className={styles.divcard1}>
-            <div className={styles.a2}>
-              <h2 className={styles.titulo}>Dicas e Truques:</h2>
-              <div className={styles.gigaimg}>
-                <Image className={styles.img} src={"/images/gigante.gif"} width={300} height={200} />
+            <div className={styles.divcard}>
+              <div className={styles.a2}>
+                <h2 className={styles.tituloall}>Acesse:</h2>
+                <div className={styles.divall}>
+                  <div className={styles.cbmar}>
+                    <Link className={styles.a} href={'/cards'}>
+                      <Image className={styles.image} src={'/images/cartasclash.png'} width={100} height={100}></Image>
+                    </Link>
+                    <h1 className={styles.contact}>Cartas</h1>
+                  </div>
+                  <div className={styles.cbmar}>
+                    <Link className={styles.a} href={'/membros'}>
+                      <Image className={styles.image} src={'/images/sobrenosescudo.png'} width={150} height={100}></Image>
+                    </Link>
+                    <h1 className={styles.contact}>Sobre Nós</h1>
+                  </div>
+                  <div className={styles.cbmar}>
+
+                    <Link className={styles.a} href={'/contatos/cadastroCtt'} target='_parent'>
+                      <Image className={styles.image1} src={'/images/contatoscr.png'} width={100} height={100}></Image>
+                    </Link>
+                    <h1 className={styles.contact}>Contato</h1>
+                    </div>
+
+
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
-      </div>
-      <Footer />
+        <Footer />
     </main>
   )
 }
