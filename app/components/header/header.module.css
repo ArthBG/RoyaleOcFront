@@ -8,7 +8,6 @@
     flex-direction: row;
     align-items: center;
     align-content: center;
-    gap: 20%;
     justify-content: flex-start; 
 }
 
@@ -19,7 +18,16 @@
     justify-content: flex-start; 
 
 }
-
+.contact4{
+    margin-left: 1rem;
+    font-size: 12px;
+    color: white;
+}
+.contact3{
+    margin-left: 0.7rem;
+    font-size: 12px;
+    color: white;
+}
 .title{
     margin-top: 3.8%;
     color: white;
@@ -70,7 +78,6 @@
 
 .divbutton1{
     margin-top: 1rem;
-    width: 20%;
 }
 
 .image1{
@@ -100,10 +107,26 @@
 
     .container2{
         width: 100%;
+        margin: 0;
+        gap: 0.5rem;
         display: flex;
         justify-content: center;
         margin-top: 1rem;
     }
+    .contact4{
+        display: none;
+       
+    }
+    .contact3{
+        display: none;
+       
+    }
+    .contact{
+       display: none;
+    }
+    .contact2{
+        display: none;
+     }
 
     .divbutton2{
         display: flex;
@@ -112,10 +135,11 @@
     }
 
     .divbutton1{
-        margin-top: 1rem;
+        margin-bottom: 10rem;
+    }
+    .a2{
         width: 100%;
     }
-
     .image1{
         margin-left: 0.8rem;
         margin-bottom: 0.5rem;
@@ -125,5 +149,8 @@
         font-size: 12px;
         color: white;
         margin-top: -10%;
+    }
+    .shortcut10{
+        display: none;
     }
 }

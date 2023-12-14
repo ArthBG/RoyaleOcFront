@@ -243,29 +243,45 @@
     text-align: center;
     margin: 5rem;
 }
-@media (max-width: 768px) {
-    .divcard1 {
-        width: 100%;
-    }
-
-    .divcard2 {
-        width: 100%;
-    }
-
-    .divimgs {
-        width: 100%;
-    }
-
-    .gigaimg {
-        width: 100%;
-    }
-
-    .prince {
-        width: 100%;
-    }
-
+@media (max-width: 767px) {
+    .divcard1,
+    .divcard2,
+    .divimgs,
+    .gigaimg,
+    .prince,
     .cards {
-        flex-direction: column;
+      width: 100%;
+      margin: 0 auto;
     }
-
-}
+  
+    .cards {
+      flex-direction: column;
+    }
+  
+    .a2,
+    .a3 {
+      font-size: 12px;
+      padding: 0.5rem;
+    }
+  
+    .titles {
+      font-size: 32px;
+    }
+  
+    .description {
+      font-size: 14px;
+      width: 100%;
+      margin-left: 0;
+    }
+  
+    .buttonSeemore {
+      font-size: 12px;
+      padding: 0.5rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      width: 100%;
+    }
+  
+    /* Outros estilos específicos para dispositivos móveis... */
+  }
+  
