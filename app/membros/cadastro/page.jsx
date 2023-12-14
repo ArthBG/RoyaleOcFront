@@ -4,7 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import styles from "./cadastro.module.css";
 import Link from "next/link";
-
+import { Rings } from 'react-loader-spinner';
 import Header from "@/app/components/header/header";
 import Footer from "@/app/components/footer/footer";
 
@@ -22,6 +22,7 @@ export default function Register() {
     const [errorDescricao, setErrorDescricao] = useState("");
     const [descricao, setDescricao] = useState("");
     const [membros, setMembros] = useState([]);
+    const [loading, setLoading] = useState(false);
 
 
 
@@ -99,6 +100,9 @@ export default function Register() {
 
                 setMsg("Erro ao cadastrar membro. Por favor, preencha todos os campos corretamente.");
 
+            } finally {
+                // Define o estado de carregamento para falso após a conclusão da requisição
+                setLoading(false);
             }
         }
     };
@@ -122,107 +126,124 @@ export default function Register() {
         <div className={styles.containerPai}>
             <Header />
             <main className={styles.main22}>
-
-            <div className={styles.containerForm}>
-                <h1 className={styles.titulo}>Fazer o cadastro:</h1>
-
-                <form className={styles.form} onSubmit={handleSubmit}>
-                    <div className={styles.divInput}>
-                        <input
-                            className={styles.input}
-                            placeholder="Nome"
-                            type="text"
-                            id="name"
-                            value={nome}
-                            onChange={(e) => setNome(e.target.value)}
-
+                {loading ? (
+                    <div className={styles.containerLoading}>
+                        <Rings
+                            height="300"
+                            width="400"
+                            color="#fff"
+                            radius="6"
+                            wrapperStyle={{}}
+                            wrapperClass=""
+                            visible={true}
+                            ariaLabel="rings-loading"
                         />
-                        <p className={styles.msgError}>{errorNome}</p>
-
                     </div>
+                ) : (
+                    <>
 
-                    <div className={styles.divInput}>
-                        <input
-                            className={styles.input}
-                            placeholder="Idade"
-                            type="number"
-                            id="idade"
-                            value={idade}
-                            onChange={(e) => setIdade(e.target.value)}
+                        <div className={styles.containerForm}>
+                            <h1 className={styles.titulo}>Fazer o cadastro:</h1>
 
-                        />
+                            <form className={styles.form} onSubmit={handleSubmit}>
+                                <div className={styles.divInput}>
+                                    <input
+                                        className={styles.input}
+                                        placeholder="Nome"
+                                        type="text"
+                                        id="name"
+                                        value={nome}
+                                        onChange={(e) => setNome(e.target.value)}
 
-                        <p className={styles.msgError}>{errorIdade}</p>
+                                    />
+                                    <p className={styles.msgError}>{errorNome}</p>
 
+                                </div>
 
+                                <div className={styles.divInput}>
+                                    <input
+                                        className={styles.input}
+                                        placeholder="Idade"
+                                        type="number"
+                                        id="idade"
+                                        value={idade}
+                                        onChange={(e) => setIdade(e.target.value)}
 
-                    </div>
+                                    />
 
-                    <div className={styles.divInput}>
-                        <input
-                            className={styles.input}
-                            placeholder="Cargo"
-                            type="text"
-                            id="cargo"
-                            value={cargo}
-                            onChange={(e) => setCargo(e.target.value)}
-
-                        />
-                        <p className={styles.msgError}>{errorCargo}</p>
-                    </div>
-
-                    <div className={styles.divInput}>
-                        <input
-                            className={styles.input}
-                            placeholder="URL da foto"
-                            type="text"
-                            id="foto"
-                            name="foto"
-                            value={foto}
-                            onChange={(e) => setFoto(e.target.value)}
+                                    <p className={styles.msgError}>{errorIdade}</p>
 
 
-                        />
-                        <p className={styles.msgError}>{errorFoto}</p>
-                    </div>
+
+                                </div>
+
+                                <div className={styles.divInput}>
+                                    <input
+                                        className={styles.input}
+                                        placeholder="Cargo"
+                                        type="text"
+                                        id="cargo"
+                                        value={cargo}
+                                        onChange={(e) => setCargo(e.target.value)}
+
+                                    />
+                                    <p className={styles.msgError}>{errorCargo}</p>
+                                </div>
+
+                                <div className={styles.divInput}>
+                                    <input
+                                        className={styles.input}
+                                        placeholder="URL da foto"
+                                        type="text"
+                                        id="foto"
+                                        name="foto"
+                                        value={foto}
+                                        onChange={(e) => setFoto(e.target.value)}
 
 
-                    <div className={styles.divInput}>
-                        <input
-                            className={styles.input}
-                            placeholder="Descrição"
-                            type="text"
-                            id="descricao"
-                            value={descricao}
-                            onChange={(e) => setDescricao(e.target.value)}
-
-                        />
-                        <p className={styles.msgError}>{errorDescricao}</p>
-
-                    </div>
-                    <div className={styles.containerbtn}>
-
-                        <Link href="/membros">
-                            <button type="submit" className={styles.botaoVoltar}>
-                                <div className={styles.overlay}></div>
-                                <div className={styles.overlay}></div>
-                                <div className={styles.overlay}></div>
-                                <span className={styles.voltar}>Voltar</span>
-                            </button >
-                        </Link>
+                                    />
+                                    <p className={styles.msgError}>{errorFoto}</p>
+                                </div>
 
 
-                        <button type="submit" className={styles.btn}>
-                            <div className={styles.overlay}></div>
-                            <div className={styles.overlay}></div>
-                            <div className={styles.overlay}></div>
-                            <span>Cadastrar</span>
-                        </button >
+                                <div className={styles.divInput}>
+                                    <input
+                                        className={styles.input}
+                                        placeholder="Descrição"
+                                        type="text"
+                                        id="descricao"
+                                        value={descricao}
+                                        onChange={(e) => setDescricao(e.target.value)}
 
-                    </div>
+                                    />
+                                    <p className={styles.msgError}>{errorDescricao}</p>
 
-                </form >
-            </div>
+                                </div>
+                                <div className={styles.containerbtn}>
+
+                                    <Link href="/membros">
+                                        <button type="submit" className={styles.botaoVoltar}>
+                                            <div className={styles.overlay}></div>
+                                            <div className={styles.overlay}></div>
+                                            <div className={styles.overlay}></div>
+                                            <span className={styles.voltar}>Voltar</span>
+                                        </button >
+                                    </Link>
+
+
+                                    <button type="submit" className={styles.btn}>
+                                        <div className={styles.overlay}></div>
+                                        <div className={styles.overlay}></div>
+                                        <div className={styles.overlay}></div>
+                                        <span>Cadastrar</span>
+                                    </button >
+
+                                </div>
+
+                            </form >
+                        </div>
+                    </>
+                )}
             </main>
             <Footer />
         </div >

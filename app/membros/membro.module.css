@@ -8,7 +8,13 @@
     min-height: 100vh;
     padding: 20px;
   }
-  
+  .containerLoading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
   /* Estilos para o título. */
   .titulo {
     font-family: 'clash-font', sans-serif;
@@ -63,7 +69,7 @@
     box-shadow: 0 0 #ae6a06, 0 0 0 2px black, 0px 0px 0px 2px black;
     top: 6px;
   }
-  
+
   .botaoCadastro .overlay {
     width: 95%;
     height: 87%;
