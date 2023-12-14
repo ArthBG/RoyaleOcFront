@@ -58,7 +58,8 @@ export default function updateCard({ params }) {
   const divRef = useRef(null);
   const { id } = params;
 
-
+  console.log({ imageupdated })
+  console.log({ image });
   console.log({ iscreated })
   const scrollToUp = () => {
     window.scrollTo(0, 0);
@@ -75,6 +76,7 @@ const scrollToDown = () => {
         console.log(card);
         setName(card.name);
         setImageUpdated(card.image);
+        setImage(card.image);
         setType(card.type);
         setRarity(card.rarity);
         setElixir(card.elixir);
@@ -155,7 +157,8 @@ const scrollToDown = () => {
         impactspeed
       }
       );
-      router.push(`/cards/${id}`);
+      clearAll();
+      router.push(`/cards`);
       console.log(response);
     } catch (error) {
       console.error(error);
@@ -166,6 +169,44 @@ const scrollToDown = () => {
     const file = e.target.files[0]
     setImageUpdated(URL.createObjectURL(file))
   }
+
+  const clearAll = () => {
+    setName("");
+    setImage("");
+    setType("");
+    setRarity("");
+    setElixir("");
+    setHp("");
+    setDeploytime("");
+    setShieldhp("");
+    setDescription("");
+    setDamage("");
+    setDamagepersecond("");
+    setRangeddamage("");
+    setDamageondistance("");
+    setDamageonarea("");
+    setDamageonimpact("");
+    setDamageontower("");
+    setChargedamage("");
+    setDamageondeath("");
+    setSpawnspeed("");
+    setDuration("");
+    setRadius("");
+    setWidth("");
+    setEfecttime("");
+    setFreezetime("");
+    setUnities("");
+    setArena("");
+    setTarget("");
+    setProjectilerange("");
+    setRange("");
+    setSpeed("");
+    setImpactspeed("");
+    setLevel("");
+
+  }
+
+
 
 
   const createImageOfaDiv = async () => {
@@ -1158,8 +1199,8 @@ const scrollToDown = () => {
         <div className={styles.containerCardInfo}>
           <CardInfoedit
             name={name}
-            image={image}
-            imageupdated={imageupdated}
+            image={imageupdated}
+            imageupdated={image}
             type={type}
             rarity={rarity}
             elixir={elixir}
