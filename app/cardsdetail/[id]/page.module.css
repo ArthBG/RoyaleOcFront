@@ -69,6 +69,72 @@
     color: rgb(22, 22, 53);
 }
 
+.home {
+    border: none;
+    border-radius: 5px;
+    font-family: 'clash-font', sans-serif;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    padding: 1rem 1.875rem;
+    display: inline-block;
+    margin: auto;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.home {
+    background: #ffbd21;
+    color: #fff;
+    box-shadow: 0 6px #ae6a06, -1px 8px 0 black, 0 0 0 2px black, 0px 6px 0px 2px black;
+}
+
+.home:active {
+    box-shadow: 0 0 #ae6a06, 0 0 0 2px black, 0px 0px 0px 2px black;
+    top: 6px;
+}
+
+.home .overlay {
+    width: 95%;
+    height: 87%;
+    position: absolute;
+    background: rgba(255, 255, 255, 0);
+    box-shadow: 0px 1px 4px #fe8d0a;
+    border-radius: 5px;
+    top: 2px;
+    left: 5px;
+}
+.link{
+    text-decoration: none;
+    margin-bottom: 2%;
+}
+.home .overlay+.overlay {
+    height: 45%;
+    width: 92.5%;
+    left: 7px;
+    border-radius: 5px;
+    top: 6px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: none;
+}
+
+.home .overlay+.overlay+.overlay {
+    width: 5px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.65);
+    border-radius: 200px;
+    right: 8px;
+    left: auto;
+    transform: rotate(-45deg);
+}
+
 .background {
     background-color: #071867;
     width: 60%;
@@ -175,17 +241,14 @@
     margin-top: 2rem;
     height: 10%;
 }
-.campeaotropa{
-    display: flex;
-    margin-right: 1rem;
-}
+
 /* carrousel */
 .slider {
     overflow: hidden;
     width: 96%;
     margin: auto;
     text-align: center;
-    /* Adicionando alinhamento central de texto */
+   
 }
 
 
@@ -205,7 +268,8 @@
     height: 100%;
 }
 
-.ipt, .iptGif {
+.ipt,
+.iptGif {
     appearance: none;
     width: 16px;
     height: 16px;
@@ -225,8 +289,9 @@
     transform: scale(1.2);
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
 }
-.iptGif:checked{
-     background-color: rgb(238, 226, 7);
+
+.iptGif:checked {
+    background-color: rgb(238, 226, 7);
     border-color: rgb(8, 8, 8);
     transform: scale(1.2);
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
@@ -264,7 +329,8 @@
 .slider>input:nth-child(4):checked~.sliderContent {
     transform: translateX(-300%);
 }
-.containerLoading{
+
+.containerLoading {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -274,7 +340,8 @@
     .container {
         overflow-x: hidden;
     }
-    .nivel{
+
+    .nivel {
         margin-top: -58%;
         font-size: 14px;
     }
@@ -291,7 +358,7 @@
 
     .background {
         width: 90%;
-       
+
     }
 
     .description {
@@ -312,8 +379,8 @@
     }
 
     .imgCard {
-       margin-left: 22%;
-       margin-top: 8%;
+        margin-left: 22%;
+        margin-top: 8%;
     }
 
     .cardinfo {
@@ -324,5 +391,4 @@
         margin-top: 12%;
         width: auto;
     }
-
 }

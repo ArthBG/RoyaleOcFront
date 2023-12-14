@@ -115,7 +115,7 @@ const CardDescription = ({ params }) => {
 
                                         {card.damage && (
                                             <div className={styles.cardinfo}>
-                                                <img width={80} height={80} className={styles.imgIcon} src={"/images/damage.png"}alt={`imagem dano da carta ${card.name}`} />
+                                                <img width={80} height={80} className={styles.imgIcon} src={"/images/damage.png"} alt={`imagem dano da carta ${card.name}`} />
                                                 <h2 className={styles.info}>Dano </h2>
                                                 <p className={styles.obj}>{card.damage}</p>
                                             </div>
@@ -221,7 +221,7 @@ const CardDescription = ({ params }) => {
 
                                         {card.spawnspeed && (
                                             <div className={styles.cardinfo}>
-                                                <img width={80} height={80} className={styles.imgIcon} src={"/images/deploytime.png"}  alt={`imagem velocidade de surgimento da carta ${card.name}`} />
+                                                <img width={80} height={80} className={styles.imgIcon} src={"/images/deploytime.png"} alt={`imagem velocidade de surgimento da carta ${card.name}`} />
 
                                                 <h2 className={styles.info}>Surgimento </h2>
                                                 <p className={styles.obj}>{card.spawnspeed}</p>
@@ -248,7 +248,7 @@ const CardDescription = ({ params }) => {
                                         {card.freezetime && (
                                             <div className={styles.cardinfo}>
 
-                                                <img width={80} height={80} className={styles.imgIcon}  src={"/images/freezetime.png"}  alt={`Imagem do Tempo de Congelamento da carta ${card.name}`} />
+                                                <img width={80} height={80} className={styles.imgIcon} src={"/images/freezetime.png"} alt={`Imagem do Tempo de Congelamento da carta ${card.name}`} />
 
                                                 <h2 className={styles.info}> Congelamento</h2>
                                                 <p className={styles.obj}>{card.freezetime}</p>
@@ -286,10 +286,21 @@ const CardDescription = ({ params }) => {
 
                     </>
                 )}
+
             </div>
+
+            <Link className={styles.link} href="/">
+                <button type="submit" className={styles.home}>
+                    <div className={styles.overlay}></div>
+                    <div className={styles.overlay}></div>
+                    <div className={styles.overlay}></div>
+                    <span>Home</span>
+                </button >
+            </Link>
             {/* componente do personagem que aparece */}
             <GameCharacter />
             <Footer />
+
         </div >
     );
 };
