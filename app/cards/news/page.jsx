@@ -1,10 +1,10 @@
 import React from 'react';
 import Header from '@/app/components/header/header';
-import Styles from './page.module.css'; // Arquivo de estilos
+import Styles from '@/app/cards/news/page.module.css'; 
 import Footer from '@/app/components/footer/footer';
 import Image from 'next/image';
 
-function GameUpdate() {
+export default function GameUpdate() {
   return (
     <div className={Styles.maindiv}>
     <Header />
@@ -44,4 +44,4 @@ function GameUpdate() {
   );
 }
 
-export default GameUpdate;
+
