@@ -101,8 +101,11 @@ export default function Forms() {
         if (isValid) {
             try {
                 const telefoneNumber = Number(telefone);
+                console.log("Sending data to API:", { nome, email, telefone: telefoneNumber, comentario });
+
                 // Envia uma requisição POST para a API com os dados do novo membro.
-                await axios.post('/api/contatos', { nome, email, telefone: telefoneNumber, comentario });
+                const response = await axios.post('/api/contatos', { nome, email, telefone: telefoneNumber, comentario });
+                console.log("API response:", response.data);
                 // Limpa os campos do formulário
                 setNome('');
                 setEmail('');
