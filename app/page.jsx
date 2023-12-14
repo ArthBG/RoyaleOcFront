@@ -257,7 +257,7 @@ export default function Home() {
 
        <div className={styles.divIntross}>
         <div className={styles.divIntro212}>
-          <h1 className={styles.a101}>NOVA ATUALIZAÇÃO</h1>
+          <h1 className={styles.titles}>NOVA ATUALIZAÇÃO</h1>
           <Link className={styles.a} href={'/cards/news'}>
           <div className={styles.divIntro21}>
           <Image className={styles.img} src={"/images/newstuff.webp"} width={600} height={400} />
@@ -295,22 +295,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className={styles.divcard2}>
-            <div className={styles.a3}>
-              <h2 className={styles.titulo}>E-Sports e Torneios: </h2>
-              <p className={styles.font}>
-                A cena competitiva de Clash Royale é vibrante. Pode ser interessante falar sobre os
-                jogadores profissionais, equipes, e os torneios mais recentes.Clash Royale tem uma série de
-                torneios oficiais, organizados pela Supercell.
-                Estes incluem a Clash Royale League (CRL), que é uma liga de equipes profissionais
-                competindo em várias regiões ao redor do mundo. Discutir os destaques desses torneios,
-                as equipes mais fortes e as jogadas incríveis pode ser bastante empolgante.
-              </p>
-              <div className={styles.prince}>
-                <Image className={styles.img} src={"/images/pricipe.gif"} width={300} height={200} />
-              </div>
-            </div>
-          </div>
           </div>
       
         <Footer />

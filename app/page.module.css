@@ -197,6 +197,7 @@
 /* Estilos para o título */
 .titles {
     font-size: 45px;
+    margin-top: 1rem;
     color: rgb(255, 255, 255);
     text-shadow: -1px 5px 0 #000,0 2px 0 #000,1px 2px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;
 }

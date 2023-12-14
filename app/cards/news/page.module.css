@@ -1,0 +1,105 @@
+/* seuArquivoDeEstilos.module.css */
+
+/* Estilos para telas grandes */
+.maindiv {
+  background-image: url("../../../public/images/fundoazul.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.newsContainer {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.img{
+  text-align: center;
+  margin: auto;
+}
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: bold;
+  color: #444;
+}
+
+.paragraph {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #333;
+}
+
+.subsectionTitle {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 15px;
+  color: #444;
+}
+
+.list {
+  margin-left: 20px;
+  list-style-type: disc;
+}
+
+.list li {
+  margin-bottom: 5px;
+}
+
+/* Estilos para telas menores */
+@media (max-width: 600px) {
+  .maindiv {
+    padding: 10px;
+  }
+
+  .newsContainer {
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+
+  .sectionTitle {
+    font-size: 16px;
+  }
+
+  .subsectionTitle {
+    font-size: 14px;
+  }
+
+  .list {
+    margin-left: 15px;
+  }
+
+  .list li {
+    margin-bottom: 3px;
+  }
+  .img img{
+    width: 360px;
+    height: 300px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
