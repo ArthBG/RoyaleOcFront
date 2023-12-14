@@ -7,18 +7,17 @@
 }
 
 .divcard1 {
-    display: flex;
     margin: auto;
 }
 
 .a2 {
     padding: 0.5rem;
     margin: auto;
+    text-align: center;
+    width: fit-content;
     text-decoration: none;
-    background-color: #0d8af7;
     border: none;
     border-radius: 5px;
-    box-shadow: 0 2px 3px 0 #0772ff, 0 0 0 4px #0772ff, 0 1px 0 4px #0772ff, 0 -1px 2px 4px #0772ff, 0 -2px 0 5px #0772ff, 0 6px 0 4px #0772ff, 0 3px 0 5px #0772ff, 0 -2px 0 7px #202020, 0 5px 0 7px #202020, 0 7px 0 7px #333;
     color: rgb(204, 255, 254);
     font-size: 10px;
     text-shadow: -1px 2px 0 #582d00, 0 2px 0 #582d00, 1px 2px 0 #582d00, -1px -1px 0 #582d00, 1px -1px 0 #582d00, -1px 1px 0 #582d00, 1px 1px 0 #582d00;
