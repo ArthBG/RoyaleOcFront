@@ -16,7 +16,9 @@
   margin-bottom: 10rem;
   margin-top: 8rem;
 }
-
+.main22{
+  min-height: 100vh;
+}
 /* Estilos para o título. */
 .titulo {
   font-family: 'clash-font', sans-serif;

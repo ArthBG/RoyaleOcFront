@@ -48,7 +48,9 @@
   border-width: 10%;
   color: #333;
 }
-
+.main22{
+  min-height: 100vh;
+}
 .subsectionTitle {
   font-size: 16px;
   font-weight: bold;

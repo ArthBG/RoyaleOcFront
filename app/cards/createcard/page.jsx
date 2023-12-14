@@ -484,9 +484,9 @@ export default function createCard() {
   }
 
   return (
-    <main className={styles.backgroundimage}>
+    <div className={styles.backgroundimage}>
       <Header />
-
+      <main className={styles.main22}>
       <div className={styles.conatainerInputs}>
         <input className={styles.input} type="text" maxLength={30} placeholder="Nome da sua carta" value={name} onChange={e => setName(e.target.value)} />
         <select className={styles.select}
@@ -1509,8 +1509,9 @@ export default function createCard() {
           id={id}
           level={level}
         />
-      </div>
+    </div>
+      </main>
      <Footer />
-    </main>
+    </div>
   )
 }

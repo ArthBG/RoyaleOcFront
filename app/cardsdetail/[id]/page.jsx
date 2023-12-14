@@ -43,6 +43,7 @@ const CardDescription = ({ params }) => {
     return (
         <div className={styles.container}>
             <Header />
+            <main className={styles.main22}>
             <div className={styles.background}>
                 {loading ? (
                     <div className={styles.containerLoading}>
@@ -299,6 +300,7 @@ const CardDescription = ({ params }) => {
             </Link>
             {/* componente do personagem que aparece */}
             <GameCharacter />
+            </main>
             <Footer />
 
         </div >

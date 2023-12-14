@@ -12,6 +12,10 @@
     margin-top: -1.3rem;
 
   }
+
+  .main22{
+    min-height: 100vh;
+}
   .btnv {
     border: none;
     border-radius: 5px;

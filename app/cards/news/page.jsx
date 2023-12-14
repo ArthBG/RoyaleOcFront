@@ -8,6 +8,7 @@ function GameUpdate() {
   return (
     <div className={Styles.maindiv}>
     <Header />
+      <main className={styles.main22}>
     <div className={Styles.newsContainer}>
       <h1 className={Styles.title}>ATUALIZAÇÃO DO JOGO - 13 DE DEZEMBRO</h1>
       <h2 className={Styles.subtitle}>GRANDES MUDANÇAS NA SUA TORRE PRINCESA!</h2>
@@ -37,6 +38,7 @@ function GameUpdate() {
       </ul>
       <p className={Styles.paragraph}>A maioria dos itens mágicos não podem ser usados ​​com tropas da torre, exceto a moeda mágica.</p>
     </div>
+    </main>
         <Footer />
       </div>
   );

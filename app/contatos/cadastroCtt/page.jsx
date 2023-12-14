@@ -111,6 +111,7 @@ export default function Forms() {
     return (
         <div className={styles.bg}>
             <Header />
+            <main className={styles.main22}>
             <div>
             <Link href="/contatos">
                         <button type="submit" className={styles.botaovoltar}>
@@ -184,6 +185,7 @@ export default function Forms() {
                     </div>
                 </form >
             </div>
+            </main>
             <Footer />
         </div>
     )

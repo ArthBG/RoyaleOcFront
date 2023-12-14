@@ -120,6 +120,9 @@ max-width: 30rem;
     align-items: center;
     
 }
+.main22{
+    min-height: 100vh;
+}
 .atributesCondition{
     display: flex;
     flex-wrap: wrap;

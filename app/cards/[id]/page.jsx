@@ -236,6 +236,7 @@ const scrollToDown = () => {
   return (
     <main className={styles.backgroundimage}>
       <Header />
+      <main className={styles.main22}>
       <div className={styles.prosseguir} style={{ display: show ? 'block' : 'none' }} value={show}>
         <h1 className={styles.title}>Deseja editar a Carta?</h1>
         <div className={styles.containerButtonsp}>
@@ -1232,6 +1233,7 @@ const scrollToDown = () => {
           />
         </div>
       </div>
+      </main>
       <Footer />
     </main>
   )

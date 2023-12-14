@@ -121,7 +121,7 @@ export default function Register() {
     return (
         <div className={styles.containerPai}>
             <Header />
-
+            <main className={styles.main22}>
 
             <div className={styles.containerForm}>
                 <h1 className={styles.titulo}>Fazer o cadastro:</h1>
@@ -222,7 +222,8 @@ export default function Register() {
                     </div>
 
                 </form >
-            </div >
+            </div>
+            </main>
             <Footer />
         </div >
     );

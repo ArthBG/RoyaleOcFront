@@ -70,7 +70,9 @@
   left: auto;
   transform: rotate(-45deg);
 }
-
+.main22{
+  min-height: 100vh;
+}
 /*botao update*/
 
 .btnupdate {

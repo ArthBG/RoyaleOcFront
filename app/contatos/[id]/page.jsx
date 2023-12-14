@@ -109,6 +109,7 @@ export default function updateForms({params}) {
     return (
         <div className={styles.bg}>
             <Header />
+            <main className={styles.main22}>
             <div>
                 <Link className={styles.Link} href="/contatos">
                         <div className={styles.botaovoltar}>
@@ -181,6 +182,7 @@ export default function updateForms({params}) {
                     </div>
                 </form >
             </div>
+            </main>
             <Footer />
         </div>
     )

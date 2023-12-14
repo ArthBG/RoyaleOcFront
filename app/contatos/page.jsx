@@ -69,6 +69,7 @@ export default function Page() {
 
         <div className={styles.bg}>
             <Header />
+            <main className={styles.main22}>
             <div className={styles.prosseguir} style={{ display: show ? 'block' : 'none' }} value={show}>
                 <h1 className={styles.titulo}>DEVELOPERS AREA</h1>
                 <div className={styles.containerImgand}>
@@ -163,6 +164,7 @@ export default function Page() {
                     </div>
                 </div>
             </div>
+            </main>
             <Footer />
         </div>
     );

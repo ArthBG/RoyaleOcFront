@@ -52,6 +52,7 @@ export default function Page() {
 
         <div className={styles.container}>
             <Header/>
+            <main className={styles.main22}>
             <h1 className={styles.h1}>Membros</h1>
             <div className={styles.divPai}>
 
@@ -123,6 +124,7 @@ export default function Page() {
                     <p>carregando..</p>
                 )}
             </div>
+            </main>
             <Footer/>
         </div>
     );

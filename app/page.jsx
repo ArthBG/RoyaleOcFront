@@ -23,6 +23,7 @@ export default function Home() {
   return (
     <main className={styles.backgroundimage}>
       <Header />
+      <main className={styles.main22}>
       <div className={styles.divIntro4}>
         <div className={styles.divIntro1}>
           <h1 className={styles.title}>ROYALEOC</h1>
@@ -298,7 +299,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-
+      </main>
       <Footer />
     </main>
   )

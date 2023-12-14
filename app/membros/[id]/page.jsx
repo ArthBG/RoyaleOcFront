@@ -56,7 +56,7 @@ export default function UpdateMembro({ params }) {
     return (
         <div className={styles.containerPai}>
             <Header />
-
+            <main className={styles.main22}>
             <div className={styles.divForm}>
                 <h1 className={styles.h1}>Atualizar Membro</h1>
 
@@ -134,6 +134,7 @@ export default function UpdateMembro({ params }) {
                     <p>Carregando...</p>
                 )}
             </div>
+            </main>
             <Footer />
         </div>
     );

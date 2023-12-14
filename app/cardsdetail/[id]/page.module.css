@@ -234,7 +234,9 @@
     margin-bottom: 2%;
     margin-top: 2%;
 }
-
+.main22{
+    min-height: 100vh;
+}
 .minicards {
     width: 12rem;
     margin: 0.5rem;
