@@ -164,8 +164,9 @@
     position: fixed;
     display: flex;
     flex-direction: column;
-    right: 5px;
+    right: 3px;
     top: 44%;
+    z-index: 999;
 }
 .containerScrolls button{
     margin: 0.75rem;
@@ -186,7 +187,9 @@
     .containerCard{
         display: flex;
         flex-wrap: wrap;
-     
+        justify-content: start;
+        margin: 0;
+        width: auto;
     }
     .containerFilters{
         display: flex;
@@ -201,17 +204,20 @@
     .search{
         width: 75%;
     }
-    .containerSearch input{
+    .containerSearch {
         width: 72%;
+    }
+    .icon{
+        margin-left: 2.5rem;
     }
 
     .card{
         width: 5rem;
         height: 10rem;
-        margin: 1.2rem;
+        margin: 5px;
+        margin-bottom: 30px;
+        min-width: 7.5rem;
         padding-bottom: 12rem;
-        min-width: fit-content;
-        min-height: fit-content;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -228,7 +234,6 @@
         padding: 10px;
     }
     .containerScrolls{
-        z-index: 999;
-        right: 90%;
-    }
+      display: none;
+}
 }
