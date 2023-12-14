@@ -2,14 +2,15 @@
     background-image: url("../public/images/fundoazul.png");
     background-repeat: no-repeat;
     background-size: cover;
-
+    background-attachment: fixed;
+    background-position: center;
 }
 
 .divcard1 {
     margin-top: 4rem;
     width: 40%;
     margin: auto;
- 
+
 }
 
 .a2 {
@@ -64,22 +65,150 @@
 .font {
     font-size: 0.9rem
 }
-.divimgs{
+
+.divimgs {
     margin: auto;
     margin-bottom: 6rem;
     text-align: center;
 }
-.gigaimg{
-    margin: auto;
-    text-align: center;
-    margin-top: 1rem;
-}
-.prince{
+
+.gigaimg {
     margin: auto;
     text-align: center;
     margin-top: 1rem;
 }
 
+.prince {
+    margin: auto;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.divIntro {
+    background-image: url("../public/images/arenabgroyale.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+}
+
+.divIntro1 {
+    margin: auto;
+    width: fit-content;
+    margin-right: 5rem;
+}
+
+.divIntro2 {
+    margin: auto;
+    width: fit-content;
+}
+
+.divIntro4 {
+    background-color: #06245C;
+    display: flex;
+}
+
+.divRender {
+    margin-right: 10rem;
+}
+
+.title {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    font-size: 70px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-shadow: 3px 2px 3px #000;
+}
+
+.description {
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    line-height: 2.5;
+    width: 25rem;
+    margin-left: 0.5rem;
+}
+
+.buttonSeemore {
+    margin-top: 2rem;
+    margin-left: 0.5rem;
+    margin-bottom: 2rem;
+    width: 10rem;
+    padding: 1rem;
+    text-decoration: none;
+    background-color: #0772ff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 3px 0 #0772ff, 0 0 0 4px #0772ff, 0 1px 0 4px #0772ff, 0 -1px 2px 4px #0772ff, 0 -2px 0 5px #0772ff, 0 6px 0 4px #0772ff, 0 3px 0 5px #0772ff, 0 -2px 0 7px #202020, 0 5px 0 7px #202020, 0 7px 0 7px #333;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    text-shadow: -1px 2px 0 #582d00, 0 2px 0 #582d00, 1px 2px 0 #582d00, -1px -1px 0 #582d00, 1px -1px 0 #582d00, -1px 1px 0 #582d00, 1px 1px 0 #582d00;
+}
+
+.buttonSeemore:hover {
+    color: rgb(192, 192, 192);
+}
+
+.buttonSeemore:active {
+    color: rgb(255, 255, 255);
+    box-shadow: 0 -2px 3px 0 #0d8af7, 0 0 0 4px #0d8af7, 0 -1px 0 4px #0d8af7, 0 -1px 2px 4px #0d8af7, 0 -2px 0 5px #0d8af7, 0 6px 0 4px #0d8af7, 0 3px 0 5px #0d8af7, 0 -2px 0 7px #202020, 0 5px 0 7px #202020, 0 7px 0 7px #333;
+    text-shadow: -1px -1px 0 #582d00, 1px -1px 0 #582d00, -1px 1px 0 #582d00, 1px 1px 0 #582d00
+}
+
+/* Estilos para a div principal */
+.divAbout {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+/* Estilos para o título */
+.titles {
+    font-size: 45px;
+    color: rgb(255, 255, 255);
+    text-shadow: -1px 5px 0 #000,0 2px 0 #000,1px 2px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;
+}
+
+/* Estilos para o texto */
+.divText {
+    line-height: 1.6;
+    display: flex;
+    margin: auto;
+    width: fit-content;
+}
+
+.divText2 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 6rem;
+}
+
+/* Estilos para o parágrafo */
+.Techtugen {
+    font-size: 14px;
+    width: 50rem;
+    color: #000000;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Estilos para links dentro do parágrafo */
+.Techtugen a {
+    color: #007bff;
+    text-decoration: none;
+    border-bottom: 1px solid #007bff;
+}
+
+.Techtugen a:hover {
+    color: #0056b3;
+    border-bottom-color: #0056b3;
+}
+.divBtns{
+    display: flex;
+    margin-top: 0.5rem;
+}
 
 @media (max-width: 768px) {
     .divcard1 {
@@ -89,13 +218,16 @@
     .divcard2 {
         width: 100%;
     }
-    .divimgs{
+
+    .divimgs {
         width: 100%;
     }
-    .gigaimg{
+
+    .gigaimg {
         width: 100%;
     }
-    .prince{
+
+    .prince {
         width: 100%;
     }
 

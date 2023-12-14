@@ -9,7 +9,7 @@ export default function Header (){
             <div className={styles.container1}>
             <Link className={styles.a3} href={'/'} target='_parent'>
                 <Image className={styles.imagemain} src={'/images/coroaicone.png'} alt="Logo da empresa" width={60} height={60}></Image>
-                <h1 className={styles.title}>Royale.oc</h1>
+                <h1 className={styles.title}>RoyaleOc</h1>
                 </Link>
             </div>
             <div className={styles.container2}>

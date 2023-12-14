@@ -15,35 +15,49 @@ export default function Home() {
   const handleSelect = (selectedIndex) => {
     setIndex(selectedIndex);
   };
+
+  const seeMore = () => {
+    window.scrollTo(0, 800);
+  }
+
   return (
     <main className={styles.backgroundimage}>
       <Header />
-      <div className={styles.cards}>
-        <div className={styles.divcard1}>
-          <div className={styles.a2}>
-            <h2 className={styles.titulo}>O que é Clash Royale:</h2>
-            <p className={styles.font}>
-              Clash Royale é um jogo de estratégia em tempo real da Supercell, onde jogadores enfrentam uns aos outros em batalhas usando cartas
-              colecionáveis. O objetivo é destruir as torres do oponente enquanto defende as suas. A chave para o sucesso está na construção inteligente
-              do deck, na gestão eficiente de elixir e na habilidade de adaptação durante as batalhas. Com uma comunidade competitiva e recursos sociais, o jogo oferece uma experiência dinâmica e envolvente,
-              desafiando os jogadores a aprimorar suas táticas e alcançar a vitória na arena.
-            </p>
-          </div>
+      <div className={styles.divIntro4}>
+        <div className={styles.divIntro1}>
+        <h1 className={styles.title}>ROYALEOC</h1>
+        <p className={styles.description}>
+          Se você é fã de Clash Royale, aqui é o seu lugar! Aqui você encontra tudo sobre o jogo, desde dicas e truques até as arenas e cartas do jogo. Além disso, você pode encontrar informações sobre os torneios e campeonatos de Clash Royale. Seja bem-vindo ao Royaleoc!
+        </p>
+        {/* botao para descer até o meio da página */}
+        <button className={styles.buttonSeemore} onClick={seeMore}>
+          Explore ▶
+        </button>
+         </div>
+        <div className={styles.divRender}>
+        <Image className={styles.img} src={"/images/Crender.png"} width={400} height={500} />
         </div>
-        <div className={styles.divcard2}>
-          <div className={styles.a3}>
-            <h2 className={styles.titulo}>Curiosidades sobre a Supercell:</h2>
-            <p className={styles.font}>
-              A Supercell, renomada desenvolvedora finlandesa de jogos mobile, destaca-se por sua abordagem única no setor.
-              Famosa pelos sucessos como Clash of Clans e Clash Royale, a empresa adota uma cultura empresarial descentralizada,
-              permitindo liberdade criativa às equipes. Seu modelo de negócios inovador foca em poucos jogos altamente polidos, com suporte contínuo. A empresa valoriza
-              o desenvolvimento colaborativo, a reinvenção constante e não hesita em descontinuar jogos para manter a inovação.
-              A sede em Helsinque reflete o ambiente descontraído e criativo que impulsiona a Supercell.
-            </p>
-          </div>
         </div>
-      </div>
+
       <div>
+      <div className={styles.divAbout}>
+      
+      <div className={styles.divText}>
+        <Image src={"/images/aminipekka.png" } width={450} height={500} />
+        <div className={styles.divText2}>
+              <h2 className={styles.titles}>Clash Royale</h2>
+              <p className={styles.Techtugen}>Clash Royale é um jogo de estratégia freemium desenvolvido e publicado pela Supercell, empresa sediada em Helsinki, na Finlândia. O objetivo do jogo é destruir as torres inimigas usando cartas que poderão ser desbloqueadas ao longo do tempo. Algumas delas são trazidas de outro jogo da Supercell: Clash of Clans. Cada carta durante uma partida possui um preço de elixir, um recurso utilizado durante partidas, sendo acumulado ao longo do tempo a servir de energia para posicionar no campo de batalha as cartas selecionadas em menu. Clash Royale também possui um sistema de clãs, sentes grupos a que pessoas se juntam para conversar e jogarem juntos.</p>
+             <div className={styles.divBtns}>
+              <Link className={styles.a} href={'https://play.google.com/store/apps/details?id=com.supercell.clashroyale'} target="_blank">
+                <Image src={"/images/googleplay.webp"} width={200} height={70} />
+              </Link>
+              <Link className={styles.a} href={'https://apps.apple.com/us/app/clash-royale/id1053012308'} target="_blank">
+                <Image src={"/images/appstore.webp"} width={200} height={70} />
+              </Link>
+              </div>
+    </div>
+    </div>
+    </div>
         <Carousel activeIndex={index} onSelect={handleSelect}>
         <Carousel.Item>
             <div className={styles.divimgs}>
@@ -240,7 +254,7 @@ export default function Home() {
 
 
         </Carousel>
-
+       
         <div className={styles.cards}>
           <div className={styles.divcard2}>
             <div className={styles.a3}>
