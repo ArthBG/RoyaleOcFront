@@ -249,6 +249,32 @@
     font-size: 14px;
     margin-bottom: 10px;
   }
+
+ /* styles.css */
+/* styles.css */
+.file {
+    /* Esconda o input file */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+  
+  .customFileInput {
+    /* Estilos para o rótulo (label) */
+    background-color: rgb(240, 240, 240); /* Cor de fundo azul */
+    color: rgb(0, 0, 0); /* Cor do texto branco */
+    text-shadow: none;
+    margin: auto;
+    margin-bottom: 0.5rem;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+  }
+  
   
   @media (max-width: 768px) {
     .containerCard{

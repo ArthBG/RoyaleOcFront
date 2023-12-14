@@ -550,7 +550,11 @@ export default function createCard() {
           <option value={10}>10 Elixir</option>
         </select>
 
-        <input type="file" className={styles.file} onChange={handleImage} />
+      <label htmlFor="fileInput" className={styles.customFileInput}>
+      ESCOLHA UMA IMAGEM DOS SEUS ARQUIVOS
+      📂
+      <input type="file" id="fileInput" className={styles.file} onChange={handleImage} />
+    </label>
         <textarea className={styles.input} placeholder="Descrição da carta" value={description} onChange={e => setDescription(e.target.value)} />
         <p className={styles.error}>{error}</p>
         <button className={styles.scbtnyellow} onClick={handleSubmit}>Criar</button>
@@ -664,7 +668,7 @@ export default function createCard() {
           </div>
           : null
            ))
-          }
+        }
           
       </div>
 
