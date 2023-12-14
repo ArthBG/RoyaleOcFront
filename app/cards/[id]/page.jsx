@@ -10,6 +10,8 @@ import CardInfo from '@/app/components/cardinfo/cardinfo';
 import CardInfoedit from '@/app/components/cardinfoedit/cardinfoedit';
 import Header from '@/app/components/header/header';
 import Footer from '@/app/components/footer/footer';
+import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowUp } from "react-icons/io";
 // npm install react-icons --save
 
 export default function updateCard({ params }) {
@@ -58,7 +60,13 @@ export default function updateCard({ params }) {
 
 
   console.log({ iscreated })
+  const scrollToUp = () => {
+    window.scrollTo(0, 0);
+}
 
+const scrollToDown = () => {
+    window.scrollTo(0, 1000000);
+}
   useEffect(() => {
     async function fetchData() {
       try {
@@ -200,6 +208,14 @@ export default function updateCard({ params }) {
         </div>
       </div>
       <div style={{ display: showInput ? 'block' : 'none' }} value={showInput} >
+      <div className={styles.containerScrolls}>
+                <button onClick={scrollToUp}>
+                    <IoIosArrowUp />
+                </button>
+                <button onClick={scrollToDown}>
+                    <IoIosArrowDown />
+                </button>
+            </div>
         <div className={styles.conatainerInputs}>
           <button className={styles.scbtnyellow} onClick={() => router.push(`/cards`)}>Voltar</button>
 
@@ -1142,8 +1158,8 @@ export default function updateCard({ params }) {
         <div className={styles.containerCardInfo}>
           <CardInfoedit
             name={name}
-            image={imageupdated}
-            imageupdated={image}
+            image={image}
+            imageupdated={imageupdated}
             type={type}
             rarity={rarity}
             elixir={elixir}
