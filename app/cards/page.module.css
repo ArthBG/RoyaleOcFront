@@ -190,7 +190,7 @@
     width: 100%;
 }
 
-@media only screen and (max-width: 740px) and (min-width: 300px){
+@media (max-width: 768px){
     .containerCard{
         display: flex;
         flex-wrap: wrap;
