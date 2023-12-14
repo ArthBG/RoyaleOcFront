@@ -124,8 +124,8 @@ max-width: 32rem;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-top: 10rem;
-    max-height:35rem;
+    margin-top: 15rem;
+    max-height: 30rem;
 }
 .atributesCondition div{
     background-color: rgb(255, 255, 255);
