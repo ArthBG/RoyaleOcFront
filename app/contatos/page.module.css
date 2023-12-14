@@ -10,14 +10,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 10rem;
-    margin-top: 5rem;
+    margin: auto;
+    margin-top: 15rem;
     background-color: rgb(4, 4, 112);
     border-radius: 10px;
     border: 2px solid #f0c44e;
     box-shadow: 0 0 30px rgb(103, 217, 255);
-    width: fit-content;
-    height: 9rem;
+    width: 20rem;
+    height: 15rem;
 
 }
 .titulo{
@@ -158,7 +158,9 @@
     position: relative;
     transition: all 0.3s;
 }
-
+.main22{
+    min-height: 100vh;
+}
 .botaocadastro {
     text-decoration: none;
     background-color: #f0c44e;
@@ -180,7 +182,7 @@
 
 @media screen and (max-width: 768px) and (min-width: 320px) {
     .containerInputs {
-     margin: auto;
+     margin-top: 15rem;
     }
 
     .containerImg {

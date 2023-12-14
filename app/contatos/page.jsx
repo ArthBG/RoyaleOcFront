@@ -71,10 +71,8 @@ export default function Page() {
             <Header />
             <main className={styles.main22}>
             <div className={styles.prosseguir} style={{ display: show ? 'block' : 'none' }} value={show}>
-                <h1 className={styles.titulo}>DEVELOPERS AREA</h1>
-                <div className={styles.containerImgand}>
-                <Image className={styles.image} src={"/images/contatocl.png"} width={340} height={330} />
                 <div className={styles.containerInputs}>
+                <h1 className={styles.titulo}>DEVELOPERS AREA</h1>
             <input
                 className={styles.inputSend}
                 type="text"
@@ -85,7 +83,6 @@ export default function Page() {
             <button className={styles.botao} onClick={verifyPassword}>
                 Enviar
             </button>
-        </div>
                 </div>
             </div>
             <div className={styles.prosseguir} style={{ display: showInput ? 'block' : 'none' }} value={showInput}>

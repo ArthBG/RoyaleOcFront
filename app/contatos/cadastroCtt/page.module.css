@@ -32,12 +32,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 2rem;
     background-color: rgb(23, 26, 83);
     padding: 1rem;
     width: fit-content;
     text-align: center;
     margin: auto;
+    margin-top: 8rem;
     margin-bottom: 1rem;
     border-radius: 10px;
     border: 2px solid #f0c44e;
