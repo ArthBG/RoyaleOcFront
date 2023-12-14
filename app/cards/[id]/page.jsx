@@ -58,8 +58,6 @@ export default function updateCard({ params }) {
   const divRef = useRef(null);
   const { id } = params;
 
-  console.log({ imageupdated })
-  console.log({ image });
   console.log({ iscreated })
   const scrollToUp = () => {
     window.scrollTo(0, 0);

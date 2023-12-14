@@ -8,7 +8,7 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
             <h1 className={styles.cardName}>{name}</h1>
             <div className={styles.containerCards}>
                 <div className={styles.containerCards2}>
-                    {!change == "Sim" ? <Image src={imageupdated} width={250} height={300} /> : null}
+                    {!change  ? <Image src={imageupdated} width={250} height={300} /> : null}
                     {change == "Sim" ?
                         elixir == "1" && rarity == "Comum" || rarity == "Raro" || rarity == "Épico" ? (
                             <div className={styles.imagecomming} style={{
@@ -678,9 +678,9 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                                                                         </div>
                                                                         :
                                                                         (rarity == "Campeão" && type == "Tropa" ?
+                                                                        <div className={styles.trick}>
                                                                         <div className={stylesDetails.campeaotropa}>
                                                                         <div className={stylesDetails.minicards}>
-                        
                                                                             <div className={stylesDetails.minicard}>
                                                                                 <div className={stylesDetails.fundoR}>
                                                                                     <h2 className={stylesDetails.h2}>Raridade</h2>
@@ -689,7 +689,6 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                                                                                     <p className={stylesDetails.p}>Campeão</p>
                                                                                 </div>
                                                                             </div>
-                                                                        
                                                                     </div>
                                         
                                                                     <div className={stylesDetails.minicards}>
@@ -703,41 +702,20 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                                                                                 </div>
                                                                             </div>
                                                                     </div>
-                                                                    </div>
+                                                                         
+                                                                            </div>
+                                                                            <div className={styles.desc20}>
+                                                                                {description}
+                                                                            </div>
+                                                                        </div>
+                                                              
+                                                            
 
                                                                             :
                                                                             (rarity == "Campeão" && type == "Feitiço" ?
-                                                                            <div className={stylesDetails.campeaotropa}>
-                                                                            <div className={stylesDetails.minicards}>
-                            
-                                                                                <div className={stylesDetails.minicard}>
-                                                                                    <div className={stylesDetails.fundoR}>
-                                                                                        <h2 className={stylesDetails.h2}>Raridade</h2>
-                                                                                    </div>
-                                                                                    <div className={stylesDetails.fundoInfo}>
-                                                                                        <p className={stylesDetails.p}>Campeão</p>
-                                                                                    </div>
-                                                                                </div>
-                                                                            
-                                                                        </div>
-                                            
+                                                                            <div className={styles.trick}>
+                                                                        <div className={stylesDetails.campeaotropa}>
                                                                         <div className={stylesDetails.minicards}>
-                                                                           
-                                                                                <div className={stylesDetails.minicard}>
-                                                                                    <div className={stylesDetails.fundoR}>
-                                                                                        <h2 className={stylesDetails.h2}>Tipo</h2>
-                                                                                    </div>
-                                                                                    <div className={stylesDetails.fundoInfo}>
-                                                                                        <p className={stylesDetails.p}>Feitiço</p>
-                                                                                    </div>
-                                                                                </div>
-                                                                        </div>
-                                                                        </div>
-                                                                                    :
-                                                                                    (rarity == "Campeão" && type == "Construção" ?
-                                                                                    <div className={stylesDetails.campeaotropa}>
-                                                                        <div className={stylesDetails.minicards}>
-                        
                                                                             <div className={stylesDetails.minicard}>
                                                                                 <div className={stylesDetails.fundoR}>
                                                                                     <h2 className={stylesDetails.h2}>Raridade</h2>
@@ -746,7 +724,38 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                                                                                     <p className={stylesDetails.p}>Campeão</p>
                                                                                 </div>
                                                                             </div>
-                                                                        
+                                                                    </div>
+                                        
+                                                                    <div className={stylesDetails.minicards}>
+                                                                       
+                                                                            <div className={stylesDetails.minicard}>
+                                                                                <div className={stylesDetails.fundoR}>
+                                                                                    <h2 className={stylesDetails.h2}>Tipo</h2>
+                                                                                </div>
+                                                                                <div className={stylesDetails.fundoInfo}>
+                                                                                    <p className={stylesDetails.p}>Feitiço</p>
+                                                                                </div>
+                                                                            </div>
+                                                                    </div>
+                                                                         
+                                                                            </div>
+                                                                            <div className={styles.desc20}>
+                                                                                {description}
+                                                                            </div>
+                                                                        </div>
+                                                                                    :
+                                                                                    (rarity == "Campeão" && type == "Construção" ?
+                                                                                    <div className={styles.trick}>
+                                                                        <div className={stylesDetails.campeaotropa}>
+                                                                        <div className={stylesDetails.minicards}>
+                                                                            <div className={stylesDetails.minicard}>
+                                                                                <div className={stylesDetails.fundoR}>
+                                                                                    <h2 className={stylesDetails.h2}>Raridade</h2>
+                                                                                </div>
+                                                                                <div className={stylesDetails.fundoInfo}>
+                                                                                    <p className={stylesDetails.p}>Campeão</p>
+                                                                                </div>
+                                                                            </div>
                                                                     </div>
                                         
                                                                     <div className={stylesDetails.minicards}>
@@ -760,7 +769,12 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                                                                                 </div>
                                                                             </div>
                                                                     </div>
-                                                                    </div>
+                                                                         
+                                                                            </div>
+                                                                            <div className={styles.desc20}>
+                                                                                {description}
+                                                                            </div>
+                                                                        </div>
                                                                                         :
                                                                                         null
                                                                                 ))))))))))))))
