@@ -79,18 +79,11 @@ const CardDescription = ({ params }) => {
 
 
                 <section className={styles.slider}>
-
-                    <input className={styles.ipt} name='slide' type="radio" />
                     <input className={styles.ipt} name='slide' type="radio" />
                     <input className={styles.ipt} name='slide' type="radio" />
 
 
                     <div className={styles.sliderContent}>
-                        <div className={styles.sliderItem}>
-                            <div className={styles.gifcarr}>
-                                <img className={styles.gif} src="https://2.bp.blogspot.com/-SxUJ0-iUyeg/WDLWrHkHx5I/AAAAAAAAvBc/JERayZh8lSEG5c4572B4hMgIYIJQcz-PwCLcB/s640/dicas-esqueleto-gigante-e-tornado-clash-royale-truques.gif" alt="Descrição da imagem para acessibilidade" />
-                            </div>
-                        </div>
                         <div className={styles.sliderItem}>
                             <div className={styles.infosCartas}>
 

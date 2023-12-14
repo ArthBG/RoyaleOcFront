@@ -28,6 +28,8 @@
     text-shadow: 2px 2px rgba(0, 0, 0, 1);
     font-weight: bold;
     margin-right: -38%;
+    display: flex;
+    flex-wrap: wrap;
     margin-top: -4%;
     color: #a7cfea;
 
@@ -43,7 +45,7 @@
     box-shadow: -0.4vw 0.3vw 0.1vw -0.1vw rgba(0, 0, 0, 0.43);
     border-radius: 1.5vw;
     width: 85%;
-    height: 55%;
+    height: 85%;
     margin: 0 auto 4px auto;
     text-align: center;
     color: rgb(43, 43, 43);
@@ -264,6 +266,10 @@
     .container {
         overflow-x: hidden;
     }
+    .nivel{
+        margin-top: -58%;
+        font-size: 14px;
+    }
 
     .infosCartas {
         flex-direction: column;
@@ -273,10 +279,6 @@
     .name {
         margin: 0;
         font-size: 1.5rem;
-        order: 1;
-    }
-    .nivel {
-    display: none;
     }
 
     .background {
@@ -303,6 +305,7 @@
 
     .imgCard {
        margin-left: 22%;
+       margin-top: 8%;
     }
 
     .cardinfo {
@@ -312,9 +315,6 @@
     .minicards {
         margin-top: 12%;
         width: auto;
-    }
-    .gif, .gifcarr{
-        display: none;
     }
 
 }
