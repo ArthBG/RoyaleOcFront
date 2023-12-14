@@ -25,7 +25,6 @@ export default function Header (){
                             <h1 className={styles.contact}>Cartas</h1>
                         </Link>
                     </div>
-                <div className={styles.divbutton2}>
                     <div className={styles.shortcut1}>
                         <Link className={styles.a} href={'/membros'}>
                             <Image className={styles.image} src={'/images/sobrenosescudo.png'} width={60} height={40}></Image>
@@ -38,7 +37,6 @@ export default function Header (){
                             <h1 className={styles.contact2}>Contato</h1>
                         </Link>
                     </div>
-                </div>
                 
             </div>
         </header>
