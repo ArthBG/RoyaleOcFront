@@ -35,7 +35,7 @@ export default function Home() {
           </button>
         </div>
         <div className={styles.divRender}>
-          <Image className={styles.img} src={"/images/Crender.png"} width={400} height={500} />
+          <Image className={styles.imgP} src={"/images/Crender.png"}   width={400} height={450} />
         </div>
       </div>
 
@@ -43,25 +43,27 @@ export default function Home() {
         <div className={styles.divAbout}>
 
           <div className={styles.divText}>
-            <Image src={"/images/aminipekka.png"} width={450} height={500} />
+            <Image src={"/images/aminipekka.png"} width={350} height={400} />
             <div className={styles.divText2}>
               <h2 className={styles.titles}>Clash Royale</h2>
               <p className={styles.Techtugen}>Clash Royale é um jogo multiplayer em tempo real estrelado pelos Royales, seus personagens favoritos de Clash e muito, muito mais. Colete e melhore dezenas de cartas apresentando tropas, feitiços e defesas de Clash of Clans que você conhece e adora, além dos Royales: Princesas, Cavaleiros, Dragões Bebês e mais. Derrube o Rei inimigo e as Princesas de suas torres para derrotar seus oponentes e ganhar Troféus, Coroas e glória na Arena.</p>
               <div className={styles.divBtns}>
                 <Link className={styles.a} href={'https://play.google.com/store/apps/details?id=com.supercell.clashroyale'} target="_blank">
-                  <Image src={"/images/googleplay.webp"} width={200} height={70} />
+                  <Image src={"/images/googleplay.webp"} width={200} height={70} layout="responsive" />
                 </Link>
                 <Link className={styles.a} href={'https://apps.apple.com/us/app/clash-royale/id1053012308'} target="_blank">
-                  <Image src={"/images/appstore.webp"} width={200} height={70} />
+                  <Image src={"/images/appstore.webp"} width={200} height={70} layout="responsive" />
                 </Link>
               </div>
             </div>
           </div>
         </div>
-        <Carousel activeIndex={index} onSelect={handleSelect}>
+{/*         <Carousel activeIndex={index} onSelect={handleSelect}>
           <Carousel.Item>
             <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena-01.png"} width={600} height={400} />
+              <Image className={styles.img} src={"/images/arena-01.png"} width={600}
+                height={400}
+                layout="responsive" />
             </div>
             <Carousel.Caption>
               <h3>Campo de Treinamento</h3>
@@ -69,7 +71,7 @@ export default function Home() {
           </Carousel.Item>
           <Carousel.Item>
             <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena1.png"} width={600} height={400} />
+              <Image className={styles.img} src={"/images/arena1.png"} width={600} height={400} layout="responsive" />
             </div>
             <Carousel.Caption>
               <h3>Estádio Goblin </h3>
@@ -77,7 +79,7 @@ export default function Home() {
           </Carousel.Item>
           <Carousel.Item>
             <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena2.png"} width={600} height={400} />
+              <Image className={styles.img} src={"/images/arena2.png"} width={600} height={400} layout="responsive" />
             </div>
             <Carousel.Caption>
               <h3>Fosso dos Ossos</h3>
@@ -85,7 +87,7 @@ export default function Home() {
           </Carousel.Item>
           <Carousel.Item>
             <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena3.png"} width={600} height={400} />
+              <Image className={styles.img} src={"/images/arena3.png"} width={600} height={400} layout="responsive" />
             </div>
             <Carousel.Caption>
               <h3>Torneio Bárbaro</h3>
@@ -93,7 +95,7 @@ export default function Home() {
           </Carousel.Item>
           <Carousel.Item>
             <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena4.png"} width={600} height={400} />
+              <Image className={styles.img} src={"/images/arena4.png"} width={600} height={400} layout="responsive" />
             </div>
             <Carousel.Caption>
               <h3>Vale dos Feitiços</h3>
@@ -253,51 +255,51 @@ export default function Home() {
           </Carousel.Item>
 
 
-        </Carousel>
+        </Carousel> */}
 
-       <div className={styles.divIntross}>
-        <div className={styles.divIntro212}>
-          <h1 className={styles.titles}>NOVA ATUALIZAÇÃO</h1>
-          <Link className={styles.a} href={'/cards/news'}>
-          <div className={styles.divIntro21}>
-          <Image className={styles.img} src={"/images/newstuff.webp"} width={600} height={400} />
-          </div>
-          </Link>
+        <div className={styles.divIntross}>
+          <div className={styles.divIntro212}>
+            <h1 className={styles.titles}>NOVA ATUALIZAÇÃO</h1>
+            <Link className={styles.a} href={'/cards/news'}>
+              <div className={styles.divIntro21}>
+                <Image className={styles.img} src={"/images/newstuff.webp"} width={600} height={400} layout="responsive" />
+              </div>
+            </Link>
           </div>
         </div>
-          <div className={styles.divcard1}>
-            <div className={styles.divcard}>
-              <div className={styles.a2}>
-                <h2 className={styles.tituloall}>Acesse:</h2>
-                <div className={styles.divall}>
-                  <div className={styles.cbmar}>
-                    <Link className={styles.a} href={'/cards'}>
-                      <Image className={styles.image} src={'/images/cartasclash.png'} width={100} height={100}></Image>
-                    </Link>
-                    <h1 className={styles.contact}>Cartas</h1>
-                  </div>
-                  <div className={styles.cbmar}>
-                    <Link className={styles.a} href={'/membros'}>
-                      <Image className={styles.image} src={'/images/sobrenosescudo.png'} width={150} height={100}></Image>
-                    </Link>
-                    <h1 className={styles.contact}>Sobre Nós</h1>
-                  </div>
-                  <div className={styles.cbmar}>
-
-                    <Link className={styles.a} href={'/contatos/cadastroCtt'} target='_parent'>
-                      <Image className={styles.image1} src={'/images/contatoscr.png'} width={100} height={100}></Image>
-                    </Link>
-                    <h1 className={styles.contact}>Contato</h1>
-                    </div>
-
-
-                  </div>
+        <div className={styles.divcard1}>
+          <div className={styles.divcard}>
+            <div className={styles.a2}>
+              <h2 className={styles.tituloall}>Acesse:</h2>
+              <div className={styles.divall}>
+                <div className={styles.cbmar}>
+                  <Link className={styles.a} href={'/cards'}>
+                    <Image className={styles.image} src={'/images/cartasclash.png'} width={100} height={100}  ></Image>
+                  </Link>
+                  <h1 className={styles.contact}>Cartas</h1>
                 </div>
+                <div className={styles.cbmar}>
+                  <Link className={styles.a} href={'/membros'}>
+                    <Image className={styles.image} src={'/images/sobrenosescudo.png'} width={170} height={150}  ></Image>
+                  </Link>
+                  <h1 className={styles.contact}>Sobre Nós</h1>
+                </div>
+                <div className={styles.cbmar}>
+
+                  <Link className={styles.a} href={'/contatos/cadastroCtt'} target='_parent'>
+                    <Image className={styles.image1} src={'/images/contatoscr.png'} width={100} height={100}  ></Image>
+                  </Link>
+                  <h1 className={styles.contact}>Contato</h1>
+                </div>
+
+
               </div>
             </div>
           </div>
-      
-        <Footer />
+        </div>
+      </div>
+
+      <Footer />
     </main>
   )
 }
