@@ -8,13 +8,15 @@
     min-height: 100vh;
     padding: 20px;
   }
-  .containerLoading{
+.containerLoading{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
-  }
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
   /* Estilos para o título. */
   .titulo {
     font-family: 'clash-font', sans-serif;

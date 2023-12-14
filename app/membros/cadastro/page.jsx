@@ -124,23 +124,23 @@ export default function Register() {
 
     return (
         <div className={styles.containerPai}>
-            <Header />
-            <main className={styles.main22}>
-                {loading ? (
-                    <div className={styles.containerLoading}>
-                        <Rings
-                            height="300"
-                            width="400"
-                            color="#fff"
-                            radius="6"
-                            wrapperStyle={{}}
-                            wrapperClass=""
-                            visible={true}
-                            ariaLabel="rings-loading"
-                        />
-                    </div>
-                ) : (
-                    <>
+            <Header />  {loading ? (
+                <div className={styles.containerLoading}>
+                    <Rings
+                        height="300"
+                        width="400"
+                        color="#fff"
+                        radius="6"
+                        wrapperStyle={{}}
+                        wrapperClass=""
+                        visible={true}
+                        ariaLabel="rings-loading"
+                    />
+                </div>
+            ) : (
+                <>
+                    <main className={styles.main22}>
+
 
                         <div className={styles.containerForm}>
                             <h1 className={styles.titulo}>Fazer o cadastro:</h1>
@@ -242,9 +242,10 @@ export default function Register() {
 
                             </form >
                         </div>
-                    </>
+                  
+                </main>
+                </>
                 )}
-            </main>
             <Footer />
         </div >
     );
