@@ -92,6 +92,7 @@ function cardspage() {
     return (
         <main className={style.mainBg}>
             <Header />
+            <main className={style.main22}>
             <div className={style.containerScrolls}>
                 <button onClick={scrollToUp}>
                     <IoIosArrowUp />
@@ -182,7 +183,10 @@ function cardspage() {
                         ))
                 }
             </div>
+            </main>
+            <div className={style.containerFooter}>
             <Footer />
+            </div>
         </main>
 
     )

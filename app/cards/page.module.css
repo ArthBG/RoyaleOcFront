@@ -4,8 +4,11 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    min-height: 100vh;
     height: 100%;
+    min-height: 100vh;
+}
+.main22{
+    min-height: 100vh;
 }
 .card{
     width: 11rem;
@@ -181,6 +184,10 @@
 .containerScrolls button:hover{
     cursor: pointer;
     color: #c8c8c8;
+}
+.containerFooter{
+    position: absolute;
+    width: 100%;
 }
 
 @media only screen and (max-width: 600px) and (min-width: 320px){
