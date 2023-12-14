@@ -152,6 +152,24 @@
     align-items: center;
     
 }
+.containerCards21{
+    display: flex;
+    padding-top: 5px;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+}
+.containerCards201{
+    display: flex;
+    position: absolute;
+    left: 500px;
+    width: 250px;
+    height: 290px;
+    top: 3000px;
+    z-index: 0;
+    align-items: center;
+    
+}
 .containerCard{
     position: relative;
     margin-top: 5rem;
@@ -161,6 +179,8 @@
 .containerCardInfo{
     margin-top: 10rem;
     padding-bottom: 5rem;
+    z-index: 999;
+    position: relative;
 }
 .error{
     color: red;

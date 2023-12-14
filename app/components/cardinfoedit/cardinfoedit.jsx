@@ -8,7 +8,7 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
             <h1 className={styles.cardName}>{name}</h1>
             <div className={styles.containerCards}>
                 <div className={styles.containerCards2}>
-                    {!change  ? <Image src={imageupdated} width={250} height={300} /> : null}
+                    {change == ""   ? <Image src={imageupdated} width={250} height={300} /> : null}
                     {change == "Sim" ?
                         elixir == "1" && rarity == "Comum" || rarity == "Raro" || rarity == "Épico" ? (
                             <div className={styles.imagecomming} style={{

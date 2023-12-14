@@ -51,7 +51,6 @@ export default function updateCard({ params }) {
   const [imageupdated, setImageUpdated] = useState("");
   const [show, setShow] = useState(true);
   const [iscreated, setIsCreated] = useState("");
-  const [imageurl, setImageurl] = useState("");
   const [change, setChange] = useState("");
 
   const router = useRouter();
@@ -59,6 +58,7 @@ export default function updateCard({ params }) {
   const { id } = params;
 
   console.log({ iscreated })
+  console.log({ change });
   const scrollToUp = () => {
     window.scrollTo(0, 0);
 }
@@ -312,7 +312,7 @@ const scrollToDown = () => {
             <option value="Construção">Construção</option>
           </select>
 
-          {iscreated == "Criado" ? (
+          {iscreated == "Criado" || iscreated == "Sim" ? (
             <>
               <label htmlFor="elixir">Elixir</label>
               <select className={styles.select} value={elixir} onChange={e => setElixir(e.target.value)}>
@@ -388,10 +388,11 @@ const scrollToDown = () => {
           <textarea className={styles.input} placeholder="Descrição da carta" value={description} onChange={e => setDescription(e.target.value)} />
           <button className={styles.scbtnyellow} onClick={handleSubmit}>Editar</button>
         </div>
-        <div className={styles3.containerCards20} ref={divRef} >
-          <div className={styles3.containerCards2}>
+        <div className={styles.containerCards201} ref={divRef} >
+          <div className={styles.containerCards21}>
             {
-              iscreated == "Criado" ? (
+              iscreated == "Criado" || iscreated == "Sim" ? (
+                createImageOfaDiv(),
                 elixir == "1" && rarity == "Comum" || elixir == "1" && rarity == "Raro" || elixir == "1" && rarity == "Épico" ? (
                   <div className={styles3.imagecomming} style={{
                     backgroundImage: `url(${imageupdated})`,
@@ -529,7 +530,6 @@ const scrollToDown = () => {
                               ) : (
                                 elixir == "9" && rarity == "Comum" || elixir == "9" && rarity == "Raro" || elixir == "9" && rarity == "Épico" ? (
                                   createImageOfaDiv(),
-                                  createImageOfaDiv(),
                                   <div className={styles3.imagecomming} style={{
                                     backgroundImage: `url(${imageupdated})`,
                                     backgroundRepeat: "no-repeat",
@@ -546,7 +546,6 @@ const scrollToDown = () => {
                                   </div>
                                 ) : (
                                   elixir == "10" && rarity == "Comum" || elixir == "10" && rarity == "Raro" || elixir == "10" && rarity == "Épico" ? (
-                                    createImageOfaDiv(),
                                     createImageOfaDiv(),
                                     <div className={styles3.imagecomming} style={{
                                       backgroundImage: `url(${imageupdated})`,
