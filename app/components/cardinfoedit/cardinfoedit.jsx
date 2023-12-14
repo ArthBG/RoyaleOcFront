@@ -886,7 +886,7 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                 }
                 {
                     damageonimpact ? <div className={styles.damageonimpact}>
-                        <Image src={"/images/damageonimpact.png"} width={60} height={60} />
+                        <Image src={"/images/damageonarea.png"} width={60} height={60} />
                         <div className={styles.desc2}>
                             <h1 className={styles.atributesP}>
                                 Dano no impacto
@@ -912,7 +912,7 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                 }
                 {
                     chargedamage ? <div className={styles.chargedamage}>
-                        <Image src={"/images/chargedamage.png"} width={60} height={60} />
+                        <Image src={"/images/damage.png"} width={60} height={60} />
                         <div className={styles.desc2}>
                             <h1 className={styles.atributesP}>
                                 Dano carregado
@@ -938,7 +938,7 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                 }
                 {
                     spawnspeed ? <div className={styles.spawnspeed}>
-                        <Image src={"/images/spawnspeed.png"} width={60} height={60} />
+                        <Image src={"/images/efecttime.png"} width={60} height={60} />
                         <div className={styles.desc2}>
                             <h1 className={styles.atributesP}>
                                 Tempo de mobilização
@@ -951,7 +951,7 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                 }
                 {
                     duration ? <div className={styles.duration}>
-                        <Image src={"/images/duration.png"} width={60} height={60} />
+                        <Image src={"/images/efecttime.png"} width={60} height={60} />
                         <div className={styles.desc2}>
                             <h1 className={styles.atributesP}>
                                 Duração
@@ -977,7 +977,7 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                 }
                 {
                     width ? <div className={styles.width}>
-                        <Image src={"/images/width.png"} width={60} height={60} />
+                        <Image src={"/images/radius.png"} width={60} height={60} />
                         <div className={styles.desc2}>
                             <h1 className={styles.atributesP}>
                                 Largura
@@ -1042,7 +1042,7 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                 }
                 {
                     projectilerange ? <div className={styles.projectilerange}>
-                        <Image src={"/images/projectilerange.png"} width={60} height={60} />
+                        <Image src={"/images/damageondistance.png"} width={60} height={60} />
                         <div className={styles.desc2}>
                             <h1 className={styles.atributesP}>
                                 Alcance do projétil

@@ -104,6 +104,10 @@ export default function createCard() {
   const addAtributes = () => {
     //coloque um limite de 10 atributos possiveis
     if (atributes.length >= 10) {
+      setErrorA("Máximo de atributos atingido")
+      setTimeout(() => {
+        setErrorA("")
+      }, 3000)
       return;
     }
     else if (inputvalue == "" || selectedOption == "") {
