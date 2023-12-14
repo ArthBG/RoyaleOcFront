@@ -244,10 +244,12 @@
 @media (max-width: 600px) {
     .divIntro1,
     .divIntro2,
-    .divcard2,
-    .divRender {
+    .divcard2 {
         width: 100%;
         max-width: none;
+    }
+    .divRender{
+        margin-top: 1rem;
     }
     .backgroundimage{
         overflow-x: hidden;
@@ -260,14 +262,16 @@
         flex-direction: column;
     }
     .description{
-        font-size: 1rem;
+        font-size: 15px;
         width: 100%;
         text-align: center;
         justify-content: center;
     }
- 
+    .titles{
+        font-size: 25px;
+    }
     .title{
-        font-size: 1.5rem;
+        font-size: 37px;
     }
     .divall{
         flex-direction: column;
@@ -277,7 +281,6 @@
     }
     .divText,
     .divText2,
-    .divBtns,
     .divimgs,
     .divCard,
     .gigaimg,
@@ -286,5 +289,10 @@
     .divIntro,
     .divall {
         margin: 1rem;
+    }
+    .divBtns {
+        flex-direction: column;
+        width: 70%;
+
     }
 }

@@ -17,7 +17,7 @@ export default function Home() {
   };
 
   const seeMore = () => {
-    window.scrollTo(0, 800);
+    window.scrollTo(0, 1000);
   }
 
   return (
@@ -259,7 +259,7 @@ export default function Home() {
 
         <div className={styles.divIntross}>
           <div className={styles.divIntro212}>
-            <h1 className={styles.titles}>NOVA ATUALIZAÇÃO</h1>
+            <h1 className={styles.titles}>NOVA ATUALIZAÇÃO !</h1>
             <Link className={styles.a} href={'/cards/news'}>
               <div className={styles.divIntro21}>
                 <Image className={styles.img} src={"/images/newstuff.webp"} width={600} height={400} layout="responsive" />
@@ -280,7 +280,7 @@ export default function Home() {
                 </div>
                 <div className={styles.cbmar}>
                   <Link className={styles.a} href={'/membros'}>
-                    <Image className={styles.image} src={'/images/sobrenosescudo.png'} width={170} height={150}  ></Image>
+                    <Image className={styles.image} src={'/images/sobrenosescudo.png'} width={170} height={100}  ></Image>
                   </Link>
                   <h1 className={styles.contact}>Sobre Nós</h1>
                 </div>
