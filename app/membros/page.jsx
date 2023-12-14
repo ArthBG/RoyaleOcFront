@@ -24,7 +24,7 @@ export default function Page() {
             setMembros(membros.filter((membro) => membro.id !== id));
         } catch (error) {
             console.error("Error deleting membro", error);
-          
+
         }
     };
     console.log(dados, membros)
@@ -51,81 +51,81 @@ export default function Page() {
     return (
 
         <div className={styles.container}>
-            <Header/>
+            <Header />
             <main className={styles.main22}>
-            <h1 className={styles.h1}>Membros</h1>
-            <div className={styles.divPai}>
+                <h1 className={styles.h1}>Membros</h1>
+                <div className={styles.divPai}>
 
-                {/* Se há dados, exibe a lista de membros; caso contrário, exibe uma mensagem de carregamento ou erro. */}
-                {dados.length ? (
-                    // Se há membros, mapeia e exibe as informações de cada membro.
-                    <div>
-                    <div className={styles.map}>
-                        {membros.map((membro) => (
-                            <div key={membro.id}>
-                               
-                                <div className={styles.divpaiinfos}>
-                                    {/*  Informações do membro */}
-                             
-                                    <p className={styles.infos}>
-                                        <strong></strong> {membro.nome}
-                                    </p>
-                                    <p className={styles.infos}>
-                                        <strong>Idade:</strong> {membro.idade}
-                                    </p>
-                                    <p className={styles.infos}>
-                                        <strong></strong> {membro.cargo}
-                                    </p>
-                                    <p className={styles.infosImg}>
-                                        <strong></strong>
-                                        <img className={styles.img} src={membro.foto} width={200} height={200} />
-                                    </p>
-                                    <p className={styles.descricao}>
-                                        <strong>Descrição:</strong> {membro.descricao}
-                                    </p>
-                                    
-                                    <div className={styles.divbtn}>
+                    {/* Se há dados, exibe a lista de membros; caso contrário, exibe uma mensagem de carregamento ou erro. */}
+                    {dados.length ? (
+                        // Se há membros, mapeia e exibe as informações de cada membro.
+                        <div>
+                            <div className={styles.map}>
+                                {membros.map((membro) => (
+                                    <div key={membro.id}>
 
-                                        <button className={styles.btndelete} onClick={() => deletar(membro.id)}>
-                                            <div className={styles.overlay}></div>
-                                            <div className={styles.overlay}></div>
-                                            <div className={styles.overlay}></div>
-                                            <span>Deletar</span>
-                                        </button >
+                                        <div className={styles.divpaiinfos}>
+                                            {/*  Informações do membro */}
+                                            <div className={styles.miniinfos}>
+                                                <p className={styles.infos}>
+                                                    <strong></strong> {membro.nome}
+                                                </p>
+                                                <p className={styles.infos}>
+                                                    <strong>Idade:</strong> {membro.idade}
+                                                </p>
+                                                <p className={styles.infos}>
+                                                    <strong></strong> {membro.cargo}
+                                                </p>
+                                                <p className={styles.infosImg}>
+                                                    <strong></strong>
+                                                    <img className={styles.img} src={membro.foto} width={160} height={160} />
+                                                </p>
+                                                <p className={styles.descricao}>
+                                                    <strong>Descrição:</strong> {membro.descricao}
+                                                </p>
+                                            </div>
+                                            <div className={styles.divbtn}>
 
-                                        <button className={styles.btnupdate} onClick={() => update(membro.id)}>
-                                            <div className={styles.overlay}></div>
-                                            <div className={styles.overlay}></div>
-                                            <div className={styles.overlay}></div>
-                                            <span>Editar</span>
-                                        </button >
+                                                <button className={styles.btndelete} onClick={() => deletar(membro.id)}>
+                                                    <div className={styles.overlay}></div>
+                                                    <div className={styles.overlay}></div>
+                                                    <div className={styles.overlay}></div>
+                                                    <span>Deletar</span>
+                                                </button >
+
+                                                <button className={styles.btnupdate} onClick={() => update(membro.id)}>
+                                                    <div className={styles.overlay}></div>
+                                                    <div className={styles.overlay}></div>
+                                                    <div className={styles.overlay}></div>
+                                                    <span>Editar</span>
+                                                </button >
+
+                                            </div>
+
+                                        </div>
 
                                     </div>
-                                    
-                                </div>
-                               
+
+                                ))}
+
                             </div>
-                           
-                        ))}
-                        
-                    </div>
-                    <div className={styles.cria}>
-                            <Link href="/membros/cadastro">
-                                <button type="submit" className={styles.btncreate}>
-                                    <div className={styles.overlay}></div>
-                                    <div className={styles.overlay}></div>
-                                    <div className={styles.overlay}></div>
-                                    <span>Cadastro</span>
-                                </button >
-                            </Link>
+                            <div className={styles.cria}>
+                                <Link href="/membros/cadastro">
+                                    <button type="submit" className={styles.btncreate}>
+                                        <div className={styles.overlay}></div>
+                                        <div className={styles.overlay}></div>
+                                        <div className={styles.overlay}></div>
+                                        <span>Cadastro</span>
+                                    </button >
+                                </Link>
+                            </div>
                         </div>
-                    </div>
-                ) : (
-                    <p>carregando..</p>
-                )}
-            </div>
+                    ) : (
+                        <p>carregando..</p>
+                    )}
+                </div>
             </main>
-            <Footer/>
+            <Footer />
         </div>
     );
 }
