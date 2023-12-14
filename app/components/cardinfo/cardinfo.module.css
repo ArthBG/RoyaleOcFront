@@ -141,6 +141,9 @@ max-width: 30rem;
     flex-direction: column;
     margin-top: 1rem;
 }
+.campeaotropa{
+    display: flex;
+}
 .atributesCondition div{
     background-color: rgb(255, 255, 255);
     border-radius: 3px;

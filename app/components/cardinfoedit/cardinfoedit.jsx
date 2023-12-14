@@ -679,7 +679,7 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                                                                         :
                                                                         (rarity == "Campeão" && type == "Tropa" ?
                                                                         <div className={styles.trick}>
-                                                                        <div className={stylesDetails.campeaotropa}>
+                                                                        <div className={styles.campeaotropa}>
                                                                         <div className={stylesDetails.minicards}>
                                                                             <div className={stylesDetails.minicard}>
                                                                                 <div className={stylesDetails.fundoR}>
@@ -714,7 +714,7 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                                                                             :
                                                                             (rarity == "Campeão" && type == "Feitiço" ?
                                                                             <div className={styles.trick}>
-                                                                        <div className={stylesDetails.campeaotropa}>
+                                                                        <div className={styles.campeaotropa}>
                                                                         <div className={stylesDetails.minicards}>
                                                                             <div className={stylesDetails.minicard}>
                                                                                 <div className={stylesDetails.fundoR}>
@@ -746,7 +746,7 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                                                                                     :
                                                                                     (rarity == "Campeão" && type == "Construção" ?
                                                                                     <div className={styles.trick}>
-                                                                        <div className={stylesDetails.campeaotropa}>
+                                                                        <div className={styles.campeaotropa}>
                                                                         <div className={stylesDetails.minicards}>
                                                                             <div className={stylesDetails.minicard}>
                                                                                 <div className={stylesDetails.fundoR}>
