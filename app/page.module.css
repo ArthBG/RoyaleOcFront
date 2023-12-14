@@ -30,6 +30,15 @@
     text-align: center;
 }
 
+.divIntross{
+    background-image: url("../public/images/arenabgroyale.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    display: flex;
+}
+
 .divcard2 {
     margin-top: 4rem;
     width: 40%;

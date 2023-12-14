@@ -255,7 +255,7 @@ export default function Home() {
 
         </Carousel>
 
-        <div className={styles.cards}>
+       <div className={styles.divIntross}>
           <div className={styles.divcard2}>
             <div className={styles.a3}>
               <h2 className={styles.titulo}>E-Sports e Torneios: </h2>
@@ -272,6 +272,7 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
           <div className={styles.divcard1}>
             <div className={styles.divcard}>
               <div className={styles.a2}>
@@ -303,7 +304,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
+      
         <Footer />
     </main>
   )
