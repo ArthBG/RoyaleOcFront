@@ -68,6 +68,9 @@
     margin-left: 32%;
     color: rgb(22, 22, 53);
 }
+.h2{
+    font-size: 1.5rem;
+}
 
 .home {
     border: none;
@@ -77,7 +80,7 @@
     color: inherit;
     background: none;
     cursor: pointer;
-    padding: 1rem 1.875rem;
+    padding: 1rem 1.3rem;
     display: inline-block;
     margin: auto;
     text-transform: uppercase;
@@ -88,6 +91,7 @@
     display: flex;
     justify-content: center;
     transition: all 0.3s;
+    margin-bottom: 8%;
 }
 
 .home {
@@ -342,9 +346,12 @@
     .container {
         overflow-x: hidden;
     }
+    .home{
+        margin-top: 2%;
+    }
 
     .nivel {
-        margin-top: -58%;
+        margin-top: -56%;
         font-size: 14px;
     }
 
