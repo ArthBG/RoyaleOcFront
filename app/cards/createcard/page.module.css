@@ -423,8 +423,7 @@
     .closeBtn {
         position: absolute;
         top: -40px;
-        right: -205px;
-        width: 95%;
+        width: 100%;
         text-align: center;
         font-size: 2rem;
         color: red;
