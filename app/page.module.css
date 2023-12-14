@@ -37,12 +37,15 @@
     text-shadow: 2px 4px 2px #000;
     font-size: 14px;
     line-height: 1.6;
-    width: 100%;
+    width: 80%;
+    margin: auto;
+    text-align: justify;
     margin-top: 1rem;
 }
 
 .buttonSeemore {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
+    margin-right: 20rem;
     width: 100%;
     max-width: 10rem;
     padding: 1rem;
@@ -294,5 +297,9 @@
         flex-direction: column;
         width: 70%;
 
+    }
+    .buttonSeemore{
+        margin: auto;
+        margin-top: 1.5rem;
     }
 }
