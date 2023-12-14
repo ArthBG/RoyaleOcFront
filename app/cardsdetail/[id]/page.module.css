@@ -175,7 +175,10 @@
     margin-top: 2rem;
     height: 10%;
 }
-
+.campeaotropa{
+    display: flex;
+    margin-right: 1rem;
+}
 /* carrousel */
 .slider {
     overflow: hidden;

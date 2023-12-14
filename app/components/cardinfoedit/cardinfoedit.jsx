@@ -1,31 +1,16 @@
 import Image from "next/image"
 import styles from "../cardinfo/cardinfo.module.css"
+import stylesDetails from "../../cardsdetail/[id]/page.module.css"
 export default function CardInfoedit({ name, image, imageupdated, type, rarity, elixir, hp, deploytime, shieldhp, description, damage, damagepersecond, rangeddamage, damageondistance, damageonarea, damageonimpact, damageontower, chargedamage, damageondeath, spawnspeed, duration, radius, width, efecttime, freezetime, unities, arena, target, projectilerange, range, speed, impactspeed, id, level, change }) {
     return (
         <div className={styles.CardInfo} >
 
             <h1 className={styles.cardName}>{name}</h1>
             <div className={styles.containerCards}>
-            <div className={styles.containerCards2}>
-                {imageupdated && !image || !change == "Sim" ? <Image src={imageupdated} width={250} height={300} /> : change == "Não" && !image ? (<Image src={imageupdated} width={250} height={300} />) : null}
-                {image || change == "Sim" ?
-                    elixir == "1" && rarity == "Comum" || rarity == "Raro" || rarity == "Épico" ? (
-                        <div className={styles.imagecomming} style={{
-                            backgroundImage: `url(${image})`,
-                            backgroundRepeat: "no-repeat",
-                            backgroundSize: "230px 246px",
-                            borderRadius: "40px",
-                            backgroundPositionY: "3px",
-                            backgroundPositionX: "center",
-                            backgroundPosition: "center",
-                        }}>
-                            <div className={styles.oi}>
-                                <Image src={"/images/createcard/normal.png"} className={styles.oi0} width={230} height={256} />
-                                <Image src={"/images/createcard/communCard1.png"} className={styles.oi2} width={63} height={63} />
-                            </div>
-                        </div>
-                    ) : (
-                        elixir == "2" && rarity == "Comum" || rarity == "Raro" || rarity == "Épico" ? (
+                <div className={styles.containerCards2}>
+                    {!change == "Sim" ? <Image src={imageupdated} width={250} height={300} /> : null}
+                    {change == "Sim" ?
+                        elixir == "1" && rarity == "Comum" || rarity == "Raro" || rarity == "Épico" ? (
                             <div className={styles.imagecomming} style={{
                                 backgroundImage: `url(${image})`,
                                 backgroundRepeat: "no-repeat",
@@ -37,11 +22,11 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                             }}>
                                 <div className={styles.oi}>
                                     <Image src={"/images/createcard/normal.png"} className={styles.oi0} width={230} height={256} />
-                                    <Image src={"/images/createcard/communCard2.png"} className={styles.oi2} width={63} height={63} />
+                                    <Image src={"/images/createcard/communCard1.png"} className={styles.oi2} width={63} height={63} />
                                 </div>
                             </div>
                         ) : (
-                            elixir == "3" && rarity == "Comum" || rarity == "Raro" || rarity == "Épico" ? (
+                            elixir == "2" && rarity == "Comum" || rarity == "Raro" || rarity == "Épico" ? (
                                 <div className={styles.imagecomming} style={{
                                     backgroundImage: `url(${image})`,
                                     backgroundRepeat: "no-repeat",
@@ -53,11 +38,11 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                                 }}>
                                     <div className={styles.oi}>
                                         <Image src={"/images/createcard/normal.png"} className={styles.oi0} width={230} height={256} />
-                                        <Image src={"/images/createcard/communCard3.png"} className={styles.oi2} width={63} height={63} />
+                                        <Image src={"/images/createcard/communCard2.png"} className={styles.oi2} width={63} height={63} />
                                     </div>
                                 </div>
                             ) : (
-                                elixir == "4" && rarity == "Comum" || rarity == "Raro" || rarity == "Épico" ? (
+                                elixir == "3" && rarity == "Comum" || rarity == "Raro" || rarity == "Épico" ? (
                                     <div className={styles.imagecomming} style={{
                                         backgroundImage: `url(${image})`,
                                         backgroundRepeat: "no-repeat",
@@ -69,11 +54,11 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                                     }}>
                                         <div className={styles.oi}>
                                             <Image src={"/images/createcard/normal.png"} className={styles.oi0} width={230} height={256} />
-                                            <Image src={"/images/createcard/communCard4.png"} className={styles.oi2} width={63} height={63} />
+                                            <Image src={"/images/createcard/communCard3.png"} className={styles.oi2} width={63} height={63} />
                                         </div>
                                     </div>
                                 ) : (
-                                    elixir == "5" && rarity == "Comum" || rarity == "Raro" || rarity == "Épico" ? (
+                                    elixir == "4" && rarity == "Comum" || rarity == "Raro" || rarity == "Épico" ? (
                                         <div className={styles.imagecomming} style={{
                                             backgroundImage: `url(${image})`,
                                             backgroundRepeat: "no-repeat",
@@ -85,11 +70,11 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                                         }}>
                                             <div className={styles.oi}>
                                                 <Image src={"/images/createcard/normal.png"} className={styles.oi0} width={230} height={256} />
-                                                <Image src={"/images/createcard/communCard5.png"} className={styles.oi2} width={63} height={63} />
+                                                <Image src={"/images/createcard/communCard4.png"} className={styles.oi2} width={63} height={63} />
                                             </div>
                                         </div>
                                     ) : (
-                                        elixir == "6" && rarity == "Comum" || rarity == "Raro" || rarity == "Épico" ? (
+                                        elixir == "5" && rarity == "Comum" || rarity == "Raro" || rarity == "Épico" ? (
                                             <div className={styles.imagecomming} style={{
                                                 backgroundImage: `url(${image})`,
                                                 backgroundRepeat: "no-repeat",
@@ -101,11 +86,11 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                                             }}>
                                                 <div className={styles.oi}>
                                                     <Image src={"/images/createcard/normal.png"} className={styles.oi0} width={230} height={256} />
-                                                    <Image src={"/images/createcard/communCard6.png"} className={styles.oi2} width={63} height={63} />
+                                                    <Image src={"/images/createcard/communCard5.png"} className={styles.oi2} width={63} height={63} />
                                                 </div>
                                             </div>
                                         ) : (
-                                            elixir == "7" && rarity == "Comum" || rarity == "Raro" || rarity == "Épico" ? (
+                                            elixir == "6" && rarity == "Comum" || rarity == "Raro" || rarity == "Épico" ? (
                                                 <div className={styles.imagecomming} style={{
                                                     backgroundImage: `url(${image})`,
                                                     backgroundRepeat: "no-repeat",
@@ -117,11 +102,11 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                                                 }}>
                                                     <div className={styles.oi}>
                                                         <Image src={"/images/createcard/normal.png"} className={styles.oi0} width={230} height={256} />
-                                                        <Image src={"/images/createcard/communCard7.png"} className={styles.oi2} width={63} height={63} />
+                                                        <Image src={"/images/createcard/communCard6.png"} className={styles.oi2} width={63} height={63} />
                                                     </div>
                                                 </div>
                                             ) : (
-                                                elixir == "8" && rarity == "Comum" || rarity == "Raro" || rarity == "Épico" ? (
+                                                elixir == "7" && rarity == "Comum" || rarity == "Raro" || rarity == "Épico" ? (
                                                     <div className={styles.imagecomming} style={{
                                                         backgroundImage: `url(${image})`,
                                                         backgroundRepeat: "no-repeat",
@@ -133,25 +118,27 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                                                     }}>
                                                         <div className={styles.oi}>
                                                             <Image src={"/images/createcard/normal.png"} className={styles.oi0} width={230} height={256} />
-                                                            <Image src={"/images/createcard/communCard8.png"} className={styles.oi2} width={63} height={63} />
+                                                            <Image src={"/images/createcard/communCard7.png"} className={styles.oi2} width={63} height={63} />
                                                         </div>
                                                     </div>
                                                 ) : (
-                                                    elixir == "9" && rarity == "Comum" || rarity == "Raro" || rarity == "Épico" ? (
+                                                    elixir == "8" && rarity == "Comum" || rarity == "Raro" || rarity == "Épico" ? (
                                                         <div className={styles.imagecomming} style={{
                                                             backgroundImage: `url(${image})`,
                                                             backgroundRepeat: "no-repeat",
                                                             backgroundSize: "230px 246px",
                                                             borderRadius: "40px",
+                                                            backgroundPositionY: "3px",
+                                                            backgroundPositionX: "center",
                                                             backgroundPosition: "center",
                                                         }}>
                                                             <div className={styles.oi}>
                                                                 <Image src={"/images/createcard/normal.png"} className={styles.oi0} width={230} height={256} />
-                                                                <Image src={"/images/createcard/communCard9.png"} className={styles.oi2} width={63} height={63} />
+                                                                <Image src={"/images/createcard/communCard8.png"} className={styles.oi2} width={63} height={63} />
                                                             </div>
                                                         </div>
                                                     ) : (
-                                                        elixir == "10" && rarity == "Comum" || rarity == "Raro" || rarity == "Épico" ? (
+                                                        elixir == "9" && rarity == "Comum" || rarity == "Raro" || rarity == "Épico" ? (
                                                             <div className={styles.imagecomming} style={{
                                                                 backgroundImage: `url(${image})`,
                                                                 backgroundRepeat: "no-repeat",
@@ -161,31 +148,26 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                                                             }}>
                                                                 <div className={styles.oi}>
                                                                     <Image src={"/images/createcard/normal.png"} className={styles.oi0} width={230} height={256} />
-                                                                    <Image src={"/images/createcard/communCard10.png"} className={styles.oi2} width={63} height={63} />
+                                                                    <Image src={"/images/createcard/communCard9.png"} className={styles.oi2} width={63} height={63} />
                                                                 </div>
                                                             </div>
                                                         ) : (
-                                                            elixir == "1" && rarity == "Lendário" ? (
-
+                                                            elixir == "10" && rarity == "Comum" || rarity == "Raro" || rarity == "Épico" ? (
                                                                 <div className={styles.imagecomming} style={{
                                                                     backgroundImage: `url(${image})`,
                                                                     backgroundRepeat: "no-repeat",
-                                                                    backgroundSize: "220px 215px",
-                                                                    borderBottomLeftRadius: "180px",
-                                                                    borderBottomRightRadius: "180px",
-                                                                    borderTopLeftRadius: "100px",
-                                                                    borderTopRightRadius: "170px",
-                                                                    backgroundPositionY: "20px",
-                                                                    backgroundPositionX: "center",
+                                                                    backgroundSize: "230px 246px",
+                                                                    borderRadius: "40px",
                                                                     backgroundPosition: "center",
                                                                 }}>
                                                                     <div className={styles.oi}>
-                                                                        <Image src={"/images/createcard/legendary.png"} className={styles.oi0} width={230} height={256} />
-                                                                        <Image src={"/images/createcard/communCard1.png"} className={styles.oi2} width={63} height={63} />
+                                                                        <Image src={"/images/createcard/normal.png"} className={styles.oi0} width={230} height={256} />
+                                                                        <Image src={"/images/createcard/communCard10.png"} className={styles.oi2} width={63} height={63} />
                                                                     </div>
                                                                 </div>
                                                             ) : (
-                                                                elixir == "2" && rarity == "Lendário" ? (
+                                                                elixir == "1" && rarity == "Lendário" ? (
+
                                                                     <div className={styles.imagecomming} style={{
                                                                         backgroundImage: `url(${image})`,
                                                                         backgroundRepeat: "no-repeat",
@@ -200,13 +182,11 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                                                                     }}>
                                                                         <div className={styles.oi}>
                                                                             <Image src={"/images/createcard/legendary.png"} className={styles.oi0} width={230} height={256} />
-                                                                            <Image src={"/images/createcard/communCard2.png"} className={styles.oi2} width={63} height={63} />
+                                                                            <Image src={"/images/createcard/communCard1.png"} className={styles.oi2} width={63} height={63} />
                                                                         </div>
                                                                     </div>
                                                                 ) : (
-                                                                    elixir == "3" && rarity == "Lendário" ? (
-
-
+                                                                    elixir == "2" && rarity == "Lendário" ? (
                                                                         <div className={styles.imagecomming} style={{
                                                                             backgroundImage: `url(${image})`,
                                                                             backgroundRepeat: "no-repeat",
@@ -221,11 +201,11 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                                                                         }}>
                                                                             <div className={styles.oi}>
                                                                                 <Image src={"/images/createcard/legendary.png"} className={styles.oi0} width={230} height={256} />
-                                                                                <Image src={"/images/createcard/communCard3.png"} className={styles.oi2} width={63} height={63} />
+                                                                                <Image src={"/images/createcard/communCard2.png"} className={styles.oi2} width={63} height={63} />
                                                                             </div>
                                                                         </div>
                                                                     ) : (
-                                                                        elixir == "4" && rarity == "Lendário" ? (
+                                                                        elixir == "3" && rarity == "Lendário" ? (
 
 
                                                                             <div className={styles.imagecomming} style={{
@@ -242,11 +222,11 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                                                                             }}>
                                                                                 <div className={styles.oi}>
                                                                                     <Image src={"/images/createcard/legendary.png"} className={styles.oi0} width={230} height={256} />
-                                                                                    <Image src={"/images/createcard/communCard4.png"} className={styles.oi2} width={63} height={63} />
+                                                                                    <Image src={"/images/createcard/communCard3.png"} className={styles.oi2} width={63} height={63} />
                                                                                 </div>
                                                                             </div>
                                                                         ) : (
-                                                                            elixir == "5" && rarity == "Lendário" ? (
+                                                                            elixir == "4" && rarity == "Lendário" ? (
 
 
                                                                                 <div className={styles.imagecomming} style={{
@@ -263,11 +243,11 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                                                                                 }}>
                                                                                     <div className={styles.oi}>
                                                                                         <Image src={"/images/createcard/legendary.png"} className={styles.oi0} width={230} height={256} />
-                                                                                        <Image src={"/images/createcard/communCard5.png"} className={styles.oi2} width={63} height={63} />
+                                                                                        <Image src={"/images/createcard/communCard4.png"} className={styles.oi2} width={63} height={63} />
                                                                                     </div>
                                                                                 </div>
                                                                             ) : (
-                                                                                elixir == "6" && rarity == "Lendário" ? (
+                                                                                elixir == "5" && rarity == "Lendário" ? (
 
 
                                                                                     <div className={styles.imagecomming} style={{
@@ -284,11 +264,11 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                                                                                     }}>
                                                                                         <div className={styles.oi}>
                                                                                             <Image src={"/images/createcard/legendary.png"} className={styles.oi0} width={230} height={256} />
-                                                                                            <Image src={"/images/createcard/communCard6.png"} className={styles.oi2} width={63} height={63} />
+                                                                                            <Image src={"/images/createcard/communCard5.png"} className={styles.oi2} width={63} height={63} />
                                                                                         </div>
                                                                                     </div>
                                                                                 ) : (
-                                                                                    elixir == "7" && rarity == "Lendário" ? (
+                                                                                    elixir == "6" && rarity == "Lendário" ? (
 
 
                                                                                         <div className={styles.imagecomming} style={{
@@ -305,11 +285,11 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                                                                                         }}>
                                                                                             <div className={styles.oi}>
                                                                                                 <Image src={"/images/createcard/legendary.png"} className={styles.oi0} width={230} height={256} />
-                                                                                                <Image src={"/images/createcard/communCard7.png"} className={styles.oi2} width={63} height={63} />
+                                                                                                <Image src={"/images/createcard/communCard6.png"} className={styles.oi2} width={63} height={63} />
                                                                                             </div>
                                                                                         </div>
                                                                                     ) : (
-                                                                                        elixir == "8" && rarity == "Lendário" ? (
+                                                                                        elixir == "7" && rarity == "Lendário" ? (
 
 
                                                                                             <div className={styles.imagecomming} style={{
@@ -326,11 +306,11 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                                                                                             }}>
                                                                                                 <div className={styles.oi}>
                                                                                                     <Image src={"/images/createcard/legendary.png"} className={styles.oi0} width={230} height={256} />
-                                                                                                    <Image src={"/images/createcard/communCard8.png"} className={styles.oi2} width={63} height={63} />
+                                                                                                    <Image src={"/images/createcard/communCard7.png"} className={styles.oi2} width={63} height={63} />
                                                                                                 </div>
                                                                                             </div>
                                                                                         ) : (
-                                                                                            elixir == "9" && rarity == "Lendário" ? (
+                                                                                            elixir == "8" && rarity == "Lendário" ? (
 
 
                                                                                                 <div className={styles.imagecomming} style={{
@@ -347,11 +327,11 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                                                                                                 }}>
                                                                                                     <div className={styles.oi}>
                                                                                                         <Image src={"/images/createcard/legendary.png"} className={styles.oi0} width={230} height={256} />
-                                                                                                        <Image src={"/images/createcard/communCard9.png"} className={styles.oi2} width={63} height={63} />
+                                                                                                        <Image src={"/images/createcard/communCard8.png"} className={styles.oi2} width={63} height={63} />
                                                                                                     </div>
                                                                                                 </div>
                                                                                             ) : (
-                                                                                                elixir == "10" && rarity == "Lendário" ? (
+                                                                                                elixir == "9" && rarity == "Lendário" ? (
 
 
                                                                                                     <div className={styles.imagecomming} style={{
@@ -368,31 +348,33 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                                                                                                     }}>
                                                                                                         <div className={styles.oi}>
                                                                                                             <Image src={"/images/createcard/legendary.png"} className={styles.oi0} width={230} height={256} />
-                                                                                                            <Image src={"/images/createcard/communCard10.png"} className={styles.oi2} width={63} height={63} />
+                                                                                                            <Image src={"/images/createcard/communCard9.png"} className={styles.oi2} width={63} height={63} />
                                                                                                         </div>
                                                                                                     </div>
                                                                                                 ) : (
-                                                                                                    elixir == "1" && rarity == "Campeão" ? (
+                                                                                                    elixir == "10" && rarity == "Lendário" ? (
+
 
                                                                                                         <div className={styles.imagecomming} style={{
                                                                                                             backgroundImage: `url(${image})`,
                                                                                                             backgroundRepeat: "no-repeat",
-                                                                                                            backgroundSize: "220px 210px",
-                                                                                                            borderBottomLeftRadius: "190px",
-                                                                                                            borderBottomRightRadius: "190px",
-                                                                                                            borderTopLeftRadius: "137px",
-                                                                                                            borderTopRightRadius: "160px",
-                                                                                                            backgroundPositionY: "25px",
+                                                                                                            backgroundSize: "220px 215px",
+                                                                                                            borderBottomLeftRadius: "180px",
+                                                                                                            borderBottomRightRadius: "180px",
+                                                                                                            borderTopLeftRadius: "100px",
+                                                                                                            borderTopRightRadius: "170px",
+                                                                                                            backgroundPositionY: "20px",
                                                                                                             backgroundPositionX: "center",
                                                                                                             backgroundPosition: "center",
                                                                                                         }}>
                                                                                                             <div className={styles.oi}>
-                                                                                                                <Image src={"/images/createcard/champion.png"} className={styles.oi0} width={230} height={256} />
-                                                                                                                <Image src={"/images/createcard/communCard1.png"} className={styles.oi2} width={63} height={63} />
+                                                                                                                <Image src={"/images/createcard/legendary.png"} className={styles.oi0} width={230} height={256} />
+                                                                                                                <Image src={"/images/createcard/communCard10.png"} className={styles.oi2} width={63} height={63} />
                                                                                                             </div>
                                                                                                         </div>
                                                                                                     ) : (
-                                                                                                        elixir == "2" && rarity == "Campeão" ? (
+                                                                                                        elixir == "1" && rarity == "Campeão" ? (
+
                                                                                                             <div className={styles.imagecomming} style={{
                                                                                                                 backgroundImage: `url(${image})`,
                                                                                                                 backgroundRepeat: "no-repeat",
@@ -407,12 +389,11 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                                                                                                             }}>
                                                                                                                 <div className={styles.oi}>
                                                                                                                     <Image src={"/images/createcard/champion.png"} className={styles.oi0} width={230} height={256} />
-                                                                                                                    <Image src={"/images/createcard/communCard2.png"} className={styles.oi2} width={63} height={63} />
+                                                                                                                    <Image src={"/images/createcard/communCard1.png"} className={styles.oi2} width={63} height={63} />
                                                                                                                 </div>
                                                                                                             </div>
                                                                                                         ) : (
-                                                                                                            elixir == "3" && rarity == "Campeão" ? (
-
+                                                                                                            elixir == "2" && rarity == "Campeão" ? (
                                                                                                                 <div className={styles.imagecomming} style={{
                                                                                                                     backgroundImage: `url(${image})`,
                                                                                                                     backgroundRepeat: "no-repeat",
@@ -427,11 +408,11 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                                                                                                                 }}>
                                                                                                                     <div className={styles.oi}>
                                                                                                                         <Image src={"/images/createcard/champion.png"} className={styles.oi0} width={230} height={256} />
-                                                                                                                        <Image src={"/images/createcard/communCard3.png"} className={styles.oi2} width={63} height={63} />
+                                                                                                                        <Image src={"/images/createcard/communCard2.png"} className={styles.oi2} width={63} height={63} />
                                                                                                                     </div>
                                                                                                                 </div>
                                                                                                             ) : (
-                                                                                                                elixir == "4" && rarity == "Campeão" ? (
+                                                                                                                elixir == "3" && rarity == "Campeão" ? (
 
                                                                                                                     <div className={styles.imagecomming} style={{
                                                                                                                         backgroundImage: `url(${image})`,
@@ -447,11 +428,11 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                                                                                                                     }}>
                                                                                                                         <div className={styles.oi}>
                                                                                                                             <Image src={"/images/createcard/champion.png"} className={styles.oi0} width={230} height={256} />
-                                                                                                                            <Image src={"/images/createcard/communCard4.png"} className={styles.oi2} width={63} height={63} />
+                                                                                                                            <Image src={"/images/createcard/communCard3.png"} className={styles.oi2} width={63} height={63} />
                                                                                                                         </div>
                                                                                                                     </div>
                                                                                                                 ) : (
-                                                                                                                    elixir == "5" && rarity == "Campeão" ? (
+                                                                                                                    elixir == "4" && rarity == "Campeão" ? (
 
                                                                                                                         <div className={styles.imagecomming} style={{
                                                                                                                             backgroundImage: `url(${image})`,
@@ -467,11 +448,11 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                                                                                                                         }}>
                                                                                                                             <div className={styles.oi}>
                                                                                                                                 <Image src={"/images/createcard/champion.png"} className={styles.oi0} width={230} height={256} />
-                                                                                                                                <Image src={"/images/createcard/communCard5.png"} className={styles.oi2} width={63} height={63} />
+                                                                                                                                <Image src={"/images/createcard/communCard4.png"} className={styles.oi2} width={63} height={63} />
                                                                                                                             </div>
                                                                                                                         </div>
                                                                                                                     ) : (
-                                                                                                                        elixir == "6" && rarity == "Campeão" ? (
+                                                                                                                        elixir == "5" && rarity == "Campeão" ? (
 
                                                                                                                             <div className={styles.imagecomming} style={{
                                                                                                                                 backgroundImage: `url(${image})`,
@@ -487,11 +468,11 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                                                                                                                             }}>
                                                                                                                                 <div className={styles.oi}>
                                                                                                                                     <Image src={"/images/createcard/champion.png"} className={styles.oi0} width={230} height={256} />
-                                                                                                                                    <Image src={"/images/createcard/communCard6.png"} className={styles.oi2} width={63} height={63} />
+                                                                                                                                    <Image src={"/images/createcard/communCard5.png"} className={styles.oi2} width={63} height={63} />
                                                                                                                                 </div>
                                                                                                                             </div>
                                                                                                                         ) : (
-                                                                                                                            elixir == "7" && rarity == "Campeão" ? (
+                                                                                                                            elixir == "6" && rarity == "Campeão" ? (
 
                                                                                                                                 <div className={styles.imagecomming} style={{
                                                                                                                                     backgroundImage: `url(${image})`,
@@ -507,11 +488,11 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                                                                                                                                 }}>
                                                                                                                                     <div className={styles.oi}>
                                                                                                                                         <Image src={"/images/createcard/champion.png"} className={styles.oi0} width={230} height={256} />
-                                                                                                                                        <Image src={"/images/createcard/communCard7.png"} className={styles.oi2} width={63} height={63} />
+                                                                                                                                        <Image src={"/images/createcard/communCard6.png"} className={styles.oi2} width={63} height={63} />
                                                                                                                                     </div>
                                                                                                                                 </div>
                                                                                                                             ) : (
-                                                                                                                                elixir == "8" && rarity == "Campeão" ? (
+                                                                                                                                elixir == "7" && rarity == "Campeão" ? (
 
                                                                                                                                     <div className={styles.imagecomming} style={{
                                                                                                                                         backgroundImage: `url(${image})`,
@@ -527,11 +508,11 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                                                                                                                                     }}>
                                                                                                                                         <div className={styles.oi}>
                                                                                                                                             <Image src={"/images/createcard/champion.png"} className={styles.oi0} width={230} height={256} />
-                                                                                                                                            <Image src={"/images/createcard/communCard8.png"} className={styles.oi2} width={63} height={63} />
+                                                                                                                                            <Image src={"/images/createcard/communCard7.png"} className={styles.oi2} width={63} height={63} />
                                                                                                                                         </div>
                                                                                                                                     </div>
                                                                                                                                 ) : (
-                                                                                                                                    elixir == "9" && rarity == "Campeão" ? (
+                                                                                                                                    elixir == "8" && rarity == "Campeão" ? (
 
                                                                                                                                         <div className={styles.imagecomming} style={{
                                                                                                                                             backgroundImage: `url(${image})`,
@@ -547,11 +528,11 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                                                                                                                                         }}>
                                                                                                                                             <div className={styles.oi}>
                                                                                                                                                 <Image src={"/images/createcard/champion.png"} className={styles.oi0} width={230} height={256} />
-                                                                                                                                                <Image src={"/images/createcard/communCard9.png"} className={styles.oi2} width={63} height={63} />
+                                                                                                                                                <Image src={"/images/createcard/communCard8.png"} className={styles.oi2} width={63} height={63} />
                                                                                                                                             </div>
                                                                                                                                         </div>
                                                                                                                                     ) : (
-                                                                                                                                        elixir == "10" && rarity == "Campeão" ? (
+                                                                                                                                        elixir == "9" && rarity == "Campeão" ? (
 
                                                                                                                                             <div className={styles.imagecomming} style={{
                                                                                                                                                 backgroundImage: `url(${image})`,
@@ -567,15 +548,35 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                                                                                                                                             }}>
                                                                                                                                                 <div className={styles.oi}>
                                                                                                                                                     <Image src={"/images/createcard/champion.png"} className={styles.oi0} width={230} height={256} />
-                                                                                                                                                    <Image src={"/images/createcard/communCard10.png"} className={styles.oi2} width={63} height={63} />
+                                                                                                                                                    <Image src={"/images/createcard/communCard9.png"} className={styles.oi2} width={63} height={63} />
                                                                                                                                                 </div>
                                                                                                                                             </div>
                                                                                                                                         ) : (
-                                                                                                                                            null
-                                                                                                                                        )
-                                                                                                                                    ))))))))))))))))))))))))))))
-                    ) : null
-                }
+                                                                                                                                            elixir == "10" && rarity == "Campeão" ? (
+
+                                                                                                                                                <div className={styles.imagecomming} style={{
+                                                                                                                                                    backgroundImage: `url(${image})`,
+                                                                                                                                                    backgroundRepeat: "no-repeat",
+                                                                                                                                                    backgroundSize: "220px 210px",
+                                                                                                                                                    borderBottomLeftRadius: "190px",
+                                                                                                                                                    borderBottomRightRadius: "190px",
+                                                                                                                                                    borderTopLeftRadius: "137px",
+                                                                                                                                                    borderTopRightRadius: "160px",
+                                                                                                                                                    backgroundPositionY: "25px",
+                                                                                                                                                    backgroundPositionX: "center",
+                                                                                                                                                    backgroundPosition: "center",
+                                                                                                                                                }}>
+                                                                                                                                                    <div className={styles.oi}>
+                                                                                                                                                        <Image src={"/images/createcard/champion.png"} className={styles.oi0} width={230} height={256} />
+                                                                                                                                                        <Image src={"/images/createcard/communCard10.png"} className={styles.oi2} width={63} height={63} />
+                                                                                                                                                    </div>
+                                                                                                                                                </div>
+                                                                                                                                            ) : (
+                                                                                                                                                null
+                                                                                                                                            )
+                                                                                                                                        ))))))))))))))))))))))))))))
+                        ) : null
+                    }
                 </div>
 
                 <div className={styles.cardTroop}>
@@ -677,30 +678,91 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                                                                         </div>
                                                                         :
                                                                         (rarity == "Campeão" && type == "Tropa" ?
-                                                                            <div className={styles.campeaotropa}>
-                                                                                <Image src={"/images/campeaotropa.png"} width={450} height={100} />
-                                                                                <div className={styles.desc}>
-                                                                                    {description}
+                                                                        <div className={stylesDetails.campeaotropa}>
+                                                                        <div className={stylesDetails.minicards}>
+                        
+                                                                            <div className={stylesDetails.minicard}>
+                                                                                <div className={stylesDetails.fundoR}>
+                                                                                    <h2 className={stylesDetails.h2}>Raridade</h2>
+                                                                                </div>
+                                                                                <div className={stylesDetails.fundoInfo}>
+                                                                                    <p className={stylesDetails.p}>Campeão</p>
                                                                                 </div>
                                                                             </div>
+                                                                        
+                                                                    </div>
+                                        
+                                                                    <div className={stylesDetails.minicards}>
+                                                                       
+                                                                            <div className={stylesDetails.minicard}>
+                                                                                <div className={stylesDetails.fundoR}>
+                                                                                    <h2 className={stylesDetails.h2}>Tipo</h2>
+                                                                                </div>
+                                                                                <div className={stylesDetails.fundoInfo}>
+                                                                                    <p className={stylesDetails.p}>Tropa</p>
+                                                                                </div>
+                                                                            </div>
+                                                                    </div>
+                                                                    </div>
+
                                                                             :
                                                                             (rarity == "Campeão" && type == "Feitiço" ?
-                                                                                <div className={styles.campeaofeitico}>
-                                                                                    <Image src={"/images/campeaofeiti.png"} width={450} height={100} />
-                                                                                    <div className={styles.desc}>
-                                                                                        {description}
+                                                                            <div className={stylesDetails.campeaotropa}>
+                                                                            <div className={stylesDetails.minicards}>
+                            
+                                                                                <div className={stylesDetails.minicard}>
+                                                                                    <div className={stylesDetails.fundoR}>
+                                                                                        <h2 className={stylesDetails.h2}>Raridade</h2>
+                                                                                    </div>
+                                                                                    <div className={stylesDetails.fundoInfo}>
+                                                                                        <p className={stylesDetails.p}>Campeão</p>
                                                                                     </div>
                                                                                 </div>
-                                                                                :
-                                                                                (rarity == "Campeão" && type == "Construção" ?
-                                                                                    <div className={styles.campeaoconstrucao}>
-                                                                                        <Image src={"/images/campeaoconst.png"} width={450} height={100} />
-                                                                                        <div className={styles.desc}>
-                                                                                            {description}
-                                                                                        </div>
+                                                                            
+                                                                        </div>
+                                            
+                                                                        <div className={stylesDetails.minicards}>
+                                                                           
+                                                                                <div className={stylesDetails.minicard}>
+                                                                                    <div className={stylesDetails.fundoR}>
+                                                                                        <h2 className={stylesDetails.h2}>Tipo</h2>
                                                                                     </div>
+                                                                                    <div className={stylesDetails.fundoInfo}>
+                                                                                        <p className={stylesDetails.p}>Feitiço</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                        </div>
+                                                                        </div>
                                                                                     :
-                                                                                    null
+                                                                                    (rarity == "Campeão" && type == "Construção" ?
+                                                                                    <div className={stylesDetails.campeaotropa}>
+                                                                        <div className={stylesDetails.minicards}>
+                        
+                                                                            <div className={stylesDetails.minicard}>
+                                                                                <div className={stylesDetails.fundoR}>
+                                                                                    <h2 className={stylesDetails.h2}>Raridade</h2>
+                                                                                </div>
+                                                                                <div className={stylesDetails.fundoInfo}>
+                                                                                    <p className={stylesDetails.p}>Campeão</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        
+                                                                    </div>
+                                        
+                                                                    <div className={stylesDetails.minicards}>
+                                                                       
+                                                                            <div className={stylesDetails.minicard}>
+                                                                                <div className={stylesDetails.fundoR}>
+                                                                                    <h2 className={stylesDetails.h2}>Tipo</h2>
+                                                                                </div>
+                                                                                <div className={stylesDetails.fundoInfo}>
+                                                                                    <p className={stylesDetails.p}>Construção</p>
+                                                                                </div>
+                                                                            </div>
+                                                                    </div>
+                                                                    </div>
+                                                                                        :
+                                                                                        null
                                                                                 ))))))))))))))
                     }
                 </div>
