@@ -116,7 +116,6 @@ const scrollToDown = () => {
       fetchData();
     }
   }, [id]);
-  console.log({ image })
   const handleSubmit = async (e) => {
     e.preventDefault();
     createImageOfaDiv();
@@ -166,6 +165,7 @@ const scrollToDown = () => {
   const handleImage = (e) => {
     const file = e.target.files[0]
     setImageUpdated(URL.createObjectURL(file))
+    setChange("Sim")
   }
 
   const clearAll = () => {
@@ -218,7 +218,7 @@ const scrollToDown = () => {
 
           const dataURL = canvas.toDataURL('image/JPEG');
           setImage(dataURL);
-          setChange("Não")
+          setIsCreated("Sim")
         } else {
           console.error('Canvas vazio ou não foi criado corretamente');
         }
@@ -378,7 +378,7 @@ const scrollToDown = () => {
           <input id="speed" className={styles.input} type="number" value={speed} onChange={e => setSpeed(e.target.value)} />
           <label htmlFor="impactspeed">Velocidade de impacto</label>
           <input id="impactspeed" className={styles.input} type="number" value={impactspeed} onChange={e => setImpactspeed(e.target.value)} />
-          {iscreated == "Criado" ? (
+          {iscreated == "Criado" || iscreated == "Sim" ? (
           <label htmlFor="fileInput" className={styles.customFileInput}>
           ESCOLHA UMA IMAGEM DOS SEUS ARQUIVOS
           📂
