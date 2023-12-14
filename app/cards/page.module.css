@@ -190,11 +190,10 @@
     width: 100%;
 }
 
-@media only screen and (max-width: 600px) and (min-width: 320px){
+@media only screen and (max-width: 740px) and (min-width: 300px){
     .containerCard{
         display: flex;
         flex-wrap: wrap;
-        justify-content: start;
         margin: 0;
         width: auto;
     }
@@ -215,7 +214,7 @@
         width: 72%;
     }
     .icon{
-        margin-left: 2.5rem;
+        margin-left: 2.0rem;
     }
 
     .card{

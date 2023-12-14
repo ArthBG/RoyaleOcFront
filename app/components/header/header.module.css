@@ -105,13 +105,14 @@
         margin-top: 1rem;
     }
 
-    .container2{
+    .container2 {
         width: 100%;
         margin: 0;
         gap: 0.5rem;
         display: flex;
         justify-content: center;
         margin-top: 1rem;
+        margin-bottom: -8rem;
     }
     .contact4{
         display: none;
@@ -135,6 +136,7 @@
     }
 
     .divbutton1{
+        margin-top: 0.5rem;
         margin-bottom: 10rem;
     }
     .a2{

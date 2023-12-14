@@ -1,6 +1,10 @@
 /* Estilos para o contêiner pai. */
 .containerPai {
   background-image: url("../../../public/images/fundoazul.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   font-family: 'clash-font', sans-serif;
   display: flex;
   flex-direction: column;
@@ -179,6 +183,7 @@
 
 .containerbtn {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   margin-top: 20px;
 
