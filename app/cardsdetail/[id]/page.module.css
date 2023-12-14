@@ -261,6 +261,11 @@
 .slider>input:nth-child(4):checked~.sliderContent {
     transform: translateX(-300%);
 }
+.containerLoading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 @media (max-width: 600px) {
     .container {
