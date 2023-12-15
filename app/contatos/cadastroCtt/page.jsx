@@ -47,12 +47,6 @@ export default function Forms() {
                 setErrorNome("");
             }, 3000);
             hasError = true;
-        } else if (nome < 2) {
-            setErrorNome("O nome deve ter no mínimo 2 caracteres!");
-            setTimeout(() => {
-                setErrorNome("");
-            }, 3000);
-            hasError = true;
         } else if (!email.includes('@')) {
             setErrorEmail("O email é inválido!");
             setTimeout(() => {
@@ -105,12 +99,16 @@ export default function Forms() {
                 console.log("Sending data to API:", { nome, email, telefone: telefoneNumber, comentario });
 
                 // Envia uma requisição POST para a API com os dados do novo membro.
-                const response = await axios.post('/api/contatos', { nome, email, telefone: telefoneNumber, comentario });
+              await axios.post('/api/contatos', { nome, email, telefone: telefoneNumber, comentario });
+                
+
                 // Limpa os campos do formulário
                 setNome('');
                 setEmail('');
                 setTelefone('');
+                
                 setComentario('');
+
             } catch (error) {
                 console.error('Error creating member:', error);
             }
