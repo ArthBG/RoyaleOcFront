@@ -12,7 +12,6 @@ import Header from '@/app/components/header/header';
 import Footer from '@/app/components/footer/footer';
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
-import { hasExternalOtelApiPackage } from 'next/dist/build/webpack-config';
 // npm install react-icons --save
 
 export default function updateCard({ params }) {
@@ -53,9 +52,9 @@ export default function updateCard({ params }) {
   const [show, setShow] = useState(true);
   const [iscreated, setIsCreated] = useState("");
   const [change, setChange] = useState("");
-  const [atributes, setAtributes] = useState([]);
-  const [errorA, setErrorA] = useState("");
-
+   const [atributes, setAtributes] = useState([]);
+   const [errorA, setErrorA] = useState("");
+ 
   const router = useRouter();
   const divRef = useRef(null);
   const { id } = params;
@@ -67,24 +66,88 @@ export default function updateCard({ params }) {
 
 
 
-const validateAtributesQuantity = () => {
-  hasError = false;
-  if(atributes.length >=10){
-    setErrorA("Você adicionou mais de 10 atributos!")
-    setTimeout(() => {
-      setErrorA("")
-    }, 3000)
-    hasError = true;
+ const validateAtributesQuantity = () => {
+  updateAttributesByStatesChanges();
+   let hasError = false;
+   if(atributes.length > 10){
+     setErrorA("Você adicionou mais de 10 atributos!")
+     setTimeout(() => {
+       setErrorA("")
+     }, 3000)
+     hasError = true;
+   }
+   if (hasError) {
+     return false;
+ } else {
+     setErrorA("");
+     return true; 
+ }
+
+ }
+
+ const updateAttributesByStatesChanges = () => {
+    let newAttributes = [];
+    if(hp) newAttributes.push(hp);
+    if(deploytime) newAttributes.push(deploytime);
+    if(shieldhp) newAttributes.push(shieldhp);
+    if(damage) newAttributes.push(damage);   
+    if(damagepersecond) newAttributes.push(damagepersecond);
+    if(rangeddamage) newAttributes.push(rangeddamage);
+    if(damageondistance) newAttributes.push(damageondistance);
+    if(damageonarea) newAttributes.push(damageonarea);
+    if(damageonimpact) newAttributes.push(damageonimpact);
+    if(damageontower) newAttributes.push(damageontower);
+    if(chargedamage) newAttributes.push(chargedamage);
+    if(damageondeath) newAttributes.push(damageondeath);
+    if(spawnspeed) newAttributes.push(spawnspeed);
+    if(duration) newAttributes.push(duration);
+    if(radius) newAttributes.push(radius);
+    if(width) newAttributes.push(width);
+    if(efecttime) newAttributes.push(efecttime);
+    if(freezetime) newAttributes.push(freezetime);
+    if(unities) newAttributes.push(unities);
+    if(arena) newAttributes.push(arena);
+    if(target) newAttributes.push(target);
+    if(projectilerange) newAttributes.push(projectilerange);
+    if(range) newAttributes.push(range);
+    if(speed) newAttributes.push(speed);
+    if(impactspeed) newAttributes.push(impactspeed);
+    setAtributes(newAttributes);
   }
-  if (hasError) {
-    return false;
-} else {
-    setErrorA("");
-    return true; 
-}
 
-}
 
+ const updateAttributes = (card) => {
+  const newAttributes = [];
+  
+  // Verificar cada atributo e adicionar à lista de novos atributos se não estiver vazio
+  if (card.hp) newAttributes.push(card.hp);
+  if (card.deploytime) newAttributes.push(card.deploytime);
+  if (card.shieldhp) newAttributes.push(card.shieldhp);
+  if (card.damage) newAttributes.push(card.damage);
+  if (card.damagepersecond) newAttributes.push(card.damagepersecond);
+  if (card.rangeddamage) newAttributes.push(card.rangeddamage);
+  if (card.damageondistance) newAttributes.push(card.damageondistance);
+  if (card.damageonarea) newAttributes.push(card.damageonarea);
+  if (card.damageonimpact) newAttributes.push(card.damageonimpact);
+  if (card.damageontower) newAttributes.push(card.damageontower);
+  if (card.chargedamage) newAttributes.push(card.chargedamage);
+  if (card.damageondeath) newAttributes.push(card.damageondeath);
+  if (card.spawnspeed) newAttributes.push(card.spawnspeed);
+  if (card.duration) newAttributes.push(card.duration);
+  if (card.radius) newAttributes.push(card.radius);
+  if (card.width) newAttributes.push(card.width);
+  if (card.efecttime) newAttributes.push(card.efecttime);
+  if (card.freezetime) newAttributes.push(card.freezetime);
+  if (card.unities) newAttributes.push(card.unities);
+  if (card.arena) newAttributes.push(card.arena);
+  if (card.target) newAttributes.push(card.target);
+  if (card.projectilerange) newAttributes.push(card.projectilerange);
+  if (card.range) newAttributes.push(card.range);
+  if (card.speed) newAttributes.push(card.speed);
+  if (card.impactspeed) newAttributes.push(card.impactspeed);
+
+  setAtributes(newAttributes);
+};
 
 const scrollToDown = () => {
     window.scrollTo(0, 1000000);
@@ -129,7 +192,8 @@ const scrollToDown = () => {
         setImpactspeed(card.impactspeed);
         setLevel(card.level);
         setIsCreated(card.iscreated)
-        setAtributes([card.hp, card.deploytime, card.shieldhp, card.damage, card.damagepersecond, card.rangeddamage, card.damageondistance, card.damageonarea, card.damageonimpact, card.damageontower, card.chargedamage, card.damageondeath, card.spawnspeed, card.duration, card.radius, card.width, card.efecttime, card.freezetime, card.unities, card.arena, card.target, card.projectilerange, card.range, card.speed, card.impactspeed])
+        updateAttributes(card);
+
         console.log(card)
       } catch (error) {
         console.error(error);
@@ -139,11 +203,11 @@ const scrollToDown = () => {
       fetchData();
     }
   }, [id]);
-  console.log({ atributes })
+   console.log({ atributes })
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const isValid = validateAtributesQuantity();
-    if (isValid) {
+     const isValid = validateAtributesQuantity();
+     if (isValid) {
     createImageOfaDiv();
     try {
       const response = await axios.put(`/api/cards/${id}`, {
@@ -186,7 +250,7 @@ const scrollToDown = () => {
     } catch (error) {
       console.error(error);
     }
-  }
+     }
   }
 
   const handleImage = (e) => {
@@ -363,49 +427,49 @@ const scrollToDown = () => {
           <label htmlFor="hp">Pontos de vida</label>
           <input id="hp" className={styles.input} type="number" value={hp} onChange={e => setHp(e.target.value)} />
           <label htmlFor="deploytime">Tempo de implantação</label>
-          <input id="deploytime" className={styles.input} type="number" value={deploytime} onChange={e => setDeploytime(e.target.value)} />
+          <input id="deploytime" className={styles.input} type="text" value={deploytime} onChange={e => setDeploytime(e.target.value)} />
           <label htmlFor="damage">Dano</label>
-          <input id="damage" className={styles.input} type="number" value={damage} onChange={e => setDamage(e.target.value)} />
+          <input id="damage" className={styles.input} type="text" value={damage} onChange={e => setDamage(e.target.value)} />
           <label htmlFor="damagepersecond">Dano por segundo</label>
-          <input id="damagepersecond" className={styles.input} type="number" value={damagepersecond} onChange={e => setDamagepersecond(e.target.value)} />
+          <input id="damagepersecond" className={styles.input} type="text" value={damagepersecond} onChange={e => setDamagepersecond(e.target.value)} />
           <label htmlFor="damageondistance">Dano a distância</label>
-          <input id="damageondistance" className={styles.input} type="number" value={damageondistance} onChange={e => setDamageondistance(e.target.value)} />
+          <input id="damageondistance" className={styles.input} type="text" value={damageondistance} onChange={e => setDamageondistance(e.target.value)} />
           <label htmlFor="damageonarea">Dano em área</label>
-          <input id="damageonarea" className={styles.input} type="number" value={damageonarea} onChange={e => setDamageonarea(e.target.value)} />
+          <input id="damageonarea" className={styles.input} type="text" value={damageonarea} onChange={e => setDamageonarea(e.target.value)} />
           <label htmlFor="damageonimpact">Dano no impacto</label>
-          <input id="damageonimpact" className={styles.input} type="number" value={damageonimpact} onChange={e => setDamageonimpact(e.target.value)} />
+          <input id="damageonimpact" className={styles.input} type="text" value={damageonimpact} onChange={e => setDamageonimpact(e.target.value)} />
           <label htmlFor="damageontower">Dano na torre</label>
-          <input id="damageontower" className={styles.input} type="number" value={damageontower} onChange={e => setDamageontower(e.target.value)} />
+          <input id="damageontower" className={styles.input} type="text" value={damageontower} onChange={e => setDamageontower(e.target.value)} />
           <label htmlFor="chargedamage">Dano carregado</label>
-          <input id="chargedamage" className={styles.input} type="number" value={chargedamage} onChange={e => setChargedamage(e.target.value)} />
+          <input id="chargedamage" className={styles.input} type="text" value={chargedamage} onChange={e => setChargedamage(e.target.value)} />
           <label htmlFor="damageondeath">Dano na morte</label>
-          <input id="damageondeath" className={styles.input} type="number" value={damageondeath} onChange={e => setDamageondeath(e.target.value)} />
+          <input id="damageondeath" className={styles.input} type="text" value={damageondeath} onChange={e => setDamageondeath(e.target.value)} />
           <label htmlFor="spawnspeed">Velocidade de geração</label>
-          <input id="spawnspeed" className={styles.input} type="number" value={spawnspeed} onChange={e => setSpawnspeed(e.target.value)} />
+          <input id="spawnspeed" className={styles.input} type="text" value={spawnspeed} onChange={e => setSpawnspeed(e.target.value)} />
           <label htmlFor="duration">Duração</label>
-          <input id="duration" className={styles.input} type="number" value={duration} onChange={e => setDuration(e.target.value)} />
+          <input id="duration" className={styles.input} type="text" value={duration} onChange={e => setDuration(e.target.value)} />
           <label htmlFor="radius">Raio</label>
-          <input id="radius" className={styles.input} type="number" value={radius} onChange={e => setRadius(e.target.value)} />
+          <input id="radius" className={styles.input} type="text" value={radius} onChange={e => setRadius(e.target.value)} />
           <label htmlFor="width">Largura</label>
-          <input id="width" className={styles.input} type="number" value={width} onChange={e => setWidth(e.target.value)} />
+          <input id="width" className={styles.input} type="text" value={width} onChange={e => setWidth(e.target.value)} />
           <label htmlFor="efecttime">Tempo de efeito</label>
-          <input id="efecttime" className={styles.input} type="number" value={efecttime} onChange={e => setEfecttime(e.target.value)} />
+          <input id="efecttime" className={styles.input} type="text" value={efecttime} onChange={e => setEfecttime(e.target.value)} />
           <label htmlFor="freezetime">Tempo de congelamento</label>
-          <input id="freezetime" className={styles.input} type="number" value={freezetime} onChange={e => setFreezetime(e.target.value)} />
+          <input id="freezetime" className={styles.input} type="text" value={freezetime} onChange={e => setFreezetime(e.target.value)} />
           <label htmlFor="unities">Unidades</label>
-          <input id="unities" className={styles.input} type="number" value={unities} onChange={e => setUnities(e.target.value)} />
+          <input id="unities" className={styles.input} type="text" value={unities} onChange={e => setUnities(e.target.value)} />
           <label htmlFor="arena">Arena</label>
-          <input id="arena" className={styles.input} type="number" value={arena} onChange={e => setArena(e.target.value)} />
+          <input id="arena" className={styles.input} type="text" value={arena} onChange={e => setArena(e.target.value)} />
           <label htmlFor="target">Alvo</label>
-          <input id="target" className={styles.input} type="number" value={target} onChange={e => setTarget(e.target.value)} />
+          <input id="target" className={styles.input} type="text" value={target} onChange={e => setTarget(e.target.value)} />
           <label htmlFor="projectilerange">Alcance do projetil</label>
-          <input id="projectilerange" className={styles.input} type="number" value={projectilerange} onChange={e => setProjectilerange(e.target.value)} />
+          <input id="projectilerange" className={styles.input} type="text" value={projectilerange} onChange={e => setProjectilerange(e.target.value)} />
           <label htmlFor="range">Alcance</label>
-          <input id="range" className={styles.input} type="number" value={range} onChange={e => setRange(e.target.value)} />
+          <input id="range" className={styles.input} type="text" value={range} onChange={e => setRange(e.target.value)} />
           <label htmlFor="speed">Velocidade</label>
-          <input id="speed" className={styles.input} type="number" value={speed} onChange={e => setSpeed(e.target.value)} />
+          <input id="speed" className={styles.input} type="text" value={speed} onChange={e => setSpeed(e.target.value)} />
           <label htmlFor="impactspeed">Velocidade de impacto</label>
-          <input id="impactspeed" className={styles.input} type="number" value={impactspeed} onChange={e => setImpactspeed(e.target.value)} />
+          <input id="impactspeed" className={styles.input} type="text" value={impactspeed} onChange={e => setImpactspeed(e.target.value)} />
           {iscreated == "Criado" || iscreated == "Sim" ? (
           <label htmlFor="fileInput" className={styles.customFileInput}>
           ESCOLHA UMA IMAGEM DOS SEUS ARQUIVOS
@@ -414,7 +478,7 @@ const scrollToDown = () => {
         </label>
           ) : null}
           <textarea className={styles.input} placeholder="Descrição da carta" value={description} onChange={e => setDescription(e.target.value)} />
-          <p className={styles.error}>{errorA}</p>
+          <p className={styles.error}>{errorA}</p> 
           <button className={styles.scbtnyellow} onClick={handleSubmit}>Editar</button>
         </div>
         <div className={styles.containerCards201} ref={divRef} >

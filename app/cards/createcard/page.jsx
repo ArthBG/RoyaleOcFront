@@ -103,8 +103,8 @@ export default function createCard() {
 
   const addAtributes = () => {
     //coloque um limite de 10 atributos possiveis
-    if (atributes.length >= 10) {
-      setErrorA("Máximo de atributos atingido")
+    if (atributes.length > 10) {
+      setErrorA("Máximo de atributos atingido 10")
       setTimeout(() => {
         setErrorA("")
       }, 3000)
