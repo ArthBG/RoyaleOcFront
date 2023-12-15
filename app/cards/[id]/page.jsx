@@ -67,7 +67,6 @@ export default function updateCard({ params }) {
 
 
  const validateAtributesQuantity = () => {
-  updateAttributesByStatesChanges();
    let hasError = false;
    if(atributes.length > 10){
      setErrorA("Você adicionou mais de 10 atributos!")
@@ -84,6 +83,131 @@ export default function updateCard({ params }) {
  }
 
  }
+ const handleHpChange = (event) => {
+  setHp(event.target.value);
+  updateAttributesByStatesChanges(); 
+};
+
+  const handleDeploytimeChange = (event) => {
+    setDeploytime(event.target.value);
+    updateAttributesByStatesChanges();
+  };
+
+  const handleShieldhpChange = (event) => {
+    setShieldhp(event.target.value);
+    updateAttributesByStatesChanges();
+  };
+
+  const handleDamageChange = (event) => {
+    setDamage(event.target.value);
+    updateAttributesByStatesChanges();
+  };
+
+  const handleDamagepersecondChange = (event) => {
+    setDamagepersecond(event.target.value);
+    updateAttributesByStatesChanges();
+  };
+
+  const handleRangeddamageChange = (event) => {
+    setRangeddamage(event.target.value);
+    updateAttributesByStatesChanges();
+  };
+
+  const handleDamageondistanceChange = (event) => {
+    setDamageondistance(event.target.value);
+    updateAttributesByStatesChanges();
+  };
+
+  const handleDamageonareaChange = (event) => {
+    setDamageonarea(event.target.value);
+    updateAttributesByStatesChanges();
+  };
+
+  const handleDamageonimpactChange = (event) => {
+    setDamageonimpact(event.target.value);
+    updateAttributesByStatesChanges();
+  };
+
+  const handleDamageontowerChange = (event) => {
+    setDamageontower(event.target.value);
+    updateAttributesByStatesChanges();
+  };
+
+  const handleChargedamageChange = (event) => {
+    setChargedamage(event.target.value);
+    updateAttributesByStatesChanges();
+  };
+
+  const handleDamageondeathChange = (event) => {
+    setDamageondeath(event.target.value);
+    updateAttributesByStatesChanges();
+  };
+
+  const handleSpawnspeedChange = (event) => {
+    setSpawnspeed(event.target.value);
+    updateAttributesByStatesChanges();
+  };
+
+  const handleDurationChange = (event) => {
+    setDuration(event.target.value);
+    updateAttributesByStatesChanges();
+  };
+
+  const handleRadiusChange = (event) => {
+    setRadius(event.target.value);
+    updateAttributesByStatesChanges();
+  };
+
+  const handleWidthChange = (event) => {
+    setWidth(event.target.value);
+    updateAttributesByStatesChanges();
+  };
+
+  const handleEfecttimeChange = (event) => {
+    setEfecttime(event.target.value);
+    updateAttributesByStatesChanges();
+  };
+
+  const handleFreezetimeChange = (event) => {
+    setFreezetime(event.target.value);
+    updateAttributesByStatesChanges();
+  };
+
+  const handleUnitiesChange = (event) => {
+    setUnities(event.target.value);
+    updateAttributesByStatesChanges();
+  };
+
+  const handleArenaChange = (event) => {
+    setArena(event.target.value);
+    updateAttributesByStatesChanges();
+  };
+
+  const handleTargetChange = (event) => {
+    setTarget(event.target.value);
+    updateAttributesByStatesChanges();
+  };
+  
+  const handleProjectilerangeChange = (event) => {
+    setProjectilerange(event.target.value);
+    updateAttributesByStatesChanges();
+  };
+
+  const handleRangeChange = (event) => {
+    setRange(event.target.value);
+    updateAttributesByStatesChanges();
+  };
+
+  const handleSpeedChange = (event) => {
+    setSpeed(event.target.value);
+    updateAttributesByStatesChanges();
+  };
+
+  const handleImpactspeedChange = (event) => {
+    setImpactspeed(event.target.value);
+    updateAttributesByStatesChanges();
+  };
+
 
  const updateAttributesByStatesChanges = () => {
     let newAttributes = [];
@@ -204,6 +328,7 @@ const scrollToDown = () => {
    console.log({ atributes })
   const handleSubmit = async (e) => {
     e.preventDefault();
+
      const isValid = validateAtributesQuantity();
      if (isValid) {
     createImageOfaDiv();
@@ -423,51 +548,53 @@ const scrollToDown = () => {
             null
           )}
           <label htmlFor="hp">Pontos de vida</label>
-          <input id="hp" className={styles.input} type="number" value={hp} onChange={e => setHp(e.target.value)} />
+          <input id="hp" className={styles.input} type="number" value={hp} onChange={handleHpChange} />
           <label htmlFor="deploytime">Tempo de implantação</label>
-          <input id="deploytime" className={styles.input} type="text" value={deploytime} onChange={e => setDeploytime(e.target.value)} />
+          <input id="deploytime" className={styles.input} type="text" value={deploytime} onChange={handleDeploytimeChange} />
           <label htmlFor="damage">Dano</label>
-          <input id="damage" className={styles.input} type="text" value={damage} onChange={e => setDamage(e.target.value)} />
+          <input id="damage" className={styles.input} type="text" value={damage} onChange={handleDamageChange} />
           <label htmlFor="damagepersecond">Dano por segundo</label>
-          <input id="damagepersecond" className={styles.input} type="text" value={damagepersecond} onChange={e => setDamagepersecond(e.target.value)} />
+          <input id="damagepersecond" className={styles.input} type="text" value={damagepersecond} onChange={handleDamagepersecondChange} />
           <label htmlFor="damageondistance">Dano a distância</label>
-          <input id="damageondistance" className={styles.input} type="text" value={damageondistance} onChange={e => setDamageondistance(e.target.value)} />
+          <input id="damageondistance" className={styles.input} type="text" value={damageondistance} onChange={handleDamageondistanceChange} />
           <label htmlFor="damageonarea">Dano em área</label>
-          <input id="damageonarea" className={styles.input} type="text" value={damageonarea} onChange={e => setDamageonarea(e.target.value)} />
+          <input id="damageonarea" className={styles.input} type="text" value={damageonarea} onChange={handleDamageonareaChange} />
           <label htmlFor="damageonimpact">Dano no impacto</label>
-          <input id="damageonimpact" className={styles.input} type="text" value={damageonimpact} onChange={e => setDamageonimpact(e.target.value)} />
+          <input id="damageonimpact" className={styles.input} type="text" value={damageonimpact} onChange={handleDamageonimpactChange} />
           <label htmlFor="damageontower">Dano na torre</label>
-          <input id="damageontower" className={styles.input} type="text" value={damageontower} onChange={e => setDamageontower(e.target.value)} />
+          <input id="damageontower" className={styles.input} type="text" value={damageontower} onChange={handleDamageontowerChange} />
           <label htmlFor="chargedamage">Dano carregado</label>
-          <input id="chargedamage" className={styles.input} type="text" value={chargedamage} onChange={e => setChargedamage(e.target.value)} />
+          <input id="chargedamage" className={styles.input} type="text" value={chargedamage} onChange={handleChargedamageChange} />
           <label htmlFor="damageondeath">Dano na morte</label>
-          <input id="damageondeath" className={styles.input} type="text" value={damageondeath} onChange={e => setDamageondeath(e.target.value)} />
+          <input id="damageondeath" className={styles.input} type="text" value={damageondeath} onChange={handleDamageondeathChange} />
+          <label htmlFor="shieldhp">Vida do escudo</label>
+          <input id="shieldhp" className={styles.input} type="text" value={shieldhp} onChange={handleShieldhpChange} />
           <label htmlFor="spawnspeed">Velocidade de geração</label>
-          <input id="spawnspeed" className={styles.input} type="text" value={spawnspeed} onChange={e => setSpawnspeed(e.target.value)} />
+          <input id="spawnspeed" className={styles.input} type="text" value={spawnspeed} onChange={handleSpawnspeedChange} />
           <label htmlFor="duration">Duração</label>
-          <input id="duration" className={styles.input} type="text" value={duration} onChange={e => setDuration(e.target.value)} />
+          <input id="duration" className={styles.input} type="text" value={duration} onChange={handleDurationChange} />
           <label htmlFor="radius">Raio</label>
-          <input id="radius" className={styles.input} type="text" value={radius} onChange={e => setRadius(e.target.value)} />
+          <input id="radius" className={styles.input} type="text" value={radius} onChange={handleRadiusChange} />
           <label htmlFor="width">Largura</label>
-          <input id="width" className={styles.input} type="text" value={width} onChange={e => setWidth(e.target.value)} />
+          <input id="width" className={styles.input} type="text" value={width} onChange={handleWidthChange} />
           <label htmlFor="efecttime">Tempo de efeito</label>
-          <input id="efecttime" className={styles.input} type="text" value={efecttime} onChange={e => setEfecttime(e.target.value)} />
+          <input id="efecttime" className={styles.input} type="text" value={efecttime} onChange={handleEfecttimeChange} />
           <label htmlFor="freezetime">Tempo de congelamento</label>
-          <input id="freezetime" className={styles.input} type="text" value={freezetime} onChange={e => setFreezetime(e.target.value)} />
+          <input id="freezetime" className={styles.input} type="text" value={freezetime} onChange={handleFreezetimeChange} />
           <label htmlFor="unities">Unidades</label>
-          <input id="unities" className={styles.input} type="text" value={unities} onChange={e => setUnities(e.target.value)} />
+          <input id="unities" className={styles.input} type="text" value={unities} onChange={handleUnitiesChange} />
           <label htmlFor="arena">Arena</label>
-          <input id="arena" className={styles.input} type="text" value={arena} onChange={e => setArena(e.target.value)} />
+          <input id="arena" className={styles.input} type="text" value={arena} onChange={handleArenaChange} />
           <label htmlFor="target">Alvo</label>
-          <input id="target" className={styles.input} type="text" value={target} onChange={e => setTarget(e.target.value)} />
+          <input id="target" className={styles.input} type="text" value={target} onChange={handleTargetChange} />
           <label htmlFor="projectilerange">Alcance do projetil</label>
-          <input id="projectilerange" className={styles.input} type="text" value={projectilerange} onChange={e => setProjectilerange(e.target.value)} />
+          <input id="projectilerange" className={styles.input} type="text" value={projectilerange} onChange={handleProjectilerangeChange} />
           <label htmlFor="range">Alcance</label>
-          <input id="range" className={styles.input} type="text" value={range} onChange={e => setRange(e.target.value)} />
+          <input id="range" className={styles.input} type="text" value={range} onChange={handleRangeChange} />
           <label htmlFor="speed">Velocidade</label>
-          <input id="speed" className={styles.input} type="text" value={speed} onChange={e => setSpeed(e.target.value)} />
+          <input id="speed" className={styles.input} type="text" value={speed} onChange={handleSpeedChange} />
           <label htmlFor="impactspeed">Velocidade de impacto</label>
-          <input id="impactspeed" className={styles.input} type="text" value={impactspeed} onChange={e => setImpactspeed(e.target.value)} />
+          <input id="impactspeed" className={styles.input} type="text" value={impactspeed} onChange={handleImpactspeedChange} />
           {iscreated == "Criado" || iscreated == "Sim" ? (
           <label htmlFor="fileInput" className={styles.customFileInput}>
           ESCOLHA UMA IMAGEM DOS SEUS ARQUIVOS
