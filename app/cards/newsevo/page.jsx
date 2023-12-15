@@ -23,7 +23,8 @@ export default function Newsevo() {
       <p>Neste caso, é bom ter alguém irritado ao seu lado.</p>
       <p>Cada golpe aumenta sua velocidade de ataque e movimento.</p>
       <p>A raiva acumula infinitamente!</p>
-      <p>Ciclos: 1.</p>
+      <h2>Ciclos:</h2>
+      <p> 1.</p>
     </div>
     <div className={style.containerdivs}>
       <h3>ARQUEIRAS</h3>
