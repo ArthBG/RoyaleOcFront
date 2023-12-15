@@ -1,0 +1,65 @@
+.containerAll {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  
+  .containerdivs {
+    margin-bottom: 30px;
+  }
+
+  .main{
+    min-height: 100vh;
+  }
+  
+  .containerdivs h3 {
+    color: blue;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .containerdivs img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .containerdivTexts {
+    margin-top: 30px;
+  }
+  
+  .containerdivTexts h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    margin-top: 1rem;
+  }
+  
+  .containerdivTexts h3 {
+   
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .containerdivTexts ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  /* Estilos para tornar a página responsiva */
+  @media screen and (max-width: 768px) {
+
+  
+    .containerdivs h3 {
+      font-size: 18px;
+    }
+  
+    .containerdivTexts h2 {
+      font-size: 20px;
+    }
+  
+    .containerdivTexts h3 {
+      font-size: 16px;
+    }
+  }
+  
