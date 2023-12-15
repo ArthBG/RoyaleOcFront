@@ -12,6 +12,7 @@ import Header from '@/app/components/header/header';
 import Footer from '@/app/components/footer/footer';
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
+import { hasExternalOtelApiPackage } from 'next/dist/build/webpack-config';
 // npm install react-icons --save
 
 export default function updateCard({ params }) {
@@ -52,16 +53,38 @@ export default function updateCard({ params }) {
   const [show, setShow] = useState(true);
   const [iscreated, setIsCreated] = useState("");
   const [change, setChange] = useState("");
+  const [atributes, setAtributes] = useState([]);
+  const [errorA, setErrorA] = useState("");
 
   const router = useRouter();
   const divRef = useRef(null);
   const { id } = params;
 
   console.log({ iscreated })
-  console.log({ change });
   const scrollToUp = () => {
     window.scrollTo(0, 0);
 }
+
+
+
+const validateAtributesQuantity = () => {
+  hasError = false;
+  if(atributes.length >=10){
+    setErrorA("Você adicionou mais de 10 atributos!")
+    setTimeout(() => {
+      setErrorA("")
+    }, 3000)
+    hasError = true;
+  }
+  if (hasError) {
+    return false;
+} else {
+    setErrorA("");
+    return true; 
+}
+
+}
+
 
 const scrollToDown = () => {
     window.scrollTo(0, 1000000);
@@ -106,7 +129,7 @@ const scrollToDown = () => {
         setImpactspeed(card.impactspeed);
         setLevel(card.level);
         setIsCreated(card.iscreated)
-
+        setAtributes([card.hp, card.deploytime, card.shieldhp, card.damage, card.damagepersecond, card.rangeddamage, card.damageondistance, card.damageonarea, card.damageonimpact, card.damageontower, card.chargedamage, card.damageondeath, card.spawnspeed, card.duration, card.radius, card.width, card.efecttime, card.freezetime, card.unities, card.arena, card.target, card.projectilerange, card.range, card.speed, card.impactspeed])
         console.log(card)
       } catch (error) {
         console.error(error);
@@ -116,8 +139,11 @@ const scrollToDown = () => {
       fetchData();
     }
   }, [id]);
+  console.log({ atributes })
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const isValid = validateAtributesQuantity();
+    if (isValid) {
     createImageOfaDiv();
     try {
       const response = await axios.put(`/api/cards/${id}`, {
@@ -160,6 +186,7 @@ const scrollToDown = () => {
     } catch (error) {
       console.error(error);
     }
+  }
   }
 
   const handleImage = (e) => {
@@ -387,6 +414,7 @@ const scrollToDown = () => {
         </label>
           ) : null}
           <textarea className={styles.input} placeholder="Descrição da carta" value={description} onChange={e => setDescription(e.target.value)} />
+          <p className={styles.error}>{errorA}</p>
           <button className={styles.scbtnyellow} onClick={handleSubmit}>Editar</button>
         </div>
         <div className={styles.containerCards201} ref={divRef} >
