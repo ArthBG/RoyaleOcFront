@@ -570,8 +570,8 @@ const scrollToDown = () => {
           <input id="chargedamage" className={styles.input} type="text" value={chargedamage} onChange={handleChargedamageChange} />
           <label htmlFor="damageondeath">Dano na morte</label>
           <input id="damageondeath" className={styles.input} type="text" value={damageondeath} onChange={handleDamageondeathChange} />
-          <label htmlFor="rangeddamage">Dano a distância</label>
-          <input id="rangeddamage" className={styles.input} type="text" value={rangeddamage} onChange={handleRangeddamageChange} />
+          {/* <label htmlFor="rangeddamage">Dano a distância</label>
+          <input id="rangeddamage" className={styles.input} type="text" value={rangeddamage} onChange={handleRangeddamageChange} /> */}
           <label htmlFor="shieldhp">Vida do escudo</label>
           <input id="shieldhp" className={styles.input} type="text" value={shieldhp} onChange={handleShieldhpChange} />
           <label htmlFor="spawnspeed">Velocidade de geração</label>
