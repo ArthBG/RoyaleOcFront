@@ -66,10 +66,12 @@ export default function Page() {
     }, []);
     // Renderização do componente.
     return (
-
+        // Componente de cabeçalho
         <div className={styles.bg}>
             <Header />
             <main className={styles.main22}>
+            {/* Seção de introdução */}
+            
             <div className={styles.prosseguir} style={{ display: show ? 'block' : 'none' }} value={show}>
                 <div className={styles.containerInputs}>
                 <h1 className={styles.titulo}>DEVELOPERS AREA</h1>
@@ -77,14 +79,15 @@ export default function Page() {
                 className={styles.inputSend}
                 type="text"
                 placeholder="Senha de acesso"
-                value={passwordValue} // Use state value here
-                onChange={handlePasswordChange} // Handle input change
+                value={passwordValue} 
+                onChange={handlePasswordChange} 
             />
             <button className={styles.botao} onClick={verifyPassword}>
                 Enviar
             </button>
                 </div>
             </div>
+            {/* Se o input for validado exibe */}
             <div className={styles.prosseguir} style={{ display: showInput ? 'block' : 'none' }} value={showInput}>
                 <h1 className={styles.cadastrotitulo}>Recebidos:</h1>
 

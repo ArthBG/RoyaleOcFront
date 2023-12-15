@@ -66,11 +66,12 @@ function cardspage() {
         setSelectedElixir("");
         setSearch("");
     }
+    // Função para editar um membro
     const editCard = (id) => {
         router.push(`/cards/${id}`);
     }
 
-
+    // Função para deletar um membro
     const deleteCard = async (id) => {
         const url = `/api/cards/${id}`;
         try {
@@ -80,11 +81,11 @@ function cardspage() {
             console.error(error);
         }
     }
-
+    // Função para rolar até uma determinada posição na página
     const scrollToUp = () => {
         window.scrollTo(0, 0);
     }
-
+    // Função para rolar até uma determinada posição na página
     const scrollToDown = () => {
         window.scrollTo(0, 1000000);
     }
@@ -93,6 +94,7 @@ function cardspage() {
         <main className={style.mainBg}>
             <Header />
             <main className={style.main22}>
+                {/* Seção de introdução */}
             <div className={style.containerScrolls}>
                 <button onClick={scrollToUp}>
                     <IoIosArrowUp />
@@ -101,11 +103,13 @@ function cardspage() {
                     <IoIosArrowDown />
                 </button>
             </div>
+            {/* Seção de introdução as cartas */}
             <h1 className={style.title}>Cartas</h1>
             <div className={style.containerSearch}>
                 <input type="text" placeholder="Pesquisar Cartas" className={style.search} value={search} onChange={(e) => setSearch(e.target.value)} />
                 <FiSearch className={style.icon} />
             </div>
+            {/* Seção de filtros */}
             <div className={style.containerFilters}>
                 <select className={style.select} value={selectedType} onChange={(e) => setSelectedType(e.target.value)}>
                     <option value="">Tipo:</option>
@@ -142,7 +146,7 @@ function cardspage() {
             </div>
 
             <div className={style.containerCard}>
-
+            {/* Seção de cards */}
                 {
                     cardsData.length === 0 ?
                         <div className={style.containerLoading}>

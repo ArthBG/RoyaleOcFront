@@ -83,7 +83,7 @@ export default function createCard() {
   const router = useRouter();
 
 
-
+// função para pegar as cartas
   useEffect(() => {
     const getCards = async () => {
       const response = await axios.get("/api/cards")
@@ -101,8 +101,9 @@ export default function createCard() {
     setImageUpdated(URL.createObjectURL(file))
   }
 
+  //função para adicionar atributos com verificações
   const addAtributes = () => {
-    //coloque um limite de 10 atributos possiveis
+
     if (atributes.length > 10) {
       setErrorA("Máximo de atributos atingido 10")
       setTimeout(() => {
@@ -137,6 +138,7 @@ export default function createCard() {
       setSelectedOption("")
     }
   }
+  //função para verificar atributos
   const validate = () => {
     //validação geral do formulario
     if (name == "") {
@@ -215,16 +217,19 @@ export default function createCard() {
 
 
 
-
+  //função para criar a imagem da div
   const createImageOfaDiv = async () => {
+    //pega a div necessaria
     const div = divRef.current;
-
+    
+    //verifica se a div existe
     if (div) {
       try {
+        //cria a imagem a partir da div utilizando o html2canvas que foi importado 
         const canvas = await html2canvas(div, { useCORS: true });
 
         if (canvas) {
-
+          //converte a imagem para jpeg
           const dataURL = canvas.toDataURL('image/JPEG');
           setImage(dataURL);
         } else {
@@ -236,7 +241,7 @@ export default function createCard() {
     }
   };
 
-
+  //função para criar a carta
   const handleSubmit = async (e) => {
     if (iscreated == "") {
       validate();
@@ -325,7 +330,7 @@ export default function createCard() {
   
   
 
-
+//opções em array para cada tipo de carta
   const options = [
     {
       title: 'Selecione um atributo',
@@ -402,6 +407,7 @@ export default function createCard() {
   ]
 
 
+  //função setar os atributos
   const setItens = (atributes) => {
 
     if (atributes.name == "Pontos de Vida") {
@@ -553,7 +559,7 @@ export default function createCard() {
           <option value={9}>9 Elixir</option>
           <option value={10}>10 Elixir</option>
         </select>
-
+      {/*enviar a imagem */}
       <label htmlFor="fileInput" className={styles.customFileInput}>
       ESCOLHA UMA IMAGEM DOS SEUS ARQUIVOS
       📂
@@ -677,7 +683,7 @@ export default function createCard() {
       </div>
 
 
-          
+          {/* importação do componente e utilizando html2canvas para criar a imagem da div */}
         <div className={styles.containerCards20} ref={divRef} >
           <div className={styles3.containerCards2}>
             {

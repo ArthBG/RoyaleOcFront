@@ -65,7 +65,7 @@ export default function updateCard({ params }) {
 }
 
 
-
+// Função para validar a quantidade de atributos
  const validateAtributesQuantity = () => {
    let hasError = false;
    if(atributes.length > 10){
@@ -83,6 +83,8 @@ export default function updateCard({ params }) {
  }
 
  }
+
+ // Função para lidar com a seleção nos states
  const handleHpChange = (event) => {
   setHp(event.target.value);
   updateAttributesByStatesChanges(); 
@@ -208,7 +210,7 @@ export default function updateCard({ params }) {
     updateAttributesByStatesChanges();
   };
 
-
+// Função para atualizar os atributos de acordo com as mudanças nos states
  const updateAttributesByStatesChanges = () => {
     let newAttributes = [];
     if(hp) newAttributes.push(hp);
@@ -238,7 +240,7 @@ export default function updateCard({ params }) {
     setAtributes(newAttributes);
   }
 
-
+// Função para atualizar os atributos de acordo com as mudanças no useeffect
  const updateAttributes = (card) => {
   const newAttributes = [];
   
@@ -302,6 +304,7 @@ const scrollToDown = () => {
         setSpawnspeed(card.spawnspeed);
         setDuration(card.duration);
         setRadius(card.radius);
+        setRangeddamage(card.rangeddamage);
         setWidth(card.width);
         setEfecttime(card.efecttime);
         setFreezetime(card.freezetime);
@@ -567,6 +570,8 @@ const scrollToDown = () => {
           <input id="chargedamage" className={styles.input} type="text" value={chargedamage} onChange={handleChargedamageChange} />
           <label htmlFor="damageondeath">Dano na morte</label>
           <input id="damageondeath" className={styles.input} type="text" value={damageondeath} onChange={handleDamageondeathChange} />
+          <label htmlFor="rangeddamage">Dano a distância</label>
+          <input id="rangeddamage" className={styles.input} type="text" value={rangeddamage} onChange={handleRangeddamageChange} />
           <label htmlFor="shieldhp">Vida do escudo</label>
           <input id="shieldhp" className={styles.input} type="text" value={shieldhp} onChange={handleShieldhpChange} />
           <label htmlFor="spawnspeed">Velocidade de geração</label>
