@@ -332,9 +332,10 @@ const scrollToDown = () => {
      if (isValid) {
     createImageOfaDiv();
     try {
+      let imageToSend = window.innerWidth <= 768 ? imageupdated : image;
       const response = await axios.put(`/api/cards/${id}`, {
         name,
-        image,
+        image: imageToSend,
         type,
         rarity,
         elixir,
