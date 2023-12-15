@@ -175,15 +175,22 @@ max-width: 30rem;
 
 @media (max-width: 768px) {
     .containerCards20{
-        display: block;
+        display: flex;
         position: static;
         margin: auto;
         left: 0px;
         right: 0px;
-        width: 250px;
-        height: 290px;
+        width: fit-content;
+        height: fit-content;
+        align-self: center;
     }
-    .oi0{
+    /* .containerCards2{
+        display: flex;
+        width: fit-content;
+        height: fit-content;
+        padding: 0;
+    } */
+    /* .oi{
         display: none;
-        }
+        } */
 }
