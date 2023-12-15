@@ -183,4 +183,7 @@ max-width: 30rem;
         width: 250px;
         height: 290px;
     }
+    .oi0{
+        display: none;
+        }
 }
