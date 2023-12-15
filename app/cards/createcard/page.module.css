@@ -356,29 +356,23 @@
         display: none;
     }
 
-    .containerCard2 {
-        display: none;
-    }
-
     .containerCards20 {
         position: static;
         left: 0px;
         right: 0px;
+        margin: auto;
         width: 250px;
         height: 290px;
-        align-items: center;
     }
     .scbtnyellow2 {
         font-size: 20px;
-    }
-    .containerCard21 {
-        display: none;
     }
 
     .containerCards201 {
         position: static;
         left: 0px;
         right: 0px;
+        margin: auto;
         width: 250px;
         height: 290px;
         align-items: center;

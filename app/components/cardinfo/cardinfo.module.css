@@ -177,12 +177,10 @@ max-width: 30rem;
     .containerCards20{
         display: block;
         position: static;
+        margin: auto;
         left: 0px;
         right: 0px;
-        margin: auto;
-        margin-top: 2.5rem;
         width: 250px;
         height: 290px;
-        align-items: center;
     }
 }
