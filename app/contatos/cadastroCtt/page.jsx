@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image"
 import { useEffect, useState } from "react";
 import axios from 'axios';
+import { FaKey } from "react-icons/fa";
 import styles from '../cadastroCtt/page.module.css';
 import Header from '../../components/header/header.jsx';
 import Footer from '../../components/footer/footer.jsx';
@@ -126,9 +127,9 @@ export default function Forms() {
             <main className={styles.main22}>
                 <div>
                     <Link href="/contatos">
-                        <button type="submit" className={styles.botaovoltar}>
-                            DEVELEPORSOCTOPUSAREA
-                        </button >
+                     
+                        <FaKey className={styles.FaKey} />
+                        
                     </Link>
                     <form onSubmit={handleSubmit} className={styles.divforms}>
                         <h1 className={styles.cadastrotitulo}>Entre em contato</h1>
