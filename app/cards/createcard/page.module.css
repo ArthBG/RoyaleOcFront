@@ -1,43 +1,49 @@
-.backgroundimage{
+.backgroundimage {
     background-image: url("../../../public/images/fundoazul.png");
-    background-repeat:repeat;
+    background-repeat: repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     min-height: 100vh;
     height: 100%;
-   
+
 
 }
-.title{
+
+.title {
     color: rgb(255, 255, 255);
-    text-shadow: -1px 5px 0 #000,0 2px 0 #000,1px 2px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;
+    text-shadow: -1px 5px 0 #000, 0 2px 0 #000, 1px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
-.prosseguir{
+
+.prosseguir {
     margin: auto;
     padding-top: 10rem;
     justify-content: center;
     align-items: center;
 
 }
-.containerButtonsp{
+
+.containerButtonsp {
     margin: auto;
     text-align: center;
 }
-.containerImageS{
+
+.containerImageS {
     display: block;
-    padding-top: 10rem;
+    padding-top: 4rem;
     text-align: center;
 
 }
-.conatainerInputs{
+
+.conatainerInputs {
     display: flex;
     flex-direction: column;
     margin: auto;
     padding-top: 5rem;
     max-width: 50%;
 }
-.conatainerInputs input[type="text"]{
+
+.conatainerInputs input[type="text"] {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -45,10 +51,12 @@
     font-size: 16px;
     margin-bottom: 0.5rem;
 }
-.conatainerInputs input[type="text"]:focus{
+
+.conatainerInputs input[type="text"]:focus {
     border: 1px solid #000;
 }
-.conatainerInputs input[type="file"]{
+
+.conatainerInputs input[type="file"] {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -56,7 +64,8 @@
     font-size: 16px;
     margin-bottom: 0.5rem;
 }
-.input{
+
+.input {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -64,7 +73,8 @@
     font-size: 16px;
     margin-bottom: 0.5rem;
 }
-.select{
+
+.select {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -72,29 +82,33 @@
     margin-bottom: 0.5rem;
     font-size: 16px;
 }
-.title{
+
+.title {
     font-size: 2rem;
     text-align: center;
     margin-bottom: 1rem;
 
 }
-.shabuya{
+
+.shabuya {
     text-align: center;
     margin: auto;
 }
+
 .scbtnyellow2 {
-    margin: 0.75rem;
+    margin-top: 0.75rem;
     background-color: #f0c44e;
     border: none;
     border-radius: 5px;
     box-shadow: 0 2px 3px 0 #ff8907, 0 0 0 4px #ffa80c, 0 1px 0 4px #ffa80c, 0 -1px 2px 4px #ffd525, 0 -2px 0 5px #f4e684, 0 6px 0 4px #b06904, 0 3px 0 5px #f4e684, 0 -2px 0 7px #202020, 0 5px 0 7px #202020, 0 7px 0 7px #333;
     color: #ffc;
-    font-size: 26px;
-    text-shadow: -1px 2px 0 #582d00,0 2px 0 #582d00,1px 2px 0 #582d00,-1px -1px 0 #582d00,1px -1px 0 #582d00,-1px 1px 0 #582d00,1px 1px 0 #582d00;
+    font-size: 24px;
+    text-shadow: -1px 2px 0 #582d00, 0 2px 0 #582d00, 1px 2px 0 #582d00, -1px -1px 0 #582d00, 1px -1px 0 #582d00, -1px 1px 0 #582d00, 1px 1px 0 #582d00;
 }
+
 .scbtnyellow2:active {
-    box-shadow: 0 -2px 3px 0 #ff8907,0 0 0 4px #ffa80c,0 -1px 0 4px #ffa80c,0 -1px 2px 4px #ffd525,0 -2px 0 5px #f4e684,0 6px 0 4px #b06904,0 3px 0 5px #f4e684,0 -2px 0 7px #202020,0 5px 0 7px #202020,0 7px 0 7px #333;
-    text-shadow: -1px -1px 0 #582d00,1px -1px 0 #582d00,-1px 1px 0 #582d00,1px 1px 0 #582d00
+    box-shadow: 0 -2px 3px 0 #ff8907, 0 0 0 4px #ffa80c, 0 -1px 0 4px #ffa80c, 0 -1px 2px 4px #ffd525, 0 -2px 0 5px #f4e684, 0 6px 0 4px #b06904, 0 3px 0 5px #f4e684, 0 -2px 0 7px #202020, 0 5px 0 7px #202020, 0 7px 0 7px #333;
+    text-shadow: -1px -1px 0 #582d00, 1px -1px 0 #582d00, -1px 1px 0 #582d00, 1px 1px 0 #582d00
 }
 
 
@@ -106,51 +120,308 @@
     box-shadow: 0 2px 3px 0 #ff8907, 0 0 0 4px #ffa80c, 0 1px 0 4px #ffa80c, 0 -1px 2px 4px #ffd525, 0 -2px 0 5px #f4e684, 0 6px 0 4px #b06904, 0 3px 0 5px #f4e684, 0 -2px 0 7px #202020, 0 5px 0 7px #202020, 0 7px 0 7px #333;
     color: #ffc;
     font-size: 26px;
-    text-shadow: -1px 2px 0 #582d00,0 2px 0 #582d00,1px 2px 0 #582d00,-1px -1px 0 #582d00,1px -1px 0 #582d00,-1px 1px 0 #582d00,1px 1px 0 #582d00;
+    text-shadow: -1px 2px 0 #582d00, 0 2px 0 #582d00, 1px 2px 0 #582d00, -1px -1px 0 #582d00, 1px -1px 0 #582d00, -1px 1px 0 #582d00, 1px 1px 0 #582d00;
 }
 
 .scbtnyellow:active {
-    box-shadow: 0 -2px 3px 0 #ff8907,0 0 0 4px #ffa80c,0 -1px 0 4px #ffa80c,0 -1px 2px 4px #ffd525,0 -2px 0 5px #f4e684,0 6px 0 4px #b06904,0 3px 0 5px #f4e684,0 -2px 0 7px #202020,0 5px 0 7px #202020,0 7px 0 7px #333;
-    text-shadow: -1px -1px 0 #582d00,1px -1px 0 #582d00,-1px 1px 0 #582d00,1px 1px 0 #582d00
+    box-shadow: 0 -2px 3px 0 #ff8907, 0 0 0 4px #ffa80c, 0 -1px 0 4px #ffa80c, 0 -1px 2px 4px #ffd525, 0 -2px 0 5px #f4e684, 0 6px 0 4px #b06904, 0 3px 0 5px #f4e684, 0 -2px 0 7px #202020, 0 5px 0 7px #202020, 0 7px 0 7px #333;
+    text-shadow: -1px -1px 0 #582d00, 1px -1px 0 #582d00, -1px 1px 0 #582d00, 1px 1px 0 #582d00
 }
 
-.containerHeader{
+.containerHeader {
     background-color: white;
     display: flex;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
 }
-.rarity{
+
+.rarity {
     display: flex;
     flex-direction: column;
     margin: 1rem;
 }
-.type{
+
+.type {
     display: flex;
     flex-direction: column;
     margin: 1rem;
 }
-.fitrt{
+
+.fitrt {
     display: flex;
     width: max-content;
     justify-content: space-between;
     border-radius: 5px;
     background-color: rgb(168, 219, 219);
 }
-.containerPoints{
+
+.containerPoints {
     background-color: rgb(226, 237, 250);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
 
-.containerCard{
-    position: relative;
-    margin-left: 10rem;
+.containerCards20 {
+    display: flex;
+    position: absolute;
+    left: 500px;
+    bottom: -450px;
+    width: 250px;
+    height: 290px;
+    align-items: center;
+
+}
+
+.containerCards21 {
+    display: flex;
+    padding-top: 5px;
+    width: fit-content;
+    height: fit-content;
     margin: auto;
+}
+
+.containerCards201 {
+    display: flex;
+    position: absolute;
+    left: 500px;
+    width: 250px;
+    height: 290px;
+    top: 3500px;
+    z-index: 0;
+    align-items: center;
+
+}
+
+.containerCard {
+    position: relative;
+    margin-top: 5rem;
     padding-bottom: 5rem;
 
 }
-.containerCardInfo{
+
+.containerCardInfo {
     margin-top: 10rem;
     padding-bottom: 5rem;
+    z-index: 999;
+    position: relative;
+}
+
+.error {
+    color: red;
+    text-shadow: 1px 1px 2px #000000;
+    margin-left: 0.2rem;
+}
+
+.closeBtn {
+    position: absolute;
+    top: -38px;
+    right: -31px;
+    margin: 1rem;
+    font-size: 2rem;
+    color: red;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.closeBtn:hover {
+    color: rgb(205, 0, 0);
+}
+
+/* Estilo para o modal */
+.shabuya {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* Estilo para o modal */
+.modal {
+    background-color: #06245c;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 400px;
+}
+
+
+.main22 {
+    min-height: 100vh;
+}
+
+/* Estilo para o título do modal */
+.title {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Estilo para o seletor de atributos */
+.royaleSelect {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Estilo para o input do valor do atributo */
+.inputatribute {
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #000000;
+}
+
+/* Estilo para o botão de adicionar atributo */
+.addBtn {
+    background: blue;
+    color: #fff;
+    box-shadow: 0 6px blue, -1px 8px 0 black, 0 0 0 2px black, 0px 6px 0px 2px black;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+.addBtn:hover {
+    color: #d6d5d5;
+    background-color: rgb(0, 0, 226);
+}
+
+
+/* Estilo para a mensagem de erro */
+.error {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* styles.css */
+/* styles.css */
+.file {
+    /* Esconda o input file */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.customFileInput {
+    /* Estilos para o rótulo (label) */
+    background-color: rgb(240, 240, 240);
+    /* Cor de fundo azul */
+    color: rgb(0, 0, 0);
+    /* Cor do texto branco */
+    text-shadow: none;
+    margin: auto;
+    margin-bottom: 0.5rem;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.containerScrolls {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    right: 5px;
+    top: 44%;
+}
+
+.containerScrolls button {
+    margin: 0.75rem;
+    background-color: #ffa80c;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 3px 0 #ff8907, 0 0 0 4px #ffa80c, 0 1px 0 4px #ffa80c, 0 -1px 2px 4px #ffd525, 0 -2px 0 5px #f4e684, 0 6px 0 4px #b06904, 0 3px 0 5px #f4e684, 0 -2px 0 7px #202020, 0 5px 0 7px #202020, 0 7px 0 7px #333;
+    color: #ffc;
+    font-size: 20px;
+    text-shadow: -1px 2px 0 #582d00, 0 2px 0 #582d00, 1px 2px 0 #582d00, -1px -1px 0 #582d00, 1px -1px 0 #582d00, -1px 1px 0 #582d00, 1px 1px 0 #582d00;
+}
+
+.containerScrolls button:hover {
+    cursor: pointer;
+    color: #c8c8c8;
+}
+
+@media (max-width: 768px) {
+    .containerCard {
+        display: none;
+    }
+
+    .containerCards20 {
+        position: static;
+        left: 0px;
+        right: 0px;
+        margin: auto;
+        width: 250px;
+        height: 290px;
+    }
+    .scbtnyellow2 {
+        font-size: 20px;
+    }
+
+    .containerCards201 {
+        position: static;
+        left: 0px;
+        right: 0px;
+        margin: auto;
+        width: 250px;
+        height: 290px;
+        align-items: center;
+    }
+
+    .containerFilters {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .containerFilters select {
+        width: 85%;
+    }
+
+    .containerFilters input {
+        width: 85%;
+    }
+
+    .search {
+        width: 75%;
+    }
+
+    .containerSearch input {
+        width: 85%;
+    }
+
+    .containerScrolls {
+        z-index: 999;
+        right: 90%;
+    }
+
+    .containerCardInfo {
+        display: none;
+    }
+
+    .closeBtn {
+        position: absolute;
+        top: -40px;
+        width: 100%;
+        text-align: center;
+        font-size: 2rem;
+        color: red;
+        background-color: transparent;
+    }
+
+    .closeBtn:hover {
+        color: rgb(205, 0, 0);
+    }
+    
+
+
 }

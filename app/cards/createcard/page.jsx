@@ -14,6 +14,8 @@ import SelectConstruction from "@/app/components/selectatributes/construction/se
 import SelectSpell from "@/app/components/selectatributes/spelll/select";
 import Header from "@/app/components/header/header";
 import styles3 from "@/app/components/cardinfo/cardinfo.module.css";
+import Footer from '@/app/components/footer/footer';
+import { useRouter } from 'next/navigation';
 // npm install html2canvas
 
 
@@ -75,7 +77,20 @@ export default function createCard() {
   const [selectedOption, setSelectedOption] = useState('');
   const [inputvalue, setInputValue] = useState('');
   const [divUpdatedImage, setDivUpdatedImage] = useState("");
+  const [iscreated, setIsCreated] = useState("");
+  const [error, setError] = useState("");
+  const [errorA, setErrorA] = useState("");
+  const router = useRouter();
 
+
+// função para pegar as cartas
+  useEffect(() => {
+    const getCards = async () => {
+      const response = await axios.get("/api/cards")
+      setCards(response.data.cards)
+    }
+    getCards()
+  }, [])
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -86,15 +101,28 @@ export default function createCard() {
     setImageUpdated(URL.createObjectURL(file))
   }
 
+  //função para adicionar atributos com verificações
   const addAtributes = () => {
-    //coloque um limite de 10 atributos possiveis
-    if (atributes.length >= 10) {
+
+    if (atributes.length > 10) {
+      setErrorA("Máximo de atributos atingido 10")
+      setTimeout(() => {
+        setErrorA("")
+      }, 3000)
       return;
     }
     else if (inputvalue == "" || selectedOption == "") {
+      setErrorA("Atributo ou valor não pode ser vazio")
+      setTimeout(() => {
+        setErrorA("")
+      }, 3000)
       return;
     }
     else if (atributes.some((item) => item.name === selectedOption)) {
+      setErrorA("Atributo já existe")
+      setTimeout(() => {
+        setErrorA("")
+      }, 3000)
       return;
     } else {
       const valueAndName = {
@@ -110,16 +138,98 @@ export default function createCard() {
       setSelectedOption("")
     }
   }
+  //função para verificar atributos
+  const validate = () => {
+    //validação geral do formulario
+    if (name == "") {
+      setError("Nome da carta não pode ser vazio")
+      setTimeout(() => {
+        setError("")
+      }, 3000)
+      return;
+    } 
+    // se o nome for repetido não deixa criar
+    else if (cards.some((item) => item.name === name)) {
+      setError("Nome da carta já existe")
+      setTimeout(() => {
+        setError("")
+      }, 3000)
+      return;
+    }
+    else if (level == "") {
+      setError("Nível da carta não pode ser vazio")
+      setTimeout(() => {
+        setError("")
+      }, 3000)
+      return;
+    }
+    else if (rarity == "") {
+      setError("Raridade da carta é obrigatório")
+      setTimeout(() => {
+        setError("")
+      }, 3000)
+      return;
+    }
+    else if (type == "") {
+      setError("Tipo da carta é obrigatório")
+      setTimeout(() => {
+        setError("")
+      }, 3000)
+      return;
+    }
+    else if (elixir == "") {
+      setError("Elixir da carta é obrigatório")
+      setTimeout(() => {
+        setError("")
+      }, 3000)
+      return;
+    }
+    else if (image == "") {
+      setError("Imagem da carta é obrigatório")
+      setTimeout(() => {
+        setError("")
+      }, 3000)
+      return;
+    }
+    else if (description == "") {
+      setError("Descrição da carta é obrigatório")
+      setTimeout(() => {
+        setError("")
+      }, 3000)
+      return;
+    }
+    //é necessario ter pelo menos 1 atributo
+    else if (atributes.length == 0) {
+      setError("É necessário ter pelo menos 1 atributo")
+      setTimeout(() => {
+        setError("")
+      }, 3000)
+      return;
+    }
+    else {
+      setIsCreated("Criado")
+    }
+  }
 
+
+
+
+
+
+
+  //função para criar a imagem da div
   const createImageOfaDiv = async () => {
+    //pega a div necessaria
     const div = divRef.current;
-
+    
+    //verifica se a div existe
     if (div) {
       try {
+        //cria a imagem a partir da div utilizando o html2canvas que foi importado 
         const canvas = await html2canvas(div, { useCORS: true });
 
         if (canvas) {
-
+          //converte a imagem para jpeg
           const dataURL = canvas.toDataURL('image/JPEG');
           setImage(dataURL);
         } else {
@@ -131,18 +241,23 @@ export default function createCard() {
     }
   };
 
-
+  //função para criar a carta
   const handleSubmit = async (e) => {
+    if (iscreated == "") {
+      validate();
+      return;
+    }
+    else{
     e.preventDefault();
-
     try {
+      let imageToSend = window.innerWidth <= 768 ? imageupdated : image;
       const response = await axios.post("/api/cards", {
         name,
         level,
         rarity,
         type,
         elixir,
-        image,
+        image: imageToSend,
         description,
         hp,
         deploytime,
@@ -169,8 +284,10 @@ export default function createCard() {
         range,
         speed,
         impactspeed,
+        iscreated
       })
-      console.log(response.data)
+      setCards([...cards, response.data.card])
+      router.push(`/cards`)
       setName("")
       setLevel("")
       setRarity("")
@@ -204,14 +321,16 @@ export default function createCard() {
       setRange("")
       setSpeed("")
       setImpactspeed("")
+      setIsCreated("")
     } catch (error) {
       console.log(error)
     }
   }
+  }
   
   
 
-
+//opções em array para cada tipo de carta
   const options = [
     {
       title: 'Selecione um atributo',
@@ -288,6 +407,7 @@ export default function createCard() {
   ]
 
 
+  //função setar os atributos
   const setItens = (atributes) => {
 
     if (atributes.name == "Pontos de Vida") {
@@ -374,9 +494,9 @@ export default function createCard() {
   }
 
   return (
-    <main className={styles.backgroundimage}>
+    <div className={styles.backgroundimage}>
       <Header />
-
+      <main className={styles.main22}>
       <div className={styles.conatainerInputs}>
         <input className={styles.input} type="text" maxLength={30} placeholder="Nome da sua carta" value={name} onChange={e => setName(e.target.value)} />
         <select className={styles.select}
@@ -439,9 +559,14 @@ export default function createCard() {
           <option value={9}>9 Elixir</option>
           <option value={10}>10 Elixir</option>
         </select>
-
-        <input type="file" className={styles.file} onChange={handleImage} />
+      {/*enviar a imagem */}
+      <label htmlFor="fileInput" className={styles.customFileInput}>
+      ESCOLHA UMA IMAGEM DOS SEUS ARQUIVOS
+      📂
+      <input type="file" id="fileInput" className={styles.file} onChange={handleImage} />
+    </label>
         <textarea className={styles.input} placeholder="Descrição da carta" value={description} onChange={e => setDescription(e.target.value)} />
+        <p className={styles.error}>{error}</p>
         <button className={styles.scbtnyellow} onClick={handleSubmit}>Criar</button>
         {
           type == "Tropa" ? (
@@ -453,12 +578,10 @@ export default function createCard() {
                 aria-describedby="modal-modal-description"
               >
                 <Box sx={style}>
-                  <button onClick={handleClose}> X </button>
-                  <Typography id="modal-modal-title" variant="h6" component="h2">
-                    Atributos para tropas
-                  </Typography>
+                <button className={styles.closeBtn} onClick={handleClose}> X </button>
+                    <h1 className={styles.title}>Atributos para tropas</h1>
                   <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                    <select onChange={(e) => setSelectedOption(e.target.value)} value={selectedOption}>
+                    <select className={styles.royaleSelect} onChange={(e) => setSelectedOption(e.target.value)} value={selectedOption}>
                       {
                         options.map((option) => {
                           return (
@@ -472,11 +595,11 @@ export default function createCard() {
                     </select>
 
                   </Typography>
-                  <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                    <input type="text" value={inputvalue} onChange={(e) => setInputValue(e.target.value)} placeholder="Valor do atributo" />
-                  </Typography>
+                    <input className={style.inputatribute} type="text" value={inputvalue} onChange={(e) => setInputValue(e.target.value)} placeholder="Valor do atributo" />
+                  
                   <div>
-                    <button onClick={addAtributes}>Adicionar atributo</button>
+                  <p className={styles.error}>{errorA}</p>
+                    <button className={styles.addBtn} onClick={addAtributes}>Adicionar atributo</button>
                   </div>
                 </Box>
               </Modal>
@@ -491,12 +614,10 @@ export default function createCard() {
               aria-describedby="modal-modal-description"
             >
               <Box sx={style}>
-                <button onClick={handleClose}> X </button>
-                <Typography id="modal-modal-title" variant="h6" component="h2">
-                  Atributos para tropas
-                </Typography>
+              <button className={styles.closeBtn} onClick={handleClose}> X </button>
+                  <h1 className={styles.title}>Atributos para Construção</h1>
                 <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                  <select onChange={(e) => setSelectedOption(e.target.value)} value={selectedOption}>
+                  <select className={styles.royaleSelect} onChange={(e) => setSelectedOption(e.target.value)} value={selectedOption}>
                     {
                       constructionOptions.map((option) => {
                         return (
@@ -510,11 +631,11 @@ export default function createCard() {
                   </select>
 
                 </Typography>
-                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                  <input type="text" value={inputvalue} onChange={(e) => setInputValue(e.target.value)} placeholder="Valor do atributo" />
-                </Typography>
+                  <input className={style.inputatribute} type="text" value={inputvalue} onChange={(e) => setInputValue(e.target.value)} placeholder="Valor do atributo" />
+                
                 <div>
-                  <button onClick={addAtributes}>Adicionar atributo</button>
+                <p className={styles.error}>{errorA}</p>
+                  <button className={styles.addBtn} onClick={addAtributes}>Adicionar atributo</button>
                 </div>
               </Box>
             </Modal>
@@ -529,12 +650,10 @@ export default function createCard() {
               aria-describedby="modal-modal-description"
             >
               <Box sx={style}>
-                <button onClick={handleClose}> X </button>
-                <Typography id="modal-modal-title" variant="h6" component="h2">
-                  Atributos para tropas
-                </Typography>
+              <button className={styles.closeBtn} onClick={handleClose}> X </button>
+                  <h1 className={styles.title}>Atributos para Feitiço</h1>
                 <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                  <select onChange={(e) => setSelectedOption(e.target.value)} value={selectedOption}>
+                  <select className={styles.royaleSelect} onChange={(e) => setSelectedOption(e.target.value)} value={selectedOption}>
                     {
                       spellOptions.map((option) => {
                         return (
@@ -548,24 +667,24 @@ export default function createCard() {
                   </select>
 
                 </Typography>
-                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                  <input type="text" value={inputvalue} onChange={(e) => setInputValue(e.target.value)} placeholder="Valor do atributo" />
-                </Typography>
+                  <input className={style.inputatribute} type="text" value={inputvalue} onChange={(e) => setInputValue(e.target.value)} placeholder="Valor do atributo" />
+                
                 <div>
-                  <button onClick={addAtributes}>Adicionar atributo</button>
+                <p className={styles.error}>{errorA}</p>
+                  <button className={styles.addBtn} onClick={addAtributes}>Adicionar atributo</button>
                 </div>
               </Box>
             </Modal>
           </div>
           : null
            ))
-          }
+        }
           
       </div>
 
 
-          
-        <div className={styles3.containerCards20} ref={divRef} >
+          {/* importação do componente e utilizando html2canvas para criar a imagem da div */}
+        <div className={styles.containerCards20} ref={divRef} >
           <div className={styles3.containerCards2}>
             {
               elixir == "1" && rarity == "Comum" ||  elixir == "1" && rarity == "Raro" || elixir == "1" && rarity == "Épico" ? (
@@ -1400,8 +1519,9 @@ export default function createCard() {
           id={id}
           level={level}
         />
-      </div>
-
-    </main>
+    </div>
+      </main>
+     <Footer />
+    </div>
   )
 }

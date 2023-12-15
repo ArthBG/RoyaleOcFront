@@ -1,6 +1,10 @@
 /* Estilos para o contêiner pai. */
 .containerPai {
   background-image: url("../../../public/images/fundoazul.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   font-family: 'clash-font', sans-serif;
   display: flex;
   flex-direction: column;
@@ -9,153 +13,94 @@
   min-height: 100vh;
 }
 
-/* Estilos para o container do formulário. */
+.main22 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
 .containerForm {
-  width: 80%;
-  max-width: 400px;
-  margin-bottom: 10rem;
-  margin-top: 8rem;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #eeebeb;
+  border-radius: 10px;
+  border: solid 1rem #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos para o título. */
 .titulo {
-  font-family: 'clash-font', sans-serif;
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
   text-align: center;
-  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
-/* Estilos para o formulário. */
 .form {
-  font-family: 'clash-font', sans-serif;
   display: flex;
   flex-direction: column;
 }
 
-/* Estilos para os campos de entrada e rótulos. */
 .divInput {
-  margin-bottom: 15px;
-  display: flex;
-}
-
-.label {
-  font-family: 'clash-font', sans-serif;
-  font-size: 17px;
-  margin-bottom: 1rem;
+  margin-bottom: 20px;
 }
 
 .input {
-  padding: 8px;
-  font-size: 10px;
-  border: 1px solid #bdc3c7;
   width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  outline: none;
-  transition: all 0.3s;
+  font-size: 1rem;
 }
 
-/* Estilos para o botão de cadastrar e voltar para membros. */
-
-.voltar {
-  font-family: 'clash-font', sans-serif;
-  font-size: 17px;
-  margin-bottom: 1rem;
-  text-align: center;
-  color: #fff;
-  margin-top: 10px;
-  margin-right: 1rem;
-
+.msgError {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 5px;
 }
-.btn,
-.botaoVoltar {
+
+.containerbtn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.botaoVoltar,
+.btn {
+  position: relative;
   border: none;
   border-radius: 5px;
   font-family: 'clash-font', sans-serif;
-  font-size: inherit;
-  color: inherit;
+  font-size: 1rem;
+  color: #fff;
   background: none;
   cursor: pointer;
-  padding: 1rem;
-  width: 90%;
-  height: 121%;
-  display: inline-block;
-  margin: auto;
+  padding: 10px 15px;
   text-transform: uppercase;
-  letter-spacing: 1px;
   font-weight: 700;
   outline: none;
-  position: relative;
   transition: all 0.3s;
-  margin-top: -1rem;
+}
+
+.botaoVoltar {
+  background: #3498db;
 }
 
 .btn {
-  background: #ffbd21;
-  color: #fff;
-  box-shadow: 0 6px #ae6a06, -1px 8px 0 black, 0 0 0 2px black, 0px 6px 0px 2px black;
-  height: 50px;
+  background: #2ecc71;
 }
 
-.btn:active {
-  box-shadow: 0 0 #ae6a06, 0 0 0 2px black, 0px 0px 0px 2px black;
-}
-
-.btn .overlay {
-  width: 95%;
-  height: 80%;
+.overlay {
+  width: 100%;
+  height: 100%;
   position: absolute;
   background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0px 1px 4px #fe8d0a;
   border-radius: 5px;
-  top: 2px;
-  left: 5px;
 }
 
-.btn .overlay+.overlay {
-  height: 45%;
-  width: 80%;
-  left: 7px;
-  border-radius: 5px;
-  top: 6px;
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: none;
-}
-
-.btn .overlay+.overlay+.overlay {
-  width: 5px;
-  height: 8px;
-  background: rgba(255, 255, 255, 0.65);
-  border-radius: 200px;
-  right: 8px;
-  left: auto;
-  transform: rotate(-45deg);
-}
-
-/* Estilos para o botão de cadastrar e voltar para membros. */
-.botaoVoltar {
-  background: rgb(28, 22, 210);
-  color: #fff;
-  box-shadow: 0 6px #09185c, -1px 8px 0 black, 0 0 0 2px black, 0px 6px 0px 2px black;
-}
-
-.botaoVoltar:active {
-  box-shadow: 0 0 #000000, 0 0 0 2px black, 0px 0px 0px 2px black;
-  top: 6px;
-}
-
-.botaoVoltar .overlay {
-  width: 95%;
-  height: 87%;
-  position: absolute;
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0px 1px 4px #24087f;
-  border-radius: 5px;
-  top: 2px;
-  left: 5px;
-}
-
-.botaoVoltar .overlay+.overlay {
+.overlay + .overlay {
   height: 45%;
   width: 92.5%;
   left: 7px;
@@ -165,7 +110,7 @@
   box-shadow: none;
 }
 
-.botaoVoltar .overlay+.overlay+.overlay {
+.overlay + .overlay + .overlay {
   width: 5px;
   height: 8px;
   background: rgba(255, 255, 255, 0.65);
@@ -174,11 +119,15 @@
   left: auto;
   transform: rotate(-45deg);
 }
+@media (max-width: 768px) {
+  .containerForm {
+    padding: 10px;
+  }
+  .containerPai{
+    overflow-x: hidden;
+  }
 
-.containerbtn {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-
+  .input {
+    font-size: 0.9rem;
+  }
 }
-

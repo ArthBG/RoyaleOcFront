@@ -1,7 +1,67 @@
+.bg {
+    background-image: url("../../public/images/fundoazul.png");
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.containerInputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    margin-top: 15rem;
+    background-color: rgb(4, 4, 112);
+    border-radius: 10px;
+    border: 2px solid #f0c44e;
+    box-shadow: 0 0 30px rgb(103, 217, 255);
+    width: 20rem;
+    height: 15rem;
+
+}
+.titulo{
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 15px #000000;
+    text-align: center;
+}
+.containerImgand{
+    display: flex;
+    margin: 2rem;
+}
+
+.botao {
+    text-decoration: none;
+    margin-top: 2rem;
+    background-color: #f0c44e;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 3px 0 #ff8907, 0 0 0 4px #ffa80c, 0 1px 0 4px #ffa80c, 0 -1px 2px 4px #ffd525, 0 -2px 0 5px #f4e684, 0 6px 0 4px #b06904, 0 3px 0 5px #f4e684, 0 -2px 0 7px #202020, 0 5px 0 7px #202020, 0 7px 0 7px #333;
+    color: #ffc;
+    font-size: 10px;
+    cursor: pointer;
+    text-shadow: -1px 2px 0 #582d00, 0 2px 0 #582d00, 1px 2px 0 #582d00, -1px -1px 0 #582d00, 1px -1px 0 #582d00, -1px 1px 0 #582d00, 1px 1px 0 #582d00;
+
+}
+
+.inputSend {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border: 2px solid #f0c44e;
+    padding: 0.5rem;
+    background-color: #fbfbfb;
+    color: rgb(0, 0, 0);
+    font-size: 10px;
+    cursor: pointer;
+
+}
+
 .cadastrotitulo {
     font-size: 1.5rem;
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin: auto;
+    margin-top: 1rem;
     color: #f0c44e;
     text-align: center;
     margin-top: 1rem;
@@ -9,15 +69,100 @@
     width: 50%;
     align-items: center;
     text-align: center;
-    margin-left: 20rem;
     background-color: rgb(4, 4, 112);
     border-radius: 10px;
     border: 2px solid #f0c44e;
-    
+
 }
 
+.containerImg {
+    border-right: 5px groove #ffffff;
+    width: fit-content;
+    margin-top: 5%;
+}
+
+.containerAll {
+    display: flex;
+}
+
+.containerForm {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5%;
+    margin-left: 1%;
+}
+
+.divContact {
+    display: flex;
+}
+
+.divContainsContactAll {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.containerForm p {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bolder;
+    margin-left: 0.5rem;
+}
+
+.containerForm strong {
+    color: #ffffff;
+    text-shadow: 4px 2px 1px rgba(1, 1, 1, 1);
+    font-size: 1rem;
+}
+
+.delete {
+    border: none;
+    border-radius: 5px;
+    font-family: 'clash-font', sans-serif;
+    font-size: inherit;
+    color: inherit;
+    cursor: pointer;
+    padding: 1rem 1.875rem;
+    display: inline-block;
+    margin: auto;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    transition: all 0.3s;
+    background: red;
+    color: #fff;
+    box-shadow: 0 6px red, -1px 8px 0 black, 0 0 0 2px black, 0px 6px 0px 2px black;
+}
+
+.btns button {
+    margin: 0.5rem;
+}
+
+.edit {
+    background: blue;
+    color: #fff;
+    box-shadow: 0 6px blue, -1px 8px 0 black, 0 0 0 2px black, 0px 6px 0px 2px black;
+    border: none;
+    border-radius: 5px;
+    font-family: 'clash-font', sans-serif;
+    font-size: inherit;
+    cursor: pointer;
+    padding: 1rem 1.875rem;
+    display: inline-block;
+    margin: auto;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    transition: all 0.3s;
+}
+.main22{
+    min-height: 100vh;
+}
 .botaocadastro {
-    text-decoration: none;  
+    text-decoration: none;
     background-color: #f0c44e;
     margin-bottom: 2rem;
     margin-left: 4rem;
@@ -27,10 +172,51 @@
     color: #ffc;
     font-size: 10px;
     cursor: pointer;
-    text-shadow: -1px 2px 0 #582d00,0 2px 0 #582d00,1px 2px 0 #582d00,-1px -1px 0 #582d00,1px -1px 0 #582d00,-1px 1px 0 #582d00,1px 1px 0 #582d00;
+    text-shadow: -1px 2px 0 #582d00, 0 2px 0 #582d00, 1px 2px 0 #582d00, -1px -1px 0 #582d00, 1px -1px 0 #582d00, -1px 1px 0 #582d00, 1px 1px 0 #582d00;
 }
 
 .botaocadastro:active {
-    box-shadow: 0 -2px 3px 0 #ff8907,0 0 0 4px #ffa80c,0 -1px 0 4px #ffa80c,0 -1px 2px 4px #ffd525,0 -2px 0 5px #f4e684,0 6px 0 4px #b06904,0 3px 0 5px #f4e684,0 -2px 0 7px #202020,0 5px 0 7px #202020,0 7px 0 7px #333;
-    text-shadow: -1px -1px 0 #582d00,1px -1px 0 #582d00,-1px 1px 0 #582d00,1px 1px 0 #582d00;
+    box-shadow: 0 -2px 3px 0 #ff8907, 0 0 0 4px #ffa80c, 0 -1px 0 4px #ffa80c, 0 -1px 2px 4px #ffd525, 0 -2px 0 5px #f4e684, 0 6px 0 4px #b06904, 0 3px 0 5px #f4e684, 0 -2px 0 7px #202020, 0 5px 0 7px #202020, 0 7px 0 7px #333;
+    text-shadow: -1px -1px 0 #582d00, 1px -1px 0 #582d00, -1px 1px 0 #582d00, 1px 1px 0 #582d00;
+}
+
+@media screen and (max-width: 768px) and (min-width: 320px) {
+    .containerInputs {
+     margin-top: 15rem;
+    }
+
+    .containerImg {
+        display: none;
+    }
+
+    .containerAll {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .containerForm {
+        display: flex;
+        flex-direction: column;
+    }
+    .image{
+        display: none;
+    }
+    .divContainsContactAll {
+        border: solid 1vw rgb(190, 190, 233);
+        text-align: center;
+        border-radius: 10px;
+    }
+
+    .cadastrotitulo {
+        width: 100%;
+    }
+
+    .botaocadastro {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .containerImgand{
+        display: flex;
+        flex-direction: column;
+    }
 }

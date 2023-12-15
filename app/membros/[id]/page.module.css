@@ -1,194 +1,146 @@
+/* Estilos para o contêiner pai. */
 .containerPai {
-    background-image: url("../../../public/images/fundoazul.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-    padding-top: 1.45rem;
-    margin-top: -1.3rem;
-
-  }
-  .btnv {
-    border: none;
-    border-radius: 5px;
-    font-family: 'clash-font', sans-serif;
-    font-size: inherit;
-    color: inherit;
-    background: none;
-    cursor: pointer;
-    padding: 1rem 1.875rem;
-    display: inline-block;
-    margin: auto;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 700;
-    outline: none;
-    position: relative;
-    transition: all 0.3s;
-  }
-  
-  .btnv {
-    background: red;
-    color: #fff;
-    box-shadow: 0 6px red, -1px 8px 0 black, 0 0 0 2px black, 0px 6px 0px 2px black;
-
+  background-image: url("../../../public/images/fundoazul.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: 'clash-font', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
-  
-  .btnv:active {
-    box-shadow: 0 0 #ae6a06, 0 0 0 2px black, 0px 0px 0px 2px black;
-    top: 6px;
-  }
-  
-  .btnv .overlay {
-    width: 95%;
-    height: 87%;
-    position: absolute;
-    background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0px 1px 4px #fe8d0a;
-    border-radius: 5px;
-    top: 2px;
-    left: 5px;
-  }
-  
-  .btnv .overlay+.overlay {
-    height: 45%;
-    width: 92.5%;
-    left: 7px;
-    border-radius: 5px;
-    top: 6px;
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: none;
-  }
-  
-  .btnv .overlay+.overlay+.overlay {
-    width: 5px;
-    height: 8px;
-    background: rgba(255, 255, 255, 0.65);
-    border-radius: 200px;
-    right: 8px;
-    left: auto;
-    transform: rotate(-45deg);
-  }
-  
-  
+.main22 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
 
-  
+.divForm {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #eeebeb;
+  border-radius: 10px;
+  border: solid 1rem #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.divInputs {
+  margin-bottom: 20px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.msgError {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 5px;
+}
+
+.divpaibtn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.btnv,
+.btna {
+  position: relative;
+  border: none;
+  border-radius: 5px;
+  font-family: 'clash-font', sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  background: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  font-weight: 700;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.btnv {
+  background: #3498db;
+}
+
+.btna {
+  background: #2ecc71;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 5px;
+}
+
+.overlay + .overlay {
+  height: 45%;
+  width: 92.5%;
+  left: 7px;
+  border-radius: 5px;
+  top: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: none;
+}
+
+.overlay + .overlay + .overlay {
+  width: 5px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 200px;
+  right: 8px;
+  left: auto;
+  transform: rotate(-45deg);
+}
+
+@media (max-width: 768px) {
   .divForm {
-    margin-top: 20px;
-    width: 50%;
-    border: none;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .divInputs {
-    margin-bottom: 15px;
-  }
-  
-  .label {
-    font-weight: bold;
-  }
-  
-  .input {
-    width: 100%;
     padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  .divpaibtn{
-    justify-content: center;
-    text-align: center;
-    margin-top: 1.25rem;
   }
 
-  .btna {
-    border: none;
-    border-radius: 5px;
-    font-family: 'clash-font', sans-serif;
-    font-size: inherit;
-    color: inherit;
-    background: none;
-    cursor: pointer;
-    padding: 1rem 1.875rem;
-    display: inline-block;
-    margin: auto;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 700;
-    outline: none;
-    position: relative;
-    transition: all 0.3s;
-    margin: 2rem;
-  }
-  
-  .btna {
-    background: rgb(0, 140, 255);
-    color: #fff;
-    box-shadow: 0 6px rgb(0, 102, 255), -1px 8px 0 black, 0 0 0 2px black, 0px 6px 0px 2px black;
-  }
-  
-  .btna:active {
-    box-shadow: 0 0 #ae6a06, 0 0 0 2px black, 0px 0px 0px 2px black;
-    top: 6px;
-  }
-  
-  .btna .overlay {
-    width: 95%;
-    height: 87%;
-    position: absolute;
-    background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0px 1px 4px #fe8d0a;
-    border-radius: 5px;
-    top: 2px;
-    left: 5px;
-  }
-  
-  .btna .overlay+.overlay {
-    height: 45%;
-    width: 92.5%;
-    left: 7px;
-    border-radius: 5px;
-    top: 6px;
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: none;
-  }
-  
-  .btna .overlay+.overlay+.overlay {
-    width: 5px;
-    height: 8px;
-    background: rgba(255, 255, 255, 0.65);
-    border-radius: 200px;
-    right: 8px;
-    left: auto;
-    transform: rotate(-45deg);
-  }
-  .textarea{
-    width: 100%;
-   padding: 1rem;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    resize: none;
+  .containerPai {
+    overflow-x: hidden;
   }
 
-  
-  
-
-  
+  .input,
+  .textarea {
+    font-size: 0.9rem;
+  }
+}

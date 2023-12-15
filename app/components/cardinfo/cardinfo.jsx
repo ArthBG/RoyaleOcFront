@@ -1,5 +1,6 @@
 import Image from "next/image"
 import styles from "./cardinfo.module.css";
+import stylesDetails from "../../cardsdetail/[id]/page.module.css";
 import Link from "next/link";
 export default function CardInfo({ name, image, type, rarity, elixir, hp, deploytime, shieldhp, description, damage, damagepersecond, rangeddamage, damageondistance, damageonarea, damageonimpact, damageontower, chargedamage, damageondeath, spawnspeed, duration, radius, width, efecttime, freezetime, unities, arena, target, projectilerange, range, speed, impactspeed, id, level }) {
   return (
@@ -11,7 +12,7 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
           <div className={styles.containerCards2}>
 
             {
-              elixir == "1" && rarity == "Comum" || elixir == "1" &&  rarity == "Raro" || elixir == "1" &&  rarity == "Épico" ? (
+              elixir == "1" && rarity == "Comum" || elixir == "1" && rarity == "Raro" || elixir == "1" && rarity == "Épico" ? (
                 <div className={styles.imagecomming} style={{
                   backgroundImage: `url(${image})`,
                   backgroundRepeat: "no-repeat",
@@ -91,7 +92,7 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                           </div>
                         </div>
                       ) : (
-                        elixir == "6" && rarity == "Comum" ||elixir == "6" &&  rarity == "Raro" || elixir == "6" && rarity == "Épico" ? (
+                        elixir == "6" && rarity == "Comum" || elixir == "6" && rarity == "Raro" || elixir == "6" && rarity == "Épico" ? (
                           <div className={styles.imagecomming} style={{
                             backgroundImage: `url(${image})`,
                             backgroundRepeat: "no-repeat",
@@ -678,34 +679,108 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                                       {description}
                                     </div>
                                   </div>
-                                  
-                                  // (rarity == "Campeão" && type == "Tropa" ?
-                                  //   <div className={styles.campeaotropa}>
-                                  //     <Image src={"/images/campeaotropa.png"} width={450} height={100} />
-                                  //     <div className={styles.desc}>
-                                  //       {description}
-                                  //     </div>
-                                  //   </div>
-                                  //   :
-                                  //   (rarity == "Campeão" && type == "Feitiço" ?
-                                  //     <div className={styles.campeaofeitico}>
-                                  //       <Image src={"/images/campeaofeiti.png"} width={450} height={100} />
-                                  //       <div className={styles.desc}>
-                                  //         {description}
-                                  //       </div>
-                                  //     </div>
-                                  //     :
-                                  //     (rarity == "Campeão" && type == "Construção" ?
-                                  //       <div className={styles.campeaoconstrucao}>
-                                  //         <Image src={"/images/campeaoconst.png"} width={450} height={100} />
-                                  //         <div className={styles.desc}>
-                                  //           {description}
-                                  //         </div>
-                                  //       </div>
+                                  :
+                                  (rarity == "Campeão" && type == "Tropa" ?
+                                    <div className={styles.trick}>
+                                      <div className={styles.campeaotropa}>
+                                        <div className={stylesDetails.minicards}>
+                                          <div className={stylesDetails.minicard}>
+                                            <div className={stylesDetails.fundoR}>
+                                              <h2 className={stylesDetails.h2}>Raridade</h2>
+                                            </div>
+                                            <div className={stylesDetails.fundoInfo}>
+                                              <p className={stylesDetails.p}>Campeão</p>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                        <div className={stylesDetails.minicards}>
+
+                                          <div className={stylesDetails.minicard}>
+                                            <div className={stylesDetails.fundoR}>
+                                              <h2 className={stylesDetails.h2}>Tipo</h2>
+                                            </div>
+                                            <div className={stylesDetails.fundoInfo}>
+                                              <p className={stylesDetails.p}>Tropa</p>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                      </div>
+                                      <div className={styles.desc20}>
+                                        {description}
+                                      </div>
+                                    </div>
+
+
+
+                                    :
+                                    (rarity == "Campeão" && type == "Feitiço" ?
+                                      <div className={styles.trick}>
+                                        <div className={styles.campeaotropa}>
+                                          <div className={stylesDetails.minicards}>
+                                            <div className={stylesDetails.minicard}>
+                                              <div className={stylesDetails.fundoR}>
+                                                <h2 className={stylesDetails.h2}>Raridade</h2>
+                                              </div>
+                                              <div className={stylesDetails.fundoInfo}>
+                                                <p className={stylesDetails.p}>Campeão</p>
+                                              </div>
+                                            </div>
+                                          </div>
+
+                                          <div className={stylesDetails.minicards}>
+
+                                            <div className={stylesDetails.minicard}>
+                                              <div className={stylesDetails.fundoR}>
+                                                <h2 className={stylesDetails.h2}>Tipo</h2>
+                                              </div>
+                                              <div className={stylesDetails.fundoInfo}>
+                                                <p className={stylesDetails.p}>Feitiço</p>
+                                              </div>
+                                            </div>
+                                          </div>
+
+                                        </div>
+                                        <div className={styles.desc20}>
+                                          {description}
+                                        </div>
+                                      </div>
+                                      :
+                                      (rarity == "Campeão" && type == "Construção" ?
+                                        <div className={styles.trick}>
+                                          <div className={styles.campeaotropa}>
+                                            <div className={stylesDetails.minicards}>
+                                              <div className={stylesDetails.minicard}>
+                                                <div className={stylesDetails.fundoR}>
+                                                  <h2 className={stylesDetails.h2}>Raridade</h2>
+                                                </div>
+                                                <div className={stylesDetails.fundoInfo}>
+                                                  <p className={stylesDetails.p}>Campeão</p>
+                                                </div>
+                                              </div>
+                                            </div>
+
+                                            <div className={stylesDetails.minicards}>
+
+                                              <div className={stylesDetails.minicard}>
+                                                <div className={stylesDetails.fundoR}>
+                                                  <h2 className={stylesDetails.h2}>Tipo</h2>
+                                                </div>
+                                                <div className={stylesDetails.fundoInfo}>
+                                                  <p className={stylesDetails.p}>Construção</p>
+                                                </div>
+                                              </div>
+                                            </div>
+
+                                          </div>
+                                          <div className={styles.desc20}>
+                                            {description}
+                                          </div>
+                                        </div>
                                         :
                                         null
-                                      )))))))))))
-                                
+                                      ))))))))))))))
         }
       </div>
       <div className={styles.atributesCondition}>
@@ -813,7 +888,7 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
         }
         {
           damageonimpact ? <div className={styles.damageonimpact}>
-            <Image src={"/images/damage.png"} width={60} height={60} />
+            <Image src={"/images/damageonarea.png"} width={60} height={60} />
             <div className={styles.desc2}>
               <h1 className={styles.atributesP}>
                 Dano no impacto
@@ -865,7 +940,7 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
         }
         {
           spawnspeed ? <div className={styles.spawnspeed}>
-            <Image src={"/images/spawnspeed.png"} width={60} height={60} />
+            <Image src={"/images/efecttime.png"} width={60} height={60} />
             <div className={styles.desc2}>
               <h1 className={styles.atributesP}>
                 Tempo de mobilização
@@ -904,7 +979,7 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
         }
         {
           width ? <div className={styles.width}>
-            <Image src={"/images/width.png"} width={60} height={60} />
+            <Image src={"/images/radius.png"} width={60} height={60} />
             <div className={styles.desc2}>
               <h1 className={styles.atributesP}>
                 Largura
@@ -969,7 +1044,7 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
         }
         {
           projectilerange ? <div className={styles.projectilerange}>
-            <Image src={"/images/range.png"} width={60} height={60} />
+            <Image src={"/images/damageondistance.png"} width={60} height={60} />
             <div className={styles.desc2}>
               <h1 className={styles.atributesP}>
                 Alcance do projétil

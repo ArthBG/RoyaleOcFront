@@ -4,9 +4,10 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  height: 100%;
+  min-height: 100vh;
   color: white;
-
+  display: flex;
+  flex-direction: column;
 }
 /*botao delete*/
 
@@ -70,7 +71,9 @@
   left: auto;
   transform: rotate(-45deg);
 }
-
+.main22{
+  min-height: 100vh;
+}
 /*botao update*/
 
 .btnupdate {
@@ -186,7 +189,12 @@
   outline: none;
   transition: all 0.3s;
 
-
+.miniinfos{
+  border: solid 15px #e10000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 }
 
 .descricao{
@@ -299,97 +307,36 @@
   gap: 1rem;
 }
 
-/* deixe essa pagina responsiva */
 @media (max-width: 768px) {
+  .main22 {
+    padding: 2rem;
+  }
+
   .divpaiinfos {
     width: 100%;
-    margin-bottom: 5rem;
-    max-height: 100%;
     padding: 1rem;
   }
 
-  .infos {
-    max-height: 100%;
-    min-height: 100%;
-  }
-
-  .infosImg{
-    max-height: 100%;
-    min-height: 100%;
-  }
-
-  .descricao{
-    max-height: 100%;
-    min-height: 100%;
+  .infos,
+  .infosImg,
+  .descricao {
+    width: 100%;
+    max-height: none;
+    min-height: none;
   }
 
   .divbtn {
     text-align: center;
     display: flex;
+    align-items: center;
     margin-top: 3rem;
+    width: auto;
+    height: auto;
+    margin-left: 1% ;
     min-height: 3rem;
   }
-
-  .map {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
+  .container{
+    overflow-x: hidden;
   }
 
-  .h1 {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-
-  .cria {
-    text-align: center;
-  }
-
-  .container {
-    background-image: url("../../public/images/fundoazulcards.png");
-    background-repeat: repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    height: 100%;
-    color: white;
-  }
-
-  .divpaiinfos {
-    min-height: 60rem;
-    width: 25rem;
-    margin-bottom: 5rem;
-    max-height: 60rem;
-    padding: 1rem;
-  }
-
-  .infos {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    width: 100%;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    font-family: 'clash-font', sans-serif;
-    font-size: 1.5rem;
-    color: white;
-    background: none;
-    cursor: pointer;
-    padding: 1rem 1.875rem;
-    margin: auto;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 700;
-    outline: none;
-    transition: all 0.3s;
-
-    max-height: 7rem;
-    min-height: 7rem;
-  }
 }
-

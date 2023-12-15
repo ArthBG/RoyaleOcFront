@@ -4,15 +4,17 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    min-height: 100vh;
     height: 100%;
+    min-height: 100vh;
+}
+.main22{
+    min-height: 100vh;
 }
 .card{
     width: 11rem;
     height: 11.15rem;
     margin: 1rem;
     min-width: fit-content;
-    min-height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -21,6 +23,9 @@
     border-radius: 10px;
     box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
     position: relative;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
 }
 .title{
     color: white;
@@ -157,3 +162,83 @@
     right: -5px;
     
 }   
+.containerScrolls{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    right: 3px;
+    top: 44%;
+    z-index: 999;
+}
+.containerScrolls button{
+    margin: 0.75rem;
+    background-color: #ffa80c;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 3px 0 #ff8907, 0 0 0 4px #ffa80c, 0 1px 0 4px #ffa80c, 0 -1px 2px 4px #ffd525, 0 -2px 0 5px #f4e684, 0 6px 0 4px #b06904, 0 3px 0 5px #f4e684, 0 -2px 0 7px #202020, 0 5px 0 7px #202020, 0 7px 0 7px #333;
+    color: #ffc;
+    font-size: 20px;
+    text-shadow: -1px 2px 0 #582d00,0 2px 0 #582d00,1px 2px 0 #582d00,-1px -1px 0 #582d00,1px -1px 0 #582d00,-1px 1px 0 #582d00,1px 1px 0 #582d00;
+}
+.containerScrolls button:hover{
+    cursor: pointer;
+    color: #c8c8c8;
+}
+.containerFooter{
+    position: absolute;
+    width: 100%;
+}
+
+@media (max-width: 768px){
+    .containerCard{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0;
+        width: auto;
+    }
+    .containerFilters{
+        display: flex;
+        flex-direction: column;
+    }
+    .containerFilters select{
+        width: 72%;
+    }
+    .containerFilters input{
+        width: 72%;
+    }
+    .search{
+        width: 75%;
+    }
+    .containerSearch {
+        width: 72%;
+    }
+    .icon{
+        margin-left: 2.0rem;
+    }
+
+    .card{
+        width: 5rem;
+        height: 10rem;
+        margin: 5px;
+        margin-bottom: 30px;
+        min-width: 7.5rem;
+        padding-bottom: 12rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+        position: relative;
+        
+    }
+    .card p{
+        font-size: 10px;
+        margin: 0;
+        padding: 10px;
+    }
+    .containerScrolls{
+      display: none;
+}
+}

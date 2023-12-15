@@ -2,45 +2,160 @@
     background-image: url("../public/images/fundoazul.png");
     background-repeat: no-repeat;
     background-size: cover;
-
+    background-attachment: fixed;
+    background-position: center;
 }
 
-.divcard1 {
-    margin-top: 4rem;
-    width: 40%;
+.divIntro4 {
+    background-color: #06245C;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.divIntro1,
+.divRender {
+    width: 100%;
+    max-width: 800px;
     margin: auto;
- 
+}
+
+.title {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 3.5rem; /* Adjust the font size as needed */
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-shadow: 1px 5px 0 #000, 0 2px 0 #000, 1px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.description {
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 4px 2px #000;
+    font-size: 14px;
+    line-height: 1.6;
+    width: 80%;
+    margin: auto;
+    text-align: justify;
+    margin-top: 1rem;
+}
+
+.buttonSeemore {
+    margin-top: 1.5rem;
+    margin-right: 20rem;
+    width: 100%;
+    max-width: 10rem;
+    padding: 1rem;
+    text-decoration: none;
+    background-color: #0772ff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 3px 0 #0772ff, 0 0 0 4px #0772ff, 0 1px 0 4px #0772ff, 0 -1px 2px 4px #0772ff, 0 -2px 0 5px #0772ff, 0 6px 0 4px #0772ff, 0 3px 0 5px #0772ff, 0 -2px 0 7px #202020, 0 5px 0 7px #202020, 0 7px 0 7px #333;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    text-shadow: -1px 2px 0 #582d00, 0 2px 0 #582d00, 1px 2px 0 #582d00, -1px -1px 0 #582d00, 1px -1px 0 #582d00, -1px 1px 0 #582d00, 1px 1px 0 #582d00;
+}
+
+.divAbout {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: #f5f5f5;
+}
+
+.divText {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.divText2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.Techtugen {
+    font-size: 14px;
+    width: 100%;
+    max-width: 45rem;
+    color: #000000;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.divBtns {
+    display: flex;
+    margin-top: 0.5rem;
+    flex-direction: row;
+}
+
+.titles {
+    font-size: 2rem;
+    margin-top: 1rem;
+    color: rgb(255, 255, 255);
+    text-shadow: -1px 5px 0 #000, 0 2px 0 #000, 1px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.divCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: #f5f5f5;
 }
 
 .a2 {
-    margin-top: 4rem;
-    padding: 3.8rem;
+    padding: 0.5rem;
+    margin: auto;
+    text-align: center;
+    width: fit-content;
     text-decoration: none;
-    background-color: #0d8af7;
     border: none;
     border-radius: 5px;
-    box-shadow: 0 2px 3px 0 #0772ff, 0 0 0 4px #0772ff, 0 1px 0 4px #0772ff, 0 -1px 2px 4px #0772ff, 0 -2px 0 5px #0772ff, 0 6px 0 4px #0772ff, 0 3px 0 5px #0772ff, 0 -2px 0 7px #202020, 0 5px 0 7px #202020, 0 7px 0 7px #333;
     color: rgb(204, 255, 254);
     font-size: 10px;
     text-shadow: -1px 2px 0 #582d00, 0 2px 0 #582d00, 1px 2px 0 #582d00, -1px -1px 0 #582d00, 1px -1px 0 #582d00, -1px 1px 0 #582d00, 1px 1px 0 #582d00;
 }
 
-.a2:active {
-    box-shadow: 0 -2px 3px 0 #0d8af7, 0 0 0 4px #0d8af7, 0 -1px 0 4px #0d8af7, 0 -1px 2px 4px #0d8af7, 0 -2px 0 5px #0d8af7, 0 6px 0 4px #0d8af7, 0 3px 0 5px #0d8af7, 0 -2px 0 7px #202020, 0 5px 0 7px #202020, 0 7px 0 7px #333;
-    text-shadow: -1px -1px 0 #582d00, 1px -1px 0 #582d00, -1px 1px 0 #582d00, 1px 1px 0 #582d00
+.contact {
+    font-size: 10px;
+    margin: auto;
+    margin-top: 0.20rem;
+    text-align: center;
+}
+
+.divIntross {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-image: url("../public/images/arenabgroyale.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    padding: 2rem;
 }
 
 .divcard2 {
-    margin-top: 4rem;
-    width: 40%;
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 600px;
     padding: 0.5rem;
     margin: auto;
 }
 
 .a3 {
-
-    padding: 3rem;
-    margin-top: 4rem;
+    padding: 1rem;
+    margin-top: 2rem;
     text-decoration: none;
     background-color: #5bec1c;
     border: none;
@@ -51,6 +166,21 @@
     text-shadow: -1px 2px 0 #582d00, 0 2px 0 #582d00, 1px 2px 0 #582d00, -1px -1px 0 #582d00, 1px -1px 0 #582d00, -1px 1px 0 #582d00, 1px 1px 0 #582d00;
 }
 
+.divIntro21 {
+    margin: 1rem;
+}
+
+.divIntro212 {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5.5rem;
+}
+
+.a101 {
+    text-align: center;
+}
+
 .a3:active {
     box-shadow: 0 -2px 3px 0 #0cff30, 0 0 0 4px #0cff30, 0 -1px 0 4px #0cff30, 0 -1px 2px 4px #0cff30, 0 -2px 0 5px #0cff30, 0 6px 0 4px #b06904, 0 3px 0 5px #0cff30, 0 -2px 0 7px #202020, 0 5px 0 7px #202020, 0 7px 0 7px #333;
     text-shadow: -1px -1px 0 #582d00, 1px -1px 0 #582d00, -1px 1px 0 #582d00, 1px 1px 0 #582d00
@@ -58,49 +188,121 @@
 
 .cards {
     display: flex;
+    flex-direction: column;
     margin-bottom: 2rem;
 }
 
 .font {
-    font-size: 0.9rem
+    font-size: 0.9rem;
 }
-.divimgs{
+
+.divimgs {
     margin: auto;
-    margin-bottom: 6rem;
+    margin-bottom: 2rem;
     text-align: center;
 }
-.gigaimg{
+
+.gigaimg,
+.prince,
+.a {
     margin: auto;
     text-align: center;
     margin-top: 1rem;
 }
-.prince{
-    margin: auto;
-    text-align: center;
-    margin-top: 1rem;
+
+.shortcut1 {
+    display: flex;
 }
 
+.divIntro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-image: url("../public/images/arenabgroyale.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 2rem;
+}
 
-@media (max-width: 768px) {
-    .divcard1 {
-        width: 100%;
-    }
+.divIntro1,
+.divIntro2 {
+    margin: auto;
+    width: 100%;
+    max-width: 800px;
+}
 
+.tituloall {
+    text-align: center;
+    margin: 2rem;
+}
+ .divall{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+ 
+} 
+.main22{
+    min-height: 100vh;
+}
+@media (max-width: 600px) {
+    .divIntro1,
+    .divIntro2,
     .divcard2 {
         width: 100%;
+        max-width: none;
     }
-    .divimgs{
+    .divRender{
+        margin-top: 1rem;
+    }
+    .backgroundimage{
+        overflow-x: hidden;
+    }
+    .imgP{
         width: 100%;
+        max-width: 100%;
     }
-    .gigaimg{
-        width: 100%;
-    }
-    .prince{
-        width: 100%;
-    }
-
-    .cards {
+    .divIntro4{
         flex-direction: column;
     }
+    .description{
+        font-size: 15px;
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+    .titles{
+        font-size: 25px;
+    }
+    .title{
+        font-size: 37px;
+    }
+    .divall{
+        flex-direction: column;
+    }
+    .divText{
+        flex-direction: column;
+    }
+    .divText,
+    .divText2,
+    .divimgs,
+    .divCard,
+    .gigaimg,
+    .prince,
+    .a,
+    .divIntro,
+    .divall {
+        margin: 1rem;
+    }
+    .divBtns {
+        flex-direction: column;
+        width: 70%;
 
+    }
+    .buttonSeemore{
+        margin: auto;
+        margin-top: 1.5rem;
+    }
 }
