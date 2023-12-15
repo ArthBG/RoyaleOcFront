@@ -59,204 +59,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-{/*         <Carousel activeIndex={index} onSelect={handleSelect}>
-          <Carousel.Item>
-            <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena-01.png"} width={600}
-                height={400}
-                layout="responsive" />
-            </div>
-            <Carousel.Caption>
-              <h3>Campo de Treinamento</h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena1.png"} width={600} height={400} layout="responsive" />
-            </div>
-            <Carousel.Caption>
-              <h3>Estádio Goblin </h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena2.png"} width={600} height={400} layout="responsive" />
-            </div>
-            <Carousel.Caption>
-              <h3>Fosso dos Ossos</h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena3.png"} width={600} height={400} layout="responsive" />
-            </div>
-            <Carousel.Caption>
-              <h3>Torneio Bárbaro</h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena4.png"} width={600} height={400} layout="responsive" />
-            </div>
-            <Carousel.Caption>
-              <h3>Vale dos Feitiços</h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena5.png"} width={600} height={400} />
-            </div>
-            <Carousel.Caption>
-              <h3>Oficina do Construtor</h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena6.png"} width={600} height={400} />
-            </div>
-            <Carousel.Caption>
-              <h3>Parqinho da P.E.K.K.A</h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena7.png"} width={600} height={400} />
-            </div>
-            <Carousel.Caption>
-              <h3>Arena Real</h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena8.png"} width={600} height={400} />
-            </div>
-            <Carousel.Caption>
-              <h3>Pico Congelado</h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena9.png"} width={600} height={400} />
-            </div>
-            <Carousel.Caption>
-              <h3>Arena da Selva</h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena10.png"} width={600} height={400} />
-            </div>
-            <Carousel.Caption>
-              <h3>Montanha do Porco</h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena11.png"} width={600} height={400} />
-            </div>
-            <Carousel.Caption>
-              <h3>Eletrovale</h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena12.png"} width={600} height={400} />
-            </div>
-            <Carousel.Caption>
-              <h3>Cidade Assombrada </h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena13.png"} width={600} height={400} />
-            </div>
-            <Carousel.Caption>
-              <h3>Covil do Patifes</h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena14.png"} width={600} height={400} />
-            </div>
-            <Carousel.Caption>
-              <h3>Pico Sereno</h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena15.png"} width={600} height={400} />
-            </div>
-            <Carousel.Caption>
-              <h3>Mina do Mineiro</h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena16.png"} width={600} height={400} />
-            </div>
-            <Carousel.Caption>
-              <h3>A cozinha do Executor</h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena17.png"} width={600} height={400} />
-            </div>
-            <Carousel.Caption>
-              <h3>Cripta Real</h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena18.png"} width={600} height={400} />
-            </div>
-            <Carousel.Caption>
-              <h3>Santuário Silencioso</h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena19.png"} width={600} height={400} />
-            </div>
-            <Carousel.Caption>
-              <h3>Spa de Dragões </h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena20.png"} width={600} height={400} />
-            </div>
-            <Carousel.Caption>
-              <h3>Campo de Treinamentos</h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena21.png"} width={600} height={400} />
-            </div>
-            <Carousel.Caption>
-              <h3>Festa Clash</h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena22.png"} width={600} height={400} />
-            </div>
-            <Carousel.Caption>
-              <h3>Panquecas</h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div className={styles.divimgs}>
-              <Image className={styles.img} src={"/images/arena23.webp"} width={600} height={400} />
-            </div>
-            <Carousel.Caption>
-              <h3>Arena Lendária</h3>
-            </Carousel.Caption>
-          </Carousel.Item>
 
-
-        </Carousel> */}
 
         <div className={styles.divIntross}>
           <div className={styles.divIntro212}>
@@ -264,6 +67,15 @@ export default function Home() {
             <Link className={styles.a} href={'/cards/news'}>
               <div className={styles.divIntro21}>
                 <Image className={styles.img} src={"/images/newstuff.webp"} width={600} height={400} layout="responsive" />
+              </div>
+            </Link>
+          </div>
+
+          <div className={styles.divIntro212}>
+            <h1 className={styles.titles}>EVOLUÇÕES !</h1>
+            <Link className={styles.a} href={'/cards/newsevo'}>
+              <div className={styles.divIntro21}>
+                <Image className={styles.img} src={"/images/cardevo.jpg"} width={50} height={30} layout="responsive"/>
               </div>
             </Link>
           </div>
