@@ -66,7 +66,7 @@ export default function Home() {
             <h1 className={styles.titles}>NOVA ATUALIZAÇÃO !</h1>
             <Link className={styles.a} href={'/cards/news'}>
               <div className={styles.divIntro21}>
-                <Image className={styles.img} src={"/images/newstuff.webp"} width={600} height={400} layout="responsive" />
+                <Image className={styles.img} src={"/images/newstuff.jpg"} width={560} height={300} layout="responsive" />
               </div>
             </Link>
           </div>
