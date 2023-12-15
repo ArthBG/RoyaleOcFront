@@ -682,7 +682,7 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                                   :
                                   (rarity == "Campeão" && type == "Tropa" ?
                                     <div className={styles.trick}>
-                                      <div className={stylesDetails.campeaotropa}>
+                                      <div className={styles.campeaotropa}>
                                         <div className={stylesDetails.minicards}>
                                           <div className={stylesDetails.minicard}>
                                             <div className={stylesDetails.fundoR}>
@@ -717,7 +717,7 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                                     :
                                     (rarity == "Campeão" && type == "Feitiço" ?
                                       <div className={styles.trick}>
-                                        <div className={stylesDetails.campeaotropa}>
+                                        <div className={styles.campeaotropa}>
                                           <div className={stylesDetails.minicards}>
                                             <div className={stylesDetails.minicard}>
                                               <div className={stylesDetails.fundoR}>
@@ -749,7 +749,7 @@ export default function CardInfo({ name, image, type, rarity, elixir, hp, deploy
                                       :
                                       (rarity == "Campeão" && type == "Construção" ?
                                         <div className={styles.trick}>
-                                          <div className={stylesDetails.campeaotropa}>
+                                          <div className={styles.campeaotropa}>
                                             <div className={stylesDetails.minicards}>
                                               <div className={stylesDetails.minicard}>
                                                 <div className={stylesDetails.fundoR}>
