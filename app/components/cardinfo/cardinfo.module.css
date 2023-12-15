@@ -173,7 +173,7 @@ max-width: 30rem;
     flex-direction: column;
 }
 
-@media only screen and (max-width: 600px) and (min-width: 320px) {
+@media (max-width: 768px) {
     .containerCards20{
         display: block;
         position: static;
