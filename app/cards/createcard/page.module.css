@@ -361,12 +361,9 @@
     }
 
     .containerCards20 {
-        display: block;
         position: static;
         left: 0px;
         right: 0px;
-        margin: auto;
-        margin-top: 2.5rem;
         width: 250px;
         height: 290px;
         align-items: center;
@@ -379,12 +376,9 @@
     }
 
     .containerCards201 {
-        display: block;
         position: static;
         left: 0px;
         right: 0px;
-        margin: auto;
-        margin-top: 2.5rem;
         width: 250px;
         height: 290px;
         align-items: center;
