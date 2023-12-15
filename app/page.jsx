@@ -12,7 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export default function Home() {
   const [index, setIndex] = useState(0);
 
-  // Função para lidar com a seleção do índice
+
 const handleSelect = (selectedIndex) => {
   setIndex(selectedIndex);
 };
