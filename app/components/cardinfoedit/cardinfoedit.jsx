@@ -1079,19 +1079,6 @@ export default function CardInfoedit({ name, image, imageupdated, type, rarity, 
                         </div>
                     </div> : null
                 }
-                 {
-                    arena ? <div className={styles.speed}>
-                        <img src="https://www.deckshop.pro/img/arena/arena_training.png" alt={`Imagem da Arena da carta ${name}`} width={60} height={60} />
-                        <div className={styles.desc2}>
-                            <h1 className={styles.atributesP}>
-                                Arena:
-                            </h1>
-                            <h1 className={styles.atributesNames}>
-                                {arena}
-                            </h1>
-                        </div>
-                    </div> : null
-                }
                 {
                     impactspeed ? <div className={styles.impactspeed}>
                         <Image src={"/images/impactspeed.png"} width={60} height={60} />

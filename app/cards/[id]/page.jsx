@@ -106,7 +106,6 @@ export default function updateCard({ params }) {
     if(efecttime) newAttributes.push(efecttime);
     if(freezetime) newAttributes.push(freezetime);
     if(unities) newAttributes.push(unities);
-    if(arena) newAttributes.push(arena);
     if(target) newAttributes.push(target);
     if(projectilerange) newAttributes.push(projectilerange);
     if(range) newAttributes.push(range);
@@ -139,7 +138,6 @@ export default function updateCard({ params }) {
   if (card.efecttime) newAttributes.push(card.efecttime);
   if (card.freezetime) newAttributes.push(card.freezetime);
   if (card.unities) newAttributes.push(card.unities);
-  if (card.arena) newAttributes.push(card.arena);
   if (card.target) newAttributes.push(card.target);
   if (card.projectilerange) newAttributes.push(card.projectilerange);
   if (card.range) newAttributes.push(card.range);
