@@ -77,7 +77,7 @@ export default function Page() {
                 <h1 className={styles.titulo}>DEVELOPERS AREA</h1>
             <input
                 className={styles.inputSend}
-                type="text"
+                type="password"
                 placeholder="Senha de acesso"
                 value={passwordValue} 
                 onChange={handlePasswordChange} 
