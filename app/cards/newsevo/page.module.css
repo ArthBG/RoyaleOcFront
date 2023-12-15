@@ -14,7 +14,8 @@
   }
   
   .containerdivs h3 {
-    color: blue;
+    color: #FECFFE;
+    text-shadow: -1px 4px 0 #592ECC, 0 2px 0 #592ECC, 1px 2px 0 #592ECC, -1px -1px 0 #592ECC, 1px -1px 0 #592ECC, -1px 1px 0 #592ECC, 1px 1px 0 #592ECC;
     font-size: 20px;
     margin-bottom: 10px;
   }
@@ -30,6 +31,8 @@
   }
   
   .containerdivTexts h2 {
+    color: rgb(255, 255, 255);
+    text-shadow: -1px 5px 0 #000, 0 2px 0 #000, 1px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     font-size: 24px;
     margin-bottom: 25px;
     margin-top: 1rem;
@@ -45,7 +48,23 @@
     list-style-type: disc;
     padding-left: 20px;
   }
-  
+  .containerdivTexts1{
+    margin-top: 30px;
+    margin-bottom: 35px;
+  }
+    .containerdivTexts1 h2{
+        color: rgb(255, 255, 255);
+    text-shadow: -1px 5px 0 #000, 0 2px 0 #000, 1px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        font-size: 35px;
+        text-align: center;
+        margin-bottom: 50px;
+        margin-top: 1rem;
+    }
+    .containerdivTexts1 p{
+        margin-bottom: 25px;
+        margin-top: 1rem;
+        font-size: 18px;
+    }
   /* Estilos para tornar a página responsiva */
   @media screen and (max-width: 768px) {
 

@@ -8,14 +8,16 @@ export default function Newsevo() {
     <Header />
     <main className={style.main}>
     <div className={style.containerAll}>
+        <div className={style.containerdivTexts1}>
       <h2>EVOLUÇÃO DE CARTAS</h2>
       <p>A NOVA ATUALIZAÇÃO ESTÁ AQUI!</p>
       <p>Desbloqueie a evolução de cartas, ganhe força com níveis de elite, jogue no caminho estendido do troféu, aumente o nível do rei, desbloqueie novos domínios.</p>
       <p>É hora de EVOLUIR!</p>
 
       <p>A evolução de cartas permite aos jogadores desbloquear novos poderes para as cartas que já possuem!</p>
+      </div>
     <div className={style.containerdivs}>
-      <h3>BARBAROS</h3>
+      <h3>BÁRBAROS</h3>
       <img src="/images/barbaroevo.webp" alt="Barbaros evoluidos"  width={250} height={300} />
       <p>A cada golpe que ele dá, ele fica furioso.</p>
       <p>Neste caso, é bom ter alguém irritado ao seu lado.</p>
@@ -24,7 +26,7 @@ export default function Newsevo() {
       <p>Ciclos: 1.</p>
     </div>
     <div className={style.containerdivs}>
-      <h3>ARQUEIRA</h3>
+      <h3>ARQUEIRAS</h3>
         <img src="/images/arqueirasevo.webp" alt="Arqueira evoluida" width={250} height={300} />
       <p>Dispara uma flecha poderosa que perfura todos os inimigos em seu caminho.</p>
       <p>É bom tê-la ao seu lado.</p>
@@ -96,7 +98,7 @@ export default function Newsevo() {
         <p>Ciclos: 1.</p>
     </div>
     <div className={style.containerdivTexts}>
-      <p>COMO FUNCIONAM AS EVOLUÇÕES?</p>
+      <h2>COMO FUNCIONAM AS EVOLUÇÕES?</h2>
       <p>Coletar fragmentos de evolução para desbloquear a evolução de uma carta.</p>
       <p>Depois de desbloqueado, coloque a carta em um slot de evolução para usar as novas habilidades no combate.</p>
       <p>Na batalha, mobilize a carta evoluída um número certo de vezes (ciclos) para ativar a evolução.</p>
