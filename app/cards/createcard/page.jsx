@@ -249,15 +249,15 @@ export default function createCard() {
     }
     else{
     e.preventDefault();
-
     try {
+      let imageToSend = window.innerWidth <= 768 ? imageupdated : image;
       const response = await axios.post("/api/cards", {
         name,
         level,
         rarity,
         type,
         elixir,
-        image,
+        image: imageToSend,
         description,
         hp,
         deploytime,
