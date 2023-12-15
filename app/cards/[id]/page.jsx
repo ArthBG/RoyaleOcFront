@@ -59,7 +59,6 @@ export default function updateCard({ params }) {
   const divRef = useRef(null);
   const { id } = params;
 
-  console.log({ iscreated })
   const scrollToUp = () => {
     window.scrollTo(0, 0);
 }
@@ -281,7 +280,6 @@ const scrollToDown = () => {
       try {
         const response = await axios.get(`/api/cards/${id}`);
         const card = response.data;
-        console.log(card);
         setName(card.name);
         setImageUpdated(card.image);
         setImage(card.image);
@@ -319,7 +317,6 @@ const scrollToDown = () => {
         setIsCreated(card.iscreated)
         updateAttributes(card);
 
-        console.log(card)
       } catch (error) {
         console.error(error);
       }
@@ -328,7 +325,6 @@ const scrollToDown = () => {
       fetchData();
     }
   }, [id]);
-   console.log({ atributes })
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -372,7 +368,6 @@ const scrollToDown = () => {
       );
       clearAll();
       router.push(`/cards`);
-      console.log(response);
     } catch (error) {
       console.error(error);
     }

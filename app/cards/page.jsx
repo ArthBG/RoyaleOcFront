@@ -23,7 +23,6 @@ function cardspage() {
     const [selectedElixir, setSelectedElixir] = useState("");
     const router = useRouter();
 
-    console.log(selectedRarity);
 
     useEffect(() => {
         async function fetchData() {
@@ -56,7 +55,6 @@ function cardspage() {
     }, [selectedRarity, selectedType, selectedElixir, search]);
 
 
-    console.log(cardsData);
 
 
 

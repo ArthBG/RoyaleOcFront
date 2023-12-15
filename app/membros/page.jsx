@@ -28,7 +28,6 @@
 
             }
         };
-        console.log(dados, membros)
 
         const update = (id) => {
             router.push(`/membros/${id}`);
